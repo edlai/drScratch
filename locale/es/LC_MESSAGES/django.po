@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-14 19:13+0000\n"
+"POT-Creation-Date: 2019-01-26 20:35+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,66 +20,209 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: drScratch/settings.py:106
-msgid "Spanish"
-msgstr "Español"
+#: .\app\forms.py:52
+msgid "Tournament Name"
+msgstr "Nombre del Torneo"
 
-#: drScratch/settings.py:107
-msgid "English"
-msgstr "Inglés"
+#: .\app\forms.py:53
+msgid "Tournament Description"
+msgstr "Descripción del Torneo"
 
-#: templates/error/404.html:9 templates/error/500.html:9
-#: templates/error/analyzing.html:9
-msgid "Error"
-msgstr "Error"
+#: .\app\forms.py:56
+msgid "Team Name"
+msgstr "Nombre del Equipo"
 
-#: templates/error/404.html:36
-msgid "ERROR 404 - Page Not Found"
-msgstr " 404 - Página No Encontrada"
+#: .\app\forms.py:57
+msgid "Team Description"
+msgstr "Descripción del Equipo"
 
-#: templates/error/404.html:39
-msgid "Ops! This page doesn't exist"
-msgstr "Ops! Esta página no existe"
+#: .\app\forms.py:71
+msgid "None: 0"
+msgstr "Nulo: 0"
 
-#: templates/error/404.html:59 templates/error/500.html:59
-#: templates/error/analyzing.html:62 templates/login/login.html:104
-#: templates/login/login.html.py:525 templates/main/collaborators.html:84
-#: templates/main/main.html:85 templates/main/main.html.py:551
-#: templates/sign/createOrganization.html:81 templates/sign/createUser.html:81
-#: templates/sign/organization.html:105
-#: templates/sign/registerOrganization.html:81
-msgid "Get Started"
-msgstr "Empezar"
+#: .\app\forms.py:72
+msgid "Easy: 1"
+msgstr "Fácil: 1"
 
-#: templates/error/404.html:67 templates/error/500.html:67
-#: templates/error/analyzing.html:70 templates/learn/base.html:94
-#: templates/login/login.html:536 templates/main/collaborators.html:593
-#: templates/main/main.html:562 templates/main/main_organization.html:246
-#: templates/password/base.html:104 templates/sign/base.html:104
-#: templates/sign/createOrganization.html:256
-#: templates/sign/createUser.html:255 templates/sign/organization.html:288
-#: templates/sign/registerOrganization.html:255
-#: templates/statistics/statistics.html:347
-#: templates/upload/dashboard-organization.html:212
-#: templates/upload/dashboard-unregistered-basic.html:255
-#: templates/upload/dashboard-unregistered-developing.html:292
-#: templates/upload/dashboard-unregistered-master.html:353
-msgid "©2014 Dr. Scratch is powered by "
-msgstr "©2014 Dr. Scratch está implementado con "
+#: .\app\forms.py:73
+msgid "Medium: 2"
+msgstr "Medio: 2"
 
-#: templates/error/500.html:36
-msgid "500 - Internal Server Error"
-msgstr "500-Error Interno del Servidor"
+#: .\app\forms.py:74
+msgid "Hard: 3"
+msgstr "Difícil: 3"
 
-#: templates/error/500.html:39 templates/error/analyzing.html:39
-msgid "We apologize for this inconvenience"
-msgstr "Sentimos las molestias"
+#: .\app\forms.py:78
+msgid "Challenge Name"
+msgstr "Nombre del Reto"
 
-#: templates/error/analyzing.html:36
+#: .\app\forms.py:79
+msgid "Challenge Description"
+msgstr "Descripción del Reto"
+
+#: .\app\views.py:1673 .\app\views.py:1699
+msgid "Logged user is not a creator or a participant."
+msgstr "El usuario logado no es un creador ni un participante."
+
+#: .\app\views.py:1725 .\app\views.py:1763 .\app\views.py:1813
+#: .\app\views.py:1843 .\app\views.py:1846 .\app\views.py:1862
+#: .\app\views.py:1920 .\app\views.py:1953 .\app\views.py:1956
+#: .\app\views.py:1989 .\app\views.py:2010 .\app\views.py:2075
+#: .\app\views.py:2124 .\app\views.py:2173 .\app\views.py:2176
+#: .\app\views.py:2192 .\app\views.py:2235 .\app\views.py:2252
+#: .\app\views.py:2306
+msgid "Logged user cannot be found."
+msgstr "El usuario logado no puede ser encontrado."
+
+#: .\app\views.py:1728 .\app\views.py:1766 .\app\views.py:1865
+#: .\app\views.py:1992 .\app\views.py:2013 .\app\views.py:2127
+#: .\app\views.py:2195
+msgid "Session expired. Please log in again."
+msgstr "Sesión caducada. Por favor vuelva a logarse."
+
+#: .\app\views.py:1752
+msgid "Challenge added."
+msgstr "Reto añadido."
+
+#: .\app\views.py:1778
+msgid ""
+"The challenge cannot be deleted because is asociated to one or more "
+"tournaments."
+msgstr ""
+"El reto no puede ser eliminado porque tiene asociados uno o más torneos."
+
+#: .\app\views.py:1781
+msgid "Challenge deleted."
+msgstr "Reto borrado."
+
+#: .\app\views.py:1809 .\app\views.py:1839
+msgid "The selected challenge cannot be found."
+msgstr "El reto seleccionado no puede ser encontrado."
+
+#. Translators: Challenge edited.
+#: .\app\views.py:1835
+msgid "Challenge edited."
+msgstr "Reto editado."
+
+#: .\app\views.py:1877
+msgid ""
+"The team cannot be deleted because is asociated to one or more tournaments."
+msgstr ""
+"El equipo no puede ser eliminado porque tiene asociados uno o más torneos."
+
+#: .\app\views.py:1880
+msgid "Team deleted."
+msgstr "Equipo borrado."
+
+#: .\app\views.py:1904 .\app\views.py:1949 .\app\views.py:2169
+#: .\app\views.py:2301
+msgid "The selected team cannot be found."
+msgstr "El equipo seleccionado no puede ser encontrado."
+
+#: .\app\views.py:1945
+msgid "Team edited."
+msgstr "Equipo editado."
+
+#: .\app\views.py:1978
+msgid "Team added."
+msgstr "Equipo añadido."
+
+#: .\app\views.py:2049
+msgid "The selected tournament cannot be found."
+msgstr "El torneo seleccionado no puede ser encontrado."
+
+#: .\app\views.py:2086
+msgid "Tournament deleted."
+msgstr "Torneo borrado."
+
+#: .\app\views.py:2120
+msgid "Tournament added."
+msgstr "Torneo añadido."
+
+#: .\app\views.py:2165
+msgid "Tournament edited."
+msgstr "Torneo editado."
+
+#: .\app\views.py:2211
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:291
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:260
+msgid "The tournament has not teams."
+msgstr "El torneo no tiene equipos"
+
+#: .\app\views.py:2393 .\app\views.py:2422 .\templates\error\analyzing.html:36
 msgid "There was an error analyzing your project"
 msgstr "Hubo un error analizando tu proyecto"
 
-#: templates/error/analyzing.html:54
+#: .\drScratch\settings.py:117
+msgid "Spanish"
+msgstr "Español"
+
+#: .\drScratch\settings.py:118
+msgid "English"
+msgstr "Inglés"
+
+#: .\templates\error\404.html:9 .\templates\error\500.html:9
+#: .\templates\error\analyzing.html:9
+msgid "Error"
+msgstr "Error"
+
+#: .\templates\error\404.html:36
+msgid "ERROR 404 - Page Not Found"
+msgstr " 404 - Página No Encontrada"
+
+#: .\templates\error\404.html:39
+msgid "Ops! This page doesn't exist"
+msgstr "Ops! Esta página no existe"
+
+#: .\templates\error\404.html:59 .\templates\error\500.html:59
+#: .\templates\error\analyzing.html:62 .\templates\login\login.html:104
+#: .\templates\login\login.html.py:525 .\templates\main\collaborators.html:84
+#: .\templates\main\main.html:85 .\templates\main\main.html.py:551
+#: .\templates\sign\createOrganization.html:81
+#: .\templates\sign\createUser.html:81 .\templates\sign\organization.html:105
+#: .\templates\sign\registerOrganization.html:81
+msgid "Get Started"
+msgstr "Empezar"
+
+#: .\templates\error\404.html:67 .\templates\error\500.html:67
+#: .\templates\error\analyzing.html:70 .\templates\learn\base.html:119
+#: .\templates\login\login.html:536 .\templates\main\collaborators.html:593
+#: .\templates\main\main.html:562 .\templates\main\main_organization.html:246
+#: .\templates\password\base.html:104 .\templates\sign\base.html:104
+#: .\templates\sign\createOrganization.html:256
+#: .\templates\sign\createUser.html:255 .\templates\sign\organization.html:288
+#: .\templates\sign\registerOrganization.html:255
+#: .\templates\statistics\statistics.html:347
+#: .\templates\tournaments\creator\admin\admin_creator.html:215
+#: .\templates\tournaments\creator\admin\challenges\challengesList.html:635
+#: .\templates\tournaments\creator\admin\challenges\editChallenge.html:264
+#: .\templates\tournaments\creator\admin\teams\newEditTeam.html:280
+#: .\templates\tournaments\creator\admin\teams\teamsList.html:328
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:404
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:369
+#: .\templates\tournaments\creator\main_creator.html:246
+#: .\templates\tournaments\creator\progress\teamsProgress.html:610
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:332
+#: .\templates\tournaments\main_tournaments.html:222
+#: .\templates\tournaments\participant\results.html:483
+#: .\templates\tournaments\participant\teamsPart.html:274
+#: .\templates\tournaments\participant\tournamentsPart.html:650
+#: .\templates\upload\dashboard-organization.html:212
+#: .\templates\upload\dashboard-unregistered-basic.html:255
+#: .\templates\upload\dashboard-unregistered-developing.html:292
+#: .\templates\upload\dashboard-unregistered-master.html:353
+msgid "©2014 Dr. Scratch is powered by "
+msgstr "©2014 Dr. Scratch está implementado con "
+
+#: .\templates\error\500.html:36
+msgid "500 - Internal Server Error"
+msgstr "500-Error Interno del Servidor"
+
+#: .\templates\error\500.html:39 .\templates\error\analyzing.html:39
+msgid "We apologize for this inconvenience"
+msgstr "Sentimos las molestias"
+
+#: .\templates\error\analyzing.html:54
 msgid ""
 "Sometimes we have got problems analyzing some projects. We're working on "
 "this."
@@ -87,11 +230,19 @@ msgstr ""
 "Algunas veces tenemos problemas analizando determinados proyectos. Estamos "
 "trabajando en ello."
 
-#: templates/learn/Abstraction.html:4 templates/statistics/statistics.html:269
+#: .\templates\learn\Abstraction.html:4 .\templates\learn\base.html:103
+#: .\templates\statistics\statistics.html:269
+#: .\templates\tournaments\creator\admin\challenges\challengesList.html:410
+#: .\templates\tournaments\creator\admin\challenges\challengesList.html:579
+#: .\templates\tournaments\creator\admin\challenges\editChallenge.html:214
+#: .\templates\tournaments\creator\progress\teamsProgress.html:451
+#: .\templates\tournaments\participant\scores.html:335
+#: .\templates\tournaments\participant\scores.html:337
+#: .\templates\tournaments\participant\tournamentsPart.html:451
 msgid "Abstraction"
 msgstr "Abstracción"
 
-#: templates/learn/Abstraction.html:10
+#: .\templates\learn\Abstraction.html:10
 msgid ""
 "The ability of abstraction and decomposition of problems helps you to "
 "<b>break a problem into smaller parts that are easier to understand, program "
@@ -101,14 +252,14 @@ msgstr ""
 "<b>dividir un problema en partes más pequeñas que serán más fáciles de "
 "comprender, programar y depurar.</b>"
 
-#: templates/learn/Abstraction.html:17 templates/learn/Data.html:19
-#: templates/learn/Flow.html:17 templates/learn/Logic.html:17
-#: templates/learn/Parallelism.html:17 templates/learn/Synchronization.html:18
-#: templates/learn/User.html:18
+#: .\templates\learn\Abstraction.html:17 .\templates\learn\Data.html:19
+#: .\templates\learn\Flow.html:17 .\templates\learn\Logic.html:17
+#: .\templates\learn\Parallelism.html:17
+#: .\templates\learn\Synchronization.html:18 .\templates\learn\User.html:18
 msgid "If you get 0 points..."
 msgstr "Si has sacado 0 puntos..."
 
-#: templates/learn/Abstraction.html:19
+#: .\templates\learn\Abstraction.html:19
 msgid ""
 "When you start programming with Scratch, sometimes it may seem that the "
 "simplest solution is to program all the behavior of a character in a single "
@@ -122,85 +273,70 @@ msgstr ""
 "personaje sea controlado por diferentes programas y que cada uno de estos "
 "programas se ocupe de una cuestión concreta.</b> Veamos un ejemplo:"
 
-#: templates/learn/Abstraction.html:20 templates/learn/Abstraction.html:35
-#: templates/learn/Abstraction.html:41 templates/learn/Abstraction.html:61
-#: templates/learn/Abstraction.html:92 templates/learn/Abstraction.html:118
-#: templates/learn/Data.html:85 templates/learn/Data.html.py:104
-#: templates/learn/Data.html:117 templates/learn/Flow.html:21
-#: templates/learn/Flow.html.py:39 templates/learn/Flow.html:49
-#: templates/learn/Flow.html.py:67 templates/learn/Parallelism.html:21
-#: templates/learn/Synchronization.html:21
-#: templates/learn/Synchronization.html:27
-#: templates/learn/Synchronization.html:45 templates/learn/User.html:22
-#: templates/learn/User.html.py:46 templates/learn/User.html:69
-#: templates/learn/attrInit.html:25
+#: .\templates\learn\Abstraction.html:20 .\templates\learn\Abstraction.html:35
+#: .\templates\learn\Abstraction.html:41 .\templates\learn\Abstraction.html:61
+#: .\templates\learn\Abstraction.html:92 .\templates\learn\Abstraction.html:118
+#: .\templates\learn\Data.html:85 .\templates\learn\Data.html.py:104
+#: .\templates\learn\Data.html:117 .\templates\learn\Flow.html:21
+#: .\templates\learn\Flow.html.py:39 .\templates\learn\Flow.html:49
+#: .\templates\learn\Flow.html.py:67 .\templates\learn\Parallelism.html:21
+#: .\templates\learn\Synchronization.html:21
+#: .\templates\learn\Synchronization.html:27
+#: .\templates\learn\Synchronization.html:45 .\templates\learn\User.html:23
+#: .\templates\learn\attrInit.html:25
 msgid "when gf clicked"
 msgstr "al presionar ⚑"
 
-#: templates/learn/Abstraction.html:21 templates/learn/Abstraction.html:36
-#: templates/learn/Abstraction.html:62 templates/learn/Abstraction.html:93
-#: templates/learn/User.html:23 templates/learn/User.html.py:47
-#: templates/learn/User.html:70
+#: .\templates\learn\Abstraction.html:21 .\templates\learn\Abstraction.html:36
+#: .\templates\learn\Abstraction.html:62 .\templates\learn\Abstraction.html:93
 msgid "clear"
 msgstr "borrar"
 
-#: templates/learn/Abstraction.html:22 templates/learn/Abstraction.html:37
-#: templates/learn/User.html:24 templates/learn/User.html.py:48
-#: templates/learn/User.html:71
+#: .\templates\learn\Abstraction.html:22 .\templates\learn\Abstraction.html:37
 msgid "go to x:(-100) y:(30)"
 msgstr "ir a x:(-100) y:(30)"
 
-#: templates/learn/Abstraction.html:23 templates/learn/Abstraction.html:38
-#: templates/learn/Abstraction.html:65 templates/learn/Abstraction.html:71
-#: templates/learn/Abstraction.html:81 templates/learn/User.html:25
-#: templates/learn/User.html.py:49 templates/learn/User.html:72
+#: .\templates\learn\Abstraction.html:23 .\templates\learn\Abstraction.html:38
+#: .\templates\learn\Abstraction.html:65 .\templates\learn\Abstraction.html:71
+#: .\templates\learn\Abstraction.html:81
 msgid "pen down"
 msgstr "bajar lápiz"
 
-#: templates/learn/Abstraction.html:24 templates/learn/Abstraction.html:39
-#: templates/learn/Abstraction.html:72 templates/learn/User.html:26
-#: templates/learn/User.html.py:50 templates/learn/User.html:73
+#: .\templates\learn\Abstraction.html:24 .\templates\learn\Abstraction.html:39
+#: .\templates\learn\Abstraction.html:72
 msgid "move (200) steps"
 msgstr "mover (10) pasos"
 
-#: templates/learn/Abstraction.html:25 templates/learn/Abstraction.html:30
-#: templates/learn/Abstraction.html:40 templates/learn/Abstraction.html:46
-#: templates/learn/Abstraction.html:67 templates/learn/Abstraction.html:73
-#: templates/learn/Abstraction.html:83 templates/learn/User.html:27
-#: templates/learn/User.html.py:32 templates/learn/User.html:51
-#: templates/learn/User.html.py:56 templates/learn/User.html:74
-#: templates/learn/User.html.py:79
+#: .\templates\learn\Abstraction.html:25 .\templates\learn\Abstraction.html:30
+#: .\templates\learn\Abstraction.html:40 .\templates\learn\Abstraction.html:46
+#: .\templates\learn\Abstraction.html:67 .\templates\learn\Abstraction.html:73
+#: .\templates\learn\Abstraction.html:83
 msgid "pen up"
 msgstr "subir lápiz"
 
-#: templates/learn/Abstraction.html:26 templates/learn/Abstraction.html:42
-#: templates/learn/Abstraction.html:68 templates/learn/Abstraction.html:96
-#: templates/learn/Synchronization.html:25 templates/learn/User.html:28
-#: templates/learn/User.html.py:52 templates/learn/User.html:75
-#: templates/learn/duplicatedScripts.html:20
+#: .\templates\learn\Abstraction.html:26 .\templates\learn\Abstraction.html:42
+#: .\templates\learn\Abstraction.html:68 .\templates\learn\Abstraction.html:96
+#: .\templates\learn\Synchronization.html:25
+#: .\templates\learn\duplicatedScripts.html:20
 msgid "wait (1) secs"
 msgstr "esperar (1) segundos"
 
-#: templates/learn/Abstraction.html:27 templates/learn/Abstraction.html:43
-#: templates/learn/User.html:29 templates/learn/User.html.py:53
-#: templates/learn/User.html:76
+#: .\templates\learn\Abstraction.html:27 .\templates\learn\Abstraction.html:43
 msgid "go to x:(-44) y:(-24)"
 msgstr "ir a x:(-44) y:(-24)"
 
-#: templates/learn/Abstraction.html:28 templates/learn/Abstraction.html:44
-#: templates/learn/Abstraction.html:64 templates/learn/Abstraction.html:70
-#: templates/learn/Abstraction.html:80 templates/learn/User.html:30
-#: templates/learn/User.html.py:54 templates/learn/User.html:77
+#: .\templates\learn\Abstraction.html:28 .\templates\learn\Abstraction.html:44
+#: .\templates\learn\Abstraction.html:64 .\templates\learn\Abstraction.html:70
+#: .\templates\learn\Abstraction.html:80
 msgid "set pen color to [#FFA500]"
 msgstr "fijar color de lápiz a [#FFA500]"
 
-#: templates/learn/Abstraction.html:29 templates/learn/Abstraction.html:45
-#: templates/learn/Abstraction.html:66 templates/learn/User.html:31
-#: templates/learn/User.html.py:55 templates/learn/User.html:78
+#: .\templates\learn\Abstraction.html:29 .\templates\learn\Abstraction.html:45
+#: .\templates\learn\Abstraction.html:66
 msgid "move (100) steps"
 msgstr "mover (100) pasos"
 
-#: templates/learn/Abstraction.html:33
+#: .\templates\learn\Abstraction.html:33
 msgid ""
 "This project, which paints a picture on the screen, has been programmed in a "
 "single program that draws the two lines that make up the drawing. Although "
@@ -214,7 +350,7 @@ msgstr ""
 "dividir el programa en dos partes, de forma que tengamos dos programas "
 "diferentes, uno para pintar la primera línea y otro para pintar la segunda:"
 
-#: templates/learn/Abstraction.html:49
+#: .\templates\learn\Abstraction.html:49
 msgid ""
 "Thus, if we make any changes eg in one of the lines drawn, it is much easier "
 "to know which part of the program we need to go to carry out the changes."
@@ -223,14 +359,14 @@ msgstr ""
 "las líneas dibujadas, es mucho más sencillo saber a qué parte del programa "
 "tenemos que dirigirnos para llevar a cabo los cambios."
 
-#: templates/learn/Abstraction.html:59 templates/learn/Data.html:80
-#: templates/learn/Flow.html:37 templates/learn/Logic.html:32
-#: templates/learn/Parallelism.html:32 templates/learn/Synchronization.html:43
-#: templates/learn/User.html:44
+#: .\templates\learn\Abstraction.html:59 .\templates\learn\Data.html:80
+#: .\templates\learn\Flow.html:37 .\templates\learn\Logic.html:32
+#: .\templates\learn\Parallelism.html:32
+#: .\templates\learn\Synchronization.html:43 .\templates\learn\User.html:36
 msgid "If you get 1 point..."
 msgstr "Si has sacado 1 punto..."
 
-#: templates/learn/Abstraction.html:60
+#: .\templates\learn\Abstraction.html:60
 msgid ""
 "Scratch allows new user-defined blocks that consist of a sequence of "
 "instructions. These abstractions allow you to create simple programs to "
@@ -241,15 +377,15 @@ msgstr ""
 "crear programas más sencillos de leer, de programar y de mantener. Veamos un "
 "ejemplo:"
 
-#: templates/learn/Abstraction.html:63 templates/learn/Abstraction.html:94
+#: .\templates\learn\Abstraction.html:63 .\templates\learn\Abstraction.html:94
 msgid "go to x:(-200) y:(40)"
 msgstr "ir a x:(-200) y:(40)"
 
-#: templates/learn/Abstraction.html:69 templates/learn/Abstraction.html:97
+#: .\templates\learn\Abstraction.html:69 .\templates\learn\Abstraction.html:97
 msgid "go to x:(-200) y:(0)"
 msgstr "ir a x:(-200) y:(0)"
 
-#: templates/learn/Abstraction.html:76
+#: .\templates\learn\Abstraction.html:76
 msgid ""
 "This Scratch project draws two orange lines of different length  on the "
 "screen. Rather than repeat the code 2 times, as shown in the example, you "
@@ -265,15 +401,15 @@ msgstr ""
 "puede indicar cuál es la longitud de la línea. Para ello hay que irse a la "
 "categoría “Más Bloques” y pulsar en el botón Crear un bloque:"
 
-#: templates/learn/Abstraction.html:79
+#: .\templates\learn\Abstraction.html:79
 msgid "define PaintedOrange(length)"
 msgstr "definir PintaNaranja(longitud)"
 
-#: templates/learn/Abstraction.html:82
+#: .\templates\learn\Abstraction.html:82
 msgid "move (length) steps"
 msgstr "mover (longitud) pasos"
 
-#: templates/learn/Abstraction.html:89
+#: .\templates\learn\Abstraction.html:89
 msgid ""
 "Having defined the block <i>'DrawOrange'</i> it can be used in any program "
 "of the project, as we see below:"
@@ -281,15 +417,15 @@ msgstr ""
 "Una vez definido el bloque <i>“PintaNaranja”</i> es posible utilizarlo en "
 "cualquier programa del proyecto, tal como vemos a continuación:"
 
-#: templates/learn/Abstraction.html:95
+#: .\templates\learn\Abstraction.html:95
 msgid "PaintedOrange(100):: looks stack"
 msgstr "PintaNaranja(100):: looks stack"
 
-#: templates/learn/Abstraction.html:98
+#: .\templates\learn\Abstraction.html:98
 msgid "PaintedOrange(200):: looks stack"
 msgstr "PintaNaranja(200):: looks stack"
 
-#: templates/learn/Abstraction.html:102
+#: .\templates\learn\Abstraction.html:102
 msgid ""
 "In this way, we avoid repeating code, which makes our projects easier to "
 "program and maintain. As can be seen, the first time the block is used "
@@ -302,14 +438,14 @@ msgstr ""
 "indica una longitud de 100 pasos, mientras que la segunda vez la longitud es "
 "de 200 pasos."
 
-#: templates/learn/Abstraction.html:111 templates/learn/Data.html:99
-#: templates/learn/Flow.html:65 templates/learn/Logic.html:47
-#: templates/learn/Parallelism.html:65 templates/learn/Synchronization.html:67
-#: templates/learn/User.html:67
+#: .\templates\learn\Abstraction.html:111 .\templates\learn\Data.html:99
+#: .\templates\learn\Flow.html:65 .\templates\learn\Logic.html:47
+#: .\templates\learn\Parallelism.html:65
+#: .\templates\learn\Synchronization.html:67 .\templates\learn\User.html:66
 msgid "If you get 2 points..."
 msgstr "Si has sacado 2 puntos..."
 
-#: templates/learn/Abstraction.html:113
+#: .\templates\learn\Abstraction.html:113
 msgid ""
 "In some Scratch projects we have many identical characters that exactly "
 "perform the same actions. The first idea that comes to mind to do this is to "
@@ -326,7 +462,7 @@ msgstr ""
 "ocurriría si quiero realizar un cambio en un programa? Tendría que ir objeto "
 "por objeto realizando esa modificación."
 
-#: templates/learn/Abstraction.html:115
+#: .\templates\learn\Abstraction.html:115
 msgid ""
 "For such situations it is preferable to use <b>clones</b>, a type of "
 "abstraction that helps us to program a single object, and dynamically "
@@ -336,7 +472,7 @@ msgstr ""
 "de abstracción que nos ayuda a poder programar un solo objeto, y <b>crear de "
 "forma dinámica copias exactas con el mismo comportamiento.</b> "
 
-#: templates/learn/Abstraction.html:116
+#: .\templates\learn\Abstraction.html:116
 msgid ""
 "Let's see how it works with an example. Imagine you want to pretend that it "
 "is snowing on a project. We can draw an object that is a snowflake, and once "
@@ -349,33 +485,33 @@ msgstr ""
 "constantemente que aparezcan en la parte superior de la pantalla y vayan "
 "cayendo hasta la parte inferior:"
 
-#: templates/learn/Abstraction.html:119 templates/learn/Flow.html:50
-#: templates/learn/Parallelism.html:41 templates/learn/Parallelism.html:46
-#: templates/learn/Synchronization.html:47
+#: .\templates\learn\Abstraction.html:119 .\templates\learn\Flow.html:50
+#: .\templates\learn\Parallelism.html:41 .\templates\learn\Parallelism.html:46
+#: .\templates\learn\Synchronization.html:47
 msgid "forever"
 msgstr "por siempre"
 
-#: templates/learn/Abstraction.html:120
+#: .\templates\learn\Abstraction.html:120
 msgid "create clone of [myself v]"
 msgstr "crear clon de [yo v]"
 
-#: templates/learn/Abstraction.html:121
+#: .\templates\learn\Abstraction.html:121
 msgid "wait (0.2) secs"
 msgstr "esperar (0.2) segundos"
 
-#: templates/learn/Abstraction.html:122
+#: .\templates\learn\Abstraction.html:122
 msgid "go to x:(pick random(-200) to (200)) y:(200)"
 msgstr "ir a x:(número al azar entre (-200) y (200)) y:(200)"
 
-#: templates/learn/Abstraction.html:123
+#: .\templates\learn\Abstraction.html:123
 msgid "glide (3) secs to x:(x position) y:(-180)"
 msgstr "deslizar en (3) segs a x:(posicion en x) y:(-180)"
 
-#: templates/learn/Abstraction.html:124
+#: .\templates\learn\Abstraction.html:124
 msgid "delete this clone"
 msgstr "borrar este clon"
 
-#: templates/learn/Abstraction.html:127
+#: .\templates\learn\Abstraction.html:127
 msgid ""
 "Thus, just by programming a character, we can have infinite clones  which "
 "are created at a particular time of project implementation and are deleted "
@@ -385,11 +521,18 @@ msgstr ""
 "clones, que se crean en un momento determinado de la ejecución del proyecto "
 "y se borran cuando ya no son necesarios."
 
-#: templates/learn/Data.html:5
+#: .\templates\learn\Data.html:5
+#: .\templates\tournaments\creator\admin\challenges\challengesList.html:374
+#: .\templates\tournaments\creator\admin\challenges\challengesList.html:575
+#: .\templates\tournaments\creator\admin\challenges\editChallenge.html:210
+#: .\templates\tournaments\creator\progress\teamsProgress.html:411
+#: .\templates\tournaments\participant\scores.html:271
+#: .\templates\tournaments\participant\scores.html:273
+#: .\templates\tournaments\participant\tournamentsPart.html:411
 msgid "Data Representation"
 msgstr "Representación de los datos"
 
-#: templates/learn/Data.html:11
+#: .\templates\learn\Data.html:11
 msgid ""
 "Every Scratch project needs a set of information about the characters in "
 "order to run properly. For example, <b>we need to know the position of each "
@@ -406,7 +549,7 @@ msgstr ""
 "encontramos, el tiempo transcurrido, la puntación, las vidas, las "
 "recompensas recogidas... "
 
-#: templates/learn/Data.html:21
+#: .\templates\learn\Data.html:21
 msgid ""
 "Each character of a Scratch project has a number of features, or attributes, "
 "that every moment of the project have value, and can be modified by "
@@ -423,107 +566,110 @@ msgstr ""
 "continuación mostramos la lista de atributos que tiene cada personaje y los "
 "bloques que pueden utilizarse para modificarlos:"
 
-#: templates/learn/Data.html:25
+#: .\templates\learn\Data.html:25
 msgid "Position:"
 msgstr "Posición:"
 
-#: templates/learn/Data.html:29 templates/learn/Flow.html:23
-#: templates/learn/Flow.html.py:42 templates/learn/Flow.html:51
-#: templates/learn/Parallelism.html:42
+#: .\templates\learn\Data.html:29 .\templates\learn\Flow.html:23
+#: .\templates\learn\Flow.html.py:42 .\templates\learn\Flow.html:51
+#: .\templates\learn\Parallelism.html:42 .\templates\learn\User.html:40
 msgid "move (10) steps"
 msgstr "mover (10) pasos"
 
-#: templates/learn/Data.html:30 templates/learn/attrInit.html:26
+#: .\templates\learn\Data.html:30 .\templates\learn\attrInit.html:26
 msgid "go to x:(0) y:(0)"
 msgstr "ir a x:(0) y:(0)"
 
-#: templates/learn/Data.html:31
+#: .\templates\learn\Data.html:31
 msgid "glide (1) secs to x:(0) y:(0)"
 msgstr "deslizar en (1) segs a x:(0) y:(0)"
 
-#: templates/learn/Data.html:32
+#: .\templates\learn\Data.html:32
 msgid "set x to (0)"
 msgstr "fijar x a (0)"
 
-#: templates/learn/Data.html:33
+#: .\templates\learn\Data.html:33
 msgid "set y to (0)"
 msgstr "fijar y a (0)"
 
-#: templates/learn/Data.html:34 templates/learn/Data.html.py:35
+#: .\templates\learn\Data.html:34
 msgid "change x by (0)"
 msgstr "cambiar x por (0)"
 
-#: templates/learn/Data.html:38
+#: .\templates\learn\Data.html:35
+msgid "change y by (0)"
+msgstr "cambiar x por (0)"
+
+#: .\templates\learn\Data.html:38
 msgid "Size:"
 msgstr "Tamaño:"
 
-#: templates/learn/Data.html:42
+#: .\templates\learn\Data.html:42
 msgid "change size by (10)"
 msgstr "cambiar tamaño por (-1)"
 
-#: templates/learn/Data.html:43
-#, fuzzy, python-format
-#| msgid "set size to (120) %"
+#: .\templates\learn\Data.html:43
+#, python-format
 msgid "set size to (120) %%"
-msgstr "fijar tamaño a (120)%"
+msgstr "fijar tamaño a (120) %%"
 
-#: templates/learn/Data.html:47
+#: .\templates\learn\Data.html:47
 msgid "Orientation:"
 msgstr "Orientación:"
 
-#: templates/learn/Data.html:51
+#: .\templates\learn\Data.html:51
 msgid "point in direction (90 v)"
 msgstr "apuntar en dirección (90 v)"
 
-#: templates/learn/Data.html:52
-msgid "point towards [v]"
+#: .\templates\learn\Data.html:52
+msgid "point towards [ v]"
 msgstr "apuntar hacia [v]"
 
-#: templates/learn/Data.html:53 templates/learn/Flow.html:24
-#: templates/learn/Flow.html.py:43
+#: .\templates\learn\Data.html:53 .\templates\learn\Flow.html:24
+#: .\templates\learn\Flow.html.py:43
 msgid "turn cw (15) degrees"
 msgstr "girar ↻ (15) grados"
 
-#: templates/learn/Data.html:54 templates/learn/Flow.html:26
-#: templates/learn/Flow.html.py:45
+#: .\templates\learn\Data.html:54 .\templates\learn\Flow.html:26
+#: .\templates\learn\Flow.html.py:45
 msgid "turn ccw (15) degrees"
 msgstr "girar ↺ (15) grados"
 
-#: templates/learn/Data.html:58
+#: .\templates\learn\Data.html:58
 msgid "Costume:"
 msgstr "Disfraz:"
 
-#: templates/learn/Data.html:61
+#: .\templates\learn\Data.html:61
 msgid "switch costume to [butterfly v]"
 msgstr "cambiar disfraz a [butterfly v]"
 
-#: templates/learn/Data.html:62 templates/learn/duplicatedScripts.html:18
-#: templates/learn/duplicatedScripts.html:26
-#: templates/learn/duplicatedScripts.html:40
+#: .\templates\learn\Data.html:62 .\templates\learn\duplicatedScripts.html:18
+#: .\templates\learn\duplicatedScripts.html:26
+#: .\templates\learn\duplicatedScripts.html:40
 msgid "next costume"
 msgstr "siguiente disfraz"
 
-#: templates/learn/Data.html:63
+#: .\templates\learn\Data.html:63
 msgid "change [color v] effect by (25)"
 msgstr "cambiar efecto [color v] por (25)"
 
-#: templates/learn/Data.html:64
+#: .\templates\learn\Data.html:64
 msgid "set [color v] effect to (0)"
 msgstr "establecer efecto [color v] a (25)"
 
-#: templates/learn/Data.html:67
+#: .\templates\learn\Data.html:67
 msgid "Visibility:"
 msgstr "Visibilidad:"
 
-#: templates/learn/Data.html:70 templates/learn/Synchronization.html:74
+#: .\templates\learn\Data.html:70 .\templates\learn\Synchronization.html:74
 msgid "show"
 msgstr "mostrar"
 
-#: templates/learn/Data.html:71
+#: .\templates\learn\Data.html:71
 msgid "hide"
 msgstr "esconder"
 
-#: templates/learn/Data.html:81
+#: .\templates\learn\Data.html:81
 msgid ""
 "In addition to modifying the attributes of the characters, programmers can "
 "use other mechanisms to store information on a Scratch project. <b>One of "
@@ -538,7 +684,7 @@ msgstr ""
 "necesitar: en qué nivel nos encontramos</b>, cuántas vidas nos quedan, "
 "cuántos puntos llevamos, cómo se llama el usuario..."
 
-#: templates/learn/Data.html:83
+#: .\templates\learn\Data.html:83
 msgid ""
 "To create a variable you have to go to the category of data, click on "
 "'Create a variable' and give a name. In the example shown below we have "
@@ -550,19 +696,19 @@ msgstr ""
 "continuación le hemos dado el nombre “Puntos”, ya que la utilizaremos para "
 "guardar el número de puntos que consigue nuestro personaje."
 
-#: templates/learn/Data.html:86
+#: .\templates\learn\Data.html:86
 msgid "set [Points v] to [0]"
 msgstr "fijar [Puntos v] a [0]"
 
-#: templates/learn/Data.html:87
+#: .\templates\learn\Data.html:87
 msgid "if &lt;touching color [#0000FF]&gt; then"
 msgstr "si &lt;¿tocando el color [#0000FF]?&gt; entonces"
 
-#: templates/learn/Data.html:88
+#: .\templates\learn\Data.html:88
 msgid "change [Points v] by (1)"
 msgstr "cambiar [Puntos v] por (1)"
 
-#: templates/learn/Data.html:92
+#: .\templates\learn\Data.html:92
 msgid ""
 "In the program of the top, we assign the number of points that we want the "
 "character has to the beginning of the game, in this case 0, for which we use "
@@ -583,7 +729,7 @@ msgstr ""
 "sumaría 1: si vale 0, le sumo 1 y ahora vale 1; si vale 1, le sumo 1 y ahora "
 "vale 2..."
 
-#: templates/learn/Data.html:100
+#: .\templates\learn\Data.html:100
 msgid ""
 "In addition to the variables, Scratch lets you use another data type to "
 "store project information: <b>The lists. The lists can store more than one "
@@ -596,7 +742,7 @@ msgstr ""
 "guardar las recompensas que han sido recuperadas por un personaje, o un "
 "conjunto de nombres, por plantear un par de ejemplos.</b>"
 
-#: templates/learn/Data.html:102
+#: .\templates\learn\Data.html:102
 msgid ""
 "To create a list, you have to go to the data category, click on 'Create a "
 "List' and give a name. In the example, we have named our 'Students' list:"
@@ -605,24 +751,24 @@ msgstr ""
 "“Crear una lista” y darle un nombre. En el ejemplo, nosotros hemos llamado a "
 "nuestra lista “Estudiantes”:"
 
-#: templates/learn/Data.html:105 templates/learn/Data.html.py:118
+#: .\templates\learn\Data.html:105 .\templates\learn\Data.html.py:118
 msgid "delete (all v) of [Students v]"
 msgstr "borrar (todos v) de [Estudiantes v]"
 
-#: templates/learn/Data.html:106 templates/learn/Data.html.py:119
-#: templates/learn/Flow.html:41
+#: .\templates\learn\Data.html:106 .\templates\learn\Data.html.py:119
+#: .\templates\learn\Flow.html:41
 msgid "repeat (3)"
 msgstr "repetir (3)"
 
-#: templates/learn/Data.html:107 templates/learn/Data.html.py:120
+#: .\templates\learn\Data.html:107 .\templates\learn\Data.html.py:120
 msgid "ask [Introduce a student name] and wait"
 msgstr "preguntar [Introduce el nombre de un estudiante] y esperar"
 
-#: templates/learn/Data.html:108 templates/learn/Data.html.py:121
+#: .\templates\learn\Data.html:108 .\templates\learn\Data.html.py:121
 msgid "insert (answer) at (last v) of [Students v]"
 msgstr "insertar (respuesta) en [último v] de [Estudiantes v]"
 
-#: templates/learn/Data.html:112
+#: .\templates\learn\Data.html:112
 msgid ""
 "What have we done with this program? The first thing we do is, to start "
 "execution, <b>delete all items from the list Students</b>, to empty it "
@@ -637,7 +783,7 @@ msgstr ""
 "introduzca un nombre, y cada nombre introducido lo insertamos en la última "
 "posición de la lista Estudiantes."
 
-#: templates/learn/Data.html:114
+#: .\templates\learn\Data.html:114
 msgid ""
 "What we do with the list? We could, for example, use it to get a volunteer "
 "to carry out an exercise to the whiteboard. Look at the new instructions "
@@ -647,25 +793,26 @@ msgstr ""
 "sacar a un voluntario a realizar un ejercicio a la pizarra digital. Fijaos "
 "en las nuevas instrucciones que añadimos al programa:"
 
-#: templates/learn/Data.html:122 templates/learn/Flow.html:48
-#: templates/learn/Flow.html.py:70 templates/learn/Logic.html:52
-#: templates/learn/Logic.html.py:55 templates/learn/Logic.html:58
-#: templates/learn/Parallelism.html:44 templates/learn/Parallelism.html:49
-#: templates/learn/Synchronization.html:50
+#: .\templates\learn\Data.html:122 .\templates\learn\Flow.html:48
+#: .\templates\learn\Flow.html.py:70 .\templates\learn\Logic.html:52
+#: .\templates\learn\Logic.html.py:55 .\templates\learn\Logic.html:58
+#: .\templates\learn\Parallelism.html:44 .\templates\learn\Parallelism.html:49
+#: .\templates\learn\Synchronization.html:50 .\templates\learn\User.html:50
+#: .\templates\learn\User.html.py:71
 msgid "end"
 msgstr "fin"
 
-#: templates/learn/Data.html:123
+#: .\templates\learn\Data.html:123
 msgid "say [Today's volunteer will be...] for (2) secs"
 msgstr "decir [El voluntario de hoy va a ser...] por (2) segundos"
 
-#: templates/learn/Data.html:124
+#: .\templates\learn\Data.html:124
 msgid "say (item(pick random (1) to (3)) of [Students v]) for (2) secs"
 msgstr ""
 "decir(elemento(número al azar entre (1) y (3)) de [Estudiantes v]) por (2) "
 "segundos"
 
-#: templates/learn/Data.html:128
+#: .\templates\learn\Data.html:128
 msgid ""
 "We generated a random number between 1 and 3, which are the elements in the "
 "list, we selected the element that occupies that position in the list. "
@@ -677,7 +824,7 @@ msgstr ""
 "lista. Unas veces cogeremos el nombre que está en la posición 1, otras al "
 "que está en la posición 2 y otras al de la posición 3."
 
-#: templates/learn/Data.html:130
+#: .\templates\learn\Data.html:130
 msgid ""
 "Lists have many possibilities and many available operations ... you dare to "
 "investigate how they work?"
@@ -685,11 +832,18 @@ msgstr ""
 "Las listas tienen muchas posibilidades y muchas operaciones disponibles... "
 "¿te animas a investigar cómo funcionan?"
 
-#: templates/learn/Flow.html:4 templates/statistics/statistics.html:260
+#: .\templates\learn\Flow.html:4 .\templates\statistics\statistics.html:260
+#: .\templates\tournaments\creator\admin\challenges\challengesList.html:302
+#: .\templates\tournaments\creator\admin\challenges\challengesList.html:567
+#: .\templates\tournaments\creator\admin\challenges\editChallenge.html:202
+#: .\templates\tournaments\creator\progress\teamsProgress.html:331
+#: .\templates\tournaments\participant\scores.html:143
+#: .\templates\tournaments\participant\scores.html:145
+#: .\templates\tournaments\participant\tournamentsPart.html:331
 msgid "Flow Control"
 msgstr "Control de flujo"
 
-#: templates/learn/Flow.html:10
+#: .\templates\learn\Flow.html:10
 msgid ""
 "Instructions related to algorithmic notions of flow control can help you to "
 "<b>control the behavior of your characters</b>, making, for example, certain "
@@ -700,7 +854,7 @@ msgstr ""
 "b>, haciendo, por ejemplo, que repitan ciertos bloques un número de veces "
 "concreto o que lo repitan hasta que se produzca una situación."
 
-#: templates/learn/Flow.html:19
+#: .\templates\learn\Flow.html:19
 msgid ""
 "The most basic way to control the behavior of your characters is creating a "
 "<b>program composed of a set of blocks are executed one after another</b>, "
@@ -710,20 +864,20 @@ msgstr ""
 "creando un <b>programa computesto por un conjunto de bloques que se ejecutan "
 "uno detrás de otro</b>, tal como vemos en la imagen:"
 
-#: templates/learn/Flow.html:22 templates/learn/Flow.html.py:40
+#: .\templates\learn\Flow.html:22 .\templates\learn\Flow.html.py:40
 msgid "say [I'm a dancer cat] for (2) secs"
 msgstr "decir [Soy un gato bailarin] por (2) segundos"
 
-#: templates/learn/Flow.html:25 templates/learn/Flow.html.py:44
-#: templates/learn/Flow.html:47 templates/learn/duplicatedScripts.html:28
+#: .\templates\learn\Flow.html:25 .\templates\learn\Flow.html.py:44
+#: .\templates\learn\Flow.html:47 .\templates\learn\duplicatedScripts.html:28
 msgid "wait (0.5) secs"
 msgstr "esperar (0.5) segundos"
 
-#: templates/learn/Flow.html:27 templates/learn/Flow.html.py:46
+#: .\templates\learn\Flow.html:27 .\templates\learn\Flow.html.py:46
 msgid "move (-10) steps"
 msgstr "mover (-10) pasos"
 
-#: templates/learn/Flow.html:29
+#: .\templates\learn\Flow.html:29
 msgid ""
 "How does this program works? When the user click on the green flag run "
 "behind one another all blocks that have been included in the program. Start "
@@ -738,7 +892,7 @@ msgstr ""
 "<i>“girar 15 grados a la derecha”</i>, y así hasta llegar al último bloque "
 "del programa."
 
-#: templates/learn/Flow.html:38
+#: .\templates\learn\Flow.html:38
 msgid ""
 "Sometimes when we want a set of blocks is constantly repeated, instead of "
 "repeating the same blocks over and over again, you can use a repeat "
@@ -750,18 +904,18 @@ msgstr ""
 "posible utilizar instrucciones de repetición que permiten conseguir el mismo "
 "efecto, pero de forma más cómoda y manejable. Veamos un par de ejemplos:"
 
-#: templates/learn/Flow.html:52 templates/learn/Parallelism.html:43
-#: templates/learn/duplicatedScripts.html:19
-#: templates/learn/duplicatedScripts.html:27
-#: templates/learn/duplicatedScripts.html:41
+#: .\templates\learn\Flow.html:52 .\templates\learn\Parallelism.html:43
+#: .\templates\learn\duplicatedScripts.html:19
+#: .\templates\learn\duplicatedScripts.html:27
+#: .\templates\learn\duplicatedScripts.html:41
 msgid "if on edge, bounce"
 msgstr "rebotar si toca un borde"
 
-#: templates/learn/Flow.html:54
+#: .\templates\learn\Flow.html:54
 msgid "How these control blocks works?"
 msgstr "¿Cómo funciona estos bloques de control?"
 
-#: templates/learn/Flow.html:56
+#: .\templates\learn\Flow.html:56
 msgid ""
 "In the block <i>'repeat'</i> when execution reaches this point is repeated "
 "as often as has been indicated in the parameter block 'repeat', in the "
@@ -776,7 +930,7 @@ msgstr ""
 "parte inferior que indica que <b>cuando se terminan de ejecutar los bloques "
 "se vuelve otra vez para arriba</b>."
 
-#: templates/learn/Flow.html:58
+#: .\templates\learn\Flow.html:58
 msgid ""
 "The block <i>'forever'</i> works like the 'repeat' but never finish "
 "executing the blocks containing in its interior."
@@ -784,7 +938,7 @@ msgstr ""
 "El bloque <i>“por siempre”</i> funciona igual que el 'repetir' pero sin "
 "terminar nunca de ejecutar los bloques que contiene en su interior."
 
-#: templates/learn/Flow.html:66
+#: .\templates\learn\Flow.html:66
 msgid ""
 "Sometimes we don't know previously  the number of times you want a set of "
 "blocks is executed, as this depends on a given situation. In these cases, "
@@ -795,19 +949,19 @@ msgstr ""
 "determinada situación. En estas ocasiones, el bloque 'repetir hasta que...' "
 "es realmente útil. Veamos un ejemplo:"
 
-#: templates/learn/Flow.html:68
+#: .\templates\learn\Flow.html:68
 msgid "repeat until &lt; touching [Enemy v] ?&gt;"
 msgstr "si  &lt; ¿tocando [Enemigo v]? &gt;"
 
-#: templates/learn/Flow.html:69
+#: .\templates\learn\Flow.html:69
 msgid "say [You don't catch me]"
 msgstr "decir [No me pillas]"
 
-#: templates/learn/Flow.html:71
+#: .\templates\learn\Flow.html:71
 msgid "say [You catch me]"
 msgstr "decir [Me has pillado]"
 
-#: templates/learn/Flow.html:74
+#: .\templates\learn\Flow.html:74
 msgid ""
 "In the example, the character will constantly repeat the instruction say "
 "'You don't caught me...' while he don't touch the enemy. At the time that "
@@ -821,11 +975,19 @@ msgstr ""
 "terminará de ejecutarse el bloque contenido en su interior y saltará a la "
 "siguiente instrucción, en este caso decir' Me pillaste!'."
 
-#: templates/learn/Logic.html:4 templates/statistics/statistics.html:257
+#: .\templates\learn\Logic.html:4 .\templates\learn\base.html:97
+#: .\templates\statistics\statistics.html:257
+#: .\templates\tournaments\creator\admin\challenges\challengesList.html:266
+#: .\templates\tournaments\creator\admin\challenges\challengesList.html:563
+#: .\templates\tournaments\creator\admin\challenges\editChallenge.html:198
+#: .\templates\tournaments\creator\progress\teamsProgress.html:291
+#: .\templates\tournaments\participant\scores.html:79
+#: .\templates\tournaments\participant\scores.html:81
+#: .\templates\tournaments\participant\tournamentsPart.html:291
 msgid "Logic"
 msgstr "Lógica"
 
-#: templates/learn/Logic.html:10
+#: .\templates\learn\Logic.html:10
 msgid ""
 "Instructions related to logical thinking can help your projects are dynamic, "
 "<b>so that they behave differently depending on the situation</b>. In the "
@@ -842,22 +1004,22 @@ msgstr ""
 "en otro tipo de proyectos, como los videojuegos, son fundamentales para "
 "ejecutar acciones diferentes dependiendo de la situación."
 
-#: templates/learn/Logic.html:19
+#: .\templates\learn\Logic.html:19
 msgid "The most basic block you can start working logical thinking is this:"
 msgstr ""
 "El bloque más básico con el que puedes comenzar a trabajar el pensamiento "
 "lógico es éste:"
 
-#: templates/learn/Logic.html:21
-msgid "if &lt; touching color [#0000FF]?&gt; then"
+#: .\templates\learn\Logic.html:21
+msgid "if &lt; touching color [#0000FF]?  &gt;then"
 msgstr "si &lt;¿tocando el color [#0000FF]?&gt; entonces"
 
-#: templates/learn/Logic.html:22 templates/learn/Logic.html.py:35
-#: templates/learn/Logic.html:37
+#: .\templates\learn\Logic.html:22 .\templates\learn\Logic.html.py:35
+#: .\templates\learn\Logic.html:37
 msgid "say [I have reached the goal!] for (2) secs"
 msgstr "decir [He alcanzado la meta!] por (2) segundos"
 
-#: templates/learn/Logic.html:23
+#: .\templates\learn\Logic.html:23
 msgid ""
 "How this block works? When execution reaches this point, the condition on "
 "the block is evaluated, and if this is true, the set of blocks that are "
@@ -867,7 +1029,7 @@ msgstr ""
 "evalúa la condición que aparece en el bloque, y si ésta es verdadera, se "
 "ejecuta el conjunto de bloques que están dentro del si."
 
-#: templates/learn/Logic.html:24
+#: .\templates\learn\Logic.html:24
 msgid ""
 "In the example, if the character is touching the blue color, he says 'I "
 "reached the goal.'"
@@ -875,7 +1037,7 @@ msgstr ""
 "En el ejemplo, si el personaje está tocando el color azul diría “Llegué a la "
 "meta”."
 
-#: templates/learn/Logic.html:33
+#: .\templates\learn\Logic.html:33
 msgid ""
 "Now that you know the instructions <i>if</i>, perhaps you can start using "
 "blocks <i>if / else</i>, which can be very practical in many types of "
@@ -887,15 +1049,15 @@ msgstr ""
 "tipos de proyectos. Los bloques <i>si/sino</i> son muy parecidos a los "
 "bloque si, pero contienen dos conjuntos de bloques en su interior."
 
-#: templates/learn/Logic.html:34
-msgid "if &lt; touching color [#0000FF]? &gt;"
-msgstr "si &lt;¿tocando el color [#0000FF]? &gt; entonces"
+#: .\templates\learn\Logic.html:34
+msgid "if &lt; touching color [#0000FF]? &gt;then"
+msgstr "si &lt;¿tocando el color [#0000FF]?&gt; entonces"
 
-#: templates/learn/Logic.html:36
+#: .\templates\learn\Logic.html:36
 msgid "else"
 msgstr "si no"
 
-#: templates/learn/Logic.html:38
+#: .\templates\learn\Logic.html:38
 msgid ""
 "How this block works? When execution reaches this point, the condition on "
 "the block is evaluated, and if this is true, the set of blocks that are "
@@ -906,7 +1068,7 @@ msgstr ""
 "evalúa la condición que aparece en el bloque, y si ésta es verdadera, se "
 "ejecuta el conjunto de bloques que están dentro del si."
 
-#: templates/learn/Logic.html:40
+#: .\templates\learn\Logic.html:40
 msgid ""
 "In the example, if the character is touching the blue color, he says  'I "
 "reached the goal!', but ,if you are not touching the purple color, says 'I "
@@ -916,7 +1078,7 @@ msgstr ""
 "meta”,pero si no está tocando el color morado diría “Aún no he llegado a la "
 "meta”"
 
-#: templates/learn/Logic.html:48
+#: .\templates\learn\Logic.html:48
 msgid ""
 "To make decisions on some projects sometimes is necessary to evaluate more "
 "than one condition at the same time to know what to execute. In these "
@@ -930,39 +1092,39 @@ msgstr ""
 "permiten combinar las condiciones. Las operaciones lógicas disponibles en "
 "Scratch son <i>Y, O y No</i>."
 
-#: templates/learn/Logic.html:49
-msgid "if &lt;&lt; touching [Enemy v]? &gt; and &lt;(lives) = [0]&gt;&gt;then"
+#: .\templates\learn\Logic.html:49
+msgid "if &lt;&lt; touching [Enemy v]? &gt; and &lt;(lives) = [0]&gt;&gt; then"
 msgstr ""
 "si &lt;&lt; ¿tocando [Enemigo v]? &gt; y &lt; (vidas) = [0]&gt;&gt;entonces"
 
-#: templates/learn/Logic.html:50
+#: .\templates\learn\Logic.html:50
 msgid "say [Game over]"
 msgstr "decir [Has perdido]"
 
-#: templates/learn/Logic.html:51 templates/learn/Synchronization.html:71
+#: .\templates\learn\Logic.html:51 .\templates\learn\Synchronization.html:71
 msgid "stop [all v]"
 msgstr "detener [todos v]"
 
-#: templates/learn/Logic.html:53
+#: .\templates\learn\Logic.html:53
 msgid ""
 "if &lt;&lt; touching [edge v]? &gt; or &lt; touching [Enemy v]? &gt;&gt;then"
 msgstr ""
 "si &lt;&lt; ¿tocando [borde v]? &gt; o &lt; ¿tocando [Enemigo v]? &gt;&gt;"
 "entonces"
 
-#: templates/learn/Logic.html:54
+#: .\templates\learn\Logic.html:54
 msgid "change [lives v] by (-1)"
 msgstr "cambiar [vidas v] por (-1)"
 
-#: templates/learn/Logic.html:56
+#: .\templates\learn\Logic.html:56
 msgid "if &lt;not&lt; (level) = (5)&gt;&gt;then"
 msgstr "si &lt;no&lt; (nivel) = (5)&gt;&gt;entonces"
 
-#: templates/learn/Logic.html:57
+#: .\templates\learn\Logic.html:57
 msgid "say [You still have undiscovered levels] for (2) secs"
 msgstr "decir [Aún tienes niveles por descubrir] por (2) segundos"
 
-#: templates/learn/Logic.html:60
+#: .\templates\learn\Logic.html:60
 msgid ""
 "The operation <i>AND</i> is true when both conditions are true evaluated. "
 "The <i>OR</i> operation is true when one of two conditions are true "
@@ -975,11 +1137,17 @@ msgstr ""
 "contrario de la condición, es decir, si la condición es verdadera, <i>No</i> "
 "devuelve falso y viceversa."
 
-#: templates/learn/Parallelism.html:4 templates/statistics/statistics.html:254
+#: .\templates\learn\Parallelism.html:4 .\templates\learn\base.html:99
+#: .\templates\statistics\statistics.html:254
+#: .\templates\tournaments\creator\admin\challenges\challengesList.html:230
+#: .\templates\tournaments\creator\progress\teamsProgress.html:251
+#: .\templates\tournaments\participant\scores.html:15
+#: .\templates\tournaments\participant\scores.html:17
+#: .\templates\tournaments\participant\tournamentsPart.html:251
 msgid "Parallelism"
 msgstr "Paralelismo"
 
-#: templates/learn/Parallelism.html:10
+#: .\templates\learn\Parallelism.html:10
 msgid ""
 "In most Scratch creations a certain level of parallelism is required. But "
 "what means parallelism? <b>Parallelism is the possibility that several "
@@ -992,7 +1160,7 @@ msgstr ""
 "que dos personajes realicen una acción al mismo tiempo, o que un personaje "
 "haga varias cosas a la vez."
 
-#: templates/learn/Parallelism.html:19
+#: .\templates\learn\Parallelism.html:19
 msgid ""
 "The most basic and most obvious way to achieve parallelism is to have "
 "several programs that start with <i>'When green flag is clicked'</i>:"
@@ -1000,7 +1168,7 @@ msgstr ""
 "La forma más básica y más evidente de conseguir paralelismo es tener varios "
 "programas que comienzan con <i>“Al presionar la bandera verde”</i>:"
 
-#: templates/learn/Parallelism.html:24
+#: .\templates\learn\Parallelism.html:24
 msgid ""
 "Thus, when the user clicking on the green flag, all programs that start with "
 "this block would begin to run simultaneously, or in parallel, as can also be "
@@ -1016,7 +1184,7 @@ msgstr ""
 "que haga varias cosas a la vez, o en programas de diferentes personajes, si "
 "quieres que todos comiencen a realizar una acción al comenzar la ejecución."
 
-#: templates/learn/Parallelism.html:33
+#: .\templates\learn\Parallelism.html:33
 msgid ""
 "Another way to achieve parallelism in your program is <b>doing several "
 "things occur when the user presses a key or clicks on an object</b>. "
@@ -1026,31 +1194,32 @@ msgstr ""
 "ocurran varias cosas cuando el usuario presiona una tecla o hace click sobre "
 "un objeto</b>.  Veamos un par de ejemplos:"
 
-#: templates/learn/Parallelism.html:35 templates/learn/Parallelism.html:37
+#: .\templates\learn\Parallelism.html:35 .\templates\learn\Parallelism.html:37
 msgid "when [a v] key pressed"
 msgstr "al presionar tecla [A v]"
 
-#: templates/learn/Parallelism.html:36 templates/learn/Parallelism.html:38
+#: .\templates\learn\Parallelism.html:36 .\templates\learn\Parallelism.html:38
 msgid "say [A] for (2) secs"
 msgstr "decir [A] por (2) segundos"
 
-#: templates/learn/Parallelism.html:40 templates/learn/Parallelism.html:45
+#: .\templates\learn\Parallelism.html:40 .\templates\learn\Parallelism.html:45
+#: .\templates\learn\User.html:42
 msgid "when this sprite clicked"
 msgstr "al presionar ⚑"
 
-#: templates/learn/Parallelism.html:47
+#: .\templates\learn\Parallelism.html:47
 msgid "if &lt;touching [the mouse pointer v]? &gt;"
 msgstr "si  &lt; ¿tocando [puntero del raton v]? &gt;"
 
-#: templates/learn/Parallelism.html:48
+#: .\templates\learn\Parallelism.html:48
 msgid "turn cw (30) degrees"
 msgstr "girar ↺ (30) grados"
 
-#: templates/learn/Parallelism.html:53
+#: .\templates\learn\Parallelism.html:53
 msgid "How these blocks works?"
 msgstr "¿Cómo funcionan estos bloques de control?"
 
-#: templates/learn/Parallelism.html:55
+#: .\templates\learn\Parallelism.html:55
 msgid ""
 "In the first example, we see two different characters that, when a key is "
 "pressed, perform a certain action. Therefore, when the user press the a key, "
@@ -1062,7 +1231,7 @@ msgstr ""
 "usuario pulse la tecla a, en este caso, tanto el gato como el niño "
 "ejecutarán al mismo tiempo <i>“decir A por 2 segundos”</i>."
 
-#: templates/learn/Parallelism.html:57
+#: .\templates\learn\Parallelism.html:57
 msgid ""
 "In the second example we see that a character has two programs that begin "
 "with <i>'when clicking this object'</i>. Therefore, when the user clicks on "
@@ -1073,32 +1242,32 @@ msgstr ""
 "haga click sobre este personaje, ambos programas comenzarán a ejecutarse al "
 "mismo tiempo, en paralelo."
 
-#: templates/learn/Parallelism.html:66
+#: .\templates\learn\Parallelism.html:66
 msgid "There are several events more that can achieve parallelism:"
 msgstr "Existen varios eventos más que permiten conseguir paralelismo:"
 
-#: templates/learn/Parallelism.html:67
+#: .\templates\learn\Parallelism.html:67
 msgid "when backdrop switches to [backdrop1 v]"
 msgstr "cuando el fondo cambie a [backdrop1 v]"
 
-#: templates/learn/Parallelism.html:68
-#: templates/learn/duplicatedScripts.html:14
+#: .\templates\learn\Parallelism.html:68
+#: .\templates\learn\duplicatedScripts.html:14
 msgid "when I receive [message1 v]"
 msgstr "al recibir [message1 v]"
 
-#: templates/learn/Parallelism.html:69
-msgid "when [loudness ] &gt; 10"
+#: .\templates\learn\Parallelism.html:69
+msgid "when [loudness v] &gt; (10)"
 msgstr "cuando [volumen del sonido v] sea &gt; (10)"
 
-#: templates/learn/Parallelism.html:70
+#: .\templates\learn\Parallelism.html:70
 msgid "when [video motion v] &gt; (2)"
 msgstr "cuando [movimiento del video v] sea &gt; (2)"
 
-#: templates/learn/Parallelism.html:71
+#: .\templates\learn\Parallelism.html:71
 msgid "when [timer v] &gt; (45)"
 msgstr "cuando [cronómetro v] sea &gt; (45)"
 
-#: templates/learn/Parallelism.html:73
+#: .\templates\learn\Parallelism.html:73
 msgid ""
 "As you see, you could create several programs that begin to run when "
 "changing the background to a given scenario, or to receive a particular "
@@ -1116,12 +1285,19 @@ msgstr ""
 "tanto, existen muchas posibilidades para conseguir que en tus programas "
 "ocurran cosas al mismo tiempo. ¿Te animas a probar algunas de ellas?"
 
-#: templates/learn/Synchronization.html:5
-#: templates/statistics/statistics.html:272
+#: .\templates\learn\Synchronization.html:5 .\templates\learn\base.html:100
+#: .\templates\statistics\statistics.html:272
+#: .\templates\tournaments\creator\admin\challenges\challengesList.html:446
+#: .\templates\tournaments\creator\admin\challenges\challengesList.html:583
+#: .\templates\tournaments\creator\admin\challenges\editChallenge.html:218
+#: .\templates\tournaments\creator\progress\teamsProgress.html:491
+#: .\templates\tournaments\participant\scores.html:399
+#: .\templates\tournaments\participant\scores.html:401
+#: .\templates\tournaments\participant\tournamentsPart.html:491
 msgid "Synchronization"
 msgstr "Sincronización"
 
-#: templates/learn/Synchronization.html:11
+#: .\templates\learn\Synchronization.html:11
 msgid ""
 "Instructions related to synchronization <b>allow our characters to organize "
 "things happen in the order we want</b>."
@@ -1130,7 +1306,7 @@ msgstr ""
 "nuestros personajes para que las cosas ocurran en el orden que nosotros "
 "deseamos</b>."
 
-#: templates/learn/Synchronization.html:20
+#: .\templates\learn\Synchronization.html:20
 msgid ""
 "The easiest way to synchronize the behavior of your characters is using a "
 "<i>'wait'</i> block, which makes the character waits the number of seconds "
@@ -1143,37 +1319,37 @@ msgstr ""
 "ejemplo de cómo puede utilizarse este bloque para sincronizar a dos "
 "personajes:"
 
-#: templates/learn/Synchronization.html:22
-#: templates/learn/Synchronization.html:46
+#: .\templates\learn\Synchronization.html:22
+#: .\templates\learn\Synchronization.html:46
 msgid "say [Hello, how are you?] for (2) secs"
 msgstr "decir [Hola, ¿cómo estás?] por (2) segundos"
 
-#: templates/learn/Synchronization.html:23
-#: templates/learn/Synchronization.html:28
+#: .\templates\learn\Synchronization.html:23
+#: .\templates\learn\Synchronization.html:28
 msgid "wait (2) secs"
 msgstr "esperar (2) segundos"
 
-#: templates/learn/Synchronization.html:24
+#: .\templates\learn\Synchronization.html:24
 msgid "say [Well, do you want to play hide-and seek?] for (3) secs"
 msgstr "decir [Bien! ¿Quieres jugar al escondite?]"
 
-#: templates/learn/Synchronization.html:26
+#: .\templates\learn\Synchronization.html:26
 msgid "say [Let's go] for (2) secs"
 msgstr "decir [Vamos!] por (2) segundos"
 
-#: templates/learn/Synchronization.html:29
+#: .\templates\learn\Synchronization.html:29
 msgid "say [I'm fine, thanks!] for (2) secs"
 msgstr "decir [Estoy bien, ¡gracias!] por (2) segundos"
 
-#: templates/learn/Synchronization.html:30
+#: .\templates\learn\Synchronization.html:30
 msgid "wait (3) secs"
 msgstr "esperar (3) segundos"
 
-#: templates/learn/Synchronization.html:31
+#: .\templates\learn\Synchronization.html:31
 msgid "say [Yes] for (1) secs"
 msgstr "decir [Sí] por (2) segundos"
 
-#: templates/learn/Synchronization.html:34
+#: .\templates\learn\Synchronization.html:34
 msgid ""
 "In this case it uses blocks <i>'wait'</i> to synchronize these two "
 "characters to maintain a conversation, so that while one speaks, the other "
@@ -1187,7 +1363,7 @@ msgstr ""
 "segundos que cada personaje espera, son iguales al número de segundos que el "
 "otro personaje habla, de manera que nunca hablan al mismo tiempo."
 
-#: templates/learn/Synchronization.html:44
+#: .\templates\learn\Synchronization.html:44
 msgid ""
 "Synchronization using blocks <i>'wait'</i> is very simple when programs are "
 "small and have few characters, but when are larger, or when we have several "
@@ -1201,27 +1377,27 @@ msgstr ""
 "generar una reacción no pueden ser medidas previamente, es más eficiente "
 "utilizar otros modos de sincronización como los mensajes. Veamos un ejemplo:"
 
-#: templates/learn/Synchronization.html:48
+#: .\templates\learn\Synchronization.html:48
 msgid "if &lt; touching [mouse pointer v]?&gt;then"
 msgstr "si  &lt; ¿tocando [puntero del raton v]? &gt;"
 
-#: templates/learn/Synchronization.html:49
+#: .\templates\learn\Synchronization.html:49
 msgid "broadcast [catched! v]"
 msgstr ""
 
-#: templates/learn/Synchronization.html:53
+#: .\templates\learn\Synchronization.html:53
 msgid "when I receive [catched! v]"
 msgstr "al recibir [Pillado! v]"
 
-#: templates/learn/Synchronization.html:54
+#: .\templates\learn\Synchronization.html:54
 msgid "say [You have catched my friend] for (2) secs"
 msgstr "decir [Has pillado a mi amigo!] por (2) segundos"
 
-#: templates/learn/Synchronization.html:55
+#: .\templates\learn\Synchronization.html:55
 msgid "say [Now, you have to catch me!] for (2) secs"
 msgstr "decir [Ahora tienes que pillarme a mi!] por (2) segundos"
 
-#: templates/learn/Synchronization.html:58
+#: .\templates\learn\Synchronization.html:58
 msgid ""
 "How do these syncblocks work? When a situation occurs in a character we want "
 "to cause a reaction in another character, we can use <b>messaging</b>. In "
@@ -1242,7 +1418,7 @@ msgstr ""
 "al gato, la mariposa dirá: “Has pillado a mi compañero. Ahora tienes que "
 "pillarme a mí”."
 
-#: templates/learn/Synchronization.html:68
+#: .\templates\learn\Synchronization.html:68
 msgid ""
 "In addition to sending messages, you can synchronize characters to make "
 "things happen in the order we want, using other blocks, such as <i>'wait "
@@ -1253,23 +1429,23 @@ msgstr ""
 "bloques, como <i>“esperar hasta que”</i> o <i>“cuando el fondo cambie a...”</"
 "i>."
 
-#: templates/learn/Synchronization.html:69
+#: .\templates\learn\Synchronization.html:69
 msgid "wait until &lt;(lives) =[0]&gt;"
 msgstr "esperar hasta que &lt;(vidas) =[0]&gt;"
 
-#: templates/learn/Synchronization.html:70
+#: .\templates\learn\Synchronization.html:70
 msgid "say [Game over] for (2) secs"
 msgstr "decir [Has perdido] por (2) segundos"
 
-#: templates/learn/Synchronization.html:73
-msgid "when backdrop changes to [Spring v]"
+#: .\templates\learn\Synchronization.html:73
+msgid "when backdrop switches to [Spring v]"
 msgstr "cuando el fondo cambie a [Primavera v]"
 
-#: templates/learn/Synchronization.html:75
+#: .\templates\learn\Synchronization.html:75
 msgid "say [Spring has come!] for (2) secs"
 msgstr "decir [La primavera ha llegado] por (2) segundos"
 
-#: templates/learn/Synchronization.html:78
+#: .\templates\learn\Synchronization.html:78
 msgid ""
 "In the first example, when program execution reaches that point will stop "
 "until the condition is met in this case, until life is equal to 0. When "
@@ -1283,7 +1459,7 @@ msgstr ""
 "de bloques, en este caso <i>“decir Game Over”</i> y <i>“detener todos”</i>, "
 "lo que finalizará la ejecución del proyecto. "
 
-#: templates/learn/Synchronization.html:80
+#: .\templates\learn\Synchronization.html:80
 msgid ""
 "In the second example, the moment when the scene changes to the backdrop "
 "with the name 'Spring', the character will execute the blocks placed after "
@@ -1295,11 +1471,12 @@ msgstr ""
 "continuación de la instrucción “cuando el fondo cambia a Primavera”, es "
 "decir, que se mostrará y dirá “¡Ha llegado la primavera”."
 
-#: templates/learn/User.html:5 templates/statistics/statistics.html:263
+#: .\templates\learn\User.html:5 .\templates\learn\base.html:101
+#: .\templates\statistics\statistics.html:263
 msgid "User interactivity"
 msgstr "Interactividad del usuario"
 
-#: templates/learn/User.html:11
+#: .\templates\learn\User.html:11
 msgid ""
 "The instructions related to user interactivity can <b>help your Scratch "
 "projects be more interactive</b>, ie the person who is running it can "
@@ -1314,7 +1491,7 @@ msgstr ""
 "teclado o el ratón para mover un personaje, puede contestar preguntas o "
 "jugar con la webcam del ordenador, entre otras muchas posibilidades."
 
-#: templates/learn/User.html:20
+#: .\templates\learn\User.html:20
 msgid ""
 "The most basic block you can start working interactivity with the user is "
 "<i>'when green flag clicked'</i>."
@@ -1322,7 +1499,7 @@ msgstr ""
 "El bloque más básico con el que puedes comenzar a trabajar la interactividad "
 "con el usuario es <i>“Al presionar la bandera verde”</i>"
 
-#: templates/learn/User.html:35
+#: .\templates\learn\User.html:27
 msgid ""
 "How this block works? When the user who wants to run your project Scratch "
 "clicks on the green flag, all blocks were placed under the block <i>'when "
@@ -1335,7 +1512,7 @@ msgstr ""
 "verde”</i>. Puedes tener tantos programas como necesites que comiencen con "
 "este bloque."
 
-#: templates/learn/User.html:45
+#: .\templates\learn\User.html:37
 msgid ""
 "Now that you have begun to interact with the user running your Scratch "
 "project, perhaps you can try some of the following blocks:"
@@ -1343,7 +1520,39 @@ msgstr ""
 "Ahora que has comenzado a interactuar con el usuario que ejecute tu proyecto "
 "Scratch, quizás puedes probar algunos de los siguientes bloques:"
 
-#: templates/learn/User.html:59
+#: .\templates\learn\User.html:39
+msgid " when [right arrow v] key pressed"
+msgstr "al presionar tecla [flecha izquierda v]"
+
+#: .\templates\learn\User.html:43
+msgid "say [Hello] for (2) secs"
+msgstr "decir [A] por (2) segundos"
+
+#: .\templates\learn\User.html:45
+msgid "ask [What's your name?] and wait"
+msgstr "preguntar [Introduce el nombre de un estudiante] y esperar"
+
+#: .\templates\learn\User.html:46
+msgid "say &lt;join [Hello,]&lt;answer"
+msgstr ""
+
+#: .\templates\learn\User.html:48
+msgid "if &lt;touching [mouse-pointer v] &gt; then"
+msgstr "si  &lt; ¿tocando [puntero del raton v]? &gt;"
+
+#: .\templates\learn\User.html:49
+msgid "say [You caught me!]"
+msgstr "decir [Me has pillado]"
+
+#: .\templates\learn\User.html:52
+msgid "mouse down?"
+msgstr "bajar lápiz"
+
+#: .\templates\learn\User.html:54
+msgid "go to [mouse-pointer v]"
+msgstr "si  &lt; ¿tocando [puntero del raton v]? &gt;"
+
+#: .\templates\learn\User.html:58
 msgid ""
 "As you see, you can allow users to interact with your characters by pressing "
 "keys to move, writing answers to questions and your characters use user "
@@ -1355,7 +1564,7 @@ msgstr ""
 "que tus personajes usen las respuestas del usuario, mover a los personajes "
 "con el ratón, o realizar acciones cuando el usuario pincha sobre un objeto."
 
-#: templates/learn/User.html:68
+#: .\templates\learn\User.html:67
 msgid ""
 "One of the funniest Scratch possibilities in terms of user interactivity is "
 "the possibility that <b>the user can use your webcam or microphone to "
@@ -1367,7 +1576,23 @@ msgstr ""
 "utilizar su webcam o el micrófono para interactuar con los personajes de "
 "Scratch o el sonido para provocar ciertas acciones.</b>"
 
-#: templates/learn/User.html:82
+#: .\templates\learn\User.html:69
+msgid "if &lt;(lives) >[30]&gt; then"
+msgstr "esperar hasta que &lt;(vidas) =[0]&gt;"
+
+#: .\templates\learn\User.html:70
+msgid "say [There is much noise...]"
+msgstr ""
+
+#: .\templates\learn\User.html:73
+msgid "video [motion v] on [this sprite v]"
+msgstr ""
+
+#: .\templates\learn\User.html:75
+msgid "video [direction v] on [this sprite v]"
+msgstr ""
+
+#: .\templates\learn\User.html:78
 msgid ""
 "As you can see in the examples, we can make certain sets of blocks are "
 "executed when the ambient sound captured by the microphone is greater than a "
@@ -1382,11 +1607,11 @@ msgstr ""
 "permitirán que tus creaciones Scratch sean totalmente interactivas con los "
 "usuarios."
 
-#: templates/learn/attrInit.html:4 templates/statistics/statistics.html:203
+#: .\templates\learn\attrInit.html:4 .\templates\statistics\statistics.html:203
 msgid "Attribute Initialization"
 msgstr "Atributos no inicializados correctamente"
 
-#: templates/learn/attrInit.html:11
+#: .\templates\learn\attrInit.html:11
 msgid ""
 " One of the mistakes that many programmers repeat when they learn to program "
 "is not initialize correctly the objects's attributes. What are the "
@@ -1400,7 +1625,7 @@ msgstr ""
 "modificadas en la ejecución de un proyecto, como su posición, su tamaño, su "
 "color, su orientación..."
 
-#: templates/learn/attrInit.html:13
+#: .\templates\learn\attrInit.html:13
 msgid ""
 "When you have blocks than modify character's feature, you should always have "
 "a program which, when the program begins, asigns the value that we want to "
@@ -1414,41 +1639,65 @@ msgstr ""
 "posición de un personaje, deberíamos tener un bloque “ir a” bajo “al pulsar "
 "la bandera verde”, para colocar al personaje en su posición inicial."
 
-#: templates/learn/attrInit.html:15
+#: .\templates\learn\attrInit.html:15
 msgid "when [right arrow v] key pressed //Not initialized correctly."
 msgstr "al presionar tecla [flecha derecha v] //No inicializado correctamente."
 
-#: templates/learn/attrInit.html:16 templates/learn/attrInit.html.py:22
-#: templates/learn/deadCode.html:16
+#: .\templates\learn\attrInit.html:16 .\templates\learn\attrInit.html.py:22
+#: .\templates\learn\deadCode.html:16
 msgid "change x by (10)"
 msgstr "cambiar x por (10)"
 
-#: templates/learn/attrInit.html:17 templates/learn/attrInit.html.py:23
+#: .\templates\learn\attrInit.html:17 .\templates\learn\attrInit.html.py:23
 msgid "when [left arrow v] key pressed"
 msgstr "al presionar tecla [flecha izquierda v]"
 
-#: templates/learn/attrInit.html:18 templates/learn/attrInit.html.py:24
+#: .\templates\learn\attrInit.html:18 .\templates\learn\attrInit.html.py:24
 msgid "change x by (-10)"
 msgstr "cambiar x por (-10)"
 
-#: templates/learn/attrInit.html:21
+#: .\templates\learn\attrInit.html:21
 msgid "when [right arrow v] key pressed  //Initialized correctly."
 msgstr "al presionar tecla [flecha derecha v] // Inicializado correctamente"
 
-#: templates/learn/base.html:77 templates/password/base.html:88
-#: templates/sign/base.html:88 templates/statistics/statistics.html:296
-#: templates/upload/dashboard-unregistered-basic.html:99
-#: templates/upload/dashboard-unregistered-developing.html:110
-#: templates/upload/dashboard-unregistered-master.html:148
+#: .\templates\learn\base.html:84 .\templates\password\base.html:88
+#: .\templates\sign\base.html:88 .\templates\statistics\statistics.html:296
+#: .\templates\upload\dashboard-unregistered-basic.html:99
+#: .\templates\upload\dashboard-unregistered-developing.html:110
+#: .\templates\upload\dashboard-unregistered-master.html:148
 msgid "Dr. Scratch(Beta Version)"
 msgstr "Dr. Scratch(Versión Beta)"
 
-#: templates/learn/deadCode.html:4 templates/statistics/statistics.html:197
-#: templates/upload/dashboard-unregistered-master.html:246
+#: .\templates\learn\base.html:98 .\templates\statistics\statistics.html:266
+msgid "Data representation"
+msgstr "Representación de los datos"
+
+#: .\templates\learn\base.html:102
+msgid "Flow control"
+msgstr "Control de flujo"
+
+#: .\templates\learn\base.html:106 .\templates\statistics\statistics.html:200
+#: .\templates\tournaments\participant\results.html:362
+#: .\templates\upload\dashboard-unregistered-master.html:240
+msgid "Duplicated scripts"
+msgstr "Programas duplicados"
+
+#: .\templates\learn\base.html:107 .\templates\learn\spriteNaming.html:5
+msgid "Incorrect names"
+msgstr "Nombres inadecuados"
+
+#: .\templates\learn\base.html:108 .\templates\learn\deadCode.html:4
+#: .\templates\statistics\statistics.html:197
+#: .\templates\tournaments\participant\results.html:368
+#: .\templates\upload\dashboard-unregistered-master.html:246
 msgid "Dead code"
 msgstr "Código Muerto"
 
-#: templates/learn/deadCode.html:11
+#: .\templates\learn\base.html:109
+msgid "Attribute initialization"
+msgstr "Atributos no inicializados correctamente"
+
+#: .\templates\learn\deadCode.html:11
 msgid ""
 "Dead code are parts of programs that never are executed. How can it form? "
 "For example, when you have a program that isn't start with a hat block, or "
@@ -1459,27 +1708,27 @@ msgstr ""
 "un programa que no comienza con un bloque de tipo sombrero, o cuando hay un "
 "programa que está esperando a que le llegue un mensaje que nadie envía."
 
-#: templates/learn/deadCode.html:14
+#: .\templates\learn\deadCode.html:14
 msgid "forever //Blocks that dont's start with a hat block."
 msgstr "por siempre //Bloques que no empiezan con un bloque sombrero."
 
-#: templates/learn/deadCode.html:15
+#: .\templates\learn\deadCode.html:15
 msgid "if &lt; key [left arrow v] pressed ? &gt; then"
 msgstr "si &lt; ¿tecla [flecha izquierda v] presionada?&gt; entonces"
 
-#: templates/learn/deadCode.html:18
+#: .\templates\learn\deadCode.html:18
 msgid "when I receive [startcc v] //Blocks that start with a hat block."
 msgstr "al recibir [startcc v] // Bloques que empiezan con un bloque sombrero."
 
-#: templates/learn/deadCode.html:19
+#: .\templates\learn\deadCode.html:19
 msgid "switch costume to [costume2 v]"
 msgstr "cambiar disfraz a [disfraz2 v]"
 
-#: templates/learn/deadCode.html:20
+#: .\templates\learn\deadCode.html:20
 msgid "say [Let's start] for (2) secs"
 msgstr "decir [Vamos!] por (2) segundos"
 
-#: templates/learn/deadCode.html:24
+#: .\templates\learn\deadCode.html:24
 msgid ""
 "These situations usually causes that projects doesn't work as expected of "
 "them,so,try to avoid dead code in your programs!"
@@ -1487,12 +1736,12 @@ msgstr ""
 "Estas situaciones suelen ser la causa de proyectos que no funcionan como se "
 "espera de ellos, así que,¡trata de evitar código muerto en tus programas!"
 
-#: templates/learn/duplicatedScripts.html:4
-#: templates/upload/dashboard-unregistered.html:162
+#: .\templates\learn\duplicatedScripts.html:4
+#: .\templates\upload\dashboard-unregistered.html:162
 msgid "Duplicated Scripts"
 msgstr "Programas Duplicados"
 
-#: templates/learn/duplicatedScripts.html:11
+#: .\templates\learn\duplicatedScripts.html:11
 msgid ""
 "Imagine that in a project we have two programs formed by the same blocks and "
 "where only vary the parameters or values of the blocks."
@@ -1501,32 +1750,33 @@ msgstr ""
 "mismos bloques y en los que solo varían los parámetros o valores de los "
 "bloques."
 
-#: templates/learn/duplicatedScripts.html:15
-#: templates/learn/duplicatedScripts.html:23
-msgid "set rotation style to [left-rigt v]"
+#: .\templates\learn\duplicatedScripts.html:15
+#: .\templates\learn\duplicatedScripts.html:23
+#: .\templates\learn\duplicatedScripts.html:37
+msgid "set rotation style [left-rigt v]"
 msgstr "fijar estilo de rotación[izquierda-derecha v]"
 
-#: templates/learn/duplicatedScripts.html:16
+#: .\templates\learn\duplicatedScripts.html:16
 msgid "repeat (10)"
 msgstr "repetir (10)"
 
-#: templates/learn/duplicatedScripts.html:17
+#: .\templates\learn\duplicatedScripts.html:17
 msgid "move (2) steps"
 msgstr "mover (2) pasos"
 
-#: templates/learn/duplicatedScripts.html:22
+#: .\templates\learn\duplicatedScripts.html:22
 msgid "when I receive [message2 v]"
 msgstr "al recibir [message2 v]"
 
-#: templates/learn/duplicatedScripts.html:24
+#: .\templates\learn\duplicatedScripts.html:24
 msgid "repeat (5)"
 msgstr "repetir (5)"
 
-#: templates/learn/duplicatedScripts.html:25
+#: .\templates\learn\duplicatedScripts.html:25
 msgid "move (4) steps"
 msgstr "mover (4) pasos"
 
-#: templates/learn/duplicatedScripts.html:33
+#: .\templates\learn\duplicatedScripts.html:33
 msgid ""
 "What would happen if we make a small change? We would have to modify both "
 "programs, complicating the maintenance of the code. In these situations is "
@@ -1539,27 +1789,23 @@ msgstr ""
 "propio que defina este comportamiento y que utilice este nuevo bloque en "
 "todos los programas donde lo necesite."
 
-#: templates/learn/duplicatedScripts.html:36
+#: .\templates\learn\duplicatedScripts.html:36
 msgid "define walk (repetitions)(step)(pause)"
 msgstr "definir andar (repeticiones)(paso)(pausa)"
 
-#: templates/learn/duplicatedScripts.html:37
-msgid "set rotation style [left-rigt v]"
-msgstr "fijar estilo de rotación[izquierda-derecha v]"
-
-#: templates/learn/duplicatedScripts.html:38
+#: .\templates\learn\duplicatedScripts.html:38
 msgid "repeat (repetitions)"
 msgstr "repetir (repeticiones)"
 
-#: templates/learn/duplicatedScripts.html:39
+#: .\templates\learn\duplicatedScripts.html:39
 msgid "move (step) steps"
 msgstr "mover (paso) pasos"
 
-#: templates/learn/duplicatedScripts.html:42
+#: .\templates\learn\duplicatedScripts.html:42
 msgid "wait (pause) secs"
 msgstr "esperar (pausa) segundos"
 
-#: templates/learn/duplicatedScripts.html:47
+#: .\templates\learn\duplicatedScripts.html:47
 msgid ""
 "Thus, if you want a change, you just have to go to the block defined by the "
 "programmer."
@@ -1567,11 +1813,7 @@ msgstr ""
 "De este modo, si se quiere realizar una modificación, tan solo hay que ir al "
 "bloque definido por el programador."
 
-#: templates/learn/spriteNaming.html:5
-msgid "Incorrect names"
-msgstr "Nombres inadecuados"
-
-#: templates/learn/spriteNaming.html:12
+#: .\templates\learn\spriteNaming.html:12
 msgid ""
 "When you start to programming with Scratch, is very usually to leave the "
 "default name of the new characters(sprite 1, sprite2, ...). When we have few "
@@ -1589,26 +1831,56 @@ msgstr ""
 "proyectos, ya que nuestros programas se leerán mejor y se programarán más "
 "rápidamente. ¡Evita los nombres por defecto!"
 
-#: templates/login/login.html:81 templates/sign/organization.html:78
+#: .\templates\login\login.html:81 .\templates\sign\organization.html:78
+#: .\templates\tournaments\creator\admin\admin_creator.html:103
+#: .\templates\tournaments\creator\admin\challenges\challengesList.html:103
+#: .\templates\tournaments\creator\admin\challenges\editChallenge.html:103
+#: .\templates\tournaments\creator\admin\teams\newEditTeam.html:103
+#: .\templates\tournaments\creator\admin\teams\teamsList.html:103
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:103
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:111
+#: .\templates\tournaments\creator\main_creator.html:104
+#: .\templates\tournaments\creator\progress\teamsProgress.html:110
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:110
+#: .\templates\tournaments\main_tournaments.html:103
+#: .\templates\tournaments\participant\results.html:221
+#: .\templates\tournaments\participant\teamsPart.html:103
+#: .\templates\tournaments\participant\tournamentsPart.html:110
 msgid "Sign in"
 msgstr "Ingresar"
 
-#: templates/login/login.html:92 templates/sign/organization.html:91
+#: .\templates\login\login.html:92 .\templates\sign\organization.html:91
+#: .\templates\tournaments\creator\admin\admin_creator.html:117
+#: .\templates\tournaments\creator\admin\challenges\challengesList.html:117
+#: .\templates\tournaments\creator\admin\challenges\editChallenge.html:117
+#: .\templates\tournaments\creator\admin\teams\newEditTeam.html:117
+#: .\templates\tournaments\creator\admin\teams\teamsList.html:117
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:117
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:125
+#: .\templates\tournaments\creator\main_creator.html:118
+#: .\templates\tournaments\creator\progress\teamsProgress.html:124
+#: .\templates\tournaments\main_tournaments.html:117
+#: .\templates\tournaments\participant\results.html:235
+#: .\templates\tournaments\participant\teamsPart.html:117
+#: .\templates\tournaments\participant\tournamentsPart.html:124
 msgid "Remember me"
 msgstr "Recordarme"
 
-#: templates/login/login.html:127 templates/sign/createOrganization.html:104
-#: templates/sign/createOrganization.html:163
-#: templates/sign/createUser.html:104 templates/sign/createUser.html.py:163
-#: templates/sign/organization.html:128 templates/sign/organization.html:187
-#: templates/sign/registerOrganization.html:104
-#: templates/sign/registerOrganization.html:163
+#: .\templates\login\login.html:127
+#: .\templates\sign\createOrganization.html:104
+#: .\templates\sign\createOrganization.html:163
+#: .\templates\sign\createUser.html:104 .\templates\sign\createUser.html:163
+#: .\templates\sign\organization.html:128
+#: .\templates\sign\organization.html:187
+#: .\templates\sign\registerOrganization.html:104
+#: .\templates\sign\registerOrganization.html:163
 msgid "Dr. Scratch for Organizations"
 msgstr "Dr. Scratch para Organizaciones"
 
-#: templates/login/login.html:129 templates/sign/createOrganization.html:106
-#: templates/sign/createUser.html:106
-#: templates/sign/registerOrganization.html:106
+#: .\templates\login\login.html:129
+#: .\templates\sign\createOrganization.html:106
+#: .\templates\sign\createUser.html:106
+#: .\templates\sign\registerOrganization.html:106
 msgid ""
 "Welcome to the Dr. Scratch website (version for organizations), an "
 "analytical tool that evaluates your Scratch projects in a variety of "
@@ -1622,45 +1894,46 @@ msgstr ""
 "evaluar los proyectos Scratch de tus alumnos.Tendrás una página "
 "personalizada con información de tus estudiantes y su desarrollo."
 
-#: templates/login/login.html:133 templates/sign/createOrganization.html:75
-#: templates/sign/createOrganization.html:110
-#: templates/sign/createOrganization.html:209
-#: templates/sign/createUser.html:75 templates/sign/createUser.html.py:110
-#: templates/sign/createUser.html:208 templates/sign/organization.html:134
-#: templates/sign/organization.html:241
-#: templates/sign/registerOrganization.html:75
-#: templates/sign/registerOrganization.html:110
-#: templates/sign/registerOrganization.html:208
+#: .\templates\login\login.html:133 .\templates\sign\createOrganization.html:75
+#: .\templates\sign\createOrganization.html:110
+#: .\templates\sign\createOrganization.html:209
+#: .\templates\sign\createUser.html:75 .\templates\sign\createUser.html:110
+#: .\templates\sign\createUser.html:208 .\templates\sign\organization.html:134
+#: .\templates\sign\organization.html:241
+#: .\templates\sign\registerOrganization.html:75
+#: .\templates\sign\registerOrganization.html:110
+#: .\templates\sign\registerOrganization.html:208
+#: .\templates\tournaments\main_tournaments.html:179
 msgid "Sign up!"
 msgstr "¡Regístrate!"
 
-#: templates/login/login.html:187 templates/main/main.html:213
+#: .\templates\login\login.html:187 .\templates\main\main.html:213
 msgid "WHY?"
 msgstr "¿Por qué?"
 
-#: templates/login/login.html:189 templates/main/main.html:215
-#: templates/sign/createOrganization.html:165
-#: templates/sign/createUser.html:165
-#: templates/sign/registerOrganization.html:165
+#: .\templates\login\login.html:189 .\templates\main\main.html:215
+#: .\templates\sign\createOrganization.html:165
+#: .\templates\sign\createUser.html:165
+#: .\templates\sign\registerOrganization.html:165
 msgid "Why "
 msgstr "Por qué "
 
-#: templates/login/login.html:189 templates/main/main.html:215
-#: templates/sign/createOrganization.html:165
-#: templates/sign/createUser.html:165
-#: templates/sign/registerOrganization.html:165
+#: .\templates\login\login.html:189 .\templates\main\main.html:215
+#: .\templates\sign\createOrganization.html:165
+#: .\templates\sign\createUser.html:165
+#: .\templates\sign\registerOrganization.html:165
 msgid "you’ll love Dr. Scratch"
 msgstr "te encantará Dr. Scratch"
 
-#: templates/login/login.html:193 templates/main/main.html:219
+#: .\templates\login\login.html:193 .\templates\main\main.html:219
 msgid "A powerful tool to analyze your Scratch projects"
 msgstr "Analiza tus proyectos de Scratch"
 
-#: templates/login/login.html:205 templates/main/main.html:231
+#: .\templates\login\login.html:205 .\templates\main\main.html:231
 msgid "Simple & Fun"
 msgstr "Fácil & Divertido"
 
-#: templates/login/login.html:207 templates/main/main.html:233
+#: .\templates\login\login.html:207 .\templates\main\main.html:233
 msgid ""
 "Your students can easily learn how to improve their programming skills in a "
 "fun way."
@@ -1668,23 +1941,23 @@ msgstr ""
 "Tus estudiantes pueden aprender fácilmente cómo mejorar sus habilidades de "
 "programación de una forma divertida."
 
-#: templates/login/login.html:218 templates/main/main.html:244
+#: .\templates\login\login.html:218 .\templates\main\main.html:244
 msgid "Improve your skills"
 msgstr "Mejora tus habilidades"
 
-#: templates/login/login.html:220 templates/main/main.html:246
+#: .\templates\login\login.html:220 .\templates\main\main.html:246
 msgid ""
 "We provide feedback on several aspects which are related to Computational "
 "Thinking."
 msgstr ""
-"Dr. Scratch ofrece realimentación en aspectos relacionados con el Pensamiento "
-"Computacional ayudándote a mejorarlos."
+"Dr. Scratch ofrece realimentación en aspectos relacionados con el "
+"Pensamiento Computacional ayudándote a mejorarlos."
 
-#: templates/login/login.html:231 templates/main/main.html:257
+#: .\templates\login\login.html:231 .\templates\main\main.html:257
 msgid "Always improving"
 msgstr "Mejorando constantemente"
 
-#: templates/login/login.html:233 templates/main/main.html:259
+#: .\templates\login\login.html:233 .\templates\main\main.html:259
 msgid ""
 "We're continually enhancing the features of Dr. Scratch, and we'd love to "
 "hear your thoughts"
@@ -1692,28 +1965,28 @@ msgstr ""
 "Intentamos mejorar continuamente, por lo que nos gustaría escuchar tus "
 "opiniones."
 
-#: templates/login/login.html:270 templates/main/main.html:296
+#: .\templates\login\login.html:270 .\templates\main\main.html:296
 msgid "How"
 msgstr "Cómo"
 
-#: templates/login/login.html:272 templates/main/main.html:298
-#: templates/sign/organization.html:189
+#: .\templates\login\login.html:272 .\templates\main\main.html:298
+#: .\templates\sign\organization.html:189
 msgid "How "
 msgstr "Cómo "
 
-#: templates/login/login.html:272 templates/main/main.html:298
+#: .\templates\login\login.html:272 .\templates\main\main.html:298
 msgid "it works"
 msgstr "funciona"
 
-#: templates/login/login.html:276 templates/main/main.html:302
+#: .\templates\login\login.html:276 .\templates\main\main.html:302
 msgid "There are two options to analyze a Scratch project with Dr. Scratch"
 msgstr "Hay dos opciones para anlizar un proyecto de Scratch con Dr. Scratch"
 
-#: templates/login/login.html:277 templates/main/main.html:303
+#: .\templates\login\login.html:277 .\templates\main\main.html:303
 msgid "project.png"
 msgstr "proyecto.png"
 
-#: templates/login/login.html:279 templates/main/main.html:305
+#: .\templates\login\login.html:279 .\templates\main\main.html:305
 msgid ""
 "You can upload an sb2 file or just provide the project url, avoiding the "
 "need to previously download the project to your computer. By analyzing your "
@@ -1725,51 +1998,51 @@ msgstr ""
 "Mediante el análisis de Dr. Scratch, puedes conocer fácilmente tu Nivel de "
 "Pensamiento Computacional."
 
-#: templates/login/login.html:288 templates/main/main.html:314
+#: .\templates\login\login.html:288 .\templates\main\main.html:314
 msgid "It is extremely easy to use, both for begginers and expert programmers."
 msgstr ""
 "Es increiblemente fácil de usar, tanto si eres principiante como si eres un "
 "programador experto."
 
-#: templates/login/login.html:292 templates/main/main.html:318
+#: .\templates\login\login.html:292 .\templates\main\main.html:318
 msgid "You receive feedback to improve your coding skills."
 msgstr "Recibirás realimentación para mejorar tus habilidades de programación."
 
-#: templates/login/login.html:300 templates/main/main.html:326
+#: .\templates\login\login.html:300 .\templates\main\main.html:326
 msgid ""
 "You can keep on improving your programming skills by yourself even from home."
 msgstr ""
 "Puedes seguir mejorando tus habilidades como programador por ti mismo, "
 "incluso desde casa."
 
-#: templates/login/login.html:304 templates/main/main.html:330
+#: .\templates\login\login.html:304 .\templates\main\main.html:330
 msgid "You can track your progress through charts and stats."
 msgstr ""
 "Puedes realizar un seguimiento de tu progreso a través de gráficos y "
 "estadísticas."
 
-#: templates/login/login.html:323 templates/main/main.html:349
+#: .\templates\login\login.html:323 .\templates\main\main.html:349
 msgid "NEW FEATURES"
 msgstr "NUEVAS FUNCIONALIDADES"
 
-#: templates/login/login.html:325 templates/main/main.html:351
+#: .\templates\login\login.html:325 .\templates\main\main.html:351
 msgid "Coming "
 msgstr "Próximas "
 
-#: templates/login/login.html:325 templates/main/main.html:351
+#: .\templates\login\login.html:325 .\templates\main\main.html:351
 msgid "Soon"
 msgstr "Funcionalidades"
 
-#: templates/login/login.html:329 templates/main/main.html:355
+#: .\templates\login\login.html:329 .\templates\main\main.html:355
 msgid "We are working on new features to improve Dr. Scratch"
 msgstr "Estamos trabajando en nuevas características que mejoren Dr. Scratch"
 
-#: templates/login/login.html:344 templates/main/main.html:370
+#: .\templates\login\login.html:344 .\templates\main\main.html:370
 msgid "Multilingual Website"
 msgstr "Web Multilenguaje"
 
-#: templates/login/login.html:348 templates/main/collaborators.html:350
-#: templates/main/main.html:374
+#: .\templates\login\login.html:348 .\templates\main\collaborators.html:350
+#: .\templates\main\main.html:374
 msgid ""
 "We know the importance of receiving feedback on your own language to "
 "understand every little detail or hint, so we'll translate Dr. Scratch to "
@@ -1779,11 +2052,11 @@ msgstr ""
 "tu propio idioma, por ello traduciremos Dr. Scratch para facilitar el "
 "aprendizaje del mayor número de personas posible."
 
-#: templates/login/login.html:359 templates/main/main.html:385
+#: .\templates\login\login.html:359 .\templates\main\main.html:385
 msgid "Teacher Accounts"
 msgstr "Cuentas para profesores"
 
-#: templates/login/login.html:363 templates/main/main.html:389
+#: .\templates\login\login.html:363 .\templates\main\main.html:389
 msgid ""
 "Teachers will be able to group (and follow) their students to keep track of "
 "their progress in a fast and simple way."
@@ -1791,11 +2064,11 @@ msgstr ""
 "Los profesores podrán agrupar(y seguir) a sus estudiantes y realizar un "
 "seguimiento de sus progresos de una forma rápida y simple."
 
-#: templates/login/login.html:374 templates/main/main.html:400
+#: .\templates\login\login.html:374 .\templates\main\main.html:400
 msgid "Cloud Platform"
 msgstr "Plataforma en la Nube"
 
-#: templates/login/login.html:378 templates/main/main.html:404
+#: .\templates\login\login.html:378 .\templates\main\main.html:404
 msgid ""
 "We are in the process of migrating our servers to the Cloud with the aim of "
 "providing a better performance."
@@ -1803,7 +2076,7 @@ msgstr ""
 "Estamos migrando nuestros servidores a la Nube con el objetivo de ofrecer un "
 "mejor rendimiento."
 
-#: templates/login/login.html:403 templates/main/main.html:429
+#: .\templates\login\login.html:403 .\templates\main\main.html:429
 msgid ""
 "With Dr. Scratch plug-ins for Chrome and Firefox, students will analyze "
 "their project WHILE programming on the Scratch website."
@@ -1811,11 +2084,11 @@ msgstr ""
 "Con los plugins de Dr. Scratch para Chrome y Firefox, los estudiantes podrán "
 "analizar sus proyectos MIENTRAS programan en la web de Scratch."
 
-#: templates/login/login.html:414 templates/main/main.html:440
+#: .\templates\login\login.html:414 .\templates\main\main.html:440
 msgid "Gamification"
 msgstr "Gamificación"
 
-#: templates/login/login.html:418 templates/main/main.html:444
+#: .\templates\login\login.html:418 .\templates\main\main.html:444
 msgid ""
 "We'd like to take learners curiosity one step further. Do you have cool "
 "ideas to gamify our platform?"
@@ -1823,11 +2096,11 @@ msgstr ""
 "Nos gustaría conseguir motivar la curiosidad de los estudiantes. ¿Tienes "
 "ideas interesantes para gamificar nuestra plataforma?"
 
-#: templates/login/login.html:429 templates/main/main.html:455
+#: .\templates\login\login.html:429 .\templates\main\main.html:455
 msgid "Social Network"
 msgstr "Red Social"
 
-#: templates/login/login.html:433 templates/main/main.html:459
+#: .\templates\login\login.html:433 .\templates\main\main.html:459
 msgid ""
 "The new social network funcionalities will allow users to communicate with "
 "each other to exchange ideas and challenges."
@@ -1835,19 +2108,19 @@ msgstr ""
 "Las funcionalidades de red social que incluiremos permitirán a los usuarios "
 "comunicarse entre ellos e intercambiar ideas y retos. "
 
-#: templates/login/login.html:453 templates/main/main.html:479
+#: .\templates\login\login.html:453 .\templates\main\main.html:479
 msgid "Contact"
 msgstr "Contacto"
 
-#: templates/login/login.html:455 templates/main/main.html:481
+#: .\templates\login\login.html:455 .\templates\main\main.html:481
 msgid "<strong>Contact </strong> Dr. Scratch team</h2>"
 msgstr "<strong>Contacta </strong>con el equipo Dr. Scratch</h2>"
 
-#: templates/login/login.html:459 templates/main/main.html:485
+#: .\templates\login\login.html:459 .\templates\main\main.html:485
 msgid "We would be pleased to receive your feedback"
 msgstr "Nos gustaría conocer tu opinión y escuchar tus ideas"
 
-#: templates/login/login.html:498 templates/main/main.html:524
+#: .\templates\login\login.html:498 .\templates\main\main.html:524
 msgid ""
 "We would like to thank many people for their collaboration and we have done "
 "one special section."
@@ -1855,77 +2128,88 @@ msgstr ""
 "Nos gustaría agradecer a mucha gente su colaboración y hemos incluido una "
 "sección especial para ello."
 
-#: templates/login/login.html:501
+#: .\templates\login\login.html:501
 msgid "Collaborators"
 msgstr "Colaboradores"
 
-#: templates/login/login.html:520 templates/main/main.html:546
+#: .\templates\login\login.html:520 .\templates\main\main.html:546
 msgid "Are you a Dr. Scratch user?"
 msgstr "¿Eres usuario de Dr. Scratch?"
 
-#: templates/login/login.html:523 templates/main/main.html:549
+#: .\templates\login\login.html:523 .\templates\main\main.html:549
 msgid "Join now!"
 msgstr "¡Pruébalo!"
 
-#: templates/login/login.html:563 templates/main/main.html:589
-#: templates/upload/dashboard-organization.html:239
+#: .\templates\login\login.html:563 .\templates\main\main.html:589
+#: .\templates\tournaments\creator\progress\teamsProgress.html:631
+#: .\templates\tournaments\participant\tournamentsPart.html:671
+#: .\templates\upload\dashboard-organization.html:239
 msgid "What is an url?"
 msgstr "¿Qué es una url?"
 
-#: templates/login/login.html:565 templates/main/main.html:591
-#: templates/upload/dashboard-organization.html:241
+#: .\templates\login\login.html:565 .\templates\main\main.html:591
+#: .\templates\tournaments\creator\progress\teamsProgress.html:633
+#: .\templates\tournaments\participant\tournamentsPart.html:673
+#: .\templates\upload\dashboard-organization.html:241
 msgid "How I can know my Scratch project's url?"
 msgstr "¿Cómo puedo averiguar la url de mi proyecto en Scratch?"
 
-#: templates/login/login.html:569 templates/main/main.html:595
+#: .\templates\login\login.html:569 .\templates\main\main.html:595
 msgid "<img class='framed' src='static/app/images/url-en.png' />"
 msgstr "<img class='framed' src='static/app/images/url-es.png' />"
 
-#: templates/login/login.html:588 templates/main/main.html:614
-#: templates/upload/dashboard-organization.html:264
+#: .\templates\login\login.html:588 .\templates\main\main.html:614
+#: .\templates\tournaments\creator\progress\teamsProgress.html:655
+#: .\templates\tournaments\participant\tournamentsPart.html:695
+#: .\templates\upload\dashboard-organization.html:264
 msgid "I want to download my project from Scratch!"
 msgstr "¡Quiero descargar mi proyecto de Scratch!"
 
-#: templates/login/login.html:590 templates/main/main.html:616
-#: templates/upload/dashboard-organization.html:266
+#: .\templates\login\login.html:590 .\templates\main\main.html:616
+#: .\templates\tournaments\creator\progress\teamsProgress.html:657
+#: .\templates\tournaments\participant\tournamentsPart.html:697
+#: .\templates\upload\dashboard-organization.html:266
 msgid "How I can download my Scratch project to my computer?"
 msgstr "¿Cómo puedo descargar mi proyecto de Scratch a mi ordenador?"
 
-#: templates/login/login.html:594 templates/main/main.html:620
+#: .\templates\login\login.html:594 .\templates\main\main.html:620
 msgid "<img class='framed' src='static/app/images/project-en.png' />"
 msgstr "<img class='framed' src='static/app/images/project-es.png' />"
 
-#: templates/login/login.html:614 templates/main/main.html:640
-#: templates/main/main_organization.html:300
+#: .\templates\login\login.html:614 .\templates\main\main.html:640
+#: .\templates\main\main_organization.html:300
 msgid "Wait a moment please"
 msgstr "Espere un momento, por favor."
 
-#: templates/login/login.html:632 templates/main/main.html:658
-#: templates/main/main_organization.html:318
+#: .\templates\login\login.html:632 .\templates\main\main.html:658
+#: .\templates\main\main_organization.html:318
 msgid "loading..."
 msgstr "cargando..."
 
-#: templates/main/collaborators.html:75 templates/main/collaborators.html:162
+#: .\templates\main\collaborators.html:75
+#: .\templates\main\collaborators.html:162
 msgid "Who we are"
 msgstr "Quiénes somos"
 
-#: templates/main/collaborators.html:76 templates/main/collaborators.html:346
+#: .\templates\main\collaborators.html:76
+#: .\templates\main\collaborators.html:346
 msgid "Translations"
 msgstr "Traducciones"
 
-#: templates/main/collaborators.html:77 templates/main/collaborators.html:527
+#: .\templates\main\collaborators.html:77
+#: .\templates\main\collaborators.html:527
 msgid "Workshops"
 msgstr "Talleres"
 
-#: templates/main/collaborators.html:78
+#: .\templates\main\collaborators.html:78
 msgid "More thanks"
 msgstr "Más agradecimientos"
 
-#: templates/main/collaborators.html:104
+#: .\templates\main\collaborators.html:104
 msgid "Thanks all of you!"
 msgstr "Gracias a todos!"
 
-#: templates/main/collaborators.html:106
+#: .\templates\main\collaborators.html:106
 msgid ""
 "We are so pleased to receive so much help of you and we thought that the "
 "best way of show our appreciation is including your work in the website. In "
@@ -1936,71 +2220,79 @@ msgstr ""
 "laweb. En este espacio podrás ver la gente que nos ha ayudado a mejorar Dr. "
 "Scratch."
 
-#: templates/main/collaborators.html:166
+#: .\templates\main\collaborators.html:166
 msgid "Dr. Scratch's team likes to thank you for your contributions."
 msgstr "El equipo de Dr. Scratch agradece vuestras contribuciones."
 
-#: templates/main/collaborators.html:182 templates/main/collaborators.html:204
-#: templates/main/collaborators.html:272 templates/main/collaborators.html:295
+#: .\templates\main\collaborators.html:182
+#: .\templates\main\collaborators.html:204
+#: .\templates\main\collaborators.html:272
+#: .\templates\main\collaborators.html:295
 msgid " "
 msgstr ""
 
-#: templates/main/collaborators.html:224
+#: .\templates\main\collaborators.html:224
 msgid "Eva Hu Garres"
 msgstr "Eva Hu Garres"
 
-#: templates/main/collaborators.html:226 templates/main/collaborators.html:248
+#: .\templates\main\collaborators.html:226
+#: .\templates\main\collaborators.html:248
 msgid "Web Developer"
 msgstr "Desarrolladora web"
 
-#: templates/main/collaborators.html:246
+#: .\templates\main\collaborators.html:246
 msgid "Mari Luz Aguado Jiménez"
 msgstr "Mari Luz Aguado Jiménez"
 
-#: templates/main/collaborators.html:270 templates/main/collaborators.html:293
-#: templates/main/collaborators.html:315 templates/main/collaborators.html:409
-#: templates/main/collaborators.html:431 templates/main/collaborators.html:455
-#: templates/main/collaborators.html:478 templates/main/collaborators.html:500
+#: .\templates\main\collaborators.html:270
+#: .\templates\main\collaborators.html:293
+#: .\templates\main\collaborators.html:315
+#: .\templates\main\collaborators.html:409
+#: .\templates\main\collaborators.html:431
+#: .\templates\main\collaborators.html:455
+#: .\templates\main\collaborators.html:478
+#: .\templates\main\collaborators.html:500
 msgid "Anonymous"
 msgstr "Anónimos"
 
-#: templates/main/collaborators.html:317 templates/main/collaborators.html:502
+#: .\templates\main\collaborators.html:317
+#: .\templates\main\collaborators.html:502
 msgid "Lenguage"
 msgstr "Lenguaje"
 
-#: templates/main/collaborators.html:351
+#: .\templates\main\collaborators.html:351
 msgid ""
 "Would you like help us to translate Dr. Scratch to your language? Many "
 "people have already helped us! "
 msgstr ""
-"¿Te gustaría ayudarnos a traducir Dr. Scratch a tu lengua? ¡Mucha gente nosha "
-"ayudado ya!"
+"¿Te gustaría ayudarnos a traducir Dr. Scratch a tu lengua? ¡Mucha gente "
+"nosha ayudado ya!"
 
-#: templates/main/collaborators.html:367
+#: .\templates\main\collaborators.html:367
 msgid "Portuguese from Brazil"
 msgstr "Portugués de Brasil"
 
-#: templates/main/collaborators.html:389
+#: .\templates\main\collaborators.html:389
 msgid "Greek"
 msgstr "Griego"
 
-#: templates/main/collaborators.html:411
+#: .\templates\main\collaborators.html:411
 msgid "Hungarian"
 msgstr "Húgaro"
 
-#: templates/main/collaborators.html:433
+#: .\templates\main\collaborators.html:433
 msgid "Catalan"
 msgstr "Catalán"
 
-#: templates/main/collaborators.html:457
+#: .\templates\main\collaborators.html:457
 msgid "Basque"
 msgstr "Vasco"
 
-#: templates/main/collaborators.html:480
+#: .\templates\main\collaborators.html:480
 msgid "Galician"
 msgstr "Gallego"
 
-#: templates/main/collaborators.html:531
+#: .\templates\main\collaborators.html:531
 msgid ""
 "We are collaborating with several schools where we can prove the website "
 "with children and see which features they need."
@@ -2008,48 +2300,54 @@ msgstr ""
 "Estamos colaborando con muchas escuelas donde pueden probar nuestrositio web "
 "y ver qué funcionalidades necesitan."
 
-#: templates/main/collaborators.html:532
+#: .\templates\main\collaborators.html:532
 msgid "Thanks all of children and teachers who help us with the development!"
 msgstr ""
 "¡Gracias a todos los niños y profesores que nos ayudan con el desarrollo!"
 
-#: templates/main/collaborators.html:561
+#: .\templates\main\collaborators.html:561
 msgid "CEIP Lope de Vega"
 msgstr "CEIP Lope de Vega"
 
-#: templates/main/collaborators.html:565
+#: .\templates\main\collaborators.html:565
 msgid "Teacher: Jorge Lobo"
 msgstr "Profesor: Jorge Lobo"
 
-#: templates/main/collaborators.html:584
+#: .\templates\main\collaborators.html:584
 msgid "<strong>More thanks</strong></h2>"
 msgstr "<strong>Contacta </strong></h2>"
 
-#: templates/main/main.html:75
+#: .\templates\main\main.html:74
 msgid "Why?"
 msgstr "¿Por qué?"
 
-#: templates/main/main.html:76
+#: .\templates\main\main.html:75
 msgid "How?"
 msgstr "¿Cómo?"
 
-#: templates/main/main.html:77
+#: .\templates\main\main.html:76
 msgid "Working on"
 msgstr "Próximamente"
 
-#: templates/main/main.html:78
+#: .\templates\main\main.html:77
 msgid "Contact us"
 msgstr "Contacto"
 
-#: templates/main/main.html:79
+#: .\templates\main\main.html:78
+#: .\templates\tournaments\creator\admin\admin_creator.html:157
+#: .\templates\tournaments\participant\teamsPart.html:203
+msgid "Tournaments"
+msgstr "Torneos"
+
+#: .\templates\main\main.html:79
 msgid "Organizations"
 msgstr "Organizaciones"
 
-#: templates/main/main.html:108
+#: .\templates\main\main.html:108
 msgid "Analyze your Scratch projects"
 msgstr "Analiza tus proyectos de Scratch"
 
-#: templates/main/main.html:110
+#: .\templates\main\main.html:110
 msgid ""
 "Welcome to the Dr. Scratch website, an analytical tool that evaluates your "
 "Scratch projects in a variety of computational areas. This analyzer is a "
@@ -2061,15 +2359,17 @@ msgstr ""
 "analizador es una herramienta muy útil tanto para evaluar tus proyectos "
 "Scratch como los de tus estudiantes."
 
-#: templates/main/main.html:114
+#: .\templates\main\main.html:114
 msgid "Learn More"
 msgstr "Aprende Más"
 
-#: templates/main/main.html:128
+#: .\templates\main\main.html:128
+#: .\templates\tournaments\participant\tournamentsPart.html:571
 msgid "There are two options to analyze your Scratch project now!"
 msgstr "Hay dos opciones para anlizar un proyecto de Scratch con Dr. Scratch"
 
-#: templates/main/main.html:133
+#: .\templates\main\main.html:133
+#: .\templates\tournaments\participant\tournamentsPart.html:578
 msgid ""
 "1. Introduce the <span class='colored-text'><a data-toggle='modal' "
 "href='#modalUrl'>url</a></span> of your Scratch project, you don't have to "
@@ -2079,7 +2379,8 @@ msgstr ""
 "href='#modalUrl'>url</a></span> de tu proyecto Scratch, no tendrás que "
 "descargarlo:"
 
-#: templates/main/main.html:134
+#: .\templates\main\main.html:134
+#: .\templates\tournaments\participant\tournamentsPart.html:579
 msgid ""
 "<input name=\"urlProject\" id=\"cf-name\" class=\"form-control input-box "
 "placeholder\" placeholder=\"http:/scratch.mit.edu/projects/your_number\" "
@@ -2089,11 +2390,13 @@ msgstr ""
 "placeholder\" placeholder=\"http://scratch.mit.edu/projects/tu_número\" type="
 "\"text\">"
 
-#: templates/main/main.html:135
+#: .\templates\main\main.html:135
+#: .\templates\tournaments\participant\tournamentsPart.html:580
 msgid "Analyze by url"
 msgstr "Analizar por url"
 
-#: templates/main/main.html:140
+#: .\templates\main\main.html:140
+#: .\templates\tournaments\participant\tournamentsPart.html:585
 msgid ""
 "2. If you have your <span class='colored-text'><a data-toggle='modal' "
 "href='#modalProject'>project</a></span> downloaded in the computer you can "
@@ -2103,7 +2406,8 @@ msgstr ""
 "href='#modalProject'>proyecto</a></span> descargado en tu ordenador, podrás "
 "analizarlo aquí:"
 
-#: templates/main/main.html:141
+#: .\templates\main\main.html:141
+#: .\templates\tournaments\participant\tournamentsPart.html:586
 msgid ""
 "<input  name='zipFile' type='file' class='filestyle' data-buttonText='Choose "
 "Project'>"
@@ -2111,86 +2415,161 @@ msgstr ""
 "<input  name='zipFile' type='file' class='filestyle' data-buttonText='Elige "
 "Proyecto'>"
 
-#: templates/main/main.html:142
+#: .\templates\main\main.html:142
+#: .\templates\tournaments\participant\tournamentsPart.html:587
 msgid "Analyze my project"
 msgstr "Analiza mi proyecto"
 
-#: templates/main/main.html:149 templates/main/main.html.py:152
-#: templates/main/main_organization.html:190
-#: templates/main/main_organization.html:193
+#: .\templates\main\main.html:149 .\templates\main\main.html.py:152
+#: .\templates\main\main_organization.html:190
+#: .\templates\main\main_organization.html:193
+#: .\templates\tournaments\participant\tournamentsPart.html:594
+#: .\templates\tournaments\participant\tournamentsPart.html:597
 msgid "Error! Please choose a .sb or .sb2 file or input an url"
 msgstr "¡Error! Por favor elige un fichero .sb o .sb2 o pon una url"
 
-#: templates/main/main.html:156 templates/main/main_organization.html:197
+#: .\templates\main\main.html:156 .\templates\main\main_organization.html:197
+#: .\templates\tournaments\participant\tournamentsPart.html:601
 msgid "Error! Your project id is wrong"
 msgstr "¡Error! El identificador de tu proyecto es incorrecto"
 
-#: templates/main/main.html:160 templates/main/main_organization.html:201
+#: .\templates\main\main.html:160 .\templates\main\main_organization.html:201
+#: .\templates\tournaments\participant\tournamentsPart.html:605
 msgid "Error! Your project doesn't exist in Scratch's servers"
 msgstr "¡Error! Tu proyecto no existe en los servidores de Scratch"
 
-#: templates/main/main.html:527 templates/statistics/statistics.html:306
+#: .\templates\main\main.html:527 .\templates\statistics\statistics.html:306
 msgid "Statistics"
 msgstr "Estadísticas"
 
-#: templates/main/main_organization.html:68
+#: .\templates\main\main_organization.html:68
 msgid "Your daily progress"
 msgstr ""
 
-#: templates/main/main_organization.html:76
-#: templates/statistics/statistics.html:73
+#: .\templates\main\main_organization.html:76
+#: .\templates\statistics\statistics.html:73
 msgid " points"
 msgstr " puntos"
 
-#: templates/main/main_organization.html:85
-#: templates/statistics/statistics.html:82
+#: .\templates\main\main_organization.html:85
+#: .\templates\statistics\statistics.html:82
 msgid "Total score"
 msgstr "Puntuación total"
 
-#: templates/main/main_organization.html:126
-#: templates/upload/dashboard-organization.html:81
+#: .\templates\main\main_organization.html:126
+#: .\templates\tournaments\creator\admin\admin_creator.html:58
+#: .\templates\tournaments\creator\admin\admin_creator.html:90
+#: .\templates\tournaments\creator\admin\challenges\challengesList.html:58
+#: .\templates\tournaments\creator\admin\challenges\challengesList.html:90
+#: .\templates\tournaments\creator\admin\challenges\editChallenge.html:58
+#: .\templates\tournaments\creator\admin\challenges\editChallenge.html:90
+#: .\templates\tournaments\creator\admin\teams\newEditTeam.html:58
+#: .\templates\tournaments\creator\admin\teams\newEditTeam.html:90
+#: .\templates\tournaments\creator\admin\teams\teamsList.html:58
+#: .\templates\tournaments\creator\admin\teams\teamsList.html:90
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:58
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:90
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:66
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:98
+#: .\templates\tournaments\creator\main_creator.html:59
+#: .\templates\tournaments\creator\main_creator.html:91
+#: .\templates\tournaments\creator\progress\teamsProgress.html:65
+#: .\templates\tournaments\creator\progress\teamsProgress.html:97
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:65
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:97
+#: .\templates\tournaments\main_tournaments.html:58
+#: .\templates\tournaments\main_tournaments.html:90
+#: .\templates\tournaments\participant\results.html:174
+#: .\templates\tournaments\participant\results.html:207
+#: .\templates\tournaments\participant\teamsPart.html:58
+#: .\templates\tournaments\participant\teamsPart.html:90
+#: .\templates\tournaments\participant\tournamentsPart.html:65
+#: .\templates\tournaments\participant\tournamentsPart.html:97
+#: .\templates\upload\dashboard-organization.html:81
 msgid "Logged in as "
 msgstr "Conectado como "
 
-#: templates/main/main_organization.html:128
-#: templates/upload/dashboard-organization.html:83
+#: .\templates\main\main_organization.html:128
+#: .\templates\tournaments\creator\admin\admin_creator.html:92
+#: .\templates\tournaments\creator\admin\challenges\challengesList.html:92
+#: .\templates\tournaments\creator\admin\challenges\editChallenge.html:92
+#: .\templates\tournaments\creator\admin\teams\newEditTeam.html:92
+#: .\templates\tournaments\creator\admin\teams\teamsList.html:92
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:92
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:100
+#: .\templates\tournaments\creator\main_creator.html:93
+#: .\templates\tournaments\creator\progress\teamsProgress.html:99
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:99
+#: .\templates\tournaments\main_tournaments.html:92
+#: .\templates\tournaments\participant\results.html:209
+#: .\templates\tournaments\participant\teamsPart.html:92
+#: .\templates\tournaments\participant\tournamentsPart.html:99
+#: .\templates\upload\dashboard-organization.html:83
 msgid "Change password"
 msgstr "Cambiar contraseña"
 
-#: templates/main/main_organization.html:130
-#: templates/upload/dashboard-organization.html:85
+#: .\templates\main\main_organization.html:130
+#: .\templates\tournaments\creator\admin\admin_creator.html:62
+#: .\templates\tournaments\creator\admin\admin_creator.html:94
+#: .\templates\tournaments\creator\admin\challenges\challengesList.html:62
+#: .\templates\tournaments\creator\admin\challenges\challengesList.html:94
+#: .\templates\tournaments\creator\admin\challenges\editChallenge.html:62
+#: .\templates\tournaments\creator\admin\challenges\editChallenge.html:94
+#: .\templates\tournaments\creator\admin\teams\newEditTeam.html:62
+#: .\templates\tournaments\creator\admin\teams\newEditTeam.html:94
+#: .\templates\tournaments\creator\admin\teams\teamsList.html:62
+#: .\templates\tournaments\creator\admin\teams\teamsList.html:94
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:62
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:94
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:70
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:102
+#: .\templates\tournaments\creator\main_creator.html:63
+#: .\templates\tournaments\creator\main_creator.html:95
+#: .\templates\tournaments\creator\progress\teamsProgress.html:69
+#: .\templates\tournaments\creator\progress\teamsProgress.html:101
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:69
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:101
+#: .\templates\tournaments\main_tournaments.html:62
+#: .\templates\tournaments\main_tournaments.html:94
+#: .\templates\tournaments\participant\results.html:178
+#: .\templates\tournaments\participant\results.html:211
+#: .\templates\tournaments\participant\teamsPart.html:62
+#: .\templates\tournaments\participant\teamsPart.html:94
+#: .\templates\tournaments\participant\tournamentsPart.html:69
+#: .\templates\tournaments\participant\tournamentsPart.html:101
+#: .\templates\upload\dashboard-organization.html:85
 msgid "Logout"
 msgstr "Salir"
 
-#: templates/main/main_organization.html:159
-#: templates/upload/dashboard-organization.html:107
+#: .\templates\main\main_organization.html:159
+#: .\templates\upload\dashboard-organization.html:107
 msgid "Welcome to the Dr. Scratch website, "
 msgstr "Bienvenido a Dr. Scratch "
 
-#: templates/main/main_organization.html:177
-#: templates/upload/dashboard-organization.html:150
+#: .\templates\main\main_organization.html:177
+#: .\templates\upload\dashboard-organization.html:150
 msgid ""
 "You can analyze at the same time all the Scratch proyects of your students!"
 msgstr ""
 "Puedes analizar de una vez todos los proyectos de Scratch de tus estudiantes."
 
-#: templates/main/main_organization.html:181
-#: templates/upload/dashboard-organization.html:153
+#: .\templates\main\main_organization.html:181
+#: .\templates\upload\dashboard-organization.html:153
 msgid "Only you have to put a "
 msgstr "Sólo tienes que poner un "
 
-#: templates/main/main_organization.html:181
-#: templates/upload/dashboard-organization.html:153
+#: .\templates\main\main_organization.html:181
+#: .\templates\upload\dashboard-organization.html:153
 msgid "file CSV "
 msgstr "fichero CSV "
 
-#: templates/main/main_organization.html:181
-#: templates/upload/dashboard-organization.html:153
+#: .\templates\main\main_organization.html:181
+#: .\templates\upload\dashboard-organization.html:153
 msgid " with the urls of the Scratch projects you want to analyze:"
 msgstr "con las urls de los proyectos de Scratch que quieres analizar:"
 
-#: templates/main/main_organization.html:182
-#: templates/upload/dashboard-organization.html:154
+#: .\templates\main\main_organization.html:182
+#: .\templates\upload\dashboard-organization.html:154
 msgid ""
 "<input  name='csvFile' type='file' class='filestyle' data-buttonText='Choose "
 "File .csv'>"
@@ -2198,25 +2577,25 @@ msgstr ""
 "<input  name='csvFile' type='file' class='filestyle' data-buttonText='Elige "
 "el fichero .csv'>"
 
-#: templates/main/main_organization.html:183
-#: templates/upload/dashboard-organization.html:155
+#: .\templates\main\main_organization.html:183
+#: .\templates\upload\dashboard-organization.html:155
 msgid "Analyze my projects"
 msgstr "Analiza mis proyectos"
 
-#: templates/main/main_organization.html:273
+#: .\templates\main\main_organization.html:273
 msgid "How is the file .csv?"
 msgstr "¿Cómo crear el fichero .csv?"
 
-#: templates/main/main_organization.html:275
+#: .\templates\main\main_organization.html:275
 msgid ""
 "You must to write only the number of your students' projects. Easy, isn't it?"
 msgstr ""
 
-#: templates/password/email.html:4
+#: .\templates\password\email.html:4
 msgid "Reset password"
 msgstr "Reestablecer contraseña"
 
-#: templates/password/email.html:6
+#: .\templates\password\email.html:6
 msgid ""
 "You're receiving this email because you requested a password reset for your "
 "user account at Dr. Scratch."
@@ -2224,66 +2603,68 @@ msgstr ""
 "Estas recibiendo este email porque has pedido restaurar tu cuenta en Dr. "
 "Scratch."
 
-#: templates/password/email.html:7
+#: .\templates\password\email.html:7
 msgid "Please, go to the following page and choose a new password:"
 msgstr "Por favor, ve a la siguiente página y elige una nueva contraseña:"
 
-#: templates/password/email.html:9
+#: .\templates\password\email.html:9
 msgid "Your username is: "
 msgstr "Tu id es: "
 
-#: templates/password/email.html:13 templates/sign/email.html:11
+#: .\templates\password\email.html:13 .\templates\sign\email.html:11
 msgid "Thanks for using our website!"
 msgstr "¡Gracias por usar nuestra web!"
 
-#: templates/password/email.html:14 templates/sign/email.html:12
+#: .\templates\password\email.html:14 .\templates\sign\email.html:12
 msgid "The Dr. Scratch team"
 msgstr "El equipo de Dr. Scratch"
 
-#: templates/password/email_sended.html:12
+#: .\templates\password\email_sended.html:12
 msgid "We sended to you an email."
 msgstr "Te  hemos enviado un email."
 
-#: templates/password/email_sended.html:13
+#: .\templates\password\email_sended.html:13
 msgid "Check with your systems operator to see if the message was blocked."
 msgstr "Compruebe la carpeta de correo no deseado de su cuenta de correo."
 
-#: templates/password/new_password.html:14
+#: .\templates\password\new_password.html:14
 msgid "Type your new password:"
 msgstr "Introduce tu nueva contraseña:"
 
-#: templates/password/new_password.html:19
+#: .\templates\password\new_password.html:19
 msgid "Confirm your password:"
 msgstr "Confirma tu contraseña:"
 
-#: templates/password/new_password.html:25 templates/password/password.html:19
+#: .\templates\password\new_password.html:25
+#: .\templates\password\password.html:19
 msgid "Send"
 msgstr "Enviar"
 
-#: templates/password/new_password.html:31
+#: .\templates\password\new_password.html:31
 msgid "The Password and Confirm password fields are not identical."
 msgstr "Las dos contraseñas no coinciden."
 
-#: templates/password/password.html:13
+#: .\templates\password\password.html:13
 msgid "Have you forgotten your password? Please introduce your email:"
 msgstr "¿Has olvidado tu contraseña? Por favor, escribe tu email:"
 
-#: templates/password/user_doesntexist.html:12
+#: .\templates\password\user_doesntexist.html:12
 msgid "User doesn't exist or the password is incorrect."
 msgstr "El usuario no existe o la contraseña es incorrecta."
 
-#: templates/password/user_doesntexist.html:14
-#: templates/password/wrong_form.html:14 templates/sign/signup_error.html:25
+#: .\templates\password\user_doesntexist.html:14
+#: .\templates\password\wrong_form.html:14
+#: .\templates\sign\signup_error.html:25
 msgid "Retry"
 msgstr "Reintentar"
 
-#: templates/password/wrong_form.html:12
+#: .\templates\password\wrong_form.html:12
 msgid "You must to complete all the fields."
 msgstr "Debes completar todos los campos correctamente."
 
-#: templates/sign/createOrganization.html:168
-#: templates/sign/createUser.html:168
-#: templates/sign/registerOrganization.html:168
+#: .\templates\sign\createOrganization.html:168
+#: .\templates\sign\createUser.html:168
+#: .\templates\sign\registerOrganization.html:168
 msgid ""
 "You'll evaluate the projects of all your student in few time. Also, you'll "
 "see all the relevant information in a view."
@@ -2291,7 +2672,7 @@ msgstr ""
 "Evaluarás los proyectos de todos tus estudiantes en poco tiempo. Además,"
 "verás la información más inportante de una pasada."
 
-#: templates/sign/createOrganization.html:170
+#: .\templates\sign\createOrganization.html:170
 msgid ""
 "If you want to be one of the ten first organizations which prove Dr. Scratch "
 "send us an email to "
@@ -2299,25 +2680,25 @@ msgstr ""
 "Si quieres ser una de las 10 primeras organizaciones que prueban Dr. Scratch "
 "envíanos un email a "
 
-#: templates/sign/createOrganization.html:170
+#: .\templates\sign\createOrganization.html:170
 msgid " and we'll give you your hash to can sign up in the web"
 msgstr " y te daremos una clave para poder registrarte en la web"
 
-#: templates/sign/createOrganization.html:184
-#: templates/sign/createUser.html:183 templates/sign/organization.html:206
-#: templates/sign/registerOrganization.html:183
+#: .\templates\sign\createOrganization.html:184
+#: .\templates\sign\createUser.html:183 .\templates\sign\organization.html:206
+#: .\templates\sign\registerOrganization.html:183
 msgid "Organization's name"
 msgstr "Nombre de la organización"
 
-#: templates/sign/createOrganization.html:196
-#: templates/sign/createUser.html:195 templates/sign/organization.html:222
-#: templates/sign/registerOrganization.html:195
+#: .\templates\sign\createOrganization.html:196
+#: .\templates\sign\createUser.html:195 .\templates\sign\organization.html:222
+#: .\templates\sign\registerOrganization.html:195
 msgid "Password"
 msgstr "Contraseña"
 
-#: templates/sign/createOrganization.html:198
-#: templates/sign/createUser.html:197 templates/sign/organization.html:224
-#: templates/sign/registerOrganization.html:197
+#: .\templates\sign\createOrganization.html:198
+#: .\templates\sign\createUser.html:197 .\templates\sign\organization.html:224
+#: .\templates\sign\registerOrganization.html:197
 msgid ""
 "<input type='password' class='form-control' name='password' "
 "placeholder='Password'>"
@@ -2325,15 +2706,15 @@ msgstr ""
 "<input type='password' class='form-control' name='password' "
 "placeholder='Contraseña'>"
 
-#: templates/sign/createOrganization.html:203
-#: templates/sign/createUser.html:202 templates/sign/organization.html:231
-#: templates/sign/registerOrganization.html:202
+#: .\templates\sign\createOrganization.html:203
+#: .\templates\sign\createUser.html:202 .\templates\sign\organization.html:231
+#: .\templates\sign\registerOrganization.html:202
 msgid "Hashkey"
 msgstr "Clave"
 
-#: templates/sign/createOrganization.html:205
-#: templates/sign/createUser.html:204 templates/sign/organization.html:233
-#: templates/sign/registerOrganization.html:204
+#: .\templates\sign\createOrganization.html:205
+#: .\templates\sign\createUser.html:204 .\templates\sign\organization.html:233
+#: .\templates\sign\registerOrganization.html:204
 msgid ""
 "<input type='password' class='form-control' name='hashkey' "
 "placeholder='Password'>"
@@ -2341,11 +2722,11 @@ msgstr ""
 "<input type='password' class='form-control' name='hashkey' "
 "placeholder='Clave'>"
 
-#: templates/sign/email.html:5
+#: .\templates\sign\email.html:5
 msgid "New organization in Dr. Scratch!"
 msgstr "¡Nueva organización en Dr. Scratch!"
 
-#: templates/sign/email.html:7
+#: .\templates\sign\email.html:7
 msgid ""
 "You're receiving this email because you have successfully signed up in Dr. "
 "Scratch for organizations."
@@ -2353,7 +2734,21 @@ msgstr ""
 "Estas recibiendo este email porque has pedido restaurar tu cuenta en Dr. "
 "Scratch."
 
-#: templates/sign/organization.html:88
+#: .\templates\sign\organization.html:88
+#: .\templates\tournaments\creator\admin\admin_creator.html:114
+#: .\templates\tournaments\creator\admin\challenges\challengesList.html:114
+#: .\templates\tournaments\creator\admin\challenges\editChallenge.html:114
+#: .\templates\tournaments\creator\admin\teams\newEditTeam.html:114
+#: .\templates\tournaments\creator\admin\teams\teamsList.html:114
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:114
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:122
+#: .\templates\tournaments\creator\main_creator.html:115
+#: .\templates\tournaments\creator\progress\teamsProgress.html:121
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:121
+#: .\templates\tournaments\main_tournaments.html:114
+#: .\templates\tournaments\participant\results.html:232
+#: .\templates\tournaments\participant\teamsPart.html:114
+#: .\templates\tournaments\participant\tournamentsPart.html:121
 msgid ""
 "<input type='text' name='username' id='username' placeholder='Username' "
 "style='margin-bottom: 15px;'>"
@@ -2361,7 +2756,21 @@ msgstr ""
 "<input type='text' name='username' id='username' placeholder='Nombre de "
 "usuario' style='margin-bottom: 15px;'>"
 
-#: templates/sign/organization.html:89
+#: .\templates\sign\organization.html:89
+#: .\templates\tournaments\creator\admin\admin_creator.html:115
+#: .\templates\tournaments\creator\admin\challenges\challengesList.html:115
+#: .\templates\tournaments\creator\admin\challenges\editChallenge.html:115
+#: .\templates\tournaments\creator\admin\teams\newEditTeam.html:115
+#: .\templates\tournaments\creator\admin\teams\teamsList.html:115
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:115
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:123
+#: .\templates\tournaments\creator\main_creator.html:116
+#: .\templates\tournaments\creator\progress\teamsProgress.html:122
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:122
+#: .\templates\tournaments\main_tournaments.html:115
+#: .\templates\tournaments\participant\results.html:233
+#: .\templates\tournaments\participant\teamsPart.html:115
+#: .\templates\tournaments\participant\tournamentsPart.html:122
 msgid ""
 "<input type='password' name='password' id='password' placeholder='Password' "
 "style='margin-bottom: 15px;'>"
@@ -2369,11 +2778,39 @@ msgstr ""
 "<input type='password' class='form-control' name='password' "
 "placeholder='Contraseña'>"
 
-#: templates/sign/organization.html:93
+#: .\templates\sign\organization.html:93
+#: .\templates\tournaments\creator\admin\admin_creator.html:119
+#: .\templates\tournaments\creator\admin\challenges\challengesList.html:119
+#: .\templates\tournaments\creator\admin\challenges\editChallenge.html:119
+#: .\templates\tournaments\creator\admin\teams\newEditTeam.html:119
+#: .\templates\tournaments\creator\admin\teams\teamsList.html:119
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:119
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:127
+#: .\templates\tournaments\creator\main_creator.html:120
+#: .\templates\tournaments\creator\progress\teamsProgress.html:126
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:124
+#: .\templates\tournaments\main_tournaments.html:119
+#: .\templates\tournaments\participant\results.html:237
+#: .\templates\tournaments\participant\teamsPart.html:119
+#: .\templates\tournaments\participant\tournamentsPart.html:126
 msgid "I forgot my password"
 msgstr "¿Has olvidado tu contraseña?"
 
-#: templates/sign/organization.html:96
+#: .\templates\sign\organization.html:96
+#: .\templates\tournaments\creator\admin\admin_creator.html:122
+#: .\templates\tournaments\creator\admin\challenges\challengesList.html:122
+#: .\templates\tournaments\creator\admin\challenges\editChallenge.html:122
+#: .\templates\tournaments\creator\admin\teams\newEditTeam.html:122
+#: .\templates\tournaments\creator\admin\teams\teamsList.html:122
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:122
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:130
+#: .\templates\tournaments\creator\main_creator.html:123
+#: .\templates\tournaments\creator\progress\teamsProgress.html:129
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:127
+#: .\templates\tournaments\main_tournaments.html:122
+#: .\templates\tournaments\participant\results.html:240
+#: .\templates\tournaments\participant\teamsPart.html:122
+#: .\templates\tournaments\participant\tournamentsPart.html:129
 msgid ""
 "<input type='submit' value='Sign in' id='sign-in' class='btn-group btn-group-"
 "justified colored-text'>"
@@ -2381,11 +2818,11 @@ msgstr ""
 "<input type='submit' value='Ingresar' id='sign-in' class='btn-group btn-"
 "group-justified colored-text'>"
 
-#: templates/sign/organization.html:129
+#: .\templates\sign\organization.html:129
 msgid "Welcome to the organizations version of Dr. Scratch"
 msgstr "Bienvenido a la versión de Dr. Scratch para organizaciones"
 
-#: templates/sign/organization.html:130
+#: .\templates\sign\organization.html:130
 msgid ""
 "Dr. Scratch for organizations is an analytical tool that can help you "
 "evaluate the Scratch projects of the students participating in your "
@@ -2397,11 +2834,11 @@ msgstr ""
 "iniciativas y te permite controlar su progresión en relación a sus "
 "habilidades de programación y pensamiento computacional."
 
-#: templates/sign/organization.html:189
+#: .\templates\sign\organization.html:189
 msgid "to join Dr. Scratch for organizations?"
 msgstr "disfrutar Dr. Scratch para organizaciones."
 
-#: templates/sign/organization.html:192
+#: .\templates\sign\organization.html:192
 msgid ""
 "Would you like to be one of the 10 first organizations testing this new "
 "feature? Just drop us a line at "
@@ -2409,177 +2846,766 @@ msgstr ""
 "Si quieres ser una de las 10 primeras organizaciones que prueban Dr. Scratch "
 "envíanos un email a "
 
-#: templates/sign/organization.html:192
+#: .\templates\sign\organization.html:192
 msgid ""
 " and we'll send you a hash key that will allow you to sign up in the web"
 msgstr " y te daremos una clave para poder registrarte en la web"
 
-#: templates/sign/signup_error.html:13
+#: .\templates\sign\signup_error.html:13
 msgid "This name already exists. Choose another, please."
 msgstr "Ese nombre ya existe. Elige otro, por favor."
 
-#: templates/sign/signup_error.html:16
+#: .\templates\sign\signup_error.html:16
 msgid "This email already exists. Choose another, please."
 msgstr "Ese email ya existe. Elige otro, por favor."
 
-#: templates/sign/signup_error.html:19
+#: .\templates\sign\signup_error.html:19
 msgid "This hash doesn't exist."
 msgstr "Esa clave no existe."
 
-#: templates/sign/signup_error.html:22
+#: .\templates\sign\signup_error.html:22
 msgid "You must to complete all fields."
 msgstr "Debes completar todos los campos correctamente."
 
-#: templates/statistics/statistics.html:65
+#: .\templates\statistics\statistics.html:65
 msgid "Scores of 2015"
 msgstr ""
 
-#: templates/statistics/statistics.html:92
+#: .\templates\statistics\statistics.html:92
 msgid "Number of projects analyzed in 2015"
 msgstr ""
 
-#: templates/statistics/statistics.html:100
+#: .\templates\statistics\statistics.html:100
 msgid " projects"
 msgstr " proyectos"
 
-#: templates/statistics/statistics.html:109
+#: .\templates\statistics\statistics.html:109
 msgid "Total projects"
 msgstr "Projectos totales"
 
-#: templates/statistics/statistics.html:123
+#: .\templates\statistics\statistics.html:123
 msgid "Percent levels"
 msgstr "Porcentaje de niveles"
 
-#: templates/statistics/statistics.html:142
+#: .\templates\statistics\statistics.html:142
 msgid "Level"
 msgstr "Nivel"
 
-#: templates/statistics/statistics.html:145
-#: templates/upload/dashboard-unregistered.html:92
+#: .\templates\statistics\statistics.html:145
+#: .\templates\upload\dashboard-unregistered.html:92
 msgid "Basic"
 msgstr "Básico"
 
-#: templates/statistics/statistics.html:148
+#: .\templates\statistics\statistics.html:148
 msgid "Development"
 msgstr "Medio"
 
-#: templates/statistics/statistics.html:151
-#: templates/upload/dashboard-unregistered.html:88
+#: .\templates\statistics\statistics.html:151
+#: .\templates\upload\dashboard-unregistered.html:88
 msgid "Master"
 msgstr "Avanzado"
 
-#: templates/statistics/statistics.html:164
-#: templates/statistics/statistics.html:171
+#: .\templates\statistics\statistics.html:164
+#: .\templates\statistics\statistics.html:171
 msgid "Average rate by code smell"
 msgstr "Puntuación media por mal hábito de programación"
 
-#: templates/statistics/statistics.html:194
+#: .\templates\statistics\statistics.html:194
 msgid "Code smell"
 msgstr "Malos hábitos"
 
-#: templates/statistics/statistics.html:200
-#: templates/upload/dashboard-unregistered-master.html:240
-msgid "Duplicated scripts"
-msgstr "Programas duplicados"
-
-#: templates/statistics/statistics.html:206
-#: templates/upload/dashboard-unregistered-developing.html:206
-#: templates/upload/dashboard-unregistered-master.html:242
+#: .\templates\statistics\statistics.html:206
+#: .\templates\tournaments\participant\results.html:364
+#: .\templates\tournaments\participant\results.html:416
+#: .\templates\upload\dashboard-unregistered-developing.html:206
+#: .\templates\upload\dashboard-unregistered-master.html:242
 msgid "Sprite naming"
 msgstr "Nombres inadecuados"
 
-#: templates/statistics/statistics.html:221
-#: templates/statistics/statistics.html:228
+#: .\templates\statistics\statistics.html:221
+#: .\templates\statistics\statistics.html:228
 msgid "Average rate by programming skill"
 msgstr "Puntuación media por habilidad de programación."
 
-#: templates/statistics/statistics.html:251
+#: .\templates\statistics\statistics.html:251
 msgid "Programming skill"
 msgstr "Habilidad de programación"
 
-#: templates/statistics/statistics.html:266
-msgid "Data representation"
-msgstr "Representación de los datos"
-
-#: templates/upload/dashboard-organization.html:122
-msgid "You can download your results. You do click in the following button:"
-msgstr "Puedes descargar tus resultados. Haz click en el siguiente botón:"
-
-#: templates/upload/dashboard-organization.html:125
-msgid "Download .csv file"
-msgstr "Descargar el fichero .csv "
-
-#: templates/upload/dashboard-organization.html:132
-msgid "Or...you can analyze another file with more projects:"
-msgstr "O... analiza otro fichero con más proyectos:"
-
-#: templates/upload/dashboard-organization.html:135
-msgid "Analyze again!"
-msgstr "¡Analizar otra vez!"
-
-#: templates/upload/dashboard-organization.html:163
-msgid "Error! Please choose a .csv file"
+#: .\templates\tournaments\creator\admin\admin_creator.html:60
+#: .\templates\tournaments\creator\admin\challenges\challengesList.html:60
+#: .\templates\tournaments\creator\admin\challenges\editChallenge.html:60
+#: .\templates\tournaments\creator\admin\teams\newEditTeam.html:60
+#: .\templates\tournaments\creator\admin\teams\teamsList.html:60
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:60
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:68
+#: .\templates\tournaments\creator\main_creator.html:61
+#: .\templates\tournaments\creator\progress\teamsProgress.html:67
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:67
+#: .\templates\tournaments\main_tournaments.html:60
+#: .\templates\tournaments\participant\results.html:176
+#: .\templates\tournaments\participant\teamsPart.html:60
+#: .\templates\tournaments\participant\tournamentsPart.html:67
+msgid "Cambiar contraseña"
 msgstr ""
-"¡Error! Por favor elige un fichero .csv/reset_password_confirm/MQ-444-"
-"d881b68117aba8cbeb9a/"
 
-#: templates/upload/dashboard-organization.html:245
+#: .\templates\tournaments\creator\admin\admin_creator.html:107
+#: .\templates\tournaments\creator\admin\challenges\challengesList.html:107
+#: .\templates\tournaments\creator\admin\challenges\editChallenge.html:107
+#: .\templates\tournaments\creator\admin\teams\newEditTeam.html:107
+#: .\templates\tournaments\creator\admin\teams\teamsList.html:107
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:107
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:115
+#: .\templates\tournaments\creator\main_creator.html:108
+#: .\templates\tournaments\creator\progress\teamsProgress.html:114
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:114
+#: .\templates\tournaments\main_tournaments.html:107
+#: .\templates\tournaments\participant\results.html:225
+#: .\templates\tournaments\participant\teamsPart.html:107
+#: .\templates\tournaments\participant\tournamentsPart.html:114
+msgid "Invalid username / password"
+msgstr "Usuario / contraseña inválidos"
+
+#: .\templates\tournaments\creator\admin\admin_creator.html:147
+#: .\templates\tournaments\creator\admin\challenges\challengesList.html:148
+#: .\templates\tournaments\creator\admin\challenges\editChallenge.html:148
+#: .\templates\tournaments\creator\admin\teams\newEditTeam.html:148
+#: .\templates\tournaments\creator\admin\teams\teamsList.html:148
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:148
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:156
+#: .\templates\tournaments\creator\main_creator.html:148
+#: .\templates\tournaments\creator\progress\teamsProgress.html:155
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:153
+#: .\templates\tournaments\participant\results.html:277
+#: .\templates\tournaments\participant\teamsPart.html:148
+#: .\templates\tournaments\participant\tournamentsPart.html:155
+msgid "« Back"
+msgstr "« Volver"
+
+#: .\templates\tournaments\creator\admin\admin_creator.html:158
+msgid "Tournaments administration for creators."
+msgstr "Administración de torneos para creadores."
+
+#: .\templates\tournaments\creator\admin\admin_creator.html:159
+#: .\templates\tournaments\creator\admin\admin_creator.html:167
+#: .\templates\tournaments\creator\admin\admin_creator.html:175
+msgid "Go »"
+msgstr "Ir »"
+
+#: .\templates\tournaments\creator\admin\admin_creator.html:165
+#: .\templates\tournaments\participant\teamsPart.html:187
+msgid "Teams"
+msgstr "Equipos"
+
+#: .\templates\tournaments\creator\admin\admin_creator.html:166
+msgid "Teams administration for creators."
+msgstr "Administración de equipos para creadores."
+
+#: .\templates\tournaments\creator\admin\admin_creator.html:173
+#: .\templates\tournaments\participant\tournamentsPart.html:197
+msgid "Challenges"
+msgstr "Retos"
+
+#: .\templates\tournaments\creator\admin\admin_creator.html:174
+msgid "Challenges administration for creators."
+msgstr "Administración de retos para creadores."
+
+#: .\templates\tournaments\creator\admin\challenges\challengesList.html:162
+#: .\templates\tournaments\creator\admin\teams\teamsList.html:162
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:170
+#: .\templates\tournaments\creator\progress\teamsProgress.html:166
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:167
+#: .\templates\tournaments\main_tournaments.html:152
+#: .\templates\tournaments\participant\teamsPart.html:162
+#: .\templates\tournaments\participant\tournamentsPart.html:166
+msgid "Error!"
+msgstr "Error!"
+
+#: .\templates\tournaments\creator\admin\challenges\challengesList.html:167
+#: .\templates\tournaments\creator\admin\teams\teamsList.html:167
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:175
+#: .\templates\tournaments\creator\progress\teamsProgress.html:171
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:172
+#: .\templates\tournaments\main_tournaments.html:157
+#: .\templates\tournaments\participant\teamsPart.html:167
+#: .\templates\tournaments\participant\tournamentsPart.html:171
+msgid "Warning!"
+msgstr "Aviso!"
+
+#: .\templates\tournaments\creator\admin\challenges\challengesList.html:172
+#: .\templates\tournaments\creator\admin\teams\teamsList.html:172
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:180
+#: .\templates\tournaments\creator\progress\teamsProgress.html:176
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:177
+#: .\templates\tournaments\main_tournaments.html:162
+#: .\templates\tournaments\participant\teamsPart.html:172
+#: .\templates\tournaments\participant\tournamentsPart.html:176
+msgid "Info:"
+msgstr "Info:"
+
+#: .\templates\tournaments\creator\admin\challenges\challengesList.html:177
+#: .\templates\tournaments\creator\admin\teams\teamsList.html:177
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:185
+#: .\templates\tournaments\creator\progress\teamsProgress.html:181
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:182
+#: .\templates\tournaments\main_tournaments.html:167
+#: .\templates\tournaments\participant\teamsPart.html:177
+#: .\templates\tournaments\participant\tournamentsPart.html:181
+msgid "Success!"
+msgstr "Éxito!"
+
+#: .\templates\tournaments\creator\admin\challenges\challengesList.html:182
+msgid "Challenges created by"
+msgstr "Retos creados por"
+
+#: .\templates\tournaments\creator\admin\challenges\challengesList.html:196
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:204
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:200
+msgid "Detail "
+msgstr "Detalle "
+
+#: .\templates\tournaments\creator\admin\challenges\challengesList.html:197
+#: .\templates\tournaments\creator\admin\teams\teamsList.html:197
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:205
+msgid "Edit "
+msgstr "Editar "
+
+#: .\templates\tournaments\creator\admin\challenges\challengesList.html:198
+#: .\templates\tournaments\creator\admin\teams\teamsList.html:198
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:206
+msgid "Delete "
+msgstr "Borrar "
+
+#: .\templates\tournaments\creator\admin\challenges\challengesList.html:210
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:244
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:213
+msgid "Detail"
+msgstr "Detalle"
+
+#: .\templates\tournaments\creator\admin\challenges\challengesList.html:212
+msgid "Detail challenge:"
+msgstr "Detalle del reto:"
+
+#: .\templates\tournaments\creator\admin\challenges\challengesList.html:219
+#: .\templates\tournaments\creator\progress\teamsProgress.html:242
+#: .\templates\tournaments\participant\scores.html:5
+#: .\templates\tournaments\participant\tournamentsPart.html:242
+#: .\templates\upload\dashboard-unregistered-basic.html:189
+#: .\templates\upload\dashboard-unregistered-developing.html:229
+#: .\templates\upload\dashboard-unregistered-master.html:290
+#: .\templates\upload\dashboard-unregistered.html:114
+msgid "Concept"
+msgstr "Concepto"
+
+#: .\templates\tournaments\creator\admin\challenges\challengesList.html:220
+msgid "Value"
+msgstr "Valor"
+
+#: .\templates\tournaments\creator\admin\challenges\challengesList.html:338
+#: .\templates\tournaments\creator\admin\challenges\challengesList.html:571
+#: .\templates\tournaments\creator\admin\challenges\editChallenge.html:206
+#: .\templates\tournaments\creator\progress\teamsProgress.html:371
+#: .\templates\tournaments\participant\scores.html:207
+#: .\templates\tournaments\participant\scores.html:209
+#: .\templates\tournaments\participant\tournamentsPart.html:371
+msgid "User Interactivity"
+msgstr "Interactividad del usuario"
+
+#: .\templates\tournaments\creator\admin\challenges\challengesList.html:491
+#: .\templates\tournaments\creator\admin\teams\teamsList.html:210
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:218
+msgid "Delete"
+msgstr "Borrar"
+
+#: .\templates\tournaments\creator\admin\challenges\challengesList.html:493
+msgid "Delete challenge:"
+msgstr "Borrar reto:"
+
+#: .\templates\tournaments\creator\admin\challenges\challengesList.html:497
+msgid "Are you sure to delete the challenge?"
+msgstr "¿Está seguro de que desea borrar el reto?"
+
+#: .\templates\tournaments\creator\admin\challenges\challengesList.html:501
+#: .\templates\tournaments\creator\admin\teams\teamsList.html:220
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:228
+msgid "Confirm"
+msgstr "Confirmar"
+
+#: .\templates\tournaments\creator\admin\challenges\challengesList.html:535
+msgid "didn´t include any challenge yet"
+msgstr "no ha incluido ningún reto todavía"
+
+#: .\templates\tournaments\creator\admin\challenges\challengesList.html:538
+#: .\templates\tournaments\creator\admin\challenges\challengesList.html:549
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:281
+msgid "New Challenge"
+msgstr "Nuevo Reto"
+
+#: .\templates\tournaments\creator\admin\challenges\challengesList.html:551
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:283
+msgid "Create a new challenge"
+msgstr "Crear nuevo reto"
+
+#: .\templates\tournaments\creator\admin\challenges\challengesList.html:559
+#: .\templates\tournaments\creator\admin\challenges\editChallenge.html:194
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:291
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:259
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:228
+msgid "Parallelism:"
+msgstr "Paralelismo:"
+
+#: .\templates\tournaments\creator\admin\challenges\challengesList.html:586
+#: .\templates\tournaments\creator\admin\teams\newEditTeam.html:236
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:266
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:318
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:356
+msgid "Add"
+msgstr "Añadir"
+
+#: .\templates\tournaments\creator\admin\challenges\editChallenge.html:186
+#: .\templates\tournaments\creator\admin\challenges\editChallenge.html:221
+#: .\templates\tournaments\creator\admin\teams\newEditTeam.html:188
+#: .\templates\tournaments\creator\admin\teams\newEditTeam.html:212
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:188
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:231
+msgid "Edit"
+msgstr "Editar"
+
+#: .\templates\tournaments\creator\admin\challenges\editChallenge.html:188
+msgid "Edit challenge:"
+msgstr "Editar reto:"
+
+#: .\templates\tournaments\creator\admin\teams\newEditTeam.html:190
+msgid "Edit team:"
+msgstr "Editar equipo:"
+
+#: .\templates\tournaments\creator\admin\teams\newEditTeam.html:195
+#: .\templates\tournaments\creator\admin\teams\newEditTeam.html:227
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:347
+msgid "You can create a team without participants or include from 1 to"
+msgstr "Puedes crear un equipo sin participantes o incluir desde 1 hasta"
+
+#: .\templates\tournaments\creator\admin\teams\newEditTeam.html:195
+#: .\templates\tournaments\creator\admin\teams\newEditTeam.html:227
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:347
+msgid "participants. Included participants cannot be repeted."
+msgstr "participantes. Los participantes incluidos no pueden estar repetidos."
+
+#: .\templates\tournaments\creator\admin\teams\newEditTeam.html:198
+#: .\templates\tournaments\creator\admin\teams\newEditTeam.html:206
+#: .\templates\tournaments\creator\admin\teams\newEditTeam.html:230
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:350
+msgid "Select participant"
+msgstr "Seleccionar participante"
+
+#: .\templates\tournaments\creator\admin\teams\newEditTeam.html:220
+#: .\templates\tournaments\creator\admin\teams\teamsList.html:286
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:337
+msgid "New Team"
+msgstr "Nuevo Equipo"
+
+#: .\templates\tournaments\creator\admin\teams\newEditTeam.html:222
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:339
+msgid "Create a new team"
+msgstr "Crear nuevo equipo"
+
+#: .\templates\tournaments\creator\admin\teams\teamsList.html:182
+msgid "Teams created by"
+msgstr "Equipos creados por"
+
+#: .\templates\tournaments\creator\admin\teams\teamsList.html:196
+msgid "View Participants "
+msgstr "Ver participantes"
+
+#: .\templates\tournaments\creator\admin\teams\teamsList.html:212
+msgid "Delete team:"
+msgstr "Borrar equipo:"
+
+#: .\templates\tournaments\creator\admin\teams\teamsList.html:216
+msgid "Are you sure to delete the team?"
+msgstr "¿Está seguro de que desea borrar el equipo?"
+
+#: .\templates\tournaments\creator\admin\teams\teamsList.html:236
+msgid "Participants"
+msgstr "Participantes"
+
+#: .\templates\tournaments\creator\admin\teams\teamsList.html:238
+msgid "Team participants:"
+msgstr "Participantes del equipo"
+
+#: .\templates\tournaments\creator\admin\teams\teamsList.html:249
+msgid "The team has not participants."
+msgstr "El equipo no tiene participantes."
+
+#: .\templates\tournaments\creator\admin\teams\teamsList.html:250
+msgid "Edit the team to add new participants."
+msgstr "Edita el equipo para añadir nuevos participantes."
+
+#: .\templates\tournaments\creator\admin\teams\teamsList.html:283
+msgid "didn´t include any team yet"
+msgstr "no ha incluido ningún equipo todavía"
+
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:190
+msgid "Edit tournament:"
+msgstr "Editar torneo"
+
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:195
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:246
+msgid "You can create a tournament without challenges or include from 1 to"
+msgstr "Puedes crear un torneo sin retos o incluir desde 1 hasta"
+
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:195
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:246
+msgid "challenges. Included challenges cannot be repeted."
+msgstr "retos. Los retos incluidos no pueden estar repetidos."
+
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:198
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:206
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:249
+msgid "Select challenge"
+msgstr "Seleccionar reto"
+
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:212
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:255
+msgid "New Challenge "
+msgstr "Nuevo Reto "
+
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:213
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:256
+msgid "You can create a tournament without teams or include from 1 to"
+msgstr "Puedes crear un torneo sin equipos o incluir desde 1 hasta"
+
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:213
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:256
+msgid "teams. Included teams cannot be repeted."
+msgstr "equipos. Los equipos incluidos no pueden estar repetidos."
+
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:216
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:224
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:259
+msgid "Select team"
+msgstr "Seleccionar equipo"
+
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:230
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:265
+msgid "New Team "
+msgstr "Nuevo Equipo "
+
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:239
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:327
+msgid "New Tournament"
+msgstr "Nuevo Torneo"
+
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:241
+msgid "Create a new tournament"
+msgstr "Crear un nuevo torneo"
+
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:295
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:260
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:229
+msgid "Logic:"
+msgstr "Lógica:"
+
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:299
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:261
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:230
+msgid "Flow Control:"
+msgstr "Control de flujo:"
+
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:303
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:262
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:231
+msgid "User Interactivity:"
+msgstr "Interactividad del usuario:"
+
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:307
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:263
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:232
+msgid "Data Representation:"
+msgstr "Representación de los datos:"
+
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:311
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:264
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:233
+msgid "Abstraction:"
+msgstr "Abstracción:"
+
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:315
+msgid "Syncronization:"
+msgstr "Sincronización:"
+
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:190
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:187
+msgid "Tournaments created by"
+msgstr "Torneos creados por"
+
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:220
+msgid "Delete tournament:"
+msgstr "Borrar torneo"
+
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:224
+msgid "Are you sure to delete the tournament?"
+msgstr "¿Está seguro de que desea borrar el torneo?"
+
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:246
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:215
+msgid "Tournament detail:"
+msgstr "Detalle del torneo:"
+
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:251
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:220
+msgid "Tournament challenges:"
+msgstr "Retos del torneo:"
+
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:265
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:234
+msgid "Synchronization:"
+msgstr "Sincronización:"
+
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:271
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:240
+msgid "The tournament has not challenges."
+msgstr "El torneo no tiene retos."
+
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:272
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:241
+msgid "Edit the tournament to add new challenges."
+msgstr "Edita el torneo para añadir nuevos retos."
+
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:275
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:244
+msgid "Tournament teams:"
+msgstr "Equipos del torneo:"
+
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:292
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:261
+msgid "Edit the tournament to add new teams."
+msgstr "Edita el torneo para añadir nuevos equipos."
+
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:324
+msgid "didn´t include any tournament yet"
+msgstr "no ha incluido ningún torneo todavía"
+
+#: .\templates\tournaments\creator\main_creator.html:167
+msgid "Tournaments Administration"
+msgstr "Administración de Torneos"
+
+#: .\templates\tournaments\creator\main_creator.html:168
+msgid ""
+"In the Tournaments Administration section you can create new tournaments, "
+"teams and challenges and manage them once created."
+msgstr ""
+"En la sección de Administración de Torneos puedes crear nuevos torneos, "
+"equipos y retos y administrarlos una vez creados."
+
+#: .\templates\tournaments\creator\main_creator.html:169
+#: .\templates\tournaments\creator\main_creator.html:177
+#: .\templates\tournaments\creator\main_creator.html:185
+#: .\templates\tournaments\creator\main_creator.html:193
+msgid "Access"
+msgstr "Acceder"
+
+#: .\templates\tournaments\creator\main_creator.html:175
+msgid "Manual Validation"
+msgstr "Validación Manual"
+
+#: .\templates\tournaments\creator\main_creator.html:176
+msgid ""
+"In the Manual Validation section you can validate manually the Scratch "
+"projects uploaded by the participants."
+msgstr ""
+"En la sección de validación manual puedes validar manualmente los proyectos "
+"Scratch subidos por los participantes de los torneos."
+
+#: .\templates\tournaments\creator\main_creator.html:183
+msgid "Tournaments progress"
+msgstr "Progreso de los torneos"
+
+#: .\templates\tournaments\creator\main_creator.html:184
+msgid ""
+"The Tournaments progress section provides information about tournaments "
+"already started."
+msgstr ""
+"La sección de progreso de los torneos proporciona información acerca de los "
+"torneos que ya han comenzado."
+
+#: .\templates\tournaments\creator\main_creator.html:191
+msgid "Invite new participants"
+msgstr "Invitar a nuevos participantes"
+
+#: .\templates\tournaments\creator\main_creator.html:192
+msgid ""
+"In the Invite new participants section you can send an email to include new "
+"participants to Dr. Scratch."
+msgstr ""
+"En la sección Invitar a nuevos participantes puedes enviar un email para "
+"incluir nuevos participantes a Dr. Scratch"
+
+#: .\templates\tournaments\creator\progress\teamsProgress.html:187
+msgid "Tournaments Progress"
+msgstr "Progreso de los torneos"
+
+#: .\templates\tournaments\creator\progress\teamsProgress.html:191
+msgid "Tournament completed."
+msgstr "Torneo completado."
+
+#: .\templates\tournaments\creator\progress\teamsProgress.html:215
+#: .\templates\tournaments\participant\tournamentsPart.html:215
+msgid "« Previous"
+msgstr "« Anterior"
+
+#: .\templates\tournaments\creator\progress\teamsProgress.html:216
+#: .\templates\tournaments\participant\tournamentsPart.html:216
+msgid "Next »"
+msgstr "Siguiente »"
+
+#: .\templates\tournaments\creator\progress\teamsProgress.html:243
+#: .\templates\tournaments\participant\scores.html:6
+#: .\templates\tournaments\participant\tournamentsPart.html:243
+msgid "Required Value"
+msgstr "Valor Requerido"
+
+#: .\templates\tournaments\creator\progress\teamsProgress.html:244
+#: .\templates\tournaments\participant\scores.html:7
+#: .\templates\tournaments\participant\tournamentsPart.html:244
+msgid "Highest Score"
+msgstr "Puntuación más alta"
+
+#: .\templates\tournaments\creator\progress\teamsProgress.html:537
+#: .\templates\tournaments\participant\tournamentsPart.html:537
+msgid "The tournament has not challenges yet"
+msgstr "El torneo no tiene retos todavía"
+
+#: .\templates\tournaments\creator\progress\teamsProgress.html:570
+#: .\templates\tournaments\participant\tournamentsPart.html:610
+msgid "The team is not included in any tournament yet"
+msgstr "El equipo no está incluido en ningún torneo todavía"
+
+#: .\templates\tournaments\creator\progress\teamsProgress.html:637
+#: .\templates\tournaments\participant\tournamentsPart.html:677
+#: .\templates\upload\dashboard-organization.html:245
 msgid "<img class='framed' src='../../static/app/images/url-en.png' />"
 msgstr "<img class='framed' src='../../static/app/images/url-es.png' />"
 
-#: templates/upload/dashboard-organization.html:270
+#: .\templates\tournaments\creator\progress\teamsProgress.html:661
+#: .\templates\tournaments\participant\tournamentsPart.html:701
+#: .\templates\upload\dashboard-organization.html:270
 msgid "<img class='framed' src='../../static/app/images/project-en.png' />"
 msgstr "<img class='framed' src='../../static/app/images/project-es.png' />"
 
-#: templates/upload/dashboard-unregistered-basic.html:63
-#: templates/upload/dashboard-unregistered-developing.html:58
-#: templates/upload/dashboard-unregistered-master.html:77
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:201
+msgid "Progress "
+msgstr "Progreso "
+
+#: .\templates\tournaments\main_tournaments.html:173
+msgid "Welcome to Dr. Scratch Tournaments"
+msgstr "Bienvenido a los torneos de Dr. Scratch "
+
+#: .\templates\tournaments\main_tournaments.html:175
+msgid ""
+"Dr. Scratch tournaments allows to registered organizations create and manage "
+"tournaments for students to take part in them. Tournaments can be evaluated "
+"manually or automatically."
+msgstr ""
+"Los torneos de Dr. Scratch permiten a las organizaciones registradas crear y "
+"administrar torneos para que los estudiantes participen en ellos. Los "
+"torneos podrán ser evaluados de manera manual o automática."
+
+#: .\templates\tournaments\participant\results.html:67
+#: .\templates\tournaments\participant\results.html:104
+#: .\templates\upload\dashboard-unregistered-basic.html:63
+#: .\templates\upload\dashboard-unregistered-developing.html:58
+#: .\templates\upload\dashboard-unregistered-master.html:77
 msgid "Score"
 msgstr "Puntuación"
 
-#: templates/upload/dashboard-unregistered-basic.html:64
-#: templates/upload/dashboard-unregistered-developing.html:59
-#: templates/upload/dashboard-unregistered-master.html:78
+#: .\templates\tournaments\participant\results.html:68
+#: .\templates\tournaments\participant\results.html:105
+#: .\templates\upload\dashboard-unregistered-basic.html:64
+#: .\templates\upload\dashboard-unregistered-developing.html:59
+#: .\templates\upload\dashboard-unregistered-master.html:78
 msgid "This section shows the total score."
 msgstr "Esta sección muestra la puntuación total."
 
-#: templates/upload/dashboard-unregistered-basic.html:68
-#: templates/upload/dashboard-unregistered-developing.html:63
-#: templates/upload/dashboard-unregistered-master.html:82
+#: .\templates\tournaments\participant\results.html:72
+#: .\templates\tournaments\participant\results.html:109
+#: .\templates\upload\dashboard-unregistered-basic.html:68
+#: .\templates\upload\dashboard-unregistered-developing.html:63
+#: .\templates\upload\dashboard-unregistered-master.html:82
 msgid "Improve the score"
 msgstr "Mejora tu puntuación"
 
-#: templates/upload/dashboard-unregistered-basic.html:69
-#: templates/upload/dashboard-unregistered-developing.html:64
-#: templates/upload/dashboard-unregistered-master.html:83
+#: .\templates\tournaments\participant\results.html:73
+#: .\templates\tournaments\participant\results.html:110
+#: .\templates\upload\dashboard-unregistered-basic.html:69
+#: .\templates\upload\dashboard-unregistered-developing.html:64
+#: .\templates\upload\dashboard-unregistered-master.html:83
 msgid ""
 "You do not like the score that you got? Improve it following our advice."
 msgstr ""
 "¿No te gusta la puntuación que has obtenido? ¡Sigue nuestros consejos para "
 "mejorarla!"
 
-#: templates/upload/dashboard-unregistered-basic.html:73
-#: templates/upload/dashboard-unregistered-developing.html:73
-#: templates/upload/dashboard-unregistered-master.html:92
+#: .\templates\tournaments\participant\results.html:77
+#: .\templates\upload\dashboard-unregistered-developing.html:68
+#: .\templates\upload\dashboard-unregistered-master.html:87
+msgid "Bad habits in programming"
+msgstr "Malos hábitos en programación"
+
+#: .\templates\tournaments\participant\results.html:78
+#: .\templates\upload\dashboard-unregistered-developing.html:69
+#: .\templates\upload\dashboard-unregistered-master.html:88
+msgid ""
+"If you correct your bad habits in programming, you will avoid problems in "
+"the future."
+msgstr ""
+"Si corriges ahora tus malos hábitos en programación, evitarás problemasen el "
+"futuro."
+
+#: .\templates\tournaments\participant\results.html:82
+#: .\templates\tournaments\participant\results.html:114
+#: .\templates\upload\dashboard-unregistered-basic.html:73
+#: .\templates\upload\dashboard-unregistered-developing.html:73
+#: .\templates\upload\dashboard-unregistered-master.html:92
 msgid "Score in detail"
 msgstr "Puntuación en detalle:"
 
-#: templates/upload/dashboard-unregistered-basic.html:74
-#: templates/upload/dashboard-unregistered-developing.html:74
-#: templates/upload/dashboard-unregistered-master.html:93
+#: .\templates\tournaments\participant\results.html:83
+#: .\templates\tournaments\participant\results.html:115
+#: .\templates\upload\dashboard-unregistered-basic.html:74
+#: .\templates\upload\dashboard-unregistered-developing.html:74
+#: .\templates\upload\dashboard-unregistered-master.html:93
 msgid "Here we show the score in each programming skill."
 msgstr ""
 "Ésta es la puntuación de cada habilidad de programación, evaluada de 0 a 3."
 
-#: templates/upload/dashboard-unregistered-basic.html:116
-#: templates/upload/dashboard-unregistered-developing.html:125
-#: templates/upload/dashboard-unregistered-master.html:164
+#: .\templates\tournaments\participant\results.html:271
+msgid "You complete the challenge."
+msgstr "Has completado el reto."
+
+#: .\templates\tournaments\participant\results.html:272
+#: .\templates\tournaments\participant\results.html:275
+msgid "Back to improve your highest score."
+msgstr "Vuelva para mejorar la puntuación más alta."
+
+#: .\templates\tournaments\participant\results.html:274
+msgid "You didn't complete the challenge yet."
+msgstr "No has completado el reto todavía."
+
+#: .\templates\tournaments\participant\results.html:278
+msgid "Learn how"
+msgstr "Aprende como"
+
+#: .\templates\tournaments\participant\results.html:292
+#: .\templates\upload\dashboard-unregistered-basic.html:116
+#: .\templates\upload\dashboard-unregistered-developing.html:125
+#: .\templates\upload\dashboard-unregistered-master.html:164
 msgid "Score:"
 msgstr "Puntuación:"
 
-#: templates/upload/dashboard-unregistered-basic.html:117
-#: templates/upload/dashboard-unregistered-developing.html:126
-#: templates/upload/dashboard-unregistered-master.html:165
+#: .\templates\tournaments\participant\results.html:293
+#: .\templates\upload\dashboard-unregistered-basic.html:117
+#: .\templates\upload\dashboard-unregistered-developing.html:126
+#: .\templates\upload\dashboard-unregistered-master.html:165
 #, python-format
 msgid ""
 " I have just obtained %(points)s points analyzing my project in Dr. Scratch! "
@@ -2588,40 +3614,172 @@ msgstr ""
 "He conseguido %(points)s puntos analizando mi proyecto en Dr. Scratch!¡A ver "
 "si lo superas! @DrScratchTool"
 
-#: templates/upload/dashboard-unregistered-basic.html:122
+#: .\templates\tournaments\participant\results.html:298
+#: .\templates\upload\dashboard-unregistered-master.html:170
+msgid ""
+"<h3 class='text-left dark-text'>Your level is...  <strong>MASTER! </strong></"
+"h3>"
+msgstr ""
+"<h3 class='text-left dark-text'>Tu nivel es <strong>ALTO!</strong></h3>"
+
+#: .\templates\tournaments\participant\results.html:299
+#: .\templates\upload\dashboard-unregistered-master.html:171
+msgid "You're the master of the universe!!! "
+msgstr "¡¡¡Eres el master del universo!!!"
+
+#: .\templates\tournaments\participant\results.html:301
+#: .\templates\upload\dashboard-unregistered-developing.html:131
+msgid ""
+"<h3 class='text-left dark-text'>Your level is... <br></br> "
+"<strong>DEVELOPING! </strong></h3>"
+msgstr ""
+"<h3 class='text-left dark-text'>Tu nivel es...<strong>MEDIO </strong></h3>"
+
+#: .\templates\tournaments\participant\results.html:302
+#: .\templates\upload\dashboard-unregistered-developing.html:132
+msgid "You're doing a great job.<br> Keep it up!!!"
+msgstr "Estás haciendo un gran trabajo. ¡¡¡Sigue así!!!"
+
+#: .\templates\tournaments\participant\results.html:304
+#: .\templates\upload\dashboard-unregistered-basic.html:122
 msgid ""
 "<h3 class='text-left dark-text'>Your level is...  <strong>BASIC! </strong></"
 "h3>"
 msgstr ""
 "<h3 class='text-left dark-text'>Tu nivel es...<strong>BÁSICO </strong></h3>"
 
-#: templates/upload/dashboard-unregistered-basic.html:123
+#: .\templates\tournaments\participant\results.html:305
+#: .\templates\upload\dashboard-unregistered-basic.html:123
 msgid "You're at the beginning of a <br>great adventure . . . Keep it up!"
 msgstr "Estás al principio de una gran aventura. . . <br>¡Continúa así!"
 
-#: templates/upload/dashboard-unregistered-basic.html:133
-#: templates/upload/dashboard-unregistered-developing.html:141
-#: templates/upload/dashboard-unregistered-master.html:184
+#: .\templates\tournaments\participant\results.html:316
+#: .\templates\upload\dashboard-unregistered-basic.html:133
+#: .\templates\upload\dashboard-unregistered-developing.html:141
+#: .\templates\upload\dashboard-unregistered-master.html:184
 msgid "Want to level up?"
 msgstr "¿Quieres subir de nivel?"
 
-#: templates/upload/dashboard-unregistered-basic.html:135
-#: templates/upload/dashboard-unregistered-developing.html:143
-#: templates/upload/dashboard-unregistered-master.html:186
+#: .\templates\tournaments\participant\results.html:318
+#: .\templates\upload\dashboard-unregistered-basic.html:135
+#: .\templates\upload\dashboard-unregistered-developing.html:143
+#: .\templates\upload\dashboard-unregistered-master.html:186
 msgid "Come back to your Scratch project."
 msgstr "Vuelve a tu proyecto Scratch"
 
-#: templates/upload/dashboard-unregistered-basic.html:148
-#: templates/upload/dashboard-unregistered-basic.html:157
-#: templates/upload/dashboard-unregistered-basic.html:203
-#: templates/upload/dashboard-unregistered-developing.html:155
-#: templates/upload/dashboard-unregistered-developing.html:165
-#: templates/upload/dashboard-unregistered-developing.html:173
-#: templates/upload/dashboard-unregistered-developing.html:243
-#: templates/upload/dashboard-unregistered-master.html:198
-#: templates/upload/dashboard-unregistered-master.html:208
-#: templates/upload/dashboard-unregistered-master.html:218
-#: templates/upload/dashboard-unregistered-master.html:304
+#: .\templates\tournaments\participant\results.html:331
+#: .\templates\tournaments\participant\results.html:340
+#, python-format
+msgid ""
+"\n"
+"\t\t                                        %(key)s\n"
+"\t\t                                        "
+msgstr ""
+
+#: .\templates\tournaments\participant\results.html:359
+#: .\templates\tournaments\participant\results.html:400
+#: .\templates\upload\dashboard-unregistered-developing.html:190
+#: .\templates\upload\dashboard-unregistered-master.html:237
+msgid "Details to fix:"
+msgstr "Detalles a corregir:"
+
+#: .\templates\tournaments\participant\results.html:362
+#: .\templates\upload\dashboard-unregistered-master.html:240
+msgid " duplicated scripts."
+msgstr "Programas Duplicados"
+
+#: .\templates\tournaments\participant\results.html:366
+#: .\templates\tournaments\participant\results.html:418
+#: .\templates\upload\dashboard-unregistered-developing.html:208
+#: .\templates\upload\dashboard-unregistered-master.html:244
+msgid " sprite naming."
+msgstr "nombres inadecuados."
+
+#: .\templates\tournaments\participant\results.html:372
+#: .\templates\upload\dashboard-unregistered-master.html:250
+msgid "Your project does not have dead code, good job!"
+msgstr "Tu proyecto no tiene código muerto, ¡Buen trabajo!"
+
+#: .\templates\tournaments\participant\results.html:374
+#: .\templates\upload\dashboard-unregistered-master.html:252
+msgid "You have dead code in "
+msgstr "Tienes código no ejecutado en "
+
+#: .\templates\tournaments\participant\results.html:379
+#: .\templates\upload\dashboard-unregistered-master.html:257
+msgid " dead code."
+msgstr " código muerto."
+
+#: .\templates\tournaments\participant\results.html:381
+#: .\templates\tournaments\participant\results.html:403
+#: .\templates\upload\dashboard-unregistered-developing.html:193
+#: .\templates\upload\dashboard-unregistered-master.html:259
+msgid "Sprites attributes"
+msgstr "Atributos no inicializados correctamente"
+
+#: .\templates\tournaments\participant\results.html:385
+#: .\templates\tournaments\participant\results.html:407
+#: .\templates\upload\dashboard-unregistered-developing.html:197
+#: .\templates\upload\dashboard-unregistered-master.html:263
+msgid "Your project does not have uninitialized attributes, good job!"
+msgstr "Tu proyecto no tiene atributos sin inicializar,¡Buen trabajo!"
+
+#: .\templates\tournaments\participant\results.html:391
+#: .\templates\tournaments\participant\results.html:413
+#: .\templates\upload\dashboard-unregistered-developing.html:203
+#: .\templates\upload\dashboard-unregistered-master.html:269
+msgid " sprite attributes."
+msgstr "atributos no inicializados correctamente."
+
+#: .\templates\tournaments\participant\teamsPart.html:208
+msgid "is not included in any team yet"
+msgstr "no está incluido en ningún equipo todavía"
+
+#: .\templates\tournaments\participant\tournamentsPart.html:187
+msgid "Analyze your Scratch project to improve your highest score"
+msgstr "Analiza tus proyectos de Scratch para mejorar tu puntuación más alta"
+
+#: .\templates\tournaments\participant\tournamentsPart.html:189
+msgid "You complete the tournament."
+msgstr "Has completado el torneo."
+
+#: .\templates\tournaments\participant\tournamentsPart.html:190
+msgid "You can still improve your highest score in every challenge."
+msgstr "Todavía puedes mejorar tu puntuación más alta en cada reto."
+
+#: .\templates\upload\dashboard-organization.html:122
+msgid "You can download your results. You do click in the following button:"
+msgstr "Puedes descargar tus resultados. Haz click en el siguiente botón:"
+
+#: .\templates\upload\dashboard-organization.html:125
+msgid "Download .csv file"
+msgstr "Descargar el fichero .csv "
+
+#: .\templates\upload\dashboard-organization.html:132
+msgid "Or...you can analyze another file with more projects:"
+msgstr "O... analiza otro fichero con más proyectos:"
+
+#: .\templates\upload\dashboard-organization.html:135
+msgid "Analyze again!"
+msgstr "¡Analizar otra vez!"
+
+#: .\templates\upload\dashboard-organization.html:163
+msgid "Error! Please choose a .csv file"
+msgstr ""
+"¡Error! Por favor elige un fichero .csv/reset_password_confirm/MQ-444-"
+"d881b68117aba8cbeb9a/"
+
+#: .\templates\upload\dashboard-unregistered-basic.html:148
+#: .\templates\upload\dashboard-unregistered-basic.html:157
+#: .\templates\upload\dashboard-unregistered-basic.html:203
+#: .\templates\upload\dashboard-unregistered-developing.html:155
+#: .\templates\upload\dashboard-unregistered-developing.html:165
+#: .\templates\upload\dashboard-unregistered-developing.html:173
+#: .\templates\upload\dashboard-unregistered-developing.html:243
+#: .\templates\upload\dashboard-unregistered-master.html:198
+#: .\templates\upload\dashboard-unregistered-master.html:208
+#: .\templates\upload\dashboard-unregistered-master.html:218
+#: .\templates\upload\dashboard-unregistered-master.html:304
 #, python-format
 msgid ""
 "\n"
@@ -2629,134 +3787,44 @@ msgid ""
 "                                        "
 msgstr ""
 
-#: templates/upload/dashboard-unregistered-basic.html:189
-#: templates/upload/dashboard-unregistered-developing.html:229
-#: templates/upload/dashboard-unregistered-master.html:290
-#: templates/upload/dashboard-unregistered.html:114
-msgid "Concept"
-msgstr "Concepto"
-
-#: templates/upload/dashboard-unregistered-basic.html:190
-#: templates/upload/dashboard-unregistered-developing.html:230
-#: templates/upload/dashboard-unregistered-master.html:291
-#: templates/upload/dashboard-unregistered.html:115
+#: .\templates\upload\dashboard-unregistered-basic.html:190
+#: .\templates\upload\dashboard-unregistered-developing.html:230
+#: .\templates\upload\dashboard-unregistered-master.html:291
+#: .\templates\upload\dashboard-unregistered.html:115
 msgid "Points"
 msgstr "Puntos"
 
-#: templates/upload/dashboard-unregistered-developing.html:68
-#: templates/upload/dashboard-unregistered-master.html:87
-msgid "Bad habits in programming"
-msgstr "Malos hábitos en programación"
-
-#: templates/upload/dashboard-unregistered-developing.html:69
-#: templates/upload/dashboard-unregistered-master.html:88
-msgid ""
-"If you correct your bad habits in programming, you will avoid problems in "
-"the future."
-msgstr ""
-"Si corriges ahora tus malos hábitos en programación, evitarás problemasen el "
-"futuro."
-
-#: templates/upload/dashboard-unregistered-developing.html:131
-#, fuzzy
-#| msgid ""
-#| "<h3 class='text-left dark-text'>Your level is...  <strong>DEVELOPING! </"
-#| "strong></h3>"
-msgid ""
-"<h3 class='text-left dark-text'>Your level is... <br></br> "
-"<strong>DEVELOPING! </strong></h3>"
-msgstr ""
-"<h3 class='text-left dark-text'>Tu nivel es...<strong>MEDIO </strong></h3>"
-
-#: templates/upload/dashboard-unregistered-developing.html:132
-msgid "You're doing a great job.<br> Keep it up!!!"
-msgstr "Estás haciendo un gran trabajo. ¡¡¡Sigue así!!!"
-
-#: templates/upload/dashboard-unregistered-developing.html:190
-#: templates/upload/dashboard-unregistered-master.html:237
-msgid "Details to fix:"
-msgstr "Detalles a corregir:"
-
-#: templates/upload/dashboard-unregistered-developing.html:193
-#: templates/upload/dashboard-unregistered-master.html:259
-msgid "Sprites attributes"
-msgstr "Atributos no inicializados correctamente"
-
-#: templates/upload/dashboard-unregistered-developing.html:197
-#: templates/upload/dashboard-unregistered-master.html:263
-msgid "Your project does not have uninitialized attributes, good job!"
-msgstr "Tu proyecto no tiene atributos sin inicializar,¡Buen trabajo!"
-
-#: templates/upload/dashboard-unregistered-developing.html:203
-#: templates/upload/dashboard-unregistered-master.html:269
-msgid " sprite attributes."
-msgstr "atributos no inicializados correctamente."
-
-#: templates/upload/dashboard-unregistered-developing.html:208
-#: templates/upload/dashboard-unregistered-master.html:244
-#, fuzzy
-#| msgid " sprites naming."
-msgid " sprite naming."
-msgstr "nombres inadecuados."
-
-#: templates/upload/dashboard-unregistered-master.html:170
-msgid ""
-"<h3 class='text-left dark-text'>Your level is...  <strong>MASTER! </strong></"
-"h3>"
-msgstr ""
-"<h3 class='text-left dark-text'>Tu nivel es <strong>ALTO!</strong></h3>"
-
-#: templates/upload/dashboard-unregistered-master.html:171
-msgid "You're the master of the universe!!! "
-msgstr "¡¡¡Eres el master del universo!!!"
-
-#: templates/upload/dashboard-unregistered-master.html:240
-msgid " duplicated scripts."
-msgstr "Programas Duplicados"
-
-#: templates/upload/dashboard-unregistered-master.html:250
-msgid "Your project does not have dead code, good job!"
-msgstr "Tu proyecto no tiene código muerto, ¡Buen trabajo!"
-
-#: templates/upload/dashboard-unregistered-master.html:252
-msgid "You have dead code in "
-msgstr "Tienes código no ejecutado en "
-
-#: templates/upload/dashboard-unregistered-master.html:257
-msgid " dead code."
-msgstr " código muerto."
-
-#: templates/upload/dashboard-unregistered.html:10
+#: .\templates\upload\dashboard-unregistered.html:10
 msgid "Project results"
 msgstr "Resultados"
 
-#: templates/upload/dashboard-unregistered.html:48
-#: templates/upload/dashboard-unregistered.html:57
-#: templates/upload/dashboard-unregistered.html:59
+#: .\templates\upload\dashboard-unregistered.html:48
+#: .\templates\upload\dashboard-unregistered.html:57
+#: .\templates\upload\dashboard-unregistered.html:59
 msgid "Dashboard"
 msgstr "Resultados"
 
-#: templates/upload/dashboard-unregistered.html:57
+#: .\templates\upload\dashboard-unregistered.html:57
 msgid "Overview"
 msgstr " "
 
-#: templates/upload/dashboard-unregistered.html:63
+#: .\templates\upload\dashboard-unregistered.html:63
 msgid "Welcome to Doctor Scratch. Project results."
 msgstr "Bienvenido a Doctor Scratch. Resultados del proyecto."
 
-#: templates/upload/dashboard-unregistered.html:79
+#: .\templates\upload\dashboard-unregistered.html:79
 msgid "CT Score:"
 msgstr "Puntuación:"
 
-#: templates/upload/dashboard-unregistered.html:86
+#: .\templates\upload\dashboard-unregistered.html:86
 msgid "Your level:"
 msgstr "Tu nivel:"
 
-#: templates/upload/dashboard-unregistered.html:90
+#: .\templates\upload\dashboard-unregistered.html:90
 msgid "Developing"
 msgstr "Medio"
 
-#: templates/upload/dashboard-unregistered.html:101
+#: .\templates\upload\dashboard-unregistered.html:101
 #, python-format
 msgid ""
 "I have just obtained %(points)s points analyzing my project in Dr. Scratch! "
@@ -2765,40 +3833,277 @@ msgstr ""
 "He conseguido %(points)s puntos analizando mi proyecto en Dr. Scratch!¡A ver "
 "si lo superas! @DrScratchTool"
 
-#: templates/upload/dashboard-unregistered.html:109
+#: .\templates\upload\dashboard-unregistered.html:109
 msgid "CT Score in detail:"
 msgstr "Puntuación en detalle:"
 
-#: templates/upload/dashboard-unregistered.html:127
-#: templates/upload/dashboard-unregistered.html:131
-#: templates/upload/dashboard-unregistered.html:135
+#: .\templates\upload\dashboard-unregistered.html:127
+#: .\templates\upload\dashboard-unregistered.html:131
+#: .\templates\upload\dashboard-unregistered.html:135
 msgid "Learn more!!!"
 msgstr "¡¡¡Aprende más!!!"
 
-#: templates/upload/dashboard-unregistered.html:139
+#: .\templates\upload\dashboard-unregistered.html:139
 msgid "Well done!!!"
 msgstr "¡¡¡Bien hecho!!!"
 
-#: templates/upload/dashboard-unregistered.html:181
+#: .\templates\upload\dashboard-unregistered.html:181
 msgid "Sprites naming"
 msgstr "Nombres inadecuados"
 
-#: templates/upload/dashboard-unregistered.html:190
+#: .\templates\upload\dashboard-unregistered.html:190
 msgid "Incorrect name:"
 msgstr "Nombres no personalizados"
 
-#: templates/upload/dashboard-unregistered.html:209
+#: .\templates\upload\dashboard-unregistered.html:209
 msgid "Dead Code"
 msgstr "Código Muerto"
 
-#: templates/upload/dashboard-unregistered.html:220
+#: .\templates\upload\dashboard-unregistered.html:220
 msgid "blocks"
 msgstr "bloques"
 
-#: templates/upload/dashboard-unregistered.html:242
+#: .\templates\upload\dashboard-unregistered.html:242
 msgid "Sprite attributes initialization"
 msgstr "Atributos no inicializados correctamente"
 
-#: templates/upload/dashboard-unregistered.html:254
+#: .\templates\upload\dashboard-unregistered.html:254
 msgid "modified but not initialized correctly."
 msgstr "ha sido modificado pero no inicializado correctamente."
+
+#~ msgid "CHALLENGE"
+#~ msgstr "RETO"
+
+#~ msgid "Create a new challenge!"
+#~ msgstr "Crear un reto nuevo!"
+
+#~ msgid "Add participants to the teams"
+#~ msgstr "Añadir participantes a los equipos"
+
+#~ msgid "Add teams to your tournament"
+#~ msgstr "Añadir equipos a tu torneo"
+
+#~ msgid ""
+#~ "<input type='text' name='description' id='description' "
+#~ "placeholder='Challenge Definition' class='form-control input-box "
+#~ "placeholder' required>"
+#~ msgstr ""
+#~ "<input type='text' name='description' id='description' "
+#~ "placeholder='Definición del Reto' class='form-control input-box "
+#~ "placeholder' required>"
+
+#~ msgid ""
+#~ "<input type='number' name='parallelism' id='parallelism' "
+#~ "placeholder='parallelism' class='form-control input-box placeholder' "
+#~ "min='0' max='3' required>"
+#~ msgstr ""
+#~ "<input type='number' name='parallelism' id='parallelism' "
+#~ "placeholder='paralelismo' class='form-control input-box placeholder' "
+#~ "min='0' max='3' required>"
+
+#~ msgid ""
+#~ "<input type='number' name='logic' id='logic' placeholder='logic' "
+#~ "class='form-control input-box placeholder' min='0' max='3' required>"
+#~ msgstr ""
+#~ "<input type='number' name='logic' id='logic' placeholder='lógica' "
+#~ "class='form-control input-box placeholder' min='0' max='3' required>"
+
+#~ msgid ""
+#~ "<input type='number' name='flowControl' id='flowControl' "
+#~ "placeholder='flowControl' class='form-control input-box placeholder' "
+#~ "min='0' max='3' required>"
+#~ msgstr ""
+#~ "<input type='number' name='flowControl' id='flowControl' "
+#~ "placeholder='Control de flujo' class='form-control input-box placeholder' "
+#~ "min='0' max='3' required>"
+
+#~ msgid ""
+#~ "<input type='number' name='userInteractivity' id='userInteractivity' "
+#~ "placeholder='userInteractivity' class='form-control input-box "
+#~ "placeholder' min='0' max='3' required>"
+#~ msgstr ""
+#~ "<input type='number' name='userInteractivity' id='userInteractivity' "
+#~ "placeholder='Interactividad con el usuario' class='form-control input-box "
+#~ "placeholder' min='0' max='3' required>"
+
+#~ msgid ""
+#~ "<input type='number' name='dataRepresentation' id='dataRepresentation' "
+#~ "placeholder='dataRepresentation' class='form-control input-box "
+#~ "placeholder' min='0' max='3' required>"
+#~ msgstr ""
+#~ "<input type='number' name='dataRepresentation' id='dataRepresentation' "
+#~ "placeholder='Representación de la información' class='form-control input-"
+#~ "box placeholder' min='0' max='3' required>"
+
+#~ msgid ""
+#~ "<input type='number' name='abstraction' id='abstraction' "
+#~ "placeholder='abstraction' class='form-control input-box placeholder' "
+#~ "min='0' max='3' required>"
+#~ msgstr ""
+#~ "<input type='number' name='abstraction' id='abstraction' "
+#~ "placeholder='Abstracción' class='form-control input-box placeholder' "
+#~ "min='0' max='3' required>"
+
+#~ msgid ""
+#~ "<input type='number' name='synchronization' id='synchronization' "
+#~ "placeholder='synchronization' class='form-control input-box placeholder' "
+#~ "min='0' max='3' required>"
+#~ msgstr ""
+#~ "<input type='number' name='synchronization' id='synchronization' "
+#~ "placeholder='Sincronización' class='form-control input-box placeholder' "
+#~ "min='0' max='3' required>"
+
+#~ msgid "Add teams"
+#~ msgstr "Añadir equipos"
+
+#~ msgid "<h3 class='text-left dark-text'>You overcame the challenge!!!</h3>"
+#~ msgstr ""
+#~ "<h3 class='text-left dark-text'>Tu nivel es...<strong>BÁSICO </strong></"
+#~ "h3>"
+
+#~ msgid "Add team"
+#~ msgstr "Añadir equipo"
+
+#~ msgid "Edit Participants"
+#~ msgstr "Editar Participantes"
+
+#~ msgid "Add Participant"
+#~ msgstr "Añadir participante"
+
+#~ msgid "TOURNAMENTS"
+#~ msgstr "TORNEOS"
+
+#~ msgid "Join tournaments!"
+#~ msgstr "Únete a los torneos"
+
+#~ msgid "Choose a tournament to join"
+#~ msgstr "Elige un torneo al que unirte"
+
+#~ msgid ""
+#~ "<input type='text' name='tourName' id='tourName' placeholder='Tournament "
+#~ "name' class='form-control input-box placeholder' required>"
+#~ msgstr ""
+#~ "<input type='text' name='username' id='username' placeholder='Nombre de "
+#~ "usuario' style='margin-bottom: 15px;'>"
+
+#~ msgid ""
+#~ "<input type='text' name='tourDesc' id='tourDesc' placeholder='Tournament "
+#~ "description' class='form-control input-box placeholder' required>"
+#~ msgstr ""
+#~ "<input type='text' name='username' id='username' placeholder='Nombre de "
+#~ "usuario' style='margin-bottom: 15px;'>"
+
+#~ msgid "Create tournament"
+#~ msgstr "Torneos"
+
+#~ msgid "Error! Incorrect User / Password"
+#~ msgstr "Error! Usuario / Contraseña Incorrectos"
+
+#~ msgid "Challenge"
+#~ msgstr "Reto"
+
+#~ msgid "Paralelismo: "
+#~ msgstr "Paralelismo"
+
+#~ msgid "Pensamiento lógico: "
+#~ msgstr "Pensamiento lógico"
+
+#~ msgid "Control de flujo: "
+#~ msgstr "Control de flujo: "
+
+#~ msgid "Interactividad con el usuario: "
+#~ msgstr "Interactividad con el usuario: "
+
+#~ msgid "Representación de la información: "
+#~ msgstr "Representación de la información: "
+
+#~ msgid "Abstracción: "
+#~ msgstr "Abstracción"
+
+#~ msgid "Sincronización: "
+#~ msgstr "Sincronización"
+
+#~ msgid "You can create tournaments or manage your owns!"
+#~ msgstr "Puedes crear torneos o administrar los torneos creados!"
+
+#~ msgid "Go!"
+#~ msgstr "Ir!"
+
+#~ msgid "You can join tournaments already created!"
+#~ msgstr "Puedes unirte a los torneos creados!"
+
+#~ msgid "Join!"
+#~ msgstr "¡Pruébalo!"
+
+#~ msgid "TEAMS"
+#~ msgstr "EQUIPOS"
+
+#~ msgid "Add your teams!"
+#~ msgstr "Incluye tus equipos!"
+
+#~ msgid "Team"
+#~ msgstr "Equipo"
+
+#~ msgid ""
+#~ "<input type='text' name='participantName' id='participantName' "
+#~ "placeholder='Participant user' class='form-control input-box placeholder' "
+#~ "required>"
+#~ msgstr ""
+#~ "<input type='text' name='username' id='username' placeholder='Nombre de "
+#~ "usuario' style='margin-bottom: 15px;'>"
+
+#~ msgid "Add participants"
+#~ msgstr "Añadir participantes"
+
+#~ msgid ""
+#~ "<input type='text' name='teamName' id='teamName' placeholder='Team name' "
+#~ "class='form-control input-box placeholder' required>"
+#~ msgstr ""
+#~ "<input type='text' name='username' id='username' placeholder='Nombre de "
+#~ "usuario' style='margin-bottom: 15px;'>"
+
+#~ msgid ""
+#~ "<input type='text' name='teamDesc' id='teamDesc' placeholder='Team "
+#~ "description' class='form-control input-box placeholder' required>"
+#~ msgstr ""
+#~ "<input type='text' name='username' id='username' placeholder='Nombre de "
+#~ "usuario' style='margin-bottom: 15px;'>"
+
+#~ msgid ""
+#~ "<input type='text' name='name' id='name' placeholder='Challenge Name' "
+#~ "class='form-control input-box placeholder' required>"
+#~ msgstr ""
+#~ "<input type='text' name='name' id='name' placeholder='Nombre del Reto' "
+#~ "class='form-control input-box placeholder' required>"
+
+#~ msgid ""
+#~ "<textarea name='description' id='description' placeholder='Challenge "
+#~ "Definition' class='form-control input-box placeholder' required></"
+#~ "textarea>"
+#~ msgstr ""
+#~ "<textarea name='description' id='description' placeholder='Definición  "
+#~ "del Reto' class='form-control input-box placeholder' required></textarea>"
+
+#~ msgid ""
+#~ "<input type='text' name='name' id='name' placeholder='Challenge Name' "
+#~ "class='form-control input-box placeholder' value='{{challengeName}}' "
+#~ "required>"
+#~ msgstr ""
+#~ "<input type='text' name='name' id='name' placeholder='Nombre del Reto' "
+#~ "class='form-control input-box placeholder' value='{{challengeName}}' "
+#~ "required>"
+
+#~ msgid ""
+#~ "<textarea name='description' id='description' placeholder='Challenge "
+#~ "Definition' class='form-control input-box placeholder' "
+#~ "value='{{challengeDescription}}' required></textarea>"
+#~ msgstr ""
+#~ "<textarea name='description' id='description' placeholder='Definición del "
+#~ "Reto' class='form-control input-box placeholder' "
+#~ "value='{{challengeDescription}}' required></textarea>"
+
+#~ msgid "if &lt; touching color [#0000FF]? &gt;"
+#~ msgstr "si &lt;¿tocando el color [#0000FF]? &gt; entonces"
+
+#~ msgid "set rotation style to [left-rigt v]"
+#~ msgstr "fijar estilo de rotación[izquierda-derecha v]"

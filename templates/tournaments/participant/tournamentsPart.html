@@ -1,0 +1,790 @@
+{% load i18n %}
+{% load getgame_template %}
+{% load getattr_template %}
+{% load getdict_template %}
+{% load getchoftour_template %}
+
+<html>
+	<head>
+	    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	    <meta name="description" content="Responsive Bootstrap 3 Startup and Multipurpose Template">
+	    <meta name="keywords" content="Stamp, Startup, Multipurpose, Bootstrap, Landing page, Template, Registration, Landing">
+	    <meta name="author" content="Programamos URJC Libresoft FECyT">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+	    <link rel="stylesheet" href="../../static/app/content/bootstrap-tour.css">
+	    <script src="../../static/app/scripts/bootstrap.min.js"></script>
+	    <script src="../../static/app/scripts/bootstrap-tour.js"></script>
+	    <!-- SITE TITLE -->
+	    <title>Dr. Scratch</title>
+	    <link rel="stylesheet" href="../../static/app/content/style.css">
+	    <!-- =========================
+	     FAV AND TOUCH ICONS AND FONT  
+	    ============================== -->
+	    <link rel="icon" href="../../static/app/images/favicon.ico">
+	    <link rel="stylesheet" href="../../static/app/icons/icons.css">  
+	    <link type="text/css" rel="stylesheet" href="../../static/app/content/css_002.css">
+	    <link type="text/css" rel="stylesheet" href="../../static/app/content/css.css">
+	    <!-- =========================
+	     STYLESHEETS   
+	    ============================== -->
+	    <!-- BOOTSTRAP AND ANIMATION -->
+	    <link rel="stylesheet" href="../../static/app/content/bootstrap.min.css">
+	    <link rel="stylesheet" href="../../static/app/content/animate.css">
+	    <!-- CAROUSEL AND LIGHTBOX -->
+	    <link rel="stylesheet" href="../../static/app/content/owl_002.css">
+	    <link rel="stylesheet" href="../../static/app/content/owl.css">
+	    <link rel="stylesheet" href="../../static/app/content/nivo-lightbox.css">
+	    <link rel="stylesheet" href="../../static/app/content/default.css">
+	    <!-- CUSTOM STYLESHEETS -->
+	    <link rel="stylesheet" href="../../static/app/content/tournaments/styles_participant.css">
+	    <!-- RESPONSIVE FIXES -->
+	    <link rel="stylesheet" href="../../static/app/content/responsive.css">
+	    <!-- DEFAULT COLOR/ CURRENTLY USING -->
+	    <link rel="stylesheet" href="../../static/app/content/red.css">
+	    <!-- EASYWIZARD STYLESHEET -->
+	    <link rel="stylesheet" href="../../static/app/content/tournaments/easyWizard.css">
+	</head>
+
+	<body>
+		<div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top  sticky-navigation" role="navigation">
+		         <div class="container">          
+		             <!-- TOP BAR -->
+		       <div class="navbar-collapse collapse" id="stamp-navigation">
+		       <!-- NAVIGATION LINK -->
+		         <a class="navbar-brand" href="/">
+		           <img src="../../static/app/images/logo_main.png" alt="">
+		         </a>
+		         <ul class="nav navbar-nav navbar-left main-navigation small-text">
+		         </ul>
+		
+		       <!-- LOGIN REGISTER -->
+		       <ul class="nav navbar-nav navbar-right">
+		
+		           <li class="dropdown">
+		                   <a class="dropdown-toggle navbar-text" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{% trans "Logged in as " %} {{ username }}<span class="caret"></span></a>
+		                   <ul class="login-register small-text dropdown-menu" aria-labelledby="dropdownMenu1">
+		                       <li> <a href="/changePwd">{% trans "Cambiar contraseña" %}</a> </li>
+		                       <li>
+		                           <a id="logout" type="submit" href="/logoutOrganization">{% trans "Logout" %}</a>
+		                       </li>
+		                       
+		                   </ul>
+		           </li>
+		       </ul></div>
+		       <!-- /END TOP BAR -->
+		   </div>
+		   <!-- /END CONTAINER -->
+		</div>
+		<header id="home" style="background-position: 50% 40.5px;" class="header" data-stellar-background-ratio="0.3">
+	        <div class="overlay-layer">
+            <!-- STICKY NAVIGATION -->
+            <div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top  sticky-navigation" role="navigation">
+                <div class="container">          
+                    <!-- TOP BAR -->
+                    <div class="navbar-collapse collapse" id="stamp-navigation">
+                    <!-- NAVIGATION LINK -->
+                      <a class="navbar-brand" href="/">
+                        <img src="../../static/app/images/logo_main.png" alt="">
+                      </a>
+                      <ul class="nav navbar-nav navbar-left main-navigation small-text">
+                      </ul>
+
+                    <!-- LOGIN REGISTER -->
+                    {% if username %}
+                    	<ul class="nav navbar-nav navbar-right">
+	                        <li class="dropdown">
+	                                <a class="dropdown-toggle navbar-text" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{% trans "Logged in as " %} {{ username }}<span class="caret"></span></a>
+	                                <ul class="login-register small-text dropdown-menu" aria-labelledby="dropdownMenu1">
+	                                    <li> <a href='/changePwd'>{% trans "Change password" %}</a> </li>
+	                                    <li>
+	                                        <a id="logout" type="submit" href="/logoutOrganization">{% trans "Logout" %}</a>
+	                                    </li>
+	                                    
+	                                </ul>
+	                        </li>
+                        </ul>
+                    {% else %}
+	                    <ul class="nav navbar-nav navbar-right login-register small-text">  
+	                        <li style="display: block;" class="login js-login dropdown">
+	                          <a aria-expanded="false" role="button" href="#" data-toggle="dropdown" class="dropdown-toggle">{% trans "Sign in" %} 
+	                            <span class="caret"></span>
+	                          </a>
+	                          {% if loginError %}
+	                          		<p>{% trans "Invalid username / password" %} </p>
+                          	  {% endif %}
+	                                    <ul role="menu" class="dropdown-menu">
+	                                        <li>        
+	                                        <div style="padding: 15px; padding-bottom: 0px;">
+	                                            <form accept-charset="UTF-8" action="/loginTournaments" method="post">
+	                                            {% csrf_token %}
+	                                                {% trans "<input type='text' name='username' id='username' placeholder='Username' style='margin-bottom: 15px;'>" %}
+	                                                {% trans "<input type='password' name='password' id='password' placeholder='Password' style='margin-bottom: 15px;'>" %}
+	                                                <!--<input type="checkbox" value="1" id="remember-me" name="remember-me" style="float: left; margin-right: 10px;"> -->                    
+	                                                <!-- <label for="sign-in" class="string optional">{% trans "Remember me" %}</label> -->
+	                                                <div>
+	                                                    <a class="message" href="/changePwd">{% trans "I forgot my password" %}</a>
+	                                                </div>                                                
+	                                                <div class="centre">
+	                                                    {% trans "<input type='submit' value='Sign in' id='sign-in' class='btn-group btn-group-justified colored-text'>" %}
+	                                                </div>    
+	                                                {% csrf_token %}                                        
+	                                            </form>
+	                                        </div>            
+	                                        </li>
+	                                        </ul>
+	                                    </li> 
+	                        </ul>
+                       {% endif %}
+                    </div>
+                    <!-- /END TOP BAR -->
+                </div>
+                <!-- /END CONTAINER -->
+            </div>
+            <!-- /END STICKY NAVIGATION -->
+              <!-- =========================
+    ALERT  
+    ============================== -->
+            <!-- CONTAINER -->
+            <div class="container">
+            	<!-- BACK BUTTON -->
+            	<div class="row">
+		          <div class="col-md-4">
+	            	<ul class="nav navbar-nav navbar-left login-register back-button small-text">                
+	                    <li style="display: block;" class="register-button js-register inpage-scroll">
+	                        <a href="/participant/teams?pageTeam={{pageTeam}}" class="navbar-register-button">{% trans "« Back" %}</a>
+	                    </li>
+	                </ul>
+	               </div>
+	            </div>
+        		<!-- MAIN CONTENT -->
+		       	<div class="row">
+		       	  {% if messages %}
+		          		{% for message in messages %}
+		          			{% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+		          				<div class="alert alert-danger" role="alert">
+								  <strong>{% trans "Error!" %}</strong> {{ message }}
+								</div>
+							{% endif %}
+							{% if message.level == DEFAULT_MESSAGE_LEVELS.WARNING %}
+								<div class="alert alert-warning" role="alert">
+								  <strong>{% trans "Warning!" %}</strong> {{ message }}
+								</div>
+							{% endif %}
+							{% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+								<div class="alert alert-info" role="alert">
+								  <strong>{% trans "Info:" %}</strong> {{ message }}
+								</div>
+							{% endif %}
+							{% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+								<div class="alert alert-success" role="alert">
+								  <strong>{% trans "Success!" %}</strong> {{ message }}
+								</div>
+							{% endif %}
+						{% endfor %}
+		          	{% endif %}
+		          	{% if tournamentsPagina|length > 0 %}
+			       	  <h2 class="intro white-text title-space-bottom">{% trans "Analyze your Scratch project to improve your highest score" %}</h2>
+			       	  <div class="result-toppanel" style="display: none;">
+						<h4 class="intro green-color toppanel-text">{% trans "You complete the tournament." %}</h4>
+						<h4 class="intro green-color toppanel-text">{% trans "You can still improve your highest score in every challenge." %}</h4>
+					  </div>
+			       	  <div class="col-md-7">
+				          <div class="list-border">
+				          	{% for tour in tournamentsPagina %}
+					          	<div class="vertical-project-form solo-form">
+					          		<div class="small-text-medium uppercase colored-text">
+					                	{% trans "Challenges" %}
+					           		</div>
+					           		<h4 class="modal-title"><strong>{{tour.name}}</strong></h4>
+					           		<div class="colored-line"></div> 
+					           		<p class="space-top">{{tour.description}}</p>
+						           		<div class="modal-body wizard-content">
+											<div class="wizard-steps-panel steps-quantity-{{tour.get_challenges|length}}">
+											{% if tour.get_challenges|length > 0 %}
+												{% for ch in tour.get_challenges %}
+													{% if ch|getchoftour_template:tour|getgame_template:team|getattr_template:'completed' %}
+														<div class="step-number step-{{forloop.counter}} done">
+													{% else %}
+														<div class="step-number step-{{forloop.counter}} notdone">
+													{% endif %}
+															<div class="number">{{forloop.counter}}</div>
+														</div>
+												{% endfor %}
+												{% if dict|getdict_template:tour.id|length > 0 %}
+													<a class="wizard-button-back btn-back" style="display: none;">{% trans "« Previous" %}</a>
+													<a class="wizard-button-next btn-next" style="display: none;">{% trans "Next »" %}</a>
+								    		  		{% for elem in dict|getdict_template:tour.id %}
+								    		  			{% if elem.completed != None %}
+								    		  				{% if elem.completed == True %}
+								    		  					<div class="wizard-step notshow-panel" style="display: none;">
+								    		  						<input type="hidden" class="idChallenge" name="idChallenge" id="idChallenge" value="{{elem.challengeOfTournament.challenge.id}}"> 
+								    		  						<p class="space-top">{{elem.challengeOfTournament.challenge.name}}</p>
+								    		  						<p>{{elem.challengeOfTournament.challenge.description}}</p>
+																	{% include 'tournaments/participant/scores.html' %}
+																</div>
+															{% else %}
+								    		  					<div class="wizard-step show-panel" style="display: none;">
+								    		  						 <input type="hidden" class="idChallenge" name="idChallenge" id="idChallenge" value="{{elem.challengeOfTournament.challenge.id}}"> 
+										                             <p class="space-top">{{elem.challengeOfTournament.challenge.name}}</p>
+								    		  						 <p>{{elem.challengeOfTournament.challenge.description}}</p>
+										                             {% include 'tournaments/participant/scores.html' %}
+																</div>
+															{% endif %}
+								    		  			{% else %}
+								    		  				<div class="wizard-step show-panel" style="display: none;">
+								    		  					<input type="hidden" class="idChallenge" name="idChallenge" id="idChallenge" value="{{elem.id}}"> 
+								    		  					<p class="space-top">{{elem.name}}</p>
+								    		  					<p>{{elem.description}}</p>
+																<table class="table tablesorter">
+									                                <thead>
+									                                    <tr>
+									                                    <th class="col-md-6"><h4>{% trans "Concept" %}</h4></th>
+									                                    <th class="col-md-3"><h4>{% trans "Required Value" %}</h4></th>
+									                                    <th class="col-md-3"><h4>{% trans "Highest Score" %}</h4></th>
+									                                    </tr>
+									                                </thead>
+									                                <tbody>
+									                                	<!-- Parallelism -->
+										                                <tr>
+										                                    <td>
+										                                    	<a href="/learn/Parallelism"><i class="glyphicon glyphicon-info-sign"> {% trans "Parallelism" %}</i></a>
+										                                    </td>
+											                                <td>
+											                                    {% if elem.parallelism = 0 %}
+												                                    <div class="progress">
+										                                               <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.parallelism }}" aria-valuemin="0" aria-valuemax="3" style="width: 0%">
+										                                                   <span><strong class="dark-text">{{ elem.parallelism }}/3</strong></span>
+										                                               </div>
+										                                            </div>  
+											                                    {% elif elem.parallelism = 1 %}
+										                                            <div class="progress">
+										                                                <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.parallelism }}" aria-valuemin="0" aria-valuemax="3" style="width: 33%">
+										                                                    <span><strong>{{ elem.parallelism }}/3</strong></span>
+										                                                </div>
+										                                             </div>
+											                                    {% elif elem.parallelism = 2 %}
+										                                            <div class="progress">
+										                                                <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.parallelism }}" aria-valuemin="0" aria-valuemax="3" style="width: 66%">
+										                                                    <span><strong>{{ elem.parallelism }}/3</strong></span>
+										                                                </div>
+										                                             </div>
+											                                    {% elif elem.parallelism = 3 %}
+										                                            <div class="progress">
+										                                                <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.parallelism }}" aria-valuemin="0" aria-valuemax="3" style="width: 100%">
+										                                                    <span><strong>{{ elem.parallelism }}/3</strong></span>
+										                                                </div>
+										                                             </div>
+											                                    {% endif %}
+											                                </td>
+											                                <td>
+											                                	<div class="progress">
+									                                               <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="3" style="width: 0%">
+									                                                   <span><strong class="dark-text">0/3</strong></span>
+									                                               </div>
+									                                            </div>  
+											                                </td>
+											                            </tr>
+											                            <!-- Logic -->
+											                            <tr>
+										                                    <td>
+										                                    	<a href="/learn/Logic"><i class="glyphicon glyphicon-info-sign"> {% trans "Logic" %}</i></a>
+										                                    </td>
+											                                <td>
+											                                    {% if elem.logic = 0 %}
+												                                    <div class="progress">
+										                                               <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.logic }}" aria-valuemin="0" aria-valuemax="3" style="width: 0%">
+										                                                   <span><strong class="dark-text">{{ elem.logic }}/3</strong></span>
+										                                               </div>
+										                                            </div>  
+											                                    {% elif elem.logic = 1 %}
+										                                            <div class="progress">
+										                                                <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.logic }}" aria-valuemin="0" aria-valuemax="3" style="width: 33%">
+										                                                    <span><strong>{{ elem.logic }}/3</strong></span>
+										                                                </div>
+										                                             </div>
+											                                    {% elif elem.logic = 2 %}
+										                                            <div class="progress">
+										                                                <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.logic }}" aria-valuemin="0" aria-valuemax="3" style="width: 66%">
+										                                                    <span><strong>{{ elem.logic }}/3</strong></span>
+										                                                </div>
+										                                             </div>
+											                                    {% elif elem.logic = 3 %}
+										                                            <div class="progress">
+										                                                <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.logic }}" aria-valuemin="0" aria-valuemax="3" style="width: 100%">
+										                                                    <span><strong>{{ elem.logic }}/3</strong></span>
+										                                                </div>
+										                                             </div>
+											                                    {% endif %}
+											                                </td>
+											                                <td>
+											                                	<div class="progress">
+									                                               <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="3" style="width: 0%">
+									                                                   <span><strong class="dark-text">0/3</strong></span>
+									                                               </div>
+									                                            </div>  
+											                                </td>
+										                                </tr>  
+										                                <!-- Flow Control -->
+											                            <tr>
+										                                    <td>
+										                                    	<a href="/learn/Flow"><i class="glyphicon glyphicon-info-sign"> {% trans "Flow Control" %}</i></a>
+										                                    </td>
+											                                <td>
+											                                    {% if elem.flowControl = 0 %}
+												                                    <div class="progress">
+										                                               <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.flowControl }}" aria-valuemin="0" aria-valuemax="3" style="width: 0%">
+										                                                   <span><strong class="dark-text">{{ elem.flowControl }}/3</strong></span>
+										                                               </div>
+										                                            </div>  
+											                                    {% elif elem.flowControl = 1 %}
+										                                            <div class="progress">
+										                                                <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.flowControl }}" aria-valuemin="0" aria-valuemax="3" style="width: 33%">
+										                                                    <span><strong>{{ elem.flowControl }}/3</strong></span>
+										                                                </div>
+										                                             </div>
+											                                    {% elif elem.flowControl = 2 %}
+										                                            <div class="progress">
+										                                                <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.flowControl }}" aria-valuemin="0" aria-valuemax="3" style="width: 66%">
+										                                                    <span><strong>{{ elem.flowControl }}/3</strong></span>
+										                                                </div>
+										                                             </div>
+											                                    {% elif elem.flowControl = 3 %}
+										                                            <div class="progress">
+										                                                <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.flowControl }}" aria-valuemin="0" aria-valuemax="3" style="width: 100%">
+										                                                    <span><strong>{{ elem.flowControl }}/3</strong></span>
+										                                                </div>
+										                                             </div>
+											                                    {% endif %}
+											                                </td>
+											                                <td>
+											                                	<div class="progress">
+									                                               <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="3" style="width: 0%">
+									                                                   <span><strong class="dark-text">0/3</strong></span>
+									                                               </div>
+									                                            </div>  
+											                                </td>
+										                                </tr> 
+										                                <!-- User Interactivity -->
+											                            <tr>
+										                                    <td>
+										                                    	<a href="/learn/User"><i class="glyphicon glyphicon-info-sign"> {% trans "User Interactivity" %}</i></a>
+										                                    </td>
+											                                <td>
+											                                    {% if elem.userInteractivity = 0 %}
+												                                    <div class="progress">
+										                                               <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.userInteractivity }}" aria-valuemin="0" aria-valuemax="3" style="width: 0%">
+										                                                   <span><strong class="dark-text">{{ elem.userInteractivity }}/3</strong></span>
+										                                               </div>
+										                                            </div>  
+											                                    {% elif elem.userInteractivity = 1 %}
+										                                            <div class="progress">
+										                                                <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.userInteractivity }}" aria-valuemin="0" aria-valuemax="3" style="width: 33%">
+										                                                    <span><strong>{{ elem.userInteractivity }}/3</strong></span>
+										                                                </div>
+										                                             </div>
+											                                    {% elif elem.userInteractivity = 2 %}
+										                                            <div class="progress">
+										                                                <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.userInteractivity }}" aria-valuemin="0" aria-valuemax="3" style="width: 66%">
+										                                                    <span><strong>{{ elem.userInteractivity }}/3</strong></span>
+										                                                </div>
+										                                             </div>
+											                                    {% elif elem.userInteractivity = 3 %}
+										                                            <div class="progress">
+										                                                <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.userInteractivity }}" aria-valuemin="0" aria-valuemax="3" style="width: 100%">
+										                                                    <span><strong>{{ elem.userInteractivity }}/3</strong></span>
+										                                                </div>
+										                                             </div>
+											                                    {% endif %}
+											                                </td>
+											                                <td>
+											                                	<div class="progress">
+									                                               <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="3" style="width: 0%">
+									                                                   <span><strong class="dark-text">0/3</strong></span>
+									                                               </div>
+									                                            </div>  
+											                                </td>
+										                                </tr>
+										                                <!-- Data Representation -->
+											                            <tr>
+										                                    <td>
+										                                    	<a href="/learn/Data"><i class="glyphicon glyphicon-info-sign"> {% trans "Data Representation" %}</i></a>
+										                                    </td>
+											                                <td>
+											                                    {% if elem.dataRepresentation = 0 %}
+												                                    <div class="progress">
+										                                               <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.dataRepresentation }}" aria-valuemin="0" aria-valuemax="3" style="width: 0%">
+										                                                   <span><strong class="dark-text">{{ elem.dataRepresentation }}/3</strong></span>
+										                                               </div>
+										                                            </div>  
+											                                    {% elif elem.dataRepresentation = 1 %}
+										                                            <div class="progress">
+										                                                <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.dataRepresentation }}" aria-valuemin="0" aria-valuemax="3" style="width: 33%">
+										                                                    <span><strong>{{ elem.dataRepresentation }}/3</strong></span>
+										                                                </div>
+										                                             </div>
+											                                    {% elif elem.dataRepresentation = 2 %}
+										                                            <div class="progress">
+										                                                <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.dataRepresentation }}" aria-valuemin="0" aria-valuemax="3" style="width: 66%">
+										                                                    <span><strong>{{ elem.dataRepresentation }}/3</strong></span>
+										                                                </div>
+										                                             </div>
+											                                    {% elif elem.dataRepresentation = 3 %}
+										                                            <div class="progress">
+										                                                <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.dataRepresentation }}" aria-valuemin="0" aria-valuemax="3" style="width: 100%">
+										                                                    <span><strong>{{ elem.dataRepresentation }}/3</strong></span>
+										                                                </div>
+										                                             </div>
+											                                    {% endif %}
+											                                </td>
+											                                <td>
+											                                	<div class="progress">
+									                                               <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="3" style="width: 0%">
+									                                                   <span><strong class="dark-text">0/3</strong></span>
+									                                               </div>
+									                                            </div>  
+											                                </td>
+										                                </tr>
+										                                <!-- Abstraction -->
+											                            <tr>
+										                                    <td>
+										                                    	<a href="/learn/Abstraction"><i class="glyphicon glyphicon-info-sign"> {% trans "Abstraction" %}</i></a>
+										                                    </td>
+											                                <td>
+											                                    {% if elem.abstraction = 0 %}
+												                                    <div class="progress">
+										                                               <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.abstraction }}" aria-valuemin="0" aria-valuemax="3" style="width: 0%">
+										                                                   <span><strong class="dark-text">{{ elem.abstraction }}/3</strong></span>
+										                                               </div>
+										                                            </div>  
+											                                    {% elif elem.abstraction = 1 %}
+										                                            <div class="progress">
+										                                                <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.abstraction }}" aria-valuemin="0" aria-valuemax="3" style="width: 33%">
+										                                                    <span><strong>{{ elem.abstraction }}/3</strong></span>
+										                                                </div>
+										                                             </div>
+											                                    {% elif elem.abstraction = 2 %}
+										                                            <div class="progress">
+										                                                <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.abstraction }}" aria-valuemin="0" aria-valuemax="3" style="width: 66%">
+										                                                    <span><strong>{{ elem.abstraction }}/3</strong></span>
+										                                                </div>
+										                                             </div>
+											                                    {% elif elem.abstraction = 3 %}
+										                                            <div class="progress">
+										                                                <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.abstraction }}" aria-valuemin="0" aria-valuemax="3" style="width: 100%">
+										                                                    <span><strong>{{ elem.abstraction }}/3</strong></span>
+										                                                </div>
+										                                             </div>
+											                                    {% endif %}
+											                                </td>
+											                                <td>
+											                                	<div class="progress">
+									                                               <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="3" style="width: 0%">
+									                                                   <span><strong class="dark-text">0/3</strong></span>
+									                                               </div>
+									                                            </div>  
+											                                </td>
+										                                </tr>
+										                                <!-- Synchronization -->
+											                            <tr>
+										                                    <td>
+										                                    	<a href="/learn/Synchronization"><i class="glyphicon glyphicon-info-sign"> {% trans "Synchronization" %}</i></a>
+										                                    </td>
+											                                <td>
+											                                    {% if elem.synchronization = 0 %}
+												                                    <div class="progress">
+										                                               <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.synchronization }}" aria-valuemin="0" aria-valuemax="3" style="width: 0%">
+										                                                   <span><strong class="dark-text">{{ elem.synchronization }}/3</strong></span>
+										                                               </div>
+										                                            </div>  
+											                                    {% elif elem.synchronization = 1 %}
+										                                            <div class="progress">
+										                                                <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.synchronization }}" aria-valuemin="0" aria-valuemax="3" style="width: 33%">
+										                                                    <span><strong>{{ elem.synchronization }}/3</strong></span>
+										                                                </div>
+										                                             </div>
+											                                    {% elif elem.synchronization = 2 %}
+										                                            <div class="progress">
+										                                                <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.synchronization }}" aria-valuemin="0" aria-valuemax="3" style="width: 66%">
+										                                                    <span><strong>{{ elem.synchronization }}/3</strong></span>
+										                                                </div>
+										                                             </div>
+											                                    {% elif elem.synchronization = 3 %}
+										                                            <div class="progress">
+										                                                <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.synchronization }}" aria-valuemin="0" aria-valuemax="3" style="width: 100%">
+										                                                    <span><strong>{{ elem.synchronization }}/3</strong></span>
+										                                                </div>
+										                                             </div>
+											                                    {% endif %}
+											                                </td>
+											                                <td>
+											                                	<div class="progress">
+									                                               <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="3" style="width: 0%">
+									                                                   <span><strong class="dark-text">0/3</strong></span>
+									                                               </div>
+									                                            </div>  
+											                                </td>
+										                                </tr>      
+									                                </tbody>
+									                             </table>
+															</div>
+								    		  			{% endif %}
+								    		  		{% endfor %}
+								    		  	{% endif %}
+											</div>
+											{% else %}
+												</div>
+								          		<h3 class="colored-text form-heading"><i class="colored-text glyphicon glyphicon-exclamation-sign"></i> <strong>{% trans "The tournament has not challenges yet" %}</strong></h3>
+								          	{% endif %}
+										</div>
+						          	</div>
+					    	{% endfor %}
+					    	<!-- PAGINATOR -->
+			            	<nav aria-label="">
+							  {% if tournamentsPagina.has_other_pages %}
+								  <ul class="pagination">
+								    {% if tournamentsPagina.has_previous %}
+								      <li><a href="?team={{team.id}}&pageTour={{ tournamentsPagina.previous_page_number }}&pageTeam={{pageTeam}}">&laquo;</a></li>
+								    {% else %}
+								      <li class="disabled"><span>&laquo;</span></li>
+								    {% endif %}
+								    {% for i in tournamentsPagina.paginator.page_range %}
+								      {% if tournamentsPagina.number == i %}
+								        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+								      {% else %}
+								        <li><a href="?team={{team.id}}&pageTour={{ i }}&pageTeam={{pageTeam}}">{{ i }}</a></li>
+								      {% endif %}
+								    {% endfor %}
+								    {% if tournamentsPagina.has_next %}
+								      <li><a href="?team={{team.id}}&pageTour={{ tournamentsPagina.next_page_number }}&pageTeam={{pageTeam}}">&raquo;</a></li>
+								    {% else %}
+								      <li class="disabled"><span>&raquo;</span></li>
+								    {% endif %}
+								  </ul>
+								{% endif %}
+							</nav>
+					 	</div>
+					</div>
+					<div class="col-md-5">
+	        			<div class="vertical-project-form solo-form">
+	                                
+	                     <h5 class="dark-text form-heading"><strong>{% trans "There are two options to analyze your Scratch project now!" %}</strong></h5>
+	                     
+	                     <form name="form" class="project-form" enctype="multipart/form-data" method="post" action="/participant/play?pageTour={{tournamentsPagina.number}}&pageTeam={{pageTeam}}">
+	                     	 {% csrf_token %}   
+	                         <input type="hidden" class="idTeam" name="idTeam" id="idTeam" value="{{team.id}}">     
+	                         <input type="hidden" class="idTournament" name="idTournament" id="idTournament" value="{{tournamentsPagina|getdict_template:0|getattr_template:'id'}}">  
+	                         <input type="hidden" class="finalIdChallenge" name="finalIdChallenge" id="finalIdChallenge" value="">      
+	                         {% trans "1. Introduce the <span class='colored-text'><a data-toggle='modal' href='#modalUrl'>url</a></span> of your Scratch project, you don't have to download it:" %}
+	                         {% trans '<input name="urlProject" id="cf-name" class="form-control input-box placeholder" placeholder="http:/scratch.mit.edu/projects/your_number" type="text">' %}
+	                         <button id="url" name='_url' type="submit" class="btn btn-primary standard-button">{% trans "Analyze by url" %}</button>
+	                         
+	                   
+	                         {% csrf_token %}
+	                         <br></br>
+	                         {% trans "2. If you have your <span class='colored-text'><a data-toggle='modal' href='#modalProject'>project</a></span> downloaded in the computer you can analyze it here:" %}
+	                         {% trans "<input  name='zipFile' type='file' class='filestyle' data-buttonText='Choose Project'>" %}
+	                         <button id="upload" name='_upload' type="submit" class="btn btn-primary standard-button">{% trans "Analyze my project" %}</button>
+	                         {% csrf_token %}                                    
+	                     
+	                     </form>
+	                     
+	                     <!-- FORM SUBMIT SUCCESS / ERROR MESSAGES -->
+	                     <p class="file-error dark-text small-text">
+	                     {% trans "Error! Please choose a .sb or .sb2 file or input an url" %}</p>
+	                     {% if error %}
+	                     <br></br>
+	                     <p><span class="icon icon-close-alt2"></span> {% trans "Error! Please choose a .sb or .sb2 file or input an url" %}</p>
+	                     {% endif %}
+	                     {% if id_error %}
+	                     <br></br>
+	                     <p><span class="icon icon-close-alt2"></span> {% trans "Error! Your project id is wrong" %}</p>
+	                     {% endif %}
+	                     {% if no_exists %}
+	                     <br></br>
+	                     <p><span class="icon icon-close-alt2"></span> {% trans "Error! Your project doesn't exist in Scratch's servers" %}</p>
+	                     {% endif %}
+	                   </div>  
+	        		</div>
+	        		{% else %}
+				     	<h2 class="intro white-text title-space-bottom">{% trans "The team is not included in any tournament yet" %}</h2>
+					{% endif %}
+              </div>
+            </div>
+         </div>
+        </div>
+        <!-- =========================
+	     SECTION: CLIENTS LOGOs
+	    ============================== -->
+	    <section id="section6" class="services grey-bg">
+	    <div class="clients white-bg">
+	        <ul class="client-logos">
+	            <li>
+	                <a href="http://programamos.es">
+	                <img src="../../static/app/images/logoProgramamos.png" alt="">
+	                </a>            
+	            </li>
+	            <li>
+	                <a href="http://www.urjc.es">
+	                <img src="../../static/app/images/logoURJC.jpg" alt="">
+	                </a>
+	            </li>
+	            <li>
+	                <a href="http://libresoft.es">
+	                <img src="../../static/app/images/logoLibresoft.jpeg" alt="">
+	                </a>
+	            </li>
+	
+	            <li>
+	                <a href="http://www.fecyt.es">
+	                <img src="../../static/app/images/logoFECYT.jpg" alt="">
+	                </a>
+	            </li>
+	
+	        </ul>
+	    </div>
+	    </section>
+    </header>
+		<footer class="footer grey-bg">
+		    <div class="container">
+		           {% trans "©2014 Dr. Scratch is powered by " %}<a href="https:/github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
+		
+		            <!-- SOCIAL ICONS -->
+		            <ul class="social-icons">
+		                <li><a href="https:/twitter.com/drscratchtool"><span class="icon-social-twitter transparent-text-dark"></span></a>
+		                </li>
+		                <li><a href=""><span class="icon-social-github transparent-text-dark"></span></a>
+		                </li>
+		                
+		            </ul>
+		    </div>
+		</footer>
+	    <!-- Modal Url -->
+	    <div id="modalUrl" class="modal fade" role="dialog">
+	      <div class="modal-dialog">
+	
+	        <!-- Modal content-->
+	        <div class="modal-content">
+	          <div class="modal-header">
+	            <button type="button" class="close text-right" data-dismiss="modal">&times;</button>
+	            <div class="small-text-medium uppercase colored-text">
+	                {% trans "What is an url?" %}
+	            </div>
+	            <h4 class="modal-title"><strong>{% trans "How I can know my Scratch project's url?" %}</strong></h4>
+	            <div class="colored-line"></div> 
+	          </div>
+	          <div class="modal-body">
+	            {% trans "<img class='framed' src='../../static/app/images/url-en.png' />" %}
+	          </div>
+	          <div class="modal-footer">
+	          </div>
+	        </div>
+	
+	      </div>
+	    </div>
+
+        <!-- Modal Project -->
+	    <div id="modalProject" class="modal fade" role="dialog">
+	      <div class="modal-dialog">
+	
+	        <!-- Modal content-->
+	        <div class="modal-content">
+	          <div class="modal-header">
+	            <button type="button" class="close text-right" data-dismiss="modal">&times;</button>
+	            <div class="small-text-medium uppercase colored-text">
+	                {% trans "I want to download my project from Scratch!" %}
+	            </div>
+	            <h4 class="modal-title"><strong>{% trans "How I can download my Scratch project to my computer?" %}</strong></h4>
+	            <div class="colored-line"></div> 
+	          </div>
+	          <div class="modal-body">
+	            {% trans "<img class='framed' src='../../static/app/images/project-en.png' />" %}
+	          </div>
+	          <div class="modal-footer">
+	          </div>
+	        </div>
+	
+	      </div>
+	    </div>
+	    <script>
+	        $(document).on("ready", function(){
+	        	if ($('.show-panel').eq(0).length > 0){
+	        		$('.show-panel').eq(0).show();
+	        	}else{
+	        		$('.notshow-panel').last().show();
+	        		if ($('.notshow-panel').eq(0).length > 0){
+	        			$('.result-toppanel').show();
+	        		}
+	        	}
+	        	$('.notdone').eq(0).toggleClass("doing");
+	        	$(".wizard-step").each( function(index, el) {
+	        		if($(el).is(":visible")){
+	        			idChallenge = $('.idChallenge').eq(index).val();
+	        			$('.finalIdChallenge').val(idChallenge);
+	        			if ($(el).prev(".wizard-step").length > 0){
+	        				 $(".wizard-button-back").show();
+	        			}
+	        			if ($(el).next(".wizard-step").length > 0){
+	        				$(".wizard-button-next").show();
+	        			}
+	        		}
+	        	});
+	        });
+	        
+	        $(".wizard-button-back").on("click", function(){
+	        	$(".wizard-step").each( function(index, el) {
+				   if($(el).is(":visible")){
+					   idChallenge = $('.idChallenge').eq(index-1).val();
+					   $('.finalIdChallenge').val(idChallenge);
+					   if ($(el).prev(".wizard-step").length > 0){
+						   $(el).hide();
+						   $(el).prev(".wizard-step").show();
+						   if ($('.show-panel').eq(0).length > 0){
+							   $(".wizard-steps-panel .step-"+(index+1)).toggleClass("doing");
+							   $(".wizard-steps-panel .step-"+index).toggleClass("doing").toggleClass("done");
+						   }else{
+							   if ($(".wizard-steps-panel .step-"+(index+1)).hasClass("done")){
+								   $(".wizard-steps-panel .step-"+(index+1)).toggleClass("done");
+							   }else{
+								   $(".wizard-steps-panel .step-"+(index+1)).toggleClass("doing");
+							   }
+							   $(".wizard-steps-panel .step-"+index).toggleClass("doing").toggleClass("done");
+						   }
+						   $(".wizard-button-next").show();
+						   if ($(el).prev(".wizard-step").prev(".wizard-step").length <= 0){
+							   $(".wizard-button-back").hide();
+						   }
+						   return false;
+					   }
+				   }
+				});
+	        });
+	        
+	        $(".wizard-button-next").on("click", function(){
+	        	$(".wizard-step").each( function(index, el) {
+				   if($(el).is(":visible")){
+					   idChallenge = $('.idChallenge').eq(index+1).val();
+					   $('.finalIdChallenge').val(idChallenge);
+					   if ($(el).next(".wizard-step").length > 0){
+						   $(el).hide();
+						   $(el).next(".wizard-step").show();
+						   $(".wizard-button-back").show();
+						   if ($('.show-panel').eq(0).length > 0){
+							   $(".wizard-steps-panel .step-"+(index+1)).toggleClass("done").toggleClass("doing");
+							   $(".wizard-steps-panel .step-"+(index+2)).toggleClass("doing");
+						   }else{
+							   $(".wizard-steps-panel .step-"+(index+1)).toggleClass("done").toggleClass("doing");
+							   $(".wizard-steps-panel .step-"+(index+2)).toggleClass("doing");
+						   }
+						   if ($(el).next(".wizard-step").next(".wizard-step").length <= 0){
+							   $(".wizard-button-next").hide();
+						   }
+						   return false;
+					   }
+				   }
+				});
+	        });
+	    </script>
+	    <script type="text/javascript" src="../../static/app/scripts/bootstrap-filestyle.js"> </script>
+	</body>
+</html>

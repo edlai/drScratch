@@ -1,0 +1,341 @@
+{% load i18n %}
+<html>
+	<head>
+	    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	    <meta name="description" content="Responsive Bootstrap 3 Startup and Multipurpose Template">
+	    <meta name="keywords" content="Stamp, Startup, Multipurpose, Bootstrap, Landing page, Template, Registration, Landing">
+	    <meta name="author" content="Programamos URJC Libresoft FECyT">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+	    <link rel="stylesheet" href="../../static/app/content/bootstrap-tour.css">
+	    <script src="../../static/app/scripts/bootstrap.min.js"></script>
+	    <script src="../../static/app/scripts/bootstrap-tour.js"></script>
+	    <!-- SITE TITLE -->
+	    <title>Dr. Scratch</title>
+	    <link rel="stylesheet" href="../../static/app/content/style.css">
+	    <!-- =========================
+	     FAV AND TOUCH ICONS AND FONT  
+	    ============================== -->
+	    <link rel="icon" href="../../static/app/images/favicon.ico">
+	    <link rel="stylesheet" href="static/app/icons/icons.css">  
+	    <link type="text/css" rel="stylesheet" href="../../static/app/content/css_002.css">
+	    <link type="text/css" rel="stylesheet" href="../../static/app/content/css.css">
+	    <!-- =========================
+	     STYLESHEETS   
+	    ============================== -->
+	    <!-- BOOTSTRAP AND ANIMATION -->
+	    <link rel="stylesheet" href="../../static/app/content/bootstrap.min.css">
+	    <link rel="stylesheet" href="../static/app/content/animate.css">
+	    <!-- CAROUSEL AND LIGHTBOX -->
+	    <link rel="stylesheet" href="../../static/app/content/owl_002.css">
+	    <link rel="stylesheet" href="../../static/app/content/owl.css">
+	    <link rel="stylesheet" href="../../static/app/content/nivo-lightbox.css">
+	    <link rel="stylesheet" href="../../static/app/content/default.css">
+	    <!-- CUSTOM STYLESHEETS -->
+	    <link rel="stylesheet" href="../../static/app/content/tournaments/styles_creator.css">
+	    <!-- RESPONSIVE FIXES -->
+	    <link rel="stylesheet" href="../../static/app/content/responsive.css">
+	    <!-- DEFAULT COLOR/ CURRENTLY USING -->
+	    <link rel="stylesheet" href="../../static/app/content/red.css">
+	</head>
+
+	<body>
+		<div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top  sticky-navigation" role="navigation">
+		         <div class="container">          
+		             <!-- TOP BAR -->
+		       <div class="navbar-collapse collapse" id="stamp-navigation">
+		       <!-- NAVIGATION LINK -->
+		         <a class="navbar-brand" href="/">
+		           <img src="../../static/app/images/logo_main.png" alt="">
+		         </a>
+		         <ul class="nav navbar-nav navbar-left main-navigation small-text">
+		         </ul>
+		
+		       <!-- LOGIN REGISTER -->
+		       <ul class="nav navbar-nav navbar-right">
+		
+		           <li class="dropdown">
+		                   <a class="dropdown-toggle navbar-text" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{% trans "Logged in as " %} {{ username }}<span class="caret"></span></a>
+		                   <ul class="login-register small-text dropdown-menu" aria-labelledby="dropdownMenu1">
+		                       <li> <a href="/changePwd">{% trans "Cambiar contraseña" %}</a> </li>
+		                       <li>
+		                           <a id="logout" type="submit" href="/logoutOrganization">{% trans "Logout" %}</a>
+		                       </li>
+		                       
+		                   </ul>
+		           </li>
+		       </ul></div>
+		       <!-- /END TOP BAR -->
+		   </div>
+		   <!-- /END CONTAINER -->
+		</div>
+		<header id="home" style="background-position: 50% 40.5px;" class="header" data-stellar-background-ratio="0.3">
+	        <div class="overlay-layer">
+            <!-- STICKY NAVIGATION -->
+            <div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top  sticky-navigation" role="navigation">
+                <div class="container">          
+                    <!-- TOP BAR -->
+                    <div class="navbar-collapse collapse" id="stamp-navigation">
+                    <!-- NAVIGATION LINK -->
+                      <a class="navbar-brand" href="/">
+                        <img src="../../static/app/images/logo_main.png" alt="">
+                      </a>
+                      <ul class="nav navbar-nav navbar-left main-navigation small-text">
+                      </ul>
+
+                    <!-- LOGIN REGISTER -->
+                    {% if username %}
+                    	<ul class="nav navbar-nav navbar-right">
+	                        <li class="dropdown">
+	                                <a class="dropdown-toggle navbar-text" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{% trans "Logged in as " %} {{ username }}<span class="caret"></span></a>
+	                                <ul class="login-register small-text dropdown-menu" aria-labelledby="dropdownMenu1">
+	                                    <li> <a href='/changePwd'>{% trans "Change password" %}</a> </li>
+	                                    <li>
+	                                        <a id="logout" type="submit" href="/logoutOrganization">{% trans "Logout" %}</a>
+	                                    </li>
+	                                    
+	                                </ul>
+	                        </li>
+                        </ul>
+                    {% else %}
+	                    <ul class="nav navbar-nav navbar-right login-register small-text">  
+	                        <li style="display: block;" class="login js-login dropdown">
+	                          <a aria-expanded="false" role="button" href="#" data-toggle="dropdown" class="dropdown-toggle">{% trans "Sign in" %} 
+	                            <span class="caret"></span>
+	                          </a>
+	                          {% if loginError %}
+	                          		<p>{% trans "Invalid username / password" %} </p>
+                          	  {% endif %}
+	                                    <ul role="menu" class="dropdown-menu">
+	                                        <li>        
+	                                        <div style="padding: 15px; padding-bottom: 0px;">
+	                                            <form accept-charset="UTF-8" action="/loginTournaments" method="post">
+	                                            {% csrf_token %}
+	                                                {% trans "<input type='text' name='username' id='username' placeholder='Username' style='margin-bottom: 15px;'>" %}
+	                                                {% trans "<input type='password' name='password' id='password' placeholder='Password' style='margin-bottom: 15px;'>" %}
+	                                                <!--<input type="checkbox" value="1" id="remember-me" name="remember-me" style="float: left; margin-right: 10px;"> -->                    
+	                                                <!-- <label for="sign-in" class="string optional">{% trans "Remember me" %}</label> -->
+	                                                <div>
+	                                                    <a class="message" href="/changePwd">{% trans "I forgot my password" %}</a>
+	                                                </div>                                                
+	                                                <div class="centre">
+	                                                    {% trans "<input type='submit' value='Sign in' id='sign-in' class='btn-group btn-group-justified colored-text'>" %}
+	                                                </div>    
+	                                                {% csrf_token %}                                        
+	                                            </form>
+	                                        </div>            
+	                                        </li>
+	                                        </ul>
+	                                    </li> 
+	                        </ul>
+                       {% endif %}
+                    </div>
+                    <!-- /END TOP BAR -->
+                </div>
+                <!-- /END CONTAINER -->
+            </div>
+            <!-- /END STICKY NAVIGATION -->
+              <!-- =========================
+    ALERT  
+    ============================== -->
+            <!-- CONTAINER -->
+            <div class="container">
+            	<!-- BACK BUTTON -->
+            	<div class="row">
+		          <div class="col-md-4">
+	            	<ul class="nav navbar-nav navbar-left login-register back-button small-text">                
+	                    <li style="display: block;" class="register-button js-register inpage-scroll">
+	                        <a href="/creator/admin" class="navbar-register-button">{% trans "« Back" %}</a>
+	                    </li>
+	                </ul>
+	               </div>
+	            </div>
+        		<!-- MAIN CONTENT -->
+		       	<div class="row">
+		       	  <div class="col-md-2"></div>
+		       	  <div class="col-md-8">
+			          <div class="list-border">
+			          	{% if messages %}
+			          		{% for message in messages %}
+			          			{% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+			          				<div class="alert alert-danger" role="alert">
+									  <strong>{% trans "Error!" %}</strong> {{ message }}
+									</div>
+								{% endif %}
+								{% if message.level == DEFAULT_MESSAGE_LEVELS.WARNING %}
+									<div class="alert alert-warning" role="alert">
+									  <strong>{% trans "Warning!" %}</strong> {{ message }}
+									</div>
+								{% endif %}
+								{% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+									<div class="alert alert-info" role="alert">
+									  <strong>{% trans "Info:" %}</strong> {{ message }}
+									</div>
+								{% endif %}
+								{% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+									<div class="alert alert-success" role="alert">
+									  <strong>{% trans "Success!" %}</strong> {{ message }}
+									</div>
+								{% endif %}
+							{% endfor %}
+			          	{% endif %}
+						<h3 class="list-title">{% trans "Teams created by" %} {{ user }}</h3>
+						{% if teamsPagina|length > 0 %}
+						{% for t in teamsPagina %}
+							<div class="list-container">
+							  {% if forloop.counter0|divisibleby:3 %}
+							  	<img data-src="holder.js/32x32?theme=thumb&amp;bg=6f42c1&amp;fg=6f42c1&amp;size=1" alt="32x32" class="list-img" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2232%22%20height%3D%2232%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_167f929ecf7%20text%20%7B%20fill%3A%236f42c1%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A2pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_167f929ecf7%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20fill%3D%22%236f42c1%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2211.84375%22%20y%3D%2216.95625%22%3E32x32%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true" style="width: 32px; height: 32px;">
+							  {% elif forloop.counter0|divisibleby:2 %}	
+							  	<img data-src="holder.js/32x32?theme=thumb&amp;bg=e83e8c&amp;fg=e83e8c&amp;size=1" alt="32x32" class="list-img" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2232%22%20height%3D%2232%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_167f929ecf5%20text%20%7B%20fill%3A%23e83e8c%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A2pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_167f929ecf5%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20fill%3D%22%23e83e8c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2211.84375%22%20y%3D%2216.95625%22%3E32x32%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true" style="width: 32px; height: 32px;">
+							  {% else %}	
+							  	<img data-src="holder.js/32x32?theme=thumb&amp;bg=007bff&amp;fg=007bff&amp;size=1" alt="32x32" class="list-img" style="width: 32px; height: 32px;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2232%22%20height%3D%2232%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_167f929ecf1%20text%20%7B%20fill%3A%23007bff%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A2pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_167f929ecf1%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20fill%3D%22%23007bff%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2211.84375%22%20y%3D%2216.95625%22%3E32x32%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true">
+							  {% endif %}
+							  <p class="list-text">
+								<strong class="list-text-strong">{{t.name}}</strong>
+								{{t.description}}</br></br>
+								<a data-toggle="modal" class="colored-text" href="#modalDetailTeam_{{t.id}}">{% trans "View Participants " %} <i class="glyphicon glyphicon-user"></i></a>
+						  		<a class="space-left colored-text" href="/editTeamGet?team={{ t.id }}&page={{teamsPagina.number}}">{% trans "Edit " %}<i class="glyphicon glyphicon-pencil"></i></a>
+						  		<a data-toggle="modal" class="space-left colored-text" href="#modalDeleteTeam_{{t.id}}">{% trans "Delete " %}<i class="glyphicon glyphicon-trash"></i></a>
+							  </p>
+							</div>
+							<!-- Modal Delete Team -->
+						    <div id="modalDeleteTeam_{{t.id}}" class="modal fade" role="dialog">
+						      <div class="modal-dialog">
+						
+						        <!-- Modal content-->
+						        <div class="modal-content">
+						          <div class="modal-header">
+						            <button type="button" class="close text-right" data-dismiss="modal">&times;</button>
+						            <div class="small-text-medium uppercase colored-text">
+						                {% trans "Delete" %}
+						            </div>
+						            <h4 class="modal-title"><strong>{% trans "Delete team:" %} {{t.name}}</strong></h4>
+						            <div class="colored-line"></div> 
+						          </div>
+					    		  <div class="modal-body">
+					    		  	<p>{% trans "Are you sure to delete the team?" %}</p>
+					    		  	<form accept-charset="UTF-8" method="post" action="/deleteTeam?page={{teamsPagina.number}}">
+					    		  		{% csrf_token %}
+					    		  		<input type="hidden" name="idTeam" id="idTeam" value="{{t.id}}">
+					    		  		<button id="upload" name='_upload' type="submit" class="btn btn-primary standard-button">{% trans "Confirm" %}</button>
+					    		  		{% csrf_token %}
+					    		  	</form>
+					    		  </div>
+					    		</div>
+					    	</div>
+					    </div>
+					    <!-- Modal Detail Team -->
+						    <div id="modalDetailTeam_{{t.id}}" class="modal fade" role="dialog">
+						      <div class="modal-dialog">
+						
+						        <!-- Modal content-->
+						        <div class="modal-content">
+						          <div class="modal-header">
+						            <button type="button" class="close text-right" data-dismiss="modal">&times;</button>
+						            <div class="small-text-medium uppercase colored-text">
+						                {% trans "Participants" %}
+						            </div>
+						            <h4 class="modal-title"><strong>{% trans "Team participants:" %} {{t.name}}</strong></h4>
+						            <div class="colored-line"></div> 
+						          </div>
+					    		  <div class="modal-body">
+					    		  	{% if t.participant.all|length > 0 %}
+						    		  	{% for p in t.participant.all %}
+						    		  	<ul class="feature-list list-text-container">
+						    		  		<li><i class="glyphicon glyphicon-user colored-text"></i><span class="space-left">{{p.username}}</span></li>
+						    		  	</ul>
+						    		  	{% endfor %}
+						    		{% else %}
+						    			<p>{% trans "The team has not participants." %}</p>
+						    			<p>{% trans "Edit the team to add new participants." %}</p>
+						    			
+						    		{% endif %}  	
+					    		  </div>
+					    		</div>
+					    	</div>
+					    </div>
+						{% endfor %}
+					<!-- PAGINATOR -->
+	            	<nav aria-label="">
+					  {% if teamsPagina.has_other_pages %}
+						  <ul class="pagination">
+						    {% if teamsPagina.has_previous %}
+						      <li><a href="?page={{ teamsPagina.previous_page_number }}">&laquo;</a></li>
+						    {% else %}
+						      <li class="disabled"><span>&laquo;</span></li>
+						    {% endif %}
+						    {% for i in teamsPagina.paginator.page_range %}
+						      {% if teamsPagina.number == i %}
+						        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+						      {% else %}
+						        <li><a href="?page={{ i }}">{{ i }}</a></li>
+						      {% endif %}
+						    {% endfor %}
+						    {% if teamsPagina.has_next %}
+						      <li><a href="?page={{ teamsPagina.next_page_number }}">&raquo;</a></li>
+						    {% else %}
+						      <li class="disabled"><span>&raquo;</span></li>
+						    {% endif %}
+						  </ul>
+						{% endif %}
+					</nav>
+					{% else %}
+					     <h2 class="intro white-text title-space-bottom">{{username}} {% trans "didn´t include any team yet" %}</h2>
+					{% endif %}
+					<div style="margin-top: 0px!important;" class="intro-section">
+						<p><a class="btn btn-primary standard-button" href="/newTeamGet?page={{teamsPagina.number}}" role="button">{% trans "New Team" %}</a></p>
+					</div>
+					 </div>
+				</div>
+				<div class="col-md-2"></div>
+              </div>
+            </div>
+         </div>
+        <!-- =========================
+	     SECTION: CLIENTS LOGOs
+	    ============================== -->
+	    <section id="section6" class="services grey-bg">
+	    <div class="clients white-bg">
+	        <ul class="client-logos">
+	            <li>
+	                <a href="http://programamos.es">
+	                <img src="../../static/app/images/logoProgramamos.png" alt="">
+	                </a>            
+	            </li>
+	            <li>
+	                <a href="http://www.urjc.es">
+	                <img src="../../static/app/images/logoURJC.jpg" alt="">
+	                </a>
+	            </li>
+	            <li>
+	                <a href="http://libresoft.es">
+	                <img src="../../static/app/images/logoLibresoft.jpeg" alt="">
+	                </a>
+	            </li>
+	
+	            <li>
+	                <a href="http://www.fecyt.es">
+	                <img src="../../static/app/images/logoFECYT.jpg" alt="">
+	                </a>
+	            </li>
+	
+	        </ul>
+	    </div>
+	    </section>
+    </header>
+		<footer class="footer grey-bg">
+		    <div class="container">
+		           {% trans "©2014 Dr. Scratch is powered by " %}<a href="https:/github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
+		
+		            <!-- SOCIAL ICONS -->
+		            <ul class="social-icons">
+		                <li><a href="https:/twitter.com/drscratchtool"><span class="icon-social-twitter transparent-text-dark"></span></a>
+		                </li>
+		                <li><a href=""><span class="icon-social-github transparent-text-dark"></span></a>
+		                </li>
+		                
+		            </ul>
+		    </div>
+		</footer>
+	</body>
+</html>

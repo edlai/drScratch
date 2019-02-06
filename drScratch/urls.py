@@ -1,4 +1,4 @@
-from django.conf.urls import include, url, patterns
+from django.conf.urls import include, url
 from django.conf import settings
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
@@ -8,13 +8,13 @@ urlpatterns = (
     # Examples:
     # url(r'^$', 'drScratch.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
-
     url(r'^admin/', include(admin.site.urls)),
     url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root' : settings.MEDIA_ROOT}),
     #url(r'^profile', 'DrScratchApp.views.profileSettings',),
     url(r'^selector', 'app.views.selector',),
-    #url(r'^login', 'app.views.loginUser',),
-    #url(r'^logout', 'app.views.logoutUser',),
+    url(r'^loginTournaments', 'app.views.loginTournaments',),
+    url(r'^login', 'app.views.loginUser',),
+    url(r'^logout', 'app.views.logoutUser',),
     url(r'^users$', 'app.views.signUpUser',),
     url(r'^statistics$', 'app.views.statistics',),
     url(r'^collaborators$', 'app.views.collaborators',),
@@ -36,6 +36,38 @@ urlpatterns = (
     url(r'^myHistoric', 'app.views.myHistoric',),
     url(r'^myProjects', 'app.views.myProjects',),
     url(r'^myRoles', 'app.views.myRoles',),
+    
+    #Tournaments
+    url(r'^tournaments', 'app.views.initTournaments',),
+    
+    #Participants
+    url(r'^participant/teams', 'app.views.teamsParticipant',),
+    url(r'^participant/tournaments', 'app.views.tournamentsParticipant',),
+    url(r'^participant/play', 'app.views.playParticipant',),
+    
+    #Creator
+    url(r'^creator/tournaments', 'app.views.tournamentsCreator',),
+    url(r'^creator/challenges', 'app.views.challengesCreator',),
+    url(r'^creator/admin/challenges', 'app.views.adminCreatorChallenges',),
+    url(r'^creator/admin/teams', 'app.views.adminCreatorTeams',),
+    url(r'^creator/admin/tournaments', 'app.views.adminCreatorTournaments',),
+    url(r'^creator/admin', 'app.views.adminCreator',),
+    url(r'^newChallenge', 'app.views.newChallenge',),
+    url(r'^deleteChallenge', 'app.views.deleteChallenge',),
+    url(r'^editChallenge', 'app.views.editChallenge',),
+    url(r'^deleteTeam', 'app.views.deleteTeam',),
+    url(r'^editTeamGet', 'app.views.newEditTeam',),
+    url(r'^newTeamGet', 'app.views.newEditTeam',),
+    url(r'^editTeamPost', 'app.views.editTeam',),
+    url(r'^newTeamPost', 'app.views.newTeam',),
+    url(r'^deleteTournament', 'app.views.deleteTournament',),
+    url(r'^editTournamentGet', 'app.views.newEditTournament',),
+    url(r'^newTournamentGet', 'app.views.newEditTournament',),
+    url(r'^editTournamentPost', 'app.views.editTournament',),
+    url(r'^newTournamentPost', 'app.views.newTournament',),
+    url(r'^tournamentNewChallenge', 'app.views.newChallenge',),
+    url(r'^tournamentNewTeam', 'app.views.newTeam',),
+    
     url(r'^$', 'app.views.main',),
     url(r'^.*', 'app.views.redirectMain',),
     

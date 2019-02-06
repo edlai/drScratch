@@ -1,0 +1,460 @@
+{% load i18n %}
+<table class="table tablesorter">
+   <thead>
+       <tr>
+       <th class="col-md-6"><h4>{% trans "Concept" %}</h4></th>
+       <th class="col-md-3"><h4>{% trans "Required Value" %}</h4></th>
+       <th class="col-md-3"><h4>{% trans "Highest Score" %}</h4></th>
+       </tr>
+   </thead>
+   <tbody>
+   	<!-- Parallelism -->
+    <tr>
+        <td>
+            {% if elem.parallelism >= elem.challengeOfTournament.challenge.parallelism %}
+            	<i class="glyphicon glyphicon-ok green-color"> {% trans "Parallelism" %}</i> 
+            {% else %}
+            	<a href="/learn/Parallelism"><i class="glyphicon glyphicon-info-sign"> {% trans "Parallelism" %}</i></a>
+            {% endif %}
+        </td>
+     <td>
+         {% if elem.challengeOfTournament.challenge.parallelism = 0 %}
+          <div class="progress">
+                   <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.challengeOfTournament.challenge.parallelism }}" aria-valuemin="0" aria-valuemax="3" style="width: 0%">
+                       <span><strong class="dark-text">{{ elem.challengeOfTournament.challenge.parallelism }}/3</strong></span>
+                   </div>
+                </div>  
+         {% elif elem.challengeOfTournament.challenge.parallelism = 1 %}
+                <div class="progress">
+                    <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.challengeOfTournament.challenge.parallelism }}" aria-valuemin="0" aria-valuemax="3" style="width: 33%">
+                        <span><strong>{{ elem.challengeOfTournament.challenge.parallelism }}/3</strong></span>
+                    </div>
+                 </div>
+         {% elif elem.challengeOfTournament.challenge.parallelism = 2 %}
+                <div class="progress">
+                    <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.challengeOfTournament.challenge.parallelism }}" aria-valuemin="0" aria-valuemax="3" style="width: 66%">
+                        <span><strong>{{ elem.challengeOfTournament.challenge.parallelism }}/3</strong></span>
+                    </div>
+                 </div>
+         {% elif elem.challengeOfTournament.challenge.parallelism = 3 %}
+                <div class="progress">
+                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.challengeOfTournament.challenge.parallelism }}" aria-valuemin="0" aria-valuemax="3" style="width: 100%">
+                        <span><strong>{{ elem.challengeOfTournament.challenge.parallelism }}/3</strong></span>
+                    </div>
+                 </div>
+         {% endif %}
+     </td>
+     <td>
+         {% if elem.parallelism = 0 %}
+          <div class="progress">
+                   <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.parallelism }}" aria-valuemin="0" aria-valuemax="3" style="width: 0%">
+                       <span><strong class="dark-text">{{ elem.parallelism }}/3</strong></span>
+                   </div>
+                </div>  
+         {% elif elem.parallelism = 1 %}
+                <div class="progress">
+                    <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.parallelism }}" aria-valuemin="0" aria-valuemax="3" style="width: 33%">
+                        <span><strong>{{ elem.parallelism }}/3</strong></span>
+                    </div>
+                 </div>
+         {% elif elem.parallelism = 2 %}
+                <div class="progress">
+                    <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.parallelism }}" aria-valuemin="0" aria-valuemax="3" style="width: 66%">
+                        <span><strong>{{ elem.parallelism }}/3</strong></span>
+                    </div>
+                 </div>
+         {% elif elem.parallelism = 3 %}
+                <div class="progress">
+                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.parallelism }}" aria-valuemin="0" aria-valuemax="3" style="width: 100%">
+                        <span><strong>{{ elem.parallelism }}/3</strong></span>
+                    </div>
+                 </div>
+         {% endif %}
+     </td>
+ </tr>
+ <!-- Logic -->
+ <tr>
+        <td>
+        	{% if elem.logic >= elem.challengeOfTournament.challenge.logic %}
+        		<i class="glyphicon glyphicon-ok green-color"> {% trans "Logic" %}</i> 
+            {% else %}
+            	<a href="/learn/Logic"><i class="glyphicon glyphicon-info-sign"> {% trans "Logic" %}</i></a>
+            {% endif %}
+        </td>
+     <td>
+         {% if elem.challengeOfTournament.challenge.logic = 0 %}
+          <div class="progress">
+                   <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.challengeOfTournament.challenge.logic }}" aria-valuemin="0" aria-valuemax="3" style="width: 0%">
+                       <span><strong class="dark-text">{{ elem.challengeOfTournament.challenge.logic }}/3</strong></span>
+                   </div>
+                </div>  
+         {% elif elem.challengeOfTournament.challenge.logic = 1 %}
+                <div class="progress">
+                    <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.challengeOfTournament.challenge.logic }}" aria-valuemin="0" aria-valuemax="3" style="width: 33%">
+                        <span><strong>{{ elem.challengeOfTournament.challenge.logic }}/3</strong></span>
+                    </div>
+                 </div>
+         {% elif elem.challengeOfTournament.challenge.logic = 2 %}
+                <div class="progress">
+                    <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.challengeOfTournament.challenge.logic }}" aria-valuemin="0" aria-valuemax="3" style="width: 66%">
+                        <span><strong>{{ elem.challengeOfTournament.challenge.logic }}/3</strong></span>
+                    </div>
+                 </div>
+         {% elif elem.challengeOfTournament.challenge.logic = 3 %}
+                <div class="progress">
+                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.challengeOfTournament.challenge.logic }}" aria-valuemin="0" aria-valuemax="3" style="width: 100%">
+                        <span><strong>{{ elem.challengeOfTournament.challenge.logic }}/3</strong></span>
+                    </div>
+                 </div>
+         {% endif %}
+     </td>
+     <td>
+         {% if elem.logic = 0 %}
+          <div class="progress">
+                   <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.logic }}" aria-valuemin="0" aria-valuemax="3" style="width: 0%">
+                       <span><strong class="dark-text">{{ elem.logic }}/3</strong></span>
+                   </div>
+                </div>  
+         {% elif elem.logic = 1 %}
+                <div class="progress">
+                    <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.logic }}" aria-valuemin="0" aria-valuemax="3" style="width: 33%">
+                        <span><strong>{{ elem.logic }}/3</strong></span>
+                    </div>
+                 </div>
+         {% elif elem.logic = 2 %}
+                <div class="progress">
+                    <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.logic }}" aria-valuemin="0" aria-valuemax="3" style="width: 66%">
+                        <span><strong>{{ elem.logic }}/3</strong></span>
+                    </div>
+                 </div>
+         {% elif elem.logic = 3 %}
+                <div class="progress">
+                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.logic }}" aria-valuemin="0" aria-valuemax="3" style="width: 100%">
+                        <span><strong>{{ elem.logic }}/3</strong></span>
+                    </div>
+                 </div>
+         {% endif %}
+     </td>
+    </tr>  
+    <!-- Flow Control -->
+ <tr>
+        <td>
+        	{% if elem.flowControl >= elem.challengeOfTournament.challenge.flowControl %}
+        		<i class="glyphicon glyphicon-ok green-color"> {% trans "Flow Control" %}</i> 
+            {% else %}
+            	<a href="/learn/Flow"><i class="glyphicon glyphicon-info-sign"> {% trans "Flow Control" %}</i></a>
+            {% endif %}
+        </td>
+     <td>
+         {% if elem.challengeOfTournament.challenge.flowControl = 0 %}
+          <div class="progress">
+                   <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.challengeOfTournament.challenge.flowControl }}" aria-valuemin="0" aria-valuemax="3" style="width: 0%">
+                       <span><strong class="dark-text">{{ elem.challengeOfTournament.challenge.flowControl }}/3</strong></span>
+                   </div>
+                </div>  
+         {% elif elem.challengeOfTournament.challenge.flowControl = 1 %}
+                <div class="progress">
+                    <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.challengeOfTournament.challenge.flowControl }}" aria-valuemin="0" aria-valuemax="3" style="width: 33%">
+                        <span><strong>{{ elem.challengeOfTournament.challenge.flowControl }}/3</strong></span>
+                    </div>
+                 </div>
+         {% elif elem.challengeOfTournament.challenge.flowControl = 2 %}
+                <div class="progress">
+                    <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.challengeOfTournament.challenge.flowControl }}" aria-valuemin="0" aria-valuemax="3" style="width: 66%">
+                        <span><strong>{{ elem.challengeOfTournament.challenge.flowControl }}/3</strong></span>
+                    </div>
+                 </div>
+         {% elif elem.challengeOfTournament.challenge.flowControl = 3 %}
+                <div class="progress">
+                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.challengeOfTournament.challenge.flowControl }}" aria-valuemin="0" aria-valuemax="3" style="width: 100%">
+                        <span><strong>{{ elem.challengeOfTournament.challenge.flowControl }}/3</strong></span>
+                    </div>
+                 </div>
+         {% endif %}
+     </td>
+     <td>
+         {% if elem.flowControl = 0 %}
+          <div class="progress">
+                   <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.flowControl }}" aria-valuemin="0" aria-valuemax="3" style="width: 0%">
+                       <span><strong class="dark-text">{{ elem.flowControl }}/3</strong></span>
+                   </div>
+                </div>  
+         {% elif elem.flowControl = 1 %}
+                <div class="progress">
+                    <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.flowControl }}" aria-valuemin="0" aria-valuemax="3" style="width: 33%">
+                        <span><strong>{{ elem.flowControl }}/3</strong></span>
+                    </div>
+                 </div>
+         {% elif elem.flowControl = 2 %}
+                <div class="progress">
+                    <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.flowControl }}" aria-valuemin="0" aria-valuemax="3" style="width: 66%">
+                        <span><strong>{{ elem.flowControl }}/3</strong></span>
+                    </div>
+                 </div>
+         {% elif elem.flowControl = 3 %}
+                <div class="progress">
+                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.flowControl }}" aria-valuemin="0" aria-valuemax="3" style="width: 100%">
+                        <span><strong>{{ elem.flowControl }}/3</strong></span>
+                    </div>
+                 </div>
+         {% endif %}
+     </td>
+    </tr> 
+    <!-- User Interactivity -->
+ <tr>
+        <td>
+        	{% if elem.userInteractivity >= elem.challengeOfTournament.challenge.userInteractivity %}
+        		<i class="glyphicon glyphicon-ok green-color"> {% trans "User Interactivity" %}</i> 
+            {% else %}
+            	<a href="/learn/User"><i class="glyphicon glyphicon-info-sign"> {% trans "User Interactivity" %}</i></a>
+            {% endif %}
+        </td>
+     <td>
+         {% if elem.challengeOfTournament.challenge.userInteractivity = 0 %}
+          <div class="progress">
+                   <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.challengeOfTournament.challenge.userInteractivity }}" aria-valuemin="0" aria-valuemax="3" style="width: 0%">
+                       <span><strong class="dark-text">{{ elem.challengeOfTournament.challenge.userInteractivity }}/3</strong></span>
+                   </div>
+                </div>  
+         {% elif elem.challengeOfTournament.challenge.userInteractivity = 1 %}
+                <div class="progress">
+                    <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.challengeOfTournament.challenge.userInteractivity }}" aria-valuemin="0" aria-valuemax="3" style="width: 33%">
+                        <span><strong>{{ elem.challengeOfTournament.challenge.userInteractivity }}/3</strong></span>
+                    </div>
+                 </div>
+         {% elif elem.challengeOfTournament.challenge.userInteractivity = 2 %}
+                <div class="progress">
+                    <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.challengeOfTournament.challenge.userInteractivity }}" aria-valuemin="0" aria-valuemax="3" style="width: 66%">
+                        <span><strong>{{ elem.challengeOfTournament.challenge.userInteractivity }}/3</strong></span>
+                    </div>
+                 </div>
+         {% elif elem.challengeOfTournament.challenge.userInteractivity = 3 %}
+                <div class="progress">
+                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.challengeOfTournament.challenge.userInteractivity }}" aria-valuemin="0" aria-valuemax="3" style="width: 100%">
+                        <span><strong>{{ elem.challengeOfTournament.challenge.userInteractivity }}/3</strong></span>
+                    </div>
+                 </div>
+         {% endif %}
+     </td>
+     <td>
+         {% if elem.userInteractivity = 0 %}
+          <div class="progress">
+                   <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.userInteractivity }}" aria-valuemin="0" aria-valuemax="3" style="width: 0%">
+                       <span><strong class="dark-text">{{ elem.userInteractivity }}/3</strong></span>
+                   </div>
+                </div>  
+         {% elif elem.userInteractivity = 1 %}
+                <div class="progress">
+                    <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.userInteractivity }}" aria-valuemin="0" aria-valuemax="3" style="width: 33%">
+                        <span><strong>{{ elem.userInteractivity }}/3</strong></span>
+                    </div>
+                 </div>
+         {% elif elem.userInteractivity = 2 %}
+                <div class="progress">
+                    <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.userInteractivity }}" aria-valuemin="0" aria-valuemax="3" style="width: 66%">
+                        <span><strong>{{ elem.userInteractivity }}/3</strong></span>
+                    </div>
+                 </div>
+         {% elif elem.userInteractivity = 3 %}
+                <div class="progress">
+                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.userInteractivity }}" aria-valuemin="0" aria-valuemax="3" style="width: 100%">
+                        <span><strong>{{ elem.userInteractivity }}/3</strong></span>
+                    </div>
+                 </div>
+         {% endif %}
+     </td>
+    </tr>
+    <!-- Data Representation -->
+ <tr>
+        <td>
+        	{% if elem.dataRepresentation >= elem.challengeOfTournament.challenge.dataRepresentation %}
+        		<i class="glyphicon glyphicon-ok green-color"> {% trans "Data Representation" %}</i> 
+            {% else %}
+            	<a href="/learn/Data"><i class="glyphicon glyphicon-info-sign"> {% trans "Data Representation" %}</i></a>
+            {% endif %}
+        </td>
+     <td>
+         {% if elem.challengeOfTournament.challenge.dataRepresentation = 0 %}
+          <div class="progress">
+                   <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.challengeOfTournament.challenge.dataRepresentation }}" aria-valuemin="0" aria-valuemax="3" style="width: 0%">
+                       <span><strong class="dark-text">{{ elem.challengeOfTournament.challenge.dataRepresentation }}/3</strong></span>
+                   </div>
+                </div>  
+         {% elif elem.challengeOfTournament.challenge.dataRepresentation = 1 %}
+                <div class="progress">
+                    <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.challengeOfTournament.challenge.dataRepresentation }}" aria-valuemin="0" aria-valuemax="3" style="width: 33%">
+                        <span><strong>{{ elem.challengeOfTournament.challenge.dataRepresentation }}/3</strong></span>
+                    </div>
+                 </div>
+         {% elif elem.challengeOfTournament.challenge.dataRepresentation = 2 %}
+                <div class="progress">
+                    <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.challengeOfTournament.challenge.dataRepresentation }}" aria-valuemin="0" aria-valuemax="3" style="width: 66%">
+                        <span><strong>{{ elem.challengeOfTournament.challenge.dataRepresentation }}/3</strong></span>
+                    </div>
+                 </div>
+         {% elif elem.challengeOfTournament.challenge.dataRepresentation = 3 %}
+                <div class="progress">
+                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.challengeOfTournament.challenge.dataRepresentation }}" aria-valuemin="0" aria-valuemax="3" style="width: 100%">
+                        <span><strong>{{ elem.challengeOfTournament.challenge.dataRepresentation }}/3</strong></span>
+                    </div>
+                 </div>
+         {% endif %}
+     </td>
+     <td>
+         {% if elem.dataRepresentation = 0 %}
+          <div class="progress">
+                   <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.dataRepresentation }}" aria-valuemin="0" aria-valuemax="3" style="width: 0%">
+                       <span><strong class="dark-text">{{ elem.dataRepresentation }}/3</strong></span>
+                   </div>
+                </div>  
+         {% elif elem.dataRepresentation = 1 %}
+                <div class="progress">
+                    <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.dataRepresentation }}" aria-valuemin="0" aria-valuemax="3" style="width: 33%">
+                        <span><strong>{{ elem.dataRepresentation }}/3</strong></span>
+                    </div>
+                 </div>
+         {% elif elem.dataRepresentation = 2 %}
+                <div class="progress">
+                    <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.dataRepresentation }}" aria-valuemin="0" aria-valuemax="3" style="width: 66%">
+                        <span><strong>{{ elem.dataRepresentation }}/3</strong></span>
+                    </div>
+                 </div>
+         {% elif elem.dataRepresentation = 3 %}
+                <div class="progress">
+                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.dataRepresentation }}" aria-valuemin="0" aria-valuemax="3" style="width: 100%">
+                        <span><strong>{{ elem.dataRepresentation }}/3</strong></span>
+                    </div>
+                 </div>
+         {% endif %}
+     </td>
+    </tr>
+    <!-- Abstraction -->
+ <tr>
+        <td>
+        	{% if elem.abstraction >= elem.challengeOfTournament.challenge.abstraction %}
+        		<i class="glyphicon glyphicon-ok green-color"> {% trans "Abstraction" %}</i>
+            {% else %}
+            	<a href="/learn/Abstraction"><i class="glyphicon glyphicon-info-sign"> {% trans "Abstraction" %}</i></a>
+            {% endif %}
+        </td>
+     <td>
+         {% if elem.challengeOfTournament.challenge.abstraction = 0 %}
+          <div class="progress">
+                   <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.challengeOfTournament.challenge.abstraction }}" aria-valuemin="0" aria-valuemax="3" style="width: 0%">
+                       <span><strong class="dark-text">{{ elem.challengeOfTournament.challenge.abstraction }}/3</strong></span>
+                   </div>
+                </div>  
+         {% elif elem.challengeOfTournament.challenge.abstraction = 1 %}
+                <div class="progress">
+                    <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.challengeOfTournament.challenge.abstraction }}" aria-valuemin="0" aria-valuemax="3" style="width: 33%">
+                        <span><strong>{{ elem.challengeOfTournament.challenge.abstraction }}/3</strong></span>
+                    </div>
+                 </div>
+         {% elif elem.challengeOfTournament.challenge.abstraction = 2 %}
+                <div class="progress">
+                    <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.challengeOfTournament.challenge.abstraction }}" aria-valuemin="0" aria-valuemax="3" style="width: 66%">
+                        <span><strong>{{ elem.challengeOfTournament.challenge.abstraction }}/3</strong></span>
+                    </div>
+                 </div>
+         {% elif elem.challengeOfTournament.challenge.abstraction = 3 %}
+                <div class="progress">
+                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.challengeOfTournament.challenge.abstraction }}" aria-valuemin="0" aria-valuemax="3" style="width: 100%">
+                        <span><strong>{{ elem.challengeOfTournament.challenge.abstraction }}/3</strong></span>
+                    </div>
+                 </div>
+         {% endif %}
+     </td>
+     <td>
+         {% if elem.abstraction = 0 %}
+          <div class="progress">
+                   <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.abstraction }}" aria-valuemin="0" aria-valuemax="3" style="width: 0%">
+                       <span><strong class="dark-text">{{ elem.abstraction }}/3</strong></span>
+                   </div>
+                </div>  
+         {% elif elem.abstraction = 1 %}
+                <div class="progress">
+                    <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.abstraction }}" aria-valuemin="0" aria-valuemax="3" style="width: 33%">
+                        <span><strong>{{ elem.abstraction }}/3</strong></span>
+                    </div>
+                 </div>
+         {% elif elem.abstraction = 2 %}
+                <div class="progress">
+                    <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.abstraction }}" aria-valuemin="0" aria-valuemax="3" style="width: 66%">
+                        <span><strong>{{ elem.abstraction }}/3</strong></span>
+                    </div>
+                 </div>
+         {% elif elem.abstraction = 3 %}
+                <div class="progress">
+                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.abstraction }}" aria-valuemin="0" aria-valuemax="3" style="width: 100%">
+                        <span><strong>{{ elem.abstraction }}/3</strong></span>
+                    </div>
+                 </div>
+         {% endif %}
+     </td>
+    </tr>
+    <!-- Synchronization -->
+ <tr>
+        <td>
+        	{% if elem.synchronization >= elem.challengeOfTournament.challenge.synchronization %}
+        		<i class="glyphicon glyphicon-ok green-color"> {% trans "Synchronization" %}</i>
+            {% else %}
+            	<a href="/learn/Synchronization"><i class="glyphicon glyphicon-info-sign"> {% trans "Synchronization" %}</i></a>
+            {% endif %}
+        </td>
+     <td>
+         {% if elem.challengeOfTournament.challenge.synchronization = 0 %}
+          <div class="progress">
+                   <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.challengeOfTournament.challenge.synchronization }}" aria-valuemin="0" aria-valuemax="3" style="width: 0%">
+                       <span><strong class="dark-text">{{ elem.challengeOfTournament.challenge.synchronization }}/3</strong></span>
+                   </div>
+                </div>  
+         {% elif elem.challengeOfTournament.challenge.synchronization = 1 %}
+                <div class="progress">
+                    <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.challengeOfTournament.challenge.synchronization }}" aria-valuemin="0" aria-valuemax="3" style="width: 33%">
+                        <span><strong>{{ elem.challengeOfTournament.challenge.synchronization }}/3</strong></span>
+                    </div>
+                 </div>
+         {% elif elem.challengeOfTournament.challenge.synchronization = 2 %}
+                <div class="progress">
+                    <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.challengeOfTournament.challenge.synchronization }}" aria-valuemin="0" aria-valuemax="3" style="width: 66%">
+                        <span><strong>{{ elem.challengeOfTournament.challenge.synchronization }}/3</strong></span>
+                    </div>
+                 </div>
+         {% elif elem.challengeOfTournament.challenge.synchronization = 3 %}
+                <div class="progress">
+                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.challengeOfTournament.challenge.synchronization }}" aria-valuemin="0" aria-valuemax="3" style="width: 100%">
+                        <span><strong>{{ elem.challengeOfTournament.challenge.synchronization }}/3</strong></span>
+                    </div>
+                 </div>
+         {% endif %}
+     </td>
+     <td>
+         {% if elem.synchronization = 0 %}
+          <div class="progress">
+                   <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.synchronization }}" aria-valuemin="0" aria-valuemax="3" style="width: 0%">
+                       <span><strong class="dark-text">{{ elem.synchronization }}/3</strong></span>
+                   </div>
+                </div>  
+         {% elif elem.synchronization = 1 %}
+                <div class="progress">
+                    <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.synchronization }}" aria-valuemin="0" aria-valuemax="3" style="width: 33%">
+                        <span><strong>{{ elem.synchronization }}/3</strong></span>
+                    </div>
+                 </div>
+         {% elif elem.synchronization = 2 %}
+                <div class="progress">
+                    <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.synchronization }}" aria-valuemin="0" aria-valuemax="3" style="width: 66%">
+                        <span><strong>{{ elem.synchronization }}/3</strong></span>
+                    </div>
+                 </div>
+         {% elif elem.synchronization = 3 %}
+                <div class="progress">
+                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="{{ elem.synchronization }}" aria-valuemin="0" aria-valuemax="3" style="width: 100%">
+                        <span><strong>{{ elem.synchronization }}/3</strong></span>
+                    </div>
+                 </div>
+         {% endif %}
+     </td>
+    </tr>      
+   </tbody>
+</table>

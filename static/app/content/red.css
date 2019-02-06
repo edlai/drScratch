@@ -163,6 +163,16 @@ a:hover {
     color: #fff !important;
 }
 
+.pagination>li>a, .pagination>li>span{
+	color: #fc3b3b;
+}
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover{
+	background-color: #fc3b3b;
+	border-color: #fc3b3b;
+}
+.pagination>li>a:focus, .pagination>li>a:hover, .pagination>li>span:focus, .pagination>li>span:hover{
+	color: #992626;
+}
 /*.sticky-navigation .login-register li.open a:hover {
 	color: #fff !important;
 }*/

@@ -18,7 +18,7 @@ class File(models.Model):
     organization = models.CharField(max_length=100)
     method = models.CharField(max_length=100)
     time = models.DateField(auto_now=False)
-    language = models.TextField(default="en")
+    language = models.TextField(default="es")
     score = models.IntegerField()
     abstraction = models.IntegerField()
     parallelization = models.IntegerField()
@@ -39,7 +39,6 @@ class Classroom(models.Model):
     name = models.CharField(max_length=100)
     #student = models.ManyToManyField(Student)
 
-
 class Teacher(models.Model):
     teacher = models.ForeignKey(User, unique=True)
     username = models.TextField()
@@ -48,7 +47,6 @@ class Teacher(models.Model):
     hashkey = models.TextField()
     #classroom = models.ManyToManyField(Classroom)
 
-
 class Organization(User):
     hashkey = models.TextField()
 
@@ -56,59 +54,59 @@ class OrganizationHash(models.Model):
     hashkey = models.TextField()
 
 class Dashboard(models.Model):
-	user = models.TextField()
-	frelease = models.DateField()
+    user = models.TextField()
+    frelease = models.DateField()
 
 class Project(models.Model):
-	name = models.TextField()
-	version = models.IntegerField()
-	score = models.IntegerField()
-	level = models.TextField()
-	path = models.TextField()
-	fupdate = models.TextField()
-	dashboard = models.ForeignKey(Dashboard)
-	
+    name = models.TextField()
+    version = models.IntegerField()
+    score = models.IntegerField()
+    level = models.TextField()
+    path = models.TextField()
+    fupdate = models.TextField()
+    dashboard = models.ForeignKey(Dashboard)
+
 class Attribute(models.Model):
-	myproject = models.ForeignKey(Project)
-	character = models.TextField()
-	orientation = models.IntegerField()
-	position = models.IntegerField()
-	costume = models.IntegerField()
-	visibility = models.IntegerField()
-	size = models.IntegerField()
+    myproject = models.ForeignKey(Project)
+    character = models.TextField()
+    orientation = models.IntegerField()
+    position = models.IntegerField()
+    costume = models.IntegerField()
+    visibility = models.IntegerField()
+    size = models.IntegerField()
 
 class Dead(models.Model):
-	myproject = models.ForeignKey(Project)
-	character = models.TextField()
-	blocks = models.IntegerField()
+    myproject = models.ForeignKey(Project)
+    character = models.TextField()
+    blocks = models.IntegerField()
 
 class Duplicate(models.Model):
-	myproject = models.ForeignKey(Project)
-	numduplicates = models.IntegerField()
+    myproject = models.ForeignKey(Project)
+    numduplicates = models.IntegerField()
 
 class Sprite(models.Model):
-	myproject = models.ForeignKey(Project)
-	character = models.TextField()
+    myproject = models.ForeignKey(Project)
+    character = models.TextField()
 
 class Mastery(models.Model):
-	myproject = models.ForeignKey(Project)
-	abstraction = models.IntegerField()
-	paralel = models.IntegerField()
-	logic = models.IntegerField()
-	synchronization = models.IntegerField()
-	flowcontrol = models.IntegerField()
-	interactivity = models.IntegerField()
-	representation = models.IntegerField()
-	scoring = models.IntegerField()	
+    myproject = models.ForeignKey(Project)
+    abstraction = models.IntegerField()
+    paralel = models.IntegerField()
+    logic = models.IntegerField()
+    synchronization = models.IntegerField()
+    flowcontrol = models.IntegerField()
+    interactivity = models.IntegerField()
+    representation = models.IntegerField()
+    scoring = models.IntegerField()	
 
 class Comment(models.Model):
-	user = models.TextField()
-	text = models.TextField()
-	date = models.DateField()
+    user = models.TextField()
+    text = models.TextField()
+    date = models.DateField()
 
 class Activity(models.Model):
-	text = models.TextField()
-	date = models.DateField()
+    text = models.TextField()
+    date = models.DateField()
 
 class Stats(models.Model):
     daily_score = models.TextField()
@@ -127,3 +125,60 @@ class Stats(models.Model):
     duplicateScript = models.IntegerField(default=int(0))
     spriteNaming = models.IntegerField(default=int(0))
     initialization = models.IntegerField(default=int(0))
+    
+class Creator(models.Model):
+    username = models.CharField(max_length=100, unique=True, blank=True)
+    password = models.TextField()
+
+class Participant(models.Model):    
+    email = models.CharField(max_length=100, unique=True, blank=True) 
+    username = models.TextField()
+    password = models.TextField()
+    creator = models.ForeignKey(Creator)
+    
+class Team(models.Model):
+    name = models.CharField(max_length=100, blank=True)
+    description = models.TextField(default="")
+    creator = models.ForeignKey(Creator)
+    participant = models.ManyToManyField(Participant)
+    
+class Challenge(models.Model):
+    name = models.TextField() 
+    description = models.TextField() 
+    parallelism = models.IntegerField(default=int(0))
+    logic = models.IntegerField(default=int(0))
+    flowControl = models.IntegerField(default=int(0))
+    userInteractivity = models.IntegerField(default=int(0))
+    dataRepresentation = models.IntegerField(default=int(0))
+    abstraction = models.IntegerField(default=int(0))
+    synchronization = models.IntegerField(default=int(0))
+    creator = models.ForeignKey(Creator)
+    
+class Tournament(models.Model):
+    name = models.CharField(max_length=100, blank=True)
+    description = models.TextField(default="")
+    creator = models.ForeignKey(Creator)
+    teams = models.ManyToManyField(Team)
+    challenges = models.ManyToManyField(Challenge, through='ChallengesOfTournament')
+    def get_challenges(self):
+        return self.challenges.order_by('chall')
+    
+class ChallengesOfTournament (models.Model):
+    position = models.PositiveIntegerField()
+    tournament = models.ForeignKey(Tournament)
+    challenge = models.ForeignKey(Challenge, related_name='chall')
+    class Meta:
+        ordering = ('position',)
+
+class Game (models.Model):
+    parallelism = models.IntegerField(default=int(0))
+    logic = models.IntegerField(default=int(0))
+    flowControl = models.IntegerField(default=int(0))
+    userInteractivity = models.IntegerField(default=int(0))
+    dataRepresentation = models.IntegerField(default=int(0))
+    abstraction = models.IntegerField(default=int(0))
+    synchronization = models.IntegerField(default=int(0))
+    completed = models.BooleanField(default=False)
+    challengeOfTournament = models.ForeignKey(ChallengesOfTournament)
+    team = models.ForeignKey(Team)
+    

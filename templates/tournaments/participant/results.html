@@ -1,0 +1,496 @@
+{% load i18n %}
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Responsive Bootstrap 3 Startup and Multipurpose Template">
+    <meta name="keywords" content="Stamp, Startup, Multipurpose, Bootstrap, Landing page, Template, Registration, Landing">
+    <meta name="author" content="Programamos URJC Libresoft FECyT">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <link rel="stylesheet" href="../../static/app/content/bootstrap-tour.css">
+    <script src="../../static/app/scripts/bootstrap.min.js"></script>
+    <script src="../../static/app/scripts/bootstrap-tour.js"></script>
+
+    <!-- SITE TITLE -->
+    <title>Dr. Scratch</title>
+
+
+    <link rel="stylesheet" href="../../static/app/content/style.css">
+    <!-- =========================
+     FAV AND TOUCH ICONS AND FONT  
+    ============================== -->
+    <link rel="icon" href="../../static/app/images/favicon.ico">
+    <link rel="stylesheet" href="../../static/app/icons/icons.css">  
+    <link type="text/css" rel="stylesheet" href="../../static/app/content/css_002.css">
+    <link type="text/css" rel="stylesheet" href="../../static/app/content/css.css">
+    <!-- =========================
+     STYLESHEETS   
+    ============================== -->
+    <!-- BOOTSTRAP AND ANIMATION -->
+    <link rel="stylesheet" href="../../static/app/content/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/app/content/animate.css">
+
+    <!-- CAROUSEL AND LIGHTBOX -->
+    <link rel="stylesheet" href="../../static/app/content/owl_002.css">
+    <link rel="stylesheet" href="../../static/app/content/owl.css">
+    <link rel="stylesheet" href="../../static/app/content/nivo-lightbox.css">
+    <link rel="stylesheet" href="../../static/app/content/default.css">
+
+    <!-- CUSTOM STYLESHEETS -->
+    <link rel="stylesheet" href="../../static/app/content/tournaments/styles_result.css">
+    
+    <!-- Level css -->
+    {% if mastery.points >= 15 %}
+    	<link rel="stylesheet" href="../../static/app/content/tournaments/master_result.css">
+    {% elif mastery.points > 7 %}
+    	<link rel="stylesheet" href="../../static/app/content/tournaments/developing_result.css">
+    {% else %}
+    	<link rel="stylesheet" href="../../static/app/content/tournaments/basic_result.css">
+    {% endif %}
+    
+    <!-- RESPONSIVE FIXES -->
+    <link rel="stylesheet" href="../../static/app/content/responsive.css">
+
+    <!-- DEFAULT COLOR/ CURRENTLY USING -->
+    <link rel="stylesheet" href="../../static/app/content/red.css">
+    {% if mastery.points > 7 %}
+		<script>
+		    // Instance the tour
+		    $(document).ready(function(){
+		        $(".btn-topbar").click(function(){
+			    var tour = new Tour({
+			      storage: false,
+			      backdrop: true,
+			      steps: [
+			      {
+			        element: "#stepone",
+			        title: "{% trans 'Score' %}",
+			        content: "{% trans 'This section shows the total score.' %}"
+			      },
+			      {
+			        element: "#steptwo",
+			        title: "{% trans 'Improve the score'%}",
+			        content: "{% trans 'You do not like the score that you got? Improve it following our advice.' %}"
+			      },
+			      {
+			        element: "#stepthree",
+			        title: "{% trans 'Bad habits in programming' %}",
+			        content:"{% trans 'If you correct your bad habits in programming, you will avoid problems in the future.'%}"
+			      },
+			      {
+			        element: "#stepfour",
+			        title: "{% trans 'Score in detail'%}",
+			        content: "{% trans 'Here we show the score in each programming skill.' %}",
+			        placement:'left'
+			      }
+			    ]});
+		    	tour.init();
+		   		// Initialize the tour
+		           tour.start();
+		       	});
+			});
+	    </script>
+	{% else %}
+		<script>
+		    // Instance the tour
+		    $(document).ready(function(){
+		        $(".btn-topbar").click(function(){
+			    var tour = new Tour({
+			      storage: false,
+			      backdrop: true,
+			      steps: [
+			      {
+			        element: "#stepone",
+			        title: "{% trans 'Score' %}",
+			        content: "{% trans 'This section shows the total score.' %}"
+			      },
+			      {
+			        element: "#steptwo",
+			        title: "{% trans 'Improve the score'%}",
+			        content: "{% trans 'You do not like the score that you got? Improve it following our advice.' %}"
+			      },
+			      {
+			          element: "#stepthree",
+			          title: "{% trans 'Score in detail'%}",
+			          content: "{% trans 'Here we show the score in each programming skill.' %}",
+			          placement:'left'
+			      }
+			    ]});
+		    	tour.init();
+		   		// Initialize the tour
+		           tour.start();
+		       	});
+			});
+	    </script>
+	{% endif %}   
+    
+    <script>
+        $(document).ready(function () {
+            $('.desplegable').popover();
+    });
+    </script>
+    <script>
+                    window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
+    </script>
+    {% if mastery.points >= 15 %}
+    <script>
+        $(document).ready(function () {
+            if("{{ dupCode }}" == ""){
+                $("#dupCode").attr("data-content","You don't have duplicated scripts.");
+            }else{
+                str = "{{ dupCode }}".split(",");
+                for (n in str){
+
+                    if(n == 0){str[n] = str[n].slice(12,-11)}
+                    else if(n == str.length-1) { str[n] = str[n].slice(13,-12)}
+                    else{
+                    str[n] = str[n].slice(13,-11)};
+                };
+               // alert(
+                $("#dupCode").attr("data-content",str.join("\n"));
+            }
+
+    });
+    </script>
+    {% endif %}
+    
+</head>
+<body>
+	<div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top  sticky-navigation" role="navigation">
+		         <div class="container">          
+		             <!-- TOP BAR -->
+		       <div class="navbar-collapse collapse" id="stamp-navigation">
+		       <!-- NAVIGATION LINK -->
+		         <a class="navbar-brand" href="/">
+		           <img src="../../static/app/images/logo_main.png" alt="">
+		         </a>
+		         <ul class="nav navbar-nav navbar-left main-navigation small-text">
+		         </ul>
+		
+		       <!-- LOGIN REGISTER -->
+		       <ul class="nav navbar-nav navbar-right">
+				   <li class="navbar-brand"><a class="btn btn-default btn-topbar" id="tour">TOUR</a></li>
+		           <li class="dropdown">
+		                   <a class="dropdown-toggle navbar-text" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{% trans "Logged in as " %} {{ username }}<span class="caret"></span></a>
+		                   <ul class="login-register small-text dropdown-menu" aria-labelledby="dropdownMenu1">
+		                       <li> <a href="/changePwd">{% trans "Cambiar contraseña" %}</a> </li>
+		                       <li>
+		                           <a id="logout" type="submit" href="/logoutOrganization">{% trans "Logout" %}</a>
+		                       </li>
+		                       
+		                   </ul>
+		           </li>
+		       </ul></div>
+		       <!-- /END TOP BAR -->
+		   </div>
+		   <!-- /END CONTAINER -->
+		</div>
+		<header id="home" style="background-position: 50% 40.5px;" class="header" data-stellar-background-ratio="0.3">
+	        <div class="overlay-layer">
+            <!-- STICKY NAVIGATION -->
+            <div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top  sticky-navigation" role="navigation">
+                <div class="container">          
+                    <!-- TOP BAR -->
+                    <div class="navbar-collapse collapse" id="stamp-navigation">
+                    <!-- NAVIGATION LINK -->
+                      <a class="navbar-brand" href="/">
+                        <img src="../../static/app/images/logo_main.png" alt="">
+                      </a>
+                      <ul class="nav navbar-nav navbar-left main-navigation small-text">
+                      </ul>
+
+                    <!-- LOGIN REGISTER -->
+                    {% if username %}
+                    	<ul class="nav navbar-nav navbar-right">
+                    		<li class="navbar-brand"><a class="btn btn-default btn-topbar" id="tour">TOUR</a></li>
+	                        <li class="dropdown">
+	                                <a class="dropdown-toggle navbar-text" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{% trans "Logged in as " %} {{ username }}<span class="caret"></span></a>
+	                                <ul class="login-register small-text dropdown-menu" aria-labelledby="dropdownMenu1">
+	                                    <li> <a href='/changePwd'>{% trans "Change password" %}</a> </li>
+	                                    <li>
+	                                        <a id="logout" type="submit" href="/logoutOrganization">{% trans "Logout" %}</a>
+	                                    </li>
+	                                    
+	                                </ul>
+	                        </li>
+                        </ul>
+                    {% else %}
+	                    <ul class="nav navbar-nav navbar-right login-register small-text">  
+	                    	<li class="navbar-brand"><a class="btn btn-default btn-topbar" id="tour">TOUR</a></li>
+	                        <li style="display: block;" class="login js-login dropdown">
+	                          <a aria-expanded="false" role="button" href="#" data-toggle="dropdown" class="dropdown-toggle">{% trans "Sign in" %} 
+	                            <span class="caret"></span>
+	                          </a>
+	                          {% if loginError %}
+	                          		<p>{% trans "Invalid username / password" %} </p>
+                          	  {% endif %}
+	                                    <ul role="menu" class="dropdown-menu">
+	                                        <li>        
+	                                        <div style="padding: 15px; padding-bottom: 0px;">
+	                                            <form accept-charset="UTF-8" action="/loginTournaments" method="post">
+	                                            {% csrf_token %}
+	                                                {% trans "<input type='text' name='username' id='username' placeholder='Username' style='margin-bottom: 15px;'>" %}
+	                                                {% trans "<input type='password' name='password' id='password' placeholder='Password' style='margin-bottom: 15px;'>" %}
+	                                                <!--<input type="checkbox" value="1" id="remember-me" name="remember-me" style="float: left; margin-right: 10px;"> -->                    
+	                                                <!-- <label for="sign-in" class="string optional">{% trans "Remember me" %}</label> -->
+	                                                <div>
+	                                                    <a class="message" href="/changePwd">{% trans "I forgot my password" %}</a>
+	                                                </div>                                                
+	                                                <div class="centre">
+	                                                    {% trans "<input type='submit' value='Sign in' id='sign-in' class='btn-group btn-group-justified colored-text'>" %}
+	                                                </div>    
+	                                                {% csrf_token %}                                        
+	                                            </form>
+	                                        </div>            
+	                                        </li>
+	                                        </ul>
+	                                    </li> 
+	                        </ul>
+                       {% endif %}
+                    </div>
+                    <!-- /END TOP BAR -->
+                </div>
+                <!-- /END CONTAINER -->
+            </div>
+            <!-- /END STICKY NAVIGATION -->
+              <!-- =========================
+			    ALERT  
+			    ============================== -->
+            <!-- CONTAINER -->
+            <!-- /END STICKY NAVIGATION -->
+		    <!-- JUMBOTRON -->
+			<div class="container">
+					{% if mastery.points >= 15 %}
+						<div class="result-toppanel-master">
+					{% elif mastery.points > 7 %}
+						<div class="result-toppanel-developing">
+					{% else %}
+						<div class="result-toppanel-basic">
+					{% endif %}
+						{% if elem.completed == True %}
+							<h4 class="intro green-color toppanel-text">{% trans "You complete the challenge." %}</h4>
+							<h4 class="intro green-color toppanel-text">{% trans "Back to improve your highest score." %}</h4>
+						{% else %}
+							<h4 class="intro yellow-color toppanel-text">{% trans "You didn't complete the challenge yet." %}</h4>
+							<h4 class="intro yellow-color toppanel-text">{% trans "Back to improve your highest score." %}</h4>
+						{% endif %}
+						<a href="/participant/tournaments?team={{elem.team.id}}&pageTour={{pageTour}}&pageTeam={{pageTeam}}" class="navbar-register-button title-back-btn">{% trans "« Back" %}</a>
+						<a class="learn-link" href="/learn/Logic">{% trans "Learn how" %} <i class="glyphicon glyphicon-book"></i></a>
+					</div>
+		            <section id="blackboard" class="services col-md-5">
+		                
+		                <div class="devpanel">
+		                    <div class="panel panel-success" id="devpanel">
+		                        <div class="panel-heading" id="stepone">
+		                        	{% if mastery.points >= 15 %}
+										<img src="../../static/app/images/cat.png" class="img-responsive col-md-4">
+									{% elif mastery.points > 7 %}
+										<img src="../../static/app/images/monkey.png" class="img-responsive col-md-4">
+									{% else %}
+										<img src="../../static/app/images/ferret.png" class="img-responsive col-md-5">
+									{% endif %}
+		                            <h2 id="score" class="panel-title dark-text"><strong>{% trans "Score:" %}</strong> {{ mastery.points }}/{{ mastery.maxi }}
+		                            <a class="twitter-share-button" data-text="{% blocktrans with points=mastery.points %} I have just obtained {{ points }} points analyzing my project in Dr. Scratch! Beat it! @DrScratchTool {% endblocktrans %}"href="https://twitter.com/share">Tweet</a></h2>
+		                        </div>
+		                        <div class="panel-body">
+		                            <div class="container">
+		                                {% if mastery.points >= 15 %}
+									    	{% trans "<h3 class='text-left dark-text'>Your level is...  <strong>MASTER! </strong></h3>" %}
+                            				<p class='text-left dark-text'> {% trans "You're the master of the universe!!! " %}</p> 
+									    {% elif mastery.points > 7 %}
+									    	{% trans "<h3 class='text-left dark-text'>Your level is... <br></br> <strong>DEVELOPING! </strong></h3>" %}
+                            				<p class='text-left dark-text'> {% trans "You're doing a great job.<br> Keep it up!!!" %}</p>
+									    {% else %}
+									    	{% trans "<h3 class='text-left dark-text'>Your level is...  <strong>BASIC! </strong></h3>" %}
+		                            		<p class='text-left dark-text'> {% trans "You're at the beginning of a <br>great adventure . . . Keep it up!" %} </p>
+									    {% endif %}
+		                            </div>
+		                        </div>
+		                    </div>
+		                </div>
+		                <!-- HOW TO IMPROVE -->
+		            <div class="improve">
+		                <div class="panel panel-success" id="improve">
+		
+		                    <div class="panel-heading" id="steptwo">
+		                        <h2 id="score" class="panel-title dark-text">{% trans "Want to level up?"%}</h2>
+		                         {% if url != "" %}
+		                        <a href="{{ url }}" target="_blank"><span class="glyphicon glyphicon-hand-right"></span>{% trans "Come back to your Scratch project." %}</a>
+		                        {% endif %}
+		                    </div>
+		                    <div class="panel-body text-left">
+		
+		                                {% for key, value in mastery.items %}
+		                                {% if forloop.counter0|divisibleby:1 %}<tr>{% endif %}
+		                                {% if key != "points" %}
+		                                {% if key != "maxi" %}
+		                                {% if value != 2 %}
+		                                      {% if value == 0 %}
+		                                  <a  href="/learn/{{ key }}/#level0">
+		                                    <img src="../../static/app/images/bulb_little.png" alt="">
+		                                        {% blocktrans %}
+		                                        {{ key }}
+		                                        {% endblocktrans %}
+		                                 </a><br>
+		                                   
+		                                </tr>
+		                            {% elif value == 1 %}
+		                                <a href="/learn/{{ key }}/#level1">
+		                                    <img src="../../static/app/images/bulb_little.png" alt=""> 
+		                                        {% blocktrans %}
+		                                        {{ key }}
+		                                        {% endblocktrans %}
+		                                 </a><br>
+		                            
+		                            
+		                            {% endif %}
+		                            {% endif %}   
+		                                {% endif %}
+		                                {% endif %}         
+		                                {% if forloop.counter|divisibleby:1 or forloop.last %}
+		                               {% endif %}
+		                                {% endfor %}
+		                                
+		                    </div>
+                    		{% if mastery.points >= 15 %}
+			                 <div id="stepthree">
+			                    
+			                    <div class="panel-heading" >
+			                        <h2 id="score" class="panel-title dark-text">{% trans "Details to fix:"%}</h2>
+			                    </div>
+			                    <div class="panel-body text-left typ">
+			                        <a class="glyphicon glyphicon-repeat"/><a class="desplegable" id="dupCode" data-toggle="popover" title="{% trans 'Duplicated scripts' %}" data-content="" data-trigger="hover" href="learn/duplicatedScripts"> {{ duplicateScript.number }} {% trans " duplicated scripts." %}
+									</a><br>
+			                        <a class="glyphicon glyphicon-pencil"/> <a class="desplegable" data-toggle="popover" title="{% trans 'Sprite naming' %}" data-content=" {% for value in spriteNaming.sprite %}
+			                                    {{ value }}.
+			                                   {% endfor %}" data-trigger="hover" href="learn/spriteNaming"> {{ spriteNaming.number }} {% trans " sprite naming." %}
+			                       </a><br>
+			                        <a class="glyphicon glyphicon-remove-sign"/><a class="desplegable" data-toggle="popover" title="{% trans 'Dead code' %}" data-content="{% for key,value in deadCode.items%}
+			                        {% if key != 'deadCode' %}
+			                        {% if key != 'number' %}
+			                        {% if deadCode.number == 0 %}
+			                        {% trans 'Your project does not have dead code, good job!' %}
+			                        {% else %} 
+			                        {% trans 'You have dead code in ' %}{{ key }}({{ value }}):
+			                        {% endif %}
+			                        {% endif%}
+			                        {% endif%}
+			                        {% endfor%}
+			                        {{ dCode }}" data-trigger="hover" href="learn/deadCode"> {{ deadCode.number }} {% trans " dead code." %}
+			                       </a><br>
+			                        <a class="glyphicon glyphicon-exclamation-sign"/><a class="desplegable" data-toggle="popover" title="{% trans 'Sprites attributes' %}" data-content=" {% for key,value in initialization.items%}
+			                        {% if value|length > 0 %}
+			                        {% if key != 'number' %}
+			                        {% if initialization.number == 0 %}
+			                        {% trans 'Your project does not have uninitialized attributes, good job!'%}
+			                        {% else %}
+			                        {{ key }}({{ value }})
+			                        {% endif %}
+			                        {% endif%}
+			                        {% endif%}
+			                        {% endfor%}" data-trigger="hover" href="learn/attrInit"> {{ initialization.number }} {% trans " sprite attributes." %}
+			                        
+									</a>
+			                    </div>
+			                  </div>
+							{% elif mastery.points > 7 %}
+								<div id="stepthree">
+                    
+				                    <div class="panel-heading" >
+				                        <h2 id="score" class="panel-title dark-text">{% trans "Details to fix:"%}</h2>
+				                    </div>
+				                    <div class="panel-body text-left typ">
+				                         <a class="glyphicon glyphicon-exclamation-sign"/><a class="desplegable" data-toggle="popover" title="{% trans 'Sprites attributes' %}" data-content=" {% for key,value in initialization.items%}
+				                        {% if value|length > 0 %}
+				                        {% if key != 'number' %}
+				                        {% if initialization.number == 0 %}
+				                        {% trans 'Your project does not have uninitialized attributes, good job!'%}
+				                        {% else %}
+				                        {{ key }}({{ value }})
+				                        {% endif %}
+				                        {% endif%}
+				                        {% endif%}
+				                        {% endfor%}" data-trigger="hover" href="learn/attrInit"> {{ initialization.number }} {% trans " sprite attributes." %}
+				                        
+										</a><br>
+				                        <a class="glyphicon glyphicon-pencil"/> <a class="desplegable" data-toggle="popover" title="{% trans 'Sprite naming' %}" data-content=" {% for value in spriteNaming.sprite %}
+				                                    {{ value }}.
+				                                   {% endfor %}" data-trigger="hover" href="learn/spriteNaming"> {{ spriteNaming.number }} {% trans " sprite naming." %}
+				                       </a><br>
+				                 </div>
+				                </div>
+							{% endif %}
+		                </div>
+		            </div>
+		            
+		            </section>    
+		
+		
+		  	<!-- Score in detail -->
+		    <div class="col-md-7">
+		        <section id="dashboard">
+					{% if mastery.points > 7 %}
+						<div class="container-fluid" id="stepfour">
+					{% else %}
+						<div class="container-fluid" id="stepthree">
+					{% endif %}
+		                <div class="row marketing">
+		                    <div class="jumbotron">
+		                        <div class="table-responsive">
+		                            {% include 'tournaments/participant/scores.html' %}
+		                        </div>
+		                      </div>
+		                    </div>
+		                </div>
+		        </section>
+		     </div>
+		</div>
+		</div>
+		<!-- =========================
+	     SECTION: CLIENTS LOGOs
+	    ============================== -->
+	    <section id="section6" class="services grey-bg">
+	    <div class="clients white-bg">
+	        <ul class="client-logos">
+	            <li>
+	                <a href="http://programamos.es">
+	                <img src="../../static/app/images/logoProgramamos.png" alt="">
+	                </a>            
+	            </li>
+	            <li>
+	                <a href="http://www.urjc.es">
+	                <img src="../../static/app/images/logoURJC.jpg" alt="">
+	                </a>
+	            </li>
+	            <li>
+	                <a href="http://libresoft.es">
+	                <img src="../../static/app/images/logoLibresoft.jpeg" alt="">
+	                </a>
+	            </li>
+	
+	            <li>
+	                <a href="http://www.fecyt.es">
+	                <img src="../../static/app/images/logoFECYT.jpg" alt="">
+	                </a>
+	            </li>
+	
+	        </ul>
+	    </div>
+	    </section>
+		</header>
+		<footer class="footer grey-bg">
+		    <div class="container">
+		           {% trans "©2014 Dr. Scratch is powered by " %}<a href="https:/github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
+		
+		            <!-- SOCIAL ICONS -->
+		            <ul class="social-icons">
+		                <li><a href="https:/twitter.com/drscratchtool"><span class="icon-social-twitter transparent-text-dark"></span></a>
+		                </li>
+		                <li><a href=""><span class="icon-social-github transparent-text-dark"></span></a>
+		                </li>
+		                
+		            </ul>
+		    </div>
+		</footer>
+</body>
+</html>

@@ -114,6 +114,20 @@ body {
   .navbar-wrapper .navbar {
     border-radius: 4px;
   }
+  
+  .carousel-indicators li{
+  	border: 1px solid #313131;
+  }
+  
+  
+	.carousel-indicators .active {
+	    background-color: #313131;
+	}
+	
+	.carousel-control {
+		color: #313131;
+	}
+
 
   /* Bump up size of carousel content */
   .carousel-caption h1 {
@@ -122,9 +136,11 @@ body {
     line-height: 1.4;
   }
   .carousel-caption h3 {
-    font-size: 25px;
-    font:bold;
-    color: #B40404;
+    font-size: 1.5rem;
+    color: #fc3b3b;
+    font-family: inherit;
+    font-weight: 500;
+    text-shadow: none;
   }
   .carousel-caption ol{
     margin-bottom: 40px;
@@ -137,6 +153,12 @@ body {
     margin-bottom: 10px;
     color: black;
     font-size: 15px;
+    text-shadow: none;
+    line-height: 28px;
+    font-weight: 300;
+    color: #313131;
+    font-size: 16px;
+    font-family: 'Purisan,Bold','Open Sans', Helvetica Neue, Sans-serif;
   }
 
   .featurette-heading {

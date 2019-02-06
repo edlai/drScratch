@@ -1,5 +1,3 @@
-from django.conf import global_settings
-
 """
 Django settings for drScratch project.
 
@@ -9,9 +7,13 @@ https://docs.djangoproject.com/en/1.7/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.7/ref/settings/
 """
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+
 import os
+
+from django.conf import global_settings
+
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 STATIC_URL = '/static/'
@@ -41,9 +43,9 @@ TEMPLATE_LOADERS = (
 #'django.template.loaders.eggs.Loader',
 )
 
-TEMPLATE_DIRS = ('templates',)
+TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'templates'),)
 
-ALLOWED_HOSTS = [...]
+#ALLOWED_HOSTS = [...]
 
 
 # Application definition
@@ -69,6 +71,16 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
+PASSWORD_HASHERS = (
+        'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+        'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+        'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
+        'django.contrib.auth.hashers.BCryptPasswordHasher',
+        'django.contrib.auth.hashers.SHA1PasswordHasher',
+        'django.contrib.auth.hashers.MD5PasswordHasher',
+        'django.contrib.auth.hashers.CryptPasswordHasher',
+)
+
 ROOT_URLCONF = 'drScratch.urls'
 
 WSGI_APPLICATION = 'drScratch.wsgi.application'
@@ -79,12 +91,12 @@ WSGI_APPLICATION = 'drScratch.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': '',
-        'NAME': ...,
-	'USER': '',
-	'PASSWORD':'',
-	'HOST': '',
-	'PORT': '',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'drscratch',
+    'USER': 'root',
+    'PASSWORD':'dntafc',
+    'HOST': 'localhost',
+    'PORT': '3306',
     }
 }
 
@@ -97,7 +109,7 @@ MEDIA_ROOT = 'static'
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'es'
 
 _ = lambda s: s
 
