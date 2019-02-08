@@ -4,6 +4,7 @@
 
 from django.http import HttpResponseRedirect, HttpResponseNotFound
 from django.http import HttpResponse, HttpResponseServerError
+from django.utils.datastructures import MultiValueDictKeyError
 from django.core.context_processors import csrf
 from django.core.cache import cache
 from django.core.mail import EmailMessage
@@ -19,18 +20,20 @@ from django.utils.encoding import force_bytes
 from django.db.models import Avg
 from django.utils.http import urlsafe_base64_encode,urlsafe_base64_decode
 from app.models import Project, Dashboard, Attribute, Game,\
-    ChallengesOfTournament
+    ChallengesOfTournament, CreatorHash
 from app.models import Dead, Sprite, Mastery, Duplicate, File, CSVs
 from app.models import Creator, Participant, Tournament, Team
 from app.models import Teacher, Organization, OrganizationHash, Challenge
 from app.forms import UploadFileForm, UserForm, NewUserForm, UrlForm, TeacherForm,\
     UpdateForm, TeamForm, TournamentForm
-from app.forms import OrganizationForm, OrganizationHashForm, LoginForm, EditTournamentForm, ParticipantForm, ChallengeForm
+from app.forms import OrganizationForm, OrganizationHashForm, LoginForm, EditTournamentForm, ParticipantForm, ChallengeForm, CreatorForm
 from django.contrib.auth.models import User
 from datetime import datetime,timedelta,date
+from django.utils.crypto import get_random_string
 from django.contrib.auth.decorators import login_required
 #from email.MIMEText import MIMEText
 from django.utils.encoding import smart_str
+import re
 import smtplib
 import email.utils
 import os
@@ -72,6 +75,7 @@ max_teams_per_tournament=4
 max_challenges_per_tournament=4
 paginator_participant_touraments=1
 paginator_creator_progress_teams=1
+max_new_participants=20
 
 #_____________________________ MAIN ______________________________________#
 
@@ -285,7 +289,7 @@ def uploadUnregistered(request):
 def changeVersion(request, file_name):
     p = kurt.Project.load(file_name)
     p.convert("scratch20")
-    p.save()
+    p   .save()
     file_name = file_name.split('.')[0] + '.sb2'
     return file_name
 
@@ -512,10 +516,6 @@ def signUpOrganization(request):
                         #email.attach_file("static/app/images/logo_main.png")
                         email.send()
                         login(request, organization)
-                        creator = Creator.objects.filter(username=username)
-                        if not creator:
-                            creatorObj = Creator(username=username, password=password)
-                            creatorObj.save()
                         return HttpResponseRedirect('/organization/' + organization.username)
 
                     except:
@@ -557,12 +557,14 @@ def loginOrganization(request):
             if organization is not None:
                 if organization.is_active:
                     login(request, organization)
-                    creator = Creator.objects.filter(username=username)
-                    if not creator:
-                        creatorObj = Creator(username=username, password=password)
-                        creatorObj.save()
-                    return HttpResponseRedirect('/organization/' + organization.username)
-
+                    try:
+                        Organization.objects.get(username=username)
+                        return HttpResponseRedirect('/organization/' + organization.username)
+                    except Organization.DoesNotExist:
+                        flag = True
+                        return render_to_response("password/user_doesntorg.html",
+                                            {'flag': flag, 'username':request.user.username},
+                                            context_instance=RC(request))
             else:
                 flag = True
                 return render_to_response("password/user_doesntexist.html",
@@ -583,7 +585,13 @@ def organization(request, name):
         if request.user.is_authenticated():
             username = request.user.username
             if username == name:
-                user = Organization.objects.get(username=username)
+                try:
+                    user = Organization.objects.get(username=username)
+                except Organization.DoesNotExist:
+                    flag = True
+                    return render_to_response("password/user_doesntorg.html",
+                                            {'flag': flag, 'username':request.user.username},
+                                            context_instance=RC(request))
                 date_joined= user.date_joined
                 end = datetime.today()
                 y = end.year
@@ -929,11 +937,14 @@ def loginUser(request):
             if user is not None:
                 if user.is_active:
                     login(request, user)
-                    creator = Creator.objects.filter(username=username)
-                    if not creator:
-                        creatorObj = Creator(username=username, password=password)
-                        creatorObj.save()
-                    return HttpResponseRedirect('/myDashboard')
+                    try:
+                        Organization.objects.get(username=username)
+                        return HttpResponseRedirect('/myDashboard')
+                    except Organization.DoesNotExist:
+                        flag = True
+                        return render_to_response("password/user_doesntorg.html",
+                                            {'flag': flag, 'username':request.user.username},
+                                            context_instance=RC(request))
             else:
                 flag = True
                 return render_to_response("password/user_doesntexist.html",
@@ -1650,7 +1661,171 @@ def show_file(request):
     
     
 #-------------------TOURNAMENTS---------------------# 
-"""TODO:------------TOURNAMENTS---------------------""" 
+"""TODO:------------TOURNAMENTS---------------------"""
+
+def reset_password_tournaments(request,uidb64=None,token=None,*arg,**kwargs):
+    UserModel = get_user_model()
+    try:
+        uid=urlsafe_base64_decode(uidb64)
+        user = User.objects.get(pk=uid)
+    except (TypeError, ValueError, OverflowError, UserModel.DoesNotExist):
+        user = None
+    if request.method == "POST":
+        flag_error = False
+        if user is not None and default_token_generator.check_token(user, token):
+            new_password = request.POST['password']
+            new_confirm = request.POST['confirm']
+            if new_password == "":
+                return render_to_response("password/new_password.html",
+                        context_instance=RC(request))
+
+            elif new_password == new_confirm:
+                user.set_password(new_password)
+                user.save()
+                return HttpResponseRedirect("/tournaments")
+            else:
+                flag_error = True
+                return render_to_response("tournaments/password/new_password.html",
+                                    {'flag_error':flag_error},
+                                    context_instance=RC(request))
+
+    else:
+         if user is not None and default_token_generator.check_token(user, token):
+             return render_to_response("tournaments/password/new_password.html",
+                                        context_instance=RC(request))
+         else:
+            return HttpResponseRedirect("/tournaments")
+
+def tourChangePwd(request):
+    if request.method == 'POST':
+        recipient = request.POST['email']
+        try:
+            user=User.objects.get(email=recipient)
+            uid = urlsafe_base64_encode(force_bytes(user.pk))
+            token=default_token_generator.make_token(user)
+            c = {
+                    'email':recipient,
+                    'uid':uid,
+                    'token':token,
+                    'id':user.username}
+
+            body = render_to_string("tournaments/password/email.html",c)
+
+            try:
+                subject = _("Dr.Scratch: Did you forget your password?")
+                sender ="no-reply@drscratch.org"
+                to = [recipient]
+                email = EmailMessage(subject,body,sender,to)
+                email.send()
+                return render_to_response("password/email_sended.html",
+                                        context_instance=RC(request))
+
+            except:
+                 return render_to_response("tournaments/password/user_doesntexist.html",
+                                           context_instance=RC(request))
+        except:
+            return render_to_response("tournaments/password/user_doesntexist.html",
+                                       context_instance=RC(request))
+    else:
+        return render_to_response("password/password.html",
+                                   context_instance=RC(request))
+        
+def initTournaments (request):
+    if request.method == "GET":
+        if request.user.is_authenticated():
+            creator = Creator.objects.filter(username=request.user.username)
+            if creator:
+                return render_to_response('tournaments/creator/main_creator.html', {'username':request.user.username}, RC(request))
+            else:
+                participant = Participant.objects.filter(username=request.user.username)
+                if participant:
+                    return HttpResponseRedirect("/participant/teams")
+                else:
+                    messages.add_message(request, messages.ERROR, _('Logged user is not a creator or a participant.'))
+                    return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request))
+        else:
+            return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request))
+    else:
+        return HttpResponseRedirect("/")
+    
+def signUpCreator(request):
+    """Method which allow to sign up creators"""
+    flagHash = False
+    flagName = False
+    flagEmail = False
+    flagForm = False
+    if request.method == 'POST':
+        form = CreatorForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            email = form.cleaned_data['email']
+            password = form.cleaned_data['password']
+            hashkey = form.cleaned_data['hashkey']
+            try:
+                #This name already exists
+                creator = Creator.objects.get(username=username)
+                flagName = True
+                return render_to_response("tournaments/creator/signup_error.html",
+                                          {'flagName':flagName,
+                                           'flagEmail':flagEmail,
+                                           'flagHash':flagHash,
+                                           'flagForm':flagForm},
+                                          context_instance = RC(request))
+            except:
+                try:
+                    #This email already exists
+                    email = Creator.objects.get(email=email)
+                    flagEmail = True
+                    return render_to_response("tournaments/creator/signup_error.html",
+                                            {'flagName':flagName,
+                                            'flagEmail':flagEmail,
+                                            'flagHash':flagHash,
+                                            'flagForm':flagForm},
+                                            context_instance = RC(request))
+                except:
+                    try:
+                        creatorHashkey = CreatorHash.objects.get(hashkey=hashkey)
+                        creatorHashkey.delete()
+                        creator = Creator.objects.create_user(username = username, email=email, password=password, hashkey=hashkey)
+                        creator = authenticate(username=username, password=password)
+                        user=Creator.objects.get(email=email)
+                        uid = urlsafe_base64_encode(force_bytes(user.pk))
+                        token=default_token_generator.make_token(user)
+                        c = {
+                                'email':email,
+                                'uid':uid,
+                                'token':token}
+
+                        body = render_to_string("tournaments/creator/email.html",c)
+                        subject = "Welcome to Dr.Scratch tournaments"
+                        sender ="no-reply@drscratch.org"
+                        to = [email]
+                        email = EmailMessage(subject,body,sender,to)
+                        email.send()
+                        login(request, creator)
+                        return HttpResponseRedirect('/tournaments')
+
+                    except:
+                        #Doesn't exist this hash
+                        flagHash = True
+
+                        return render_to_response("tournaments/creator/signup_error.html",
+                                          {'flagName':flagName,
+                                           'flagEmail':flagEmail,
+                                           'flagHash':flagHash,
+                                           'flagForm':flagForm},
+                                          context_instance = RC(request))
+        else:
+            flagForm = True
+            return render_to_response("tournaments/creator/signup_error.html",
+                  {'flagName':flagName,
+                   'flagEmail':flagEmail,
+                   'flagHash':flagHash,
+                   'flagForm':flagForm},
+                  context_instance = RC(request))
+
+    elif request.method == 'GET':
+        return HttpResponseRedirect('/tournaments')
 
 def loginTournaments(request):
     if request.method == 'POST':
@@ -1672,6 +1847,11 @@ def loginTournaments(request):
                 else:
                     messages.add_message(request, messages.ERROR, _('Logged user is not a creator or a participant.'))
                     return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request))
+            else:
+                flag = True
+                return render_to_response("tournaments/password/user_doesntexist.html",
+                                            {'flag': flag},
+                                            context_instance=RC(request))
     else:
         return HttpResponseRedirect("/")   
 
@@ -1684,24 +1864,6 @@ def getElementsPaginador (elementList, page, numElemPerPage):
     except EmptyPage:
         elementsPage = paginator.page(paginator.num_pages)
     return elementsPage
-    
-def initTournaments (request):
-    if request.method == "GET":
-        if request.user.is_authenticated():
-            creator = Creator.objects.filter(username=request.user.username)
-            if creator:
-                return render_to_response('tournaments/creator/main_creator.html', {'username':request.user.username}, RC(request))
-            else:
-                participant = Participant.objects.filter(username=request.user.username)
-                if participant:
-                    return HttpResponseRedirect("/participant/teams")
-                else:
-                    messages.add_message(request, messages.ERROR, _('Logged user is not a creator or a participant.'))
-                    return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request))
-        else:
-            return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request))
-    else:
-        return HttpResponseRedirect("/")
     
 def adminCreator (request):
     if request.method == "GET":
@@ -1716,7 +1878,7 @@ def adminCreatorChallenges (request):
             if creator:
                 form = ChallengeForm()
                 """Muestro los retos creados por dicho creador"""
-                challenges = Challenge.objects.filter(creator_id=creator.id)
+                challenges = Challenge.objects.filter(creator=creator.username)
                 page = request.GET.get('page', 1)
                 challengesPagina = getElementsPaginador (challenges, page, paginator_creator_challenges)
                 return render_to_response('tournaments/creator/admin/challenges/challengesList.html', {'username':request.user.username, 
@@ -1853,7 +2015,7 @@ def adminCreatorTeams (request):
             if creator:
                 form = TeamForm()
                 """Muestro los equipos creados por dicho creador"""
-                teams = Team.objects.filter(creator_id=creator.id)
+                teams = Team.objects.filter(creator=creator.username)
                 page = request.GET.get('page', 1)
                 teamsPagina = getElementsPaginador (teams, page, paginator_creator_teams)
                 return render_to_response('tournaments/creator/admin/teams/teamsList.html', {'username':request.user.username, 
@@ -1895,7 +2057,7 @@ def newEditTeam (request):
                     form = TeamForm(initial={'name': teamEdit.name, 
                                                   'description': teamEdit.description})
                     """Busco todos los participantes incluidos por el creador para poder seleccionarlos"""
-                    participants = Participant.objects.filter(creator_id=creator.id)
+                    participants = Participant.objects.filter(creator=creator.username)
                     return render_to_response('tournaments/creator/admin/teams/newEditTeam.html', 
                                               {'username':request.user.username, 'form': form, 'team': teamEdit, 
                                                'page': page, 'participants': participants, 'totalParticipants': int (max_participants_per_team),
@@ -1908,7 +2070,7 @@ def newEditTeam (request):
                 page = request.GET.get('page', 1)
                 form = TeamForm()
                 """Busco todos los participantes incluidos por el creador para poder seleccionarlos"""
-                participants = Participant.objects.filter(creator_id=creator.id)
+                participants = Participant.objects.filter(creator=creator.username)
                 return render_to_response('tournaments/creator/admin/teams/newEditTeam.html', 
                                           {'username':request.user.username, 'form': form, 'page': page, 
                                            'participants': participants, 'maxParticipants': range(int (max_participants_per_team)), 
@@ -2001,7 +2163,7 @@ def adminCreatorTournaments (request):
             if creator:
                 form = TournamentForm()
                 """Muestro los torneos creados por dicho creador"""
-                tournaments = Tournament.objects.filter(creator_id=creator.id)
+                tournaments = Tournament.objects.filter(creator=creator.username)
                 page = request.GET.get('page', 1)
                 tournamentsPagina = getElementsPaginador (tournaments, page, paginator_creator_tournaments)
                 return render_to_response('tournaments/creator/admin/tournaments/tournamentsList.html', {'username':request.user.username, 'tournamentsPagina': tournamentsPagina,
@@ -2027,14 +2189,14 @@ def newEditTournament (request):
                     challengeForm  = ChallengeForm()
                     teamForm  = TeamForm()
                     """Busco todos los participantes incluidos por el creador para poder seleccionarlos"""
-                    participants = Participant.objects.filter(creator_id=creator.id)
+                    participants = Participant.objects.filter(creator=creator.username)
                     
                     form = TournamentForm(initial={'name': tournamentEdit.name, 
                                                   'description': tournamentEdit.description})
                     """Busco todos los equipos incluidos por el creador para poder seleccionarlos"""
-                    teams = Team.objects.filter(creator_id=creator.id)
+                    teams = Team.objects.filter(creator=creator.username)
                     """Busco todos los retos incluidos por el creador para poder seleccionarlos"""
-                    challenges = Challenge.objects.filter(creator_id=creator.id)
+                    challenges = Challenge.objects.filter(creator=creator.username)
                     
                     return render_to_response('tournaments/creator/admin/tournaments/newEditTournament.html', 
                                               {'username':request.user.username, 'form': form, 'tournament': tournamentEdit, 
@@ -2055,11 +2217,11 @@ def newEditTournament (request):
                 challengeForm  = ChallengeForm()
                 teamForm  = TeamForm()
                 """Busco todos los participantes incluidos por el creador para poder seleccionarlos"""
-                participants = Participant.objects.filter(creator_id=creator.id)
+                participants = Participant.objects.filter(creator=creator.username)
                 """Busco todos los equipos incluidos por el creador para poder seleccionarlos"""
-                teams = Team.objects.filter(creator_id=creator.id)
+                teams = Team.objects.filter(creator=creator.username)
                 """Busco todos los retos incluidos por el creador para poder seleccionarlos"""
-                challenges = Challenge.objects.filter(creator_id=creator.id)
+                challenges = Challenge.objects.filter(creator=creator.username)
                 
                 return render_to_response('tournaments/creator/admin/tournaments/newEditTournament.html', 
                                           {'username':request.user.username, 'form': form, 'page': page, 
@@ -2184,7 +2346,7 @@ def tournamentsCreator (request):
             creator = Creator.objects.get(username=request.user.username)
             if creator:
                 """Muestro los torneos creados por dicho creador"""
-                tournaments = Tournament.objects.filter(creator_id=creator.id)
+                tournaments = Tournament.objects.filter(creator=creator.username)
                 page = request.GET.get('page', 1)
                 tournamentsPagina = getElementsPaginador (tournaments, page, paginator_creator_tournaments)
                 return render_to_response('tournaments/creator/progress/tournamentsProgress.html', {'username':request.user.username, 'tournamentsPagina': tournamentsPagina}, RC(request))
@@ -2236,7 +2398,111 @@ def challengesCreator (request):
             return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request))    
     else:
         return HttpResponseRedirect("/")
-
+    
+def register_participant (email, creator_username, error_msg, success_msg, show_error_msg, show_success_msg):
+    try:
+        user=User.objects.get(username=email)
+        error_msg = error_msg + email + "; "
+        show_error_msg = True
+    except User.DoesNotExist:
+        try:
+            user=User.objects.get(email=email)
+            error_msg = error_msg + email + "; "
+            show_error_msg = True
+        except User.DoesNotExist:
+            password = get_random_string(length=32)
+            user = Participant.objects.create_user(username = email, email=email, password=password, creator_username=creator_username)
+            uid = urlsafe_base64_encode(force_bytes(user.pk))
+            token=default_token_generator.make_token(user)
+            c = {
+                    'email':email,
+                    'uid':uid,
+                    'token':token,
+                    'id':user.username}
+    
+            body = render_to_string("tournaments/password/email_new_participant.html",c)
+            try:
+                subject = _("Welcome to Dr.Scratch for tournaments")
+                sender ="no-reply@drscratch.org"
+                to = [email]
+                mail = EmailMessage(subject,body,sender,to)
+                mail.send()
+            except:
+                """"""
+            success_msg = success_msg + email + "; "
+            show_success_msg = True
+    return error_msg, success_msg, show_error_msg, show_success_msg
+    
+def creatorNewParticipants (request):
+    if request.method == "GET":
+        return render_to_response('tournaments/creator/newParticipant/main_new_participants.html', 
+                                  {'username':request.user.username, 'maxNewPart': range(int (max_new_participants))}, RC(request))
+    else:
+        creator = Creator.objects.get(username=request.user.username)
+        if creator:
+            error_msg = _('The following emails are already included in Dr. Scratch (they where not registered): ')
+            show_error_msg = False
+            success_msg = _('The following emails were successfully registered in Dr. Scratch: ')
+            show_success_msg = False
+            if "uploadCSV" in request.POST:
+                try:
+                    file = request.FILES['csvFile']
+                except MultiValueDictKeyError:
+                    messages.add_message(request, messages.ERROR, _('You have to include a CSV file.'))
+                    return render_to_response('tournaments/creator/newParticipant/main_new_participants.html', 
+                                              {'username':request.user.username, 'maxNewPart': range(int (max_new_participants))}, RC(request))
+                file_name = file.name.encode('utf-8')
+                if file_name.endswith('.csv'):
+                    for i in range(int (max_new_participants)):
+                        # read line
+                        email = file.readline().rstrip()
+                        # check if line is not empty
+                        if email:
+                            if re.match("[^@]+@[^\.]+\..+", email) != None:
+                                error_msg, success_msg, show_error_msg, show_success_msg = register_participant (email, creator.username, error_msg, success_msg, show_error_msg, show_success_msg)
+                            else:
+                                error_msg = error_msg + email + "; "
+                                show_error_msg = True 
+                    file.close()
+                else:
+                    messages.add_message(request, messages.ERROR, _('The file added is not a CSV file.'))
+            elif "uploadTXT" in request.POST:
+                try:
+                    file = request.FILES['txtFile']
+                except MultiValueDictKeyError:
+                    messages.add_message(request, messages.ERROR, _('You have to include a TXT file.'))
+                    return render_to_response('tournaments/creator/newParticipant/main_new_participants.html', 
+                                              {'username':request.user.username, 'maxNewPart': range(int (max_new_participants))}, RC(request))
+                file_name = file.name.encode('utf-8')
+                if file_name.endswith('.txt'):
+                    for i in range(int (max_new_participants)):
+                        # read line
+                        email = file.readline().rstrip()
+                        # check if line is not empty
+                        if email:
+                            if re.match("[^@]+@[^\.]+\..+", email) != None:
+                                error_msg, success_msg, show_error_msg, show_success_msg = register_participant (email, creator.username, error_msg, success_msg, show_error_msg, show_success_msg)
+                            else:
+                                error_msg = error_msg + email + "; "
+                                show_error_msg = True 
+                    file.close()
+                else:
+                    messages.add_message(request, messages.ERROR, _('The file added is not a TXT file.'))
+            else:    
+                for i in range(int (max_new_participants)):
+                    email = request.POST['email_'+str(i)]
+                    if (email != ''):
+                        error_msg, success_msg, show_error_msg, show_success_msg = register_participant (email, creator.username, error_msg, success_msg, show_error_msg, show_success_msg)
+                        
+            if show_error_msg:            
+                messages.add_message(request, messages.ERROR, error_msg)
+            if show_success_msg:
+                messages.add_message(request, messages.SUCCESS, success_msg)
+            return render_to_response('tournaments/creator/newParticipant/main_new_participants.html', 
+                {'username':request.user.username, 'maxNewPart': range(int (max_new_participants))}, RC(request))
+        else:
+            messages.add_message(request, messages.ERROR, _('Logged user cannot be found.'))
+            return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request))      
 
 def teamsParticipant (request):
     if request.method == "GET":
@@ -2307,7 +2573,7 @@ def tournamentsParticipant (request):
             return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request)) 
     else:
         return HttpResponseRedirect("/")
-    
+
 def get_trans_keys ():
     dict = {}
     dict['Abstracción'] = 'abstraction'

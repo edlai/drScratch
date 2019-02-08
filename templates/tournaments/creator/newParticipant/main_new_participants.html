@@ -25,7 +25,6 @@
 	    ============================== -->
 	    <!-- BOOTSTRAP AND ANIMATION -->
 	    <link rel="stylesheet" href="../../static/app/content/bootstrap.min.css">
-	    <link rel="stylesheet" href="../../static/app/content/carousel-master.css" >
 	    <link rel="stylesheet" href="../static/app/content/animate.css">
 	    <!-- CAROUSEL AND LIGHTBOX -->
 	    <link rel="stylesheet" href="../../static/app/content/owl_002.css">
@@ -140,75 +139,122 @@
     ============================== -->
             <!-- CONTAINER -->
             <div class="container">
-				<!-- BACK BUTTON -->
+            	<!-- BACK BUTTON -->
             	<div class="row">
 		          <div class="col-md-4">
 	            	<ul class="nav navbar-nav navbar-left login-register back-button small-text">                
 	                    <li style="display: block;" class="register-button js-register inpage-scroll">
-	                        <a href="/" class="navbar-register-button">{% trans "« Back" %}</a>
+	                        <a href="/tournaments" class="navbar-register-button">{% trans "« Back" %}</a>
 	                    </li>
 	                </ul>
 	               </div>
 	            </div>
         		<!-- MAIN CONTENT -->
-                <div class="row">
-                    <div class="col-md-12">
-                 	  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-				        <ol class="carousel-indicators">
-				          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-				          <li data-target="#myCarousel" data-slide-to="1"></li>
-				          <li data-target="#myCarousel" data-slide-to="2"></li>
-				          <li data-target="#myCarousel" data-slide-to="3"></li>
-				        </ol>
-				        <div class="carousel-inner">
-				          <div class="item active">
-				            <img class="first-slide" src="../../static/app/images/tournaments/undraw_in_progress_ql66.png" alt="First slide">
-				              <div class="carousel-caption text-left">
-				                <h3 style="color: #fc3b3b;">{% trans "Tournaments Administration" %}</h3>
-				                <p>{% trans "In the Tournaments Administration section you can create new tournaments, teams and challenges and manage them once created." %}</p>
-				                <p><a href="/creator/admin" class="btn btn-primary standard-button" role="button">{% trans "Access" %}</a></p>
-				              </div>
-				          </div>
-				          <div class="item">
-				          	  <img class="first-slide" src="../../static/app/images/tournaments/undraw_booking_33fn.png" alt="First slide">
-				              <div class="carousel-caption">
-				                <h3 class="colored-text">{% trans "Manual Validation" %}</h3>
-				                <p>{% trans "In the Manual Validation section you can validate manually the Scratch projects uploaded by the participants." %}</p>
-				                <p><a href="#" class="btn btn-primary standard-button" role="button">{% trans "Access" %}</a></p>
-				              </div>
-				          </div>
-				          <div class="item">
-				          	  <img class="first-slide" src="../../static/app/images/tournaments/undraw_visual_data_b1wx.png" alt="First slide">
-				              <div class="carousel-caption text-right">
-				                <h3 style="color: #fc3b3b;">{% trans "Tournaments progress" %}</h3>
-				                <p>{% trans "The Tournaments progress section provides information about tournaments created." %}</p>
-				                <p><a href="/creator/tournaments" class="btn btn-primary standard-button" role="button">{% trans "Access" %}</a></p>
-				              </div>
-				          </div>
-				          <div class="item">
-				          	  <img class="first-slide" src="../../static/app/images/tournaments/undraw_add_user_ipe3.png" alt="First slide">
-				              <div class="carousel-caption text-right">
-				                <h3 style="color: #fc3b3b;">{% trans "Register new participants" %}</h3>
-				                <p>{% trans "In the Register new participants section you can include new participants in Dr. Scratch Tournaments." %}</p>
-				                <p><a href="/creator/newParticipants" class="btn btn-primary standard-button" role="button">{% trans "Access" %}</a></p>
-				              </div>
-				          </div>
-				        </div>
-				        <!-- Controls -->
-						  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-						    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-						    <span class="sr-only">Previous</span>
-						  </a>
-						  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-						    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-						    <span class="sr-only">Next</span>
-						  </a>
-				      </div>
-				      
+		       	<div class="row">
+		       		{% if messages %}
+			          		{% for message in messages %}
+			          			{% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+			          				<div class="alert alert-danger" role="alert">
+									  <strong>{% trans "Error!" %}</strong> {{ message }}
+									</div>
+								{% endif %}
+								{% if message.level == DEFAULT_MESSAGE_LEVELS.WARNING %}
+									<div class="alert alert-warning" role="alert">
+									  <strong>{% trans "Warning!" %}</strong> {{ message }}
+									</div>
+								{% endif %}
+								{% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+									<div class="alert alert-info" role="alert">
+									  <strong>{% trans "Info:" %}</strong> {{ message }}
+									</div>
+								{% endif %}
+								{% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+									<div class="alert alert-success" role="alert">
+									  <strong>{% trans "Success!" %}</strong> {{ message }}
+									</div>
+								{% endif %}
+							{% endfor %}
+			          	{% endif %}
+			          	<h2 class="intro white-text title-space-bottom">{% trans "Register new participants in Dr. Scratch Tournaments" %}</h2>
+			          	<div class="col-md-3"></div>
+		          		<div class="col-md-6">
+		          			<h5 class="transparent-text form-heading"><strong>{% trans "You have 3 options:" %}</strong></h5>
+		          		</div>
+		          		<div class="col-md-3"></div>
+			          </div>
+			          <div class="row space-top">
+			          	<div class="col-md-3"></div>
+		       	 		 <div class="col-md-6">
+                            <form name="form" class="project-form" enctype="multipart/form-data" method="post" action="/creator/newpart/form">
+                                {% csrf_token %}
+                                <span class='transparent-text'>{% trans "1. You can include up to 20 participants at the same time with a" %}</span> <span class='colored-text'><a data-toggle='modal' href='#modalCSV'>{% trans "CSV file" %}</a></span>
+                         </div>
+                     </div>
+                     <div class="row">
+                     	<div class="col-md-3"></div>
+                     	<div class="col-md-4">      
+                                {% trans "<input  name='csvFile' type='file' class='filestyle' data-buttonText='Choose File .csv'>" %}
+                        </div> 
+                        <div class="col-md-2"> 
+                                <button id="uploadCSV" name='uploadCSV' type="submit" class="btn btn-secundary standard-button space-top">{% trans "Register" %}</button>
+                                {% csrf_token %}                                    
+                            </form>
+                        </div>
+                        <div class="col-md-3"></div>
                     </div>
-                </div>
+                    <div class="row space-top">
+                    	<div class="col-md-3"></div>
+                    	<div class="col-md-6">
+                            <form name="form" class="project-form" enctype="multipart/form-data" method="post" action="/creator/newpart/form">
+                                {% csrf_token %}
+                                <span class='transparent-text'>{% trans "2. You can include up to 20 participants at the same time with a" %}</span> <span class='colored-text'><a data-toggle='modal' href='#modalTXT'>{% trans "TXT file" %}</a></span>
+                         </div>
+                    	<div class="col-md-3"></div>
+                    </div>
+                    <div class="row">
+                    	<div class="col-md-3"></div>
+                    	<div class="col-md-4">      
+                                {% trans "<input  name='txtFile' type='file' class='filestyle' data-buttonText='Choose File .txt'>" %}
+                        </div>
+                        <div class="col-md-2"> 
+                                <button id="uploadTXT" name='uploadTXT' type="submit" class="btn btn-secundary standard-button space-top">{% trans "Register" %}</button>
+                                {% csrf_token %}                                    
+                            </form>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                    <div class="row space-top">
+                     	<div class="col-md-3"></div>
+                     	<div class="col-md-6"> 
+                            <span class='transparent-text space-top'>{% trans "3. You can include up to 20 participants filling the form below. Press + to include multiple participants." %}</span>
+				          	<table class="table">
+							  <thead class="white-text">
+							    <tr>
+							      <th scope="col"></th>
+							      <th scope="col" class="title-table-text">{% trans "Email" %}</th>
+							      <th scope="col"></th>
+							    </tr>
+							  </thead>
+							  <tbody>
+							  <form name="form" class="project-form" enctype="multipart/form-data" method="post" action="/creator/newpart/form">
+							  {% csrf_token %}
+							  {% for i in maxNewPart %}
+						    	<tr class="white-text row-line" style="display: none;">
+							      <td scope="row" class="title-table-text">#{{forloop.counter}}</td>
+							      <td class="table-input-cell"><input type="email" class="table-input dark-text form-control placeholder" name="email_{{i}}" id="email_{{i}}"></td>
+							      <td class="table-input-cell title-table-text"><a id="{{i}}" class="plus-link glyphicon glyphicon-plus"></a></td>
+							    </tr>
+							  {% endfor %}
+							  </tbody>
+							</table>
+							<button id="uploadForm" name='uploadForm' type="submit" class="btn btn-secundary standard-button space-bottom">{% trans "Register" %}</button>
+							{% csrf_token %}
+							</form>
+						</div>
+			        <div class="col-md-3"></div>  	
+		        </div>
+              </div>
             </div>
-        </div>
         <!-- =========================
 	     SECTION: CLIENTS LOGOs
 	    ============================== -->
@@ -241,6 +287,52 @@
 	    </div>
 	    </section>
     </header>
+    	<!-- Modal CSV -->
+	    <div id="modalCSV" class="modal fade" role="dialog">
+	      <div class="modal-dialog">
+	
+	        <!-- Modal content-->
+	        <div class="modal-content">
+	          <div class="modal-header">
+	            <button type="button" class="close text-right" data-dismiss="modal">&times;</button>
+	            <div class="small-text-medium uppercase colored-text">
+	                {% trans "How is the file .csv?" %}
+	            </div>
+	            <h4 class="modal-title"><strong>{% trans "You have to write only the email of the student in the first column. Easy, isn't it?" %}</strong></h4>
+	            <div class="colored-line"></div> 
+	          </div>
+	          <div class="modal-body">
+	            <img class='framed' src='../../static/app/images/tournaments/csv.png' />
+	          </div>
+	          <div class="modal-footer">
+	          </div>
+	        </div>
+	
+	      </div>
+	    </div>
+	    <!-- Modal TXT -->
+	    <div id="modalTXT" class="modal fade" role="dialog">
+	      <div class="modal-dialog">
+	
+	        <!-- Modal content-->
+	        <div class="modal-content">
+	          <div class="modal-header">
+	            <button type="button" class="close text-right" data-dismiss="modal">&times;</button>
+	            <div class="small-text-medium uppercase colored-text">
+	                {% trans "How is the file .txt?" %}
+	            </div>
+	            <h4 class="modal-title"><strong>{% trans "You have to write only the email of the student in each line. Easy, isn't it?" %}</strong></h4>
+	            <div class="colored-line"></div> 
+	          </div>
+	          <div class="modal-body">
+	            <img class='framed' src='../../static/app/images/tournaments/txt.png' />
+	          </div>
+	          <div class="modal-footer">
+	          </div>
+	        </div>
+	
+	      </div>
+	    </div>
 		<footer class="footer grey-bg">
 		    <div class="container">
 		           {% trans "©2014 Dr. Scratch is powered by " %}<a href="https:/github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
@@ -255,5 +347,34 @@
 		            </ul>
 		    </div>
 		</footer>
+		<script>
+	        $(document).on("ready", function(){
+	        	$('.row-line').eq(0).show();
+	        });
+	        $(".plus-link").on("click", function(){
+	        	newId = parseInt(this.id)+1
+	        	if ($('.row-line').eq(newId).length > 0){
+	        		$('.row-line').eq(newId).show();
+	        	}
+	        	$(this).hide();
+	        });
+	        $('#uploadForm').click(function() { 
+	            $.blockUI({ 
+	            	message: '<img src="../../static/app/images/tournaments/please_wait.gif"/>'
+	            }); 
+	        });
+	        $('#uploadCSV').click(function() { 
+	            $.blockUI({ 
+	            	message: '<img src="../../static/app/images/tournaments/please_wait.gif"/>'
+	            }); 
+	        });
+	        $('#uploadTXT').click(function() { 
+	            $.blockUI({ 
+	            	message: '<img src="../../static/app/images/tournaments/please_wait.gif"/>'
+	            }); 
+	        });
+	    </script>
+	    <script type="text/javascript" src="../../static/app/scripts/bootstrap-filestyle.js"> </script>
+	    <script type="text/javascript" src="../../static/app/scripts/tournaments/jquery.blockUI.js"> </script>
 	</body>
 </html>

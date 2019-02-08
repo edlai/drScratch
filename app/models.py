@@ -126,21 +126,20 @@ class Stats(models.Model):
     spriteNaming = models.IntegerField(default=int(0))
     initialization = models.IntegerField(default=int(0))
     
-class Creator(models.Model):
-    username = models.CharField(max_length=100, unique=True, blank=True)
-    password = models.TextField()
+class Creator(User):
+    hashkey = models.TextField()
 
-class Participant(models.Model):    
-    email = models.CharField(max_length=100, unique=True, blank=True) 
-    username = models.TextField()
-    password = models.TextField()
-    creator = models.ForeignKey(Creator)
-    
+class CreatorHash(models.Model):
+    hashkey = models.TextField()
+
 class Team(models.Model):
     name = models.CharField(max_length=100, blank=True)
     description = models.TextField(default="")
-    creator = models.ForeignKey(Creator)
-    participant = models.ManyToManyField(Participant)
+    creator = models.CharField(max_length=100)
+    
+class Participant(User):    
+    creator_username = models.CharField(max_length=100)
+    teams = models.ManyToManyField(Team)
     
 class Challenge(models.Model):
     name = models.TextField() 
@@ -152,14 +151,15 @@ class Challenge(models.Model):
     dataRepresentation = models.IntegerField(default=int(0))
     abstraction = models.IntegerField(default=int(0))
     synchronization = models.IntegerField(default=int(0))
-    creator = models.ForeignKey(Creator)
+    creator = models.CharField(max_length=100)
     
 class Tournament(models.Model):
     name = models.CharField(max_length=100, blank=True)
     description = models.TextField(default="")
-    creator = models.ForeignKey(Creator)
+    creator = models.CharField(max_length=100)
     teams = models.ManyToManyField(Team)
     challenges = models.ManyToManyField(Challenge, through='ChallengesOfTournament')
+    manualValidation = models.BooleanField(default=False)
     def get_challenges(self):
         return self.challenges.order_by('chall')
     
@@ -178,7 +178,7 @@ class Game (models.Model):
     dataRepresentation = models.IntegerField(default=int(0))
     abstraction = models.IntegerField(default=int(0))
     synchronization = models.IntegerField(default=int(0))
-    completed = models.BooleanField(default=False)
+    completed = models.IntegerField(default=int(0))
     challengeOfTournament = models.ForeignKey(ChallengesOfTournament)
     team = models.ForeignKey(Team)
     

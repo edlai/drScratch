@@ -39,13 +39,15 @@ urlpatterns = (
     
     #Tournaments
     url(r'^tournaments', 'app.views.initTournaments',),
-    
+    url(r'^tourChangePwd$', 'app.views.tourChangePwd',),
+    url(r'^reset_password_tournaments/(?P<uidb64>[0-9A-Za-z]+)-(?P<token>.+)/$', 'app.views.reset_password_tournaments',name="reset_password_tournaments"),
     #Participants
     url(r'^participant/teams', 'app.views.teamsParticipant',),
     url(r'^participant/tournaments', 'app.views.tournamentsParticipant',),
     url(r'^participant/play', 'app.views.playParticipant',),
     
     #Creator
+    url(r'^creator/signup', 'app.views.signUpCreator',),
     url(r'^creator/tournaments', 'app.views.tournamentsCreator',),
     url(r'^creator/challenges', 'app.views.challengesCreator',),
     url(r'^creator/admin/challenges', 'app.views.adminCreatorChallenges',),
@@ -67,6 +69,8 @@ urlpatterns = (
     url(r'^newTournamentPost', 'app.views.newTournament',),
     url(r'^tournamentNewChallenge', 'app.views.newChallenge',),
     url(r'^tournamentNewTeam', 'app.views.newTeam',),
+    url(r'^creator/newParticipants', 'app.views.creatorNewParticipants',),
+    url(r'^creator/newpart/form', 'app.views.creatorNewParticipants',),
     
     url(r'^$', 'app.views.main',),
     url(r'^.*', 'app.views.redirectMain',),

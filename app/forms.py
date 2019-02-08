@@ -48,6 +48,12 @@ class LoginForm(forms.Form):
     username = forms.CharField(max_length=50) 
     password = forms.CharField(max_length=50) 
     
+class CreatorForm(forms.Form):
+    username = forms.CharField(max_length=50)
+    email = forms.CharField(max_length=50) 
+    password = forms.CharField(max_length=50) 
+    hashkey = forms.CharField(max_length=70)
+    
 class TournamentForm(forms.Form):
     name = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'placeholder': _('Tournament Name'), 'class': 'form-control input-box placeholder', 'required': 'required'}), required=True)
     description = forms.CharField(max_length=500, widget=forms.Textarea(attrs={'placeholder': _('Tournament Description'), 'class': 'form-control input-box placeholder', 'required': 'required'}), required=True)

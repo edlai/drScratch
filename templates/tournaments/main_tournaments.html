@@ -6,10 +6,7 @@
 	    <meta name="keywords" content="Stamp, Startup, Multipurpose, Bootstrap, Landing page, Template, Registration, Landing">
 	    <meta name="author" content="Programamos URJC Libresoft FECyT">
 	    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 	    <link rel="stylesheet" href="../../static/app/content/bootstrap-tour.css">
-	    <script src="../../static/app/scripts/bootstrap.min.js"></script>
-	    <script src="../../static/app/scripts/bootstrap-tour.js"></script>
 	    <!-- SITE TITLE -->
 	    <title>Dr. Scratch</title>
 	    <link rel="stylesheet" href="../../static/app/content/style.css">
@@ -57,7 +54,7 @@
 		           <li class="dropdown">
 		                   <a class="dropdown-toggle navbar-text" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{% trans "Logged in as " %} {{ username }}<span class="caret"></span></a>
 		                   <ul class="login-register small-text dropdown-menu" aria-labelledby="dropdownMenu1">
-		                       <li> <a href="/changePwd">{% trans "Cambiar contraseña" %}</a> </li>
+		                       <li> <a href="/tourChangePwd">{% trans "Cambiar contraseña" %}</a> </li>
 		                       <li>
 		                           <a id="logout" type="submit" href="/logoutOrganization">{% trans "Logout" %}</a>
 		                       </li>
@@ -89,7 +86,7 @@
 	                        <li class="dropdown">
 	                                <a class="dropdown-toggle navbar-text" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{% trans "Logged in as " %} {{ username }}<span class="caret"></span></a>
 	                                <ul class="login-register small-text dropdown-menu" aria-labelledby="dropdownMenu1">
-	                                    <li> <a href='/changePwd'>{% trans "Change password" %}</a> </li>
+	                                    <li> <a href='/tourChangePwd'>{% trans "Change password" %}</a> </li>
 	                                    <li>
 	                                        <a id="logout" type="submit" href="/logoutOrganization">{% trans "Logout" %}</a>
 	                                    </li>
@@ -116,7 +113,7 @@
 	                                                <!--<input type="checkbox" value="1" id="remember-me" name="remember-me" style="float: left; margin-right: 10px;"> -->                    
 	                                                <!-- <label for="sign-in" class="string optional">{% trans "Remember me" %}</label> -->
 	                                                <div>
-	                                                    <a class="message" href="/changePwd">{% trans "I forgot my password" %}</a>
+	                                                    <a class="message" href="/tourChangePwd">{% trans "I forgot my password" %}</a>
 	                                                </div>                                                
 	                                                <div class="centre">
 	                                                    {% trans "<input type='submit' value='Sign in' id='sign-in' class='btn-group btn-group-justified colored-text'>" %}
@@ -176,7 +173,7 @@
                          	<div class="intro-section">
 	                            <!-- BUTTON -->
 	                            <div class="button hidden-xs">
-	                                <a href="/organization#section1" class="btn btn-primary secondary-button">{% trans "Sign up!" %}</a>
+	                                <a href="#section1" class="btn btn-primary secondary-button">{% trans "Sign up!" %}</a>
 	                            </div>
 	                            <!-- /END BUTTON -->
                             </div>
@@ -217,6 +214,112 @@
 	    </div>
 	    </section>
     </header>
+    <!-- =========================
+     SECTION: Form
+    ============================== -->
+    <section id="section1" class="services grey-bg">
+        <div class="container">
+            <!-- SECTION HEADER -->
+            <div class="section-header">
+
+                <div class="small-text-medium uppercase colored-text">
+                    {% trans "Dr. Scratch Tournaments" %}
+                </div>
+                <h2 class="dark-text"><strong>{% trans "How " %} </strong>{% trans "to join Dr. Scratch tournaments?" %}</h2>
+                <div class="colored-line"></div>
+                <div class="sub-heading">
+                    <h3><em>{% trans "Would you like to be one of the 10 first teachers testing this new feature? Just drop us a line at " %}<a href="mailto:team@drscratch.org" class="strong">team@drscratch.org</a>{% trans  " and we'll send you a hash key that will allow you to sign up in the web" %}</em></h3>
+
+
+        </div>
+        </div>
+    </section>
+
+    <!-- FORM -->
+        
+        <div class="container">
+        <img src="../../static/app/images/drScratch.png" alt=""  width="200" height="200" />
+        <form action="/creator/signup" method="post" class="vertical-registration-form" role="form">
+       {% csrf_token %}     
+       <div class="col-lg-8">
+        <label class="col-md-6 text-left control-label">{% trans "Teacher's username" %}</label>
+          <input class='form-control' name='username' placeholder='Username'>
+        </div>
+        {{ form.as_p }}
+    
+        <div class="col-lg-8">
+        <label for="ejemplo_email_3" class="col-md-6 text-left control-label">E-mail</label>
+        
+          <input type="email" class="form-control" name="email"
+                 placeholder="E-mail">
+      </div>
+
+        {{ form.as_p }}
+
+      <div class="form-group">
+        <div class="col-lg-8">
+        <label class="col-lg-2 control-label">{% trans "Password" %}</label>
+        
+        {% trans "<input type='password' class='form-control' name='password' placeholder='Password'>" %}
+      </div>
+
+        {{ form.as_p }}
+
+     <div class="form-group">
+        <div class="col-lg-8">
+        <label class="col-lg-2 control-label">{% trans "Hashkey" %}</label>
+        
+        {% trans "<input type='password' class='form-control' name='hashkey' placeholder='Password'>" %}
+      </div>
+
+        {{ form.as_p }}
+    </div>
+
+        
+            <div class="registration-buttom">      
+            <button style="visibility: visible; animation-duration: 2s; animation-name: fadeInRight;" class="btn btn-primary standard-button inpage-scroll wow fadeInRight animated" data-wow-duration="2s" data-wow-offset="10" type="submit">{% trans "Sign up!" %}</button>
+    
+            </div>
+    </form>
+    </div>
+    </div>
+        <!-- ENDFORM -->
+
+
+
+
+        <!-- =========================
+     SECTION: CONTACT INFO  
+    ============================== -->
+    <div class="contact-info white-bg">
+        <div class="container">
+
+            <!-- CONTACT INFO -->
+            <div class="row contact-links">
+
+                <div class="col-sm-4">
+                    <div class="icon-container">
+                        <span class="icon-basic-mail colored-text"></span>
+                    </div>
+                    <a href="mailto:drscratch@programamos.es" class="strong">team@drscratch.org</a>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="icon-container">
+                        <span class="icon-social-twitter colored-text"></span>
+                    </div>
+                    <a href="https:/twitter.com/drscratchtool" class="strong">@DrScratchTool</a>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="icon-container">
+                        <span class="icon-basic-tablet colored-text"></span>
+                    </div>
+                    <a href="https:/github.com/jemole/drScratch/issues" class="strong">GitHub(issues)</a>
+                </div>
+            </div>
+        </div>
+    </div>
 		<footer class="footer grey-bg">
 		    <div class="container">
 		           {% trans "©2014 Dr. Scratch is powered by " %}<a href="https:/github.com/ucsb-cs-education/hairball" class="dark-text">Hairball</a>
@@ -231,5 +334,32 @@
 		            </ul>
 		    </div>
 		</footer>
+		<!-- =========================
+     SCRIPTS   
+    ============================== -->
+    <script src="../../static/app/scripts/jquery.min.js"></script>
+    <script>
+        /* PRE LOADER */
+        jQuery(window).load(function () {
+            "use strict";
+            jQuery(".status").fadeOut();
+            jQuery(".preloader").delay(1000).fadeOut("slow");
+        })
+    </script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <script type="text/javascript" src="../../static/app/scripts/bootstrap-filestyle.js"> </script>
+    <script src="../../static/app/scripts/smoothscroll.js"></script>
+    <script src="../../static/app/scripts/bootstrap.min.js"></script>
+    <script src="../../static/app/scripts/bootstrap-tour.js"></script>
+    <script src="../../static/app/scripts/jquery.nav.js"></script>
+    <script src="../../static/app/scripts/ie-emulation-modes-warning.js"></script>
+    <script src="../../static/app/scripts/wow.js"></script>
+    <script src="../../static/app/scripts/nivo-lightbox.js"></script>
+    <script src="../../static/app/scripts/owl.js"></script>
+    <script src="../../static/app/scripts/jquery_main.js"></script>
+    <script src="../../static/app/scripts/jquery.ajaxchimp.min.js"></script>
+    <script src="../../static/app/scripts/progress-bar.js"></script>
+    <!-- CUSTOM JS  -->
+    <script src="../../static/app/scripts/custom.js"></script>
 	</body>
 </html>

@@ -64,7 +64,7 @@
 		           <li class="dropdown">
 		                   <a class="dropdown-toggle navbar-text" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{% trans "Logged in as " %} {{ username }}<span class="caret"></span></a>
 		                   <ul class="login-register small-text dropdown-menu" aria-labelledby="dropdownMenu1">
-		                       <li> <a href="/changePwd">{% trans "Cambiar contraseña" %}</a> </li>
+		                       <li> <a href="/tourChangePwd">{% trans "Cambiar contraseña" %}</a> </li>
 		                       <li>
 		                           <a id="logout" type="submit" href="/logoutOrganization">{% trans "Logout" %}</a>
 		                       </li>
@@ -96,7 +96,7 @@
 	                        <li class="dropdown">
 	                                <a class="dropdown-toggle navbar-text" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{% trans "Logged in as " %} {{ username }}<span class="caret"></span></a>
 	                                <ul class="login-register small-text dropdown-menu" aria-labelledby="dropdownMenu1">
-	                                    <li> <a href='/changePwd'>{% trans "Change password" %}</a> </li>
+	                                    <li> <a href='/tourChangePwd'>{% trans "Change password" %}</a> </li>
 	                                    <li>
 	                                        <a id="logout" type="submit" href="/logoutOrganization">{% trans "Logout" %}</a>
 	                                    </li>
@@ -121,7 +121,7 @@
 	                                                {% trans "<input type='text' name='username' id='username' placeholder='Username' style='margin-bottom: 15px;'>" %}
 	                                                {% trans "<input type='password' name='password' id='password' placeholder='Password' style='margin-bottom: 15px;'>" %}
 	                                                <div>
-	                                                    <a class="message" href="/changePwd">{% trans "I forgot my password" %}</a>
+	                                                    <a class="message" href="/tourChangePwd">{% trans "I forgot my password" %}</a>
 	                                                </div>                                                
 	                                                <div class="centre">
 	                                                    {% trans "<input type='submit' value='Sign in' id='sign-in' class='btn-group btn-group-justified colored-text'>" %}
