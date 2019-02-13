@@ -280,7 +280,7 @@
 						    		  			<ul class="feature-list list-text-container">
 								    		  		<li><i class="glyphicon glyphicon-star colored-text"></i>
 								    		  		<a class="desplegable2" data-toggle="popover" data-html="true"
-								    		  			data-content="{% for p in team.participant.all %}
+								    		  			data-content="{% for p in team.participant_set.all %}
 								    		  			{{forloop.counter}}: {{p.username}}<br/>
 								    		  			{% endfor %}"
 								    		  			data-trigger="hover"><span class="space-left">{{team.name}}</span></li>
@@ -291,6 +291,24 @@
 							    			<p class="space-left space-top text-align-left">{% trans "The tournament has not teams." %}</p>
 							    			<p class="space-left text-align-left">{% trans "Edit the tournament to add new teams." %}</p>
 						    			{% endif %}
+						    			<div style="padding-top: 15px;" class="modal-subtitle-container">
+						    				{% if t.manualValidation %}
+					    		  				<h5 class="modal-subtitle"><strong>{% trans "Manual Validation:" %}</strong> <span class="colored-text">{% trans "Yes" %}</span></h5>
+					    		  				{% if t.notificationPeriod == 0 %}
+					    		  					<h5 class="modal-subtitle"><strong>{% trans "Receive Emails:" %}</strong> <span class="colored-text">{% trans "Never" %}</span></h5>
+						            			{% elif t.notificationPeriod == 1 %}
+					    		  					<h5 class="modal-subtitle"><strong>{% trans "Receive Emails:" %}</strong> <span class="colored-text">{% trans "Immediately" %}</span></h5>
+						            			{% elif t.notificationPeriod == 2 %}
+					    		  					<h5 class="modal-subtitle"><strong>{% trans "Receive Emails:" %}</strong> <span class="colored-text">{% trans "Once a day" %}</span></h5>
+						            			{% elif t.notificationPeriod == 3 %}
+					    		  					<h5 class="modal-subtitle"><strong>{% trans "Receive Emails:" %}</strong> <span class="colored-text">{% trans "Once a week" %}</span></h5>
+						            			{% endif %} 
+						            		{% else %}
+						            			<h5 class="modal-subtitle"><strong>{% trans "Manual Validation:" %}</strong> <span class="colored-text">{% trans "No" %}</span></h5>
+						            		{% endif %} 
+						            		<div class="colored-line-left modal-subtitle-img"></div>
+						            		
+						            	</div>
 					    		  </div>
 					    		</div>
 					    	</div>

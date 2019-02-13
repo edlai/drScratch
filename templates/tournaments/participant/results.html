@@ -271,8 +271,13 @@
 							<h4 class="intro green-color toppanel-text">{% trans "You complete the challenge." %}</h4>
 							<h4 class="intro green-color toppanel-text">{% trans "Back to improve your highest score." %}</h4>
 						{% else %}
-							<h4 class="intro yellow-color toppanel-text">{% trans "You didn't complete the challenge yet." %}</h4>
-							<h4 class="intro yellow-color toppanel-text">{% trans "Back to improve your highest score." %}</h4>
+							{% if elem.done == True %}
+								<h4 class="intro yellow-color toppanel-text">{% trans "Your score has to be validated by you teacher to complete the challenge." %}</h4>
+								<h4 class="intro yellow-color toppanel-text">{% trans "Back to improve your highest score." %}</h4>
+							{% else %}
+								<h4 class="intro yellow-color toppanel-text">{% trans "You didn't complete the challenge yet." %}</h4>
+								<h4 class="intro yellow-color toppanel-text">{% trans "Back to improve your highest score." %}</h4>
+							{% endif %}
 						{% endif %}
 						<a href="/participant/tournaments?team={{elem.team.id}}&pageTour={{pageTour}}&pageTeam={{pageTeam}}" class="navbar-register-button title-back-btn">{% trans "« Back" %}</a>
 						<a class="learn-link" href="/learn/Logic">{% trans "Learn how" %} <i class="glyphicon glyphicon-book"></i></a>

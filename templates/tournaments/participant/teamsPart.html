@@ -189,7 +189,7 @@
 					            	<h4 class="modal-title"><strong>{{t.name}}</strong></h4>
 					            	<div class="colored-line"></div> 
 							          	{{t.description}}
-						          		{% for p in t.participant.all %}
+						          		{% for p in t.participant_set.all %}
 							    		  	<ul class="feature-list list-text-container">
 							    		  		<li><i class="glyphicon glyphicon-user colored-text"></i>
 							    		  			{% if p.email == participant.email %}

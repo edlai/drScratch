@@ -228,6 +228,17 @@
 									</select>
 								{% endfor %}
 								<a data-toggle="modal" class="colored-text" href="#modalNewTeam">{% trans "New Team " %}</a>
+								<p class="space-top form-text-left">{% trans "You can validate the challenges of the tournament manually. The challenge will not be completed until you validate the student's game in Manual Validation section."%}</p>
+	                            <div class="form-check">
+	                              <label class="chk-input-text" for="defaultCheck1">
+	                              	{% trans "Validate the challenges manually" %}
+								  </label>
+								  {{form.manualValidation}}
+								</div>
+								<div class="notif-select" style="display: none;">
+									<p class="space-top form-text-left">{% trans "You can be notified with an email when a participant complete a challenge. Select the notification frequency."%}</p>
+									{{form.notificationPeriod}}
+								</div>
 	                            <div class="space-top"><button id="upload" name='_upload' type="submit" class="btn btn-primary standard-button">{% trans "Edit" %}</button></div>
 	                            {% csrf_token %}
 					        </form>
@@ -263,6 +274,17 @@
 									</select>
 								{% endfor %}
 								<a data-toggle="modal" class="colored-text" href="#modalNewTeam">{% trans "New Team " %}</a>
+								<p class="space-top form-text-left">{% trans "You can validate the challenges of the tournament manually. The challenge will not be completed until you validate the student's game in Manual Validation section."%}</p>
+	                            <div class="form-check">
+	                              <label class="chk-input-text" for="defaultCheck1">
+	                              	{% trans "Validate the challenges manually" %}
+								  </label>
+								  {{form.manualValidation}}
+								</div>
+								<div class="notif-select" style="display: none;">
+									<p class="space-top form-text-left">{% trans "You can be notified with an email when a participant complete a challenge. Select the notification frequency."%}</p>
+									{{form.notificationPeriod}}
+								</div>
 	                            <div class="space-top"><button id="upload" name='_upload' type="submit" class="btn btn-primary standard-button">{% trans "Add" %}</button></div>
 	                            {% csrf_token %}
 					        </form>
@@ -413,5 +435,20 @@
 		            </ul>
 		    </div>
 		</footer>
+		<script>
+	        $(document).on("ready", function(){
+	        	if($(".chk-input").is(":checked")){
+	        		$(".notif-select").show();
+	        	}
+	        });
+	        
+	        $(".chk-input").change(function(){
+	        	if($(".chk-input").is(":checked")){
+	        		$(".notif-select").show();
+	        	}else{
+	        		$(".notif-select").hide();
+	        	}
+	        });
+	    </script>
 	</body>
 </html>

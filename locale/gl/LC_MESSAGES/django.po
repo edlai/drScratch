@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-26 20:35+0100\n"
+"POT-Creation-Date: 2019-02-13 15:04+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,142 +18,231 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\app\forms.py:52
+#: .\app\forms.py:58
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:298
+msgid "Never"
+msgstr ""
+
+#: .\app\forms.py:59
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:300
+msgid "Immediately"
+msgstr ""
+
+#: .\app\forms.py:60
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:302
+msgid "Once a day"
+msgstr ""
+
+#: .\app\forms.py:61
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:304
+msgid "Once a week"
+msgstr ""
+
+#: .\app\forms.py:65
 msgid "Tournament Name"
 msgstr ""
 
-#: .\app\forms.py:53
+#: .\app\forms.py:66
 msgid "Tournament Description"
 msgstr ""
 
-#: .\app\forms.py:56
+#: .\app\forms.py:71
 msgid "Team Name"
 msgstr ""
 
-#: .\app\forms.py:57
+#: .\app\forms.py:72
 msgid "Team Description"
 msgstr ""
 
-#: .\app\forms.py:71
+#: .\app\forms.py:86
 msgid "None: 0"
 msgstr ""
 
-#: .\app\forms.py:72
+#: .\app\forms.py:87
 msgid "Easy: 1"
 msgstr ""
 
-#: .\app\forms.py:73
+#: .\app\forms.py:88
 msgid "Medium: 2"
 msgstr ""
 
-#: .\app\forms.py:74
+#: .\app\forms.py:89
 msgid "Hard: 3"
 msgstr ""
 
-#: .\app\forms.py:78
+#: .\app\forms.py:93
 msgid "Challenge Name"
 msgstr ""
 
-#: .\app\forms.py:79
+#: .\app\forms.py:94
 msgid "Challenge Description"
 msgstr ""
 
-#: .\app\views.py:1673 .\app\views.py:1699
+#: .\app\tasks.py:17 .\templates\tournaments\creator\email_resumen.html:3
+msgid "Dr. Scratch Tournaments: Manual Validation Summary"
+msgstr ""
+
+#: .\app\views.py:1688
+msgid "Password changed successfully."
+msgstr ""
+
+#: .\app\views.py:1719
+msgid "Dr.Scratch: Did you forget your password?"
+msgstr ""
+
+#: .\app\views.py:1748 .\app\views.py:1852
 msgid "Logged user is not a creator or a participant."
 msgstr ""
 
-#: .\app\views.py:1725 .\app\views.py:1763 .\app\views.py:1813
-#: .\app\views.py:1843 .\app\views.py:1846 .\app\views.py:1862
-#: .\app\views.py:1920 .\app\views.py:1953 .\app\views.py:1956
-#: .\app\views.py:1989 .\app\views.py:2010 .\app\views.py:2075
-#: .\app\views.py:2124 .\app\views.py:2173 .\app\views.py:2176
-#: .\app\views.py:2192 .\app\views.py:2235 .\app\views.py:2252
-#: .\app\views.py:2306
+#: .\app\views.py:1804
+msgid "Welcome to Dr.Scratch tournaments"
+msgstr ""
+
+#: .\app\views.py:1860 .\templates\password\user_doesntexist.html:12
+#: .\templates\tournaments\password\user_doesntexist.html:12
+msgid "User doesn't exist or the password is incorrect."
+msgstr ""
+
+#: .\app\views.py:1882 .\app\views.py:1897 .\app\views.py:1919
+#: .\app\views.py:1975 .\app\views.py:2004 .\app\views.py:2029
+#: .\app\views.py:2038 .\app\views.py:2074 .\app\views.py:2115
+#: .\app\views.py:2139 .\app\views.py:2151 .\app\views.py:2186
+#: .\app\views.py:2206 .\app\views.py:2286 .\app\views.py:2332
+#: .\app\views.py:2381 .\app\views.py:2392 .\app\views.py:2410
+#: .\app\views.py:2487 .\app\views.py:2560 .\app\views.py:2587
+#: .\app\views.py:2612 .\app\views.py:2635 .\app\views.py:2651
 msgid "Logged user cannot be found."
 msgstr ""
 
-#: .\app\views.py:1728 .\app\views.py:1766 .\app\views.py:1865
-#: .\app\views.py:1992 .\app\views.py:2013 .\app\views.py:2127
-#: .\app\views.py:2195
+#: .\app\views.py:1885 .\app\views.py:1907 .\app\views.py:1945
+#: .\app\views.py:2048 .\app\views.py:2175 .\app\views.py:2196
+#: .\app\views.py:2320 .\app\views.py:2400 .\app\views.py:2576
+#: .\app\views.py:2605 .\app\views.py:2627
 msgid "Session expired. Please log in again."
 msgstr ""
 
-#: .\app\views.py:1752
+#: .\app\views.py:1934
 msgid "Challenge added."
 msgstr ""
 
-#: .\app\views.py:1778
+#: .\app\views.py:1957
 msgid ""
 "The challenge cannot be deleted because is asociated to one or more "
 "tournaments."
 msgstr ""
 
-#: .\app\views.py:1781
+#: .\app\views.py:1960
 msgid "Challenge deleted."
 msgstr ""
 
-#: .\app\views.py:1809 .\app\views.py:1839
+#: .\app\views.py:1964 .\app\views.py:1995 .\app\views.py:2025
 msgid "The selected challenge cannot be found."
 msgstr ""
 
 #. Translators: Challenge edited.
-#: .\app\views.py:1835
+#: .\app\views.py:2021
 msgid "Challenge edited."
 msgstr ""
 
-#: .\app\views.py:1877
+#: .\app\views.py:2060
 msgid ""
 "The team cannot be deleted because is asociated to one or more tournaments."
 msgstr ""
 
-#: .\app\views.py:1880
+#: .\app\views.py:2063
 msgid "Team deleted."
 msgstr ""
 
-#: .\app\views.py:1904 .\app\views.py:1949 .\app\views.py:2169
-#: .\app\views.py:2301
+#: .\app\views.py:2090 .\app\views.py:2135 .\app\views.py:2377
+#: .\app\views.py:2692 .\app\views.py:2696
 msgid "The selected team cannot be found."
 msgstr ""
 
-#: .\app\views.py:1945
+#: .\app\views.py:2131
 msgid "Team edited."
 msgstr ""
 
-#: .\app\views.py:1978
+#: .\app\views.py:2164
 msgid "Team added."
 msgstr ""
 
-#: .\app\views.py:2049
+#: .\app\views.py:2237 .\app\views.py:2602
 msgid "The selected tournament cannot be found."
 msgstr ""
 
-#: .\app\views.py:2086
+#: .\app\views.py:2273
 msgid "Tournament deleted."
 msgstr ""
 
-#: .\app\views.py:2120
+#: .\app\views.py:2316
 msgid "Tournament added."
 msgstr ""
 
-#: .\app\views.py:2165
+#: .\app\views.py:2373
 msgid "Tournament edited."
 msgstr ""
 
-#: .\app\views.py:2211
+#: .\app\views.py:2419
 #: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:291
-#: .\templates\tournaments\creator\progress\tournamentsProgress.html:260
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:261
 msgid "The tournament has not teams."
 msgstr ""
 
-#: .\app\views.py:2393 .\app\views.py:2422 .\templates\error\analyzing.html:36
+#: .\app\views.py:2468
+msgid "Welcome to Dr.Scratch for tournaments"
+msgstr ""
+
+#: .\app\views.py:2489
+msgid ""
+"The following emails are already included in Dr. Scratch (they where not "
+"registered): "
+msgstr ""
+
+#: .\app\views.py:2491
+msgid "The following emails were successfully registered in Dr. Scratch: "
+msgstr ""
+
+#: .\app\views.py:2493
+msgid "The following emails have wrong format (they where not registered): "
+msgstr ""
+
+#: .\app\views.py:2499
+msgid "You have to include a CSV file."
+msgstr ""
+
+#: .\app\views.py:2516
+msgid "The file added is not a CSV file."
+msgstr ""
+
+#: .\app\views.py:2521
+msgid "You have to include a TXT file."
+msgstr ""
+
+#: .\app\views.py:2538
+msgid "The file added is not a TXT file."
+msgstr ""
+
+#: .\app\views.py:2621
+msgid "Game validated successfully."
+msgstr ""
+
+#: .\app\views.py:2624
+msgid "The selected game cannot be found."
+msgstr ""
+
+#: .\app\views.py:2752 .\templates\tournaments\creator\email_valid.html:3
+msgid "Dr. Scratch Tournaments: Manual Validation"
+msgstr ""
+
+#: .\app\views.py:2806 .\app\views.py:2835 .\templates\error\analyzing.html:36
 msgid "There was an error analyzing your project"
 msgstr ""
 
-#: .\drScratch\settings.py:117
+#: .\drScratch\settings.py:118
 msgid "Spanish"
 msgstr ""
 
-#: .\drScratch\settings.py:118
+#: .\drScratch\settings.py:119
 msgid "English"
 msgstr ""
 
@@ -173,7 +262,7 @@ msgstr ""
 #: .\templates\error\404.html:59 .\templates\error\500.html:59
 #: .\templates\error\analyzing.html:62 .\templates\login\login.html:104
 #: .\templates\login\login.html.py:525 .\templates\main\collaborators.html:84
-#: .\templates\main\main.html:85 .\templates\main\main.html.py:551
+#: .\templates\main\main.html:86 .\templates\main\main.html.py:552
 #: .\templates\sign\createOrganization.html:81
 #: .\templates\sign\createUser.html:81 .\templates\sign\organization.html:105
 #: .\templates\sign\registerOrganization.html:81
@@ -183,7 +272,7 @@ msgstr ""
 #: .\templates\error\404.html:67 .\templates\error\500.html:67
 #: .\templates\error\analyzing.html:70 .\templates\learn\base.html:119
 #: .\templates\login\login.html:536 .\templates\main\collaborators.html:593
-#: .\templates\main\main.html:562 .\templates\main\main_organization.html:246
+#: .\templates\main\main.html:563 .\templates\main\main_organization.html:246
 #: .\templates\password\base.html:104 .\templates\sign\base.html:104
 #: .\templates\sign\createOrganization.html:256
 #: .\templates\sign\createUser.html:255 .\templates\sign\organization.html:288
@@ -194,13 +283,16 @@ msgstr ""
 #: .\templates\tournaments\creator\admin\challenges\editChallenge.html:264
 #: .\templates\tournaments\creator\admin\teams\newEditTeam.html:280
 #: .\templates\tournaments\creator\admin\teams\teamsList.html:328
-#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:404
-#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:369
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:426
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:387
 #: .\templates\tournaments\creator\main_creator.html:246
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:338
 #: .\templates\tournaments\creator\progress\teamsProgress.html:610
-#: .\templates\tournaments\creator\progress\tournamentsProgress.html:332
-#: .\templates\tournaments\main_tournaments.html:222
-#: .\templates\tournaments\participant\results.html:483
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:336
+#: .\templates\tournaments\creator\validation\validate.html:349
+#: .\templates\tournaments\creator\validation\validation.html:268
+#: .\templates\tournaments\main_tournaments.html:325
+#: .\templates\tournaments\participant\results.html:488
 #: .\templates\tournaments\participant\teamsPart.html:274
 #: .\templates\tournaments\participant\tournamentsPart.html:650
 #: .\templates\upload\dashboard-organization.html:212
@@ -1381,7 +1473,7 @@ msgid "Flow control"
 msgstr ""
 
 #: .\templates\learn\base.html:106 .\templates\statistics\statistics.html:200
-#: .\templates\tournaments\participant\results.html:362
+#: .\templates\tournaments\participant\results.html:367
 #: .\templates\upload\dashboard-unregistered-master.html:240
 msgid "Duplicated scripts"
 msgstr ""
@@ -1392,7 +1484,7 @@ msgstr ""
 
 #: .\templates\learn\base.html:108 .\templates\learn\deadCode.html:4
 #: .\templates\statistics\statistics.html:197
-#: .\templates\tournaments\participant\results.html:368
+#: .\templates\tournaments\participant\results.html:373
 #: .\templates\upload\dashboard-unregistered-master.html:246
 msgid "Dead code"
 msgstr ""
@@ -1520,9 +1612,12 @@ msgstr ""
 #: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:103
 #: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:111
 #: .\templates\tournaments\creator\main_creator.html:104
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:103
 #: .\templates\tournaments\creator\progress\teamsProgress.html:110
 #: .\templates\tournaments\creator\progress\tournamentsProgress.html:110
-#: .\templates\tournaments\main_tournaments.html:103
+#: .\templates\tournaments\creator\validation\validate.html:107
+#: .\templates\tournaments\creator\validation\validation.html:104
+#: .\templates\tournaments\main_tournaments.html:100
 #: .\templates\tournaments\participant\results.html:221
 #: .\templates\tournaments\participant\teamsPart.html:103
 #: .\templates\tournaments\participant\tournamentsPart.html:110
@@ -1538,8 +1633,11 @@ msgstr ""
 #: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:117
 #: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:125
 #: .\templates\tournaments\creator\main_creator.html:118
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:117
 #: .\templates\tournaments\creator\progress\teamsProgress.html:124
-#: .\templates\tournaments\main_tournaments.html:117
+#: .\templates\tournaments\creator\validation\validate.html:121
+#: .\templates\tournaments\creator\validation\validation.html:118
+#: .\templates\tournaments\main_tournaments.html:114
 #: .\templates\tournaments\participant\results.html:235
 #: .\templates\tournaments\participant\teamsPart.html:117
 #: .\templates\tournaments\participant\tournamentsPart.html:124
@@ -1578,84 +1676,86 @@ msgstr ""
 #: .\templates\sign\registerOrganization.html:75
 #: .\templates\sign\registerOrganization.html:110
 #: .\templates\sign\registerOrganization.html:208
-#: .\templates\tournaments\main_tournaments.html:179
+#: .\templates\tournaments\main_tournaments.html:176
+#: .\templates\tournaments\main_tournaments.html:280
 msgid "Sign up!"
 msgstr ""
 
-#: .\templates\login\login.html:187 .\templates\main\main.html:213
+#: .\templates\login\login.html:187 .\templates\main\main.html:214
 msgid "WHY?"
 msgstr ""
 
-#: .\templates\login\login.html:189 .\templates\main\main.html:215
+#: .\templates\login\login.html:189 .\templates\main\main.html:216
 #: .\templates\sign\createOrganization.html:165
 #: .\templates\sign\createUser.html:165
 #: .\templates\sign\registerOrganization.html:165
 msgid "Why "
 msgstr ""
 
-#: .\templates\login\login.html:189 .\templates\main\main.html:215
+#: .\templates\login\login.html:189 .\templates\main\main.html:216
 #: .\templates\sign\createOrganization.html:165
 #: .\templates\sign\createUser.html:165
 #: .\templates\sign\registerOrganization.html:165
 msgid "you’ll love Dr. Scratch"
 msgstr ""
 
-#: .\templates\login\login.html:193 .\templates\main\main.html:219
+#: .\templates\login\login.html:193 .\templates\main\main.html:220
 msgid "A powerful tool to analyze your Scratch projects"
 msgstr ""
 
-#: .\templates\login\login.html:205 .\templates\main\main.html:231
+#: .\templates\login\login.html:205 .\templates\main\main.html:232
 msgid "Simple & Fun"
 msgstr ""
 
-#: .\templates\login\login.html:207 .\templates\main\main.html:233
+#: .\templates\login\login.html:207 .\templates\main\main.html:234
 msgid ""
 "Your students can easily learn how to improve their programming skills in a "
 "fun way."
 msgstr ""
 
-#: .\templates\login\login.html:218 .\templates\main\main.html:244
+#: .\templates\login\login.html:218 .\templates\main\main.html:245
 msgid "Improve your skills"
 msgstr ""
 
-#: .\templates\login\login.html:220 .\templates\main\main.html:246
+#: .\templates\login\login.html:220 .\templates\main\main.html:247
 msgid ""
 "We provide feedback on several aspects which are related to Computational "
 "Thinking."
 msgstr ""
 
-#: .\templates\login\login.html:231 .\templates\main\main.html:257
+#: .\templates\login\login.html:231 .\templates\main\main.html:258
 msgid "Always improving"
 msgstr ""
 
-#: .\templates\login\login.html:233 .\templates\main\main.html:259
+#: .\templates\login\login.html:233 .\templates\main\main.html:260
 msgid ""
 "We're continually enhancing the features of Dr. Scratch, and we'd love to "
 "hear your thoughts"
 msgstr ""
 
-#: .\templates\login\login.html:270 .\templates\main\main.html:296
+#: .\templates\login\login.html:270 .\templates\main\main.html:297
 msgid "How"
 msgstr ""
 
-#: .\templates\login\login.html:272 .\templates\main\main.html:298
+#: .\templates\login\login.html:272 .\templates\main\main.html:299
 #: .\templates\sign\organization.html:189
+#: .\templates\tournaments\main_tournaments.html:228
 msgid "How "
 msgstr ""
 
-#: .\templates\login\login.html:272 .\templates\main\main.html:298
+#: .\templates\login\login.html:272 .\templates\main\main.html:299
 msgid "it works"
 msgstr ""
 
-#: .\templates\login\login.html:276 .\templates\main\main.html:302
+#: .\templates\login\login.html:276 .\templates\main\main.html:303
 msgid "There are two options to analyze a Scratch project with Dr. Scratch"
 msgstr ""
 
-#: .\templates\login\login.html:277 .\templates\main\main.html:303
+#: .\templates\login\login.html:277 .\templates\main\main.html:304
 msgid "project.png"
 msgstr ""
 
-#: .\templates\login\login.html:279 .\templates\main\main.html:305
+#: .\templates\login\login.html:279 .\templates\main\main.html:306
 msgid ""
 "You can upload an sb2 file or just provide the project url, avoiding the "
 "need to previously download the project to your computer. By analyzing your "
@@ -1663,110 +1763,110 @@ msgid ""
 "Score."
 msgstr ""
 
-#: .\templates\login\login.html:288 .\templates\main\main.html:314
+#: .\templates\login\login.html:288 .\templates\main\main.html:315
 msgid "It is extremely easy to use, both for begginers and expert programmers."
 msgstr ""
 
-#: .\templates\login\login.html:292 .\templates\main\main.html:318
+#: .\templates\login\login.html:292 .\templates\main\main.html:319
 msgid "You receive feedback to improve your coding skills."
 msgstr ""
 
-#: .\templates\login\login.html:300 .\templates\main\main.html:326
+#: .\templates\login\login.html:300 .\templates\main\main.html:327
 msgid ""
 "You can keep on improving your programming skills by yourself even from home."
 msgstr ""
 
-#: .\templates\login\login.html:304 .\templates\main\main.html:330
+#: .\templates\login\login.html:304 .\templates\main\main.html:331
 msgid "You can track your progress through charts and stats."
 msgstr ""
 
-#: .\templates\login\login.html:323 .\templates\main\main.html:349
+#: .\templates\login\login.html:323 .\templates\main\main.html:350
 msgid "NEW FEATURES"
 msgstr ""
 
-#: .\templates\login\login.html:325 .\templates\main\main.html:351
+#: .\templates\login\login.html:325 .\templates\main\main.html:352
 msgid "Coming "
 msgstr ""
 
-#: .\templates\login\login.html:325 .\templates\main\main.html:351
+#: .\templates\login\login.html:325 .\templates\main\main.html:352
 msgid "Soon"
 msgstr ""
 
-#: .\templates\login\login.html:329 .\templates\main\main.html:355
+#: .\templates\login\login.html:329 .\templates\main\main.html:356
 msgid "We are working on new features to improve Dr. Scratch"
 msgstr ""
 
-#: .\templates\login\login.html:344 .\templates\main\main.html:370
+#: .\templates\login\login.html:344 .\templates\main\main.html:371
 msgid "Multilingual Website"
 msgstr ""
 
 #: .\templates\login\login.html:348 .\templates\main\collaborators.html:350
-#: .\templates\main\main.html:374
+#: .\templates\main\main.html:375
 msgid ""
 "We know the importance of receiving feedback on your own language to "
 "understand every little detail or hint, so we'll translate Dr. Scratch to "
 "facilitate coding learning to as many people as possible."
 msgstr ""
 
-#: .\templates\login\login.html:359 .\templates\main\main.html:385
+#: .\templates\login\login.html:359 .\templates\main\main.html:386
 msgid "Teacher Accounts"
 msgstr ""
 
-#: .\templates\login\login.html:363 .\templates\main\main.html:389
+#: .\templates\login\login.html:363 .\templates\main\main.html:390
 msgid ""
 "Teachers will be able to group (and follow) their students to keep track of "
 "their progress in a fast and simple way."
 msgstr ""
 
-#: .\templates\login\login.html:374 .\templates\main\main.html:400
+#: .\templates\login\login.html:374 .\templates\main\main.html:401
 msgid "Cloud Platform"
 msgstr ""
 
-#: .\templates\login\login.html:378 .\templates\main\main.html:404
+#: .\templates\login\login.html:378 .\templates\main\main.html:405
 msgid ""
 "We are in the process of migrating our servers to the Cloud with the aim of "
 "providing a better performance."
 msgstr ""
 
-#: .\templates\login\login.html:403 .\templates\main\main.html:429
+#: .\templates\login\login.html:403 .\templates\main\main.html:430
 msgid ""
 "With Dr. Scratch plug-ins for Chrome and Firefox, students will analyze "
 "their project WHILE programming on the Scratch website."
 msgstr ""
 
-#: .\templates\login\login.html:414 .\templates\main\main.html:440
+#: .\templates\login\login.html:414 .\templates\main\main.html:441
 msgid "Gamification"
 msgstr ""
 
-#: .\templates\login\login.html:418 .\templates\main\main.html:444
+#: .\templates\login\login.html:418 .\templates\main\main.html:445
 msgid ""
 "We'd like to take learners curiosity one step further. Do you have cool "
 "ideas to gamify our platform?"
 msgstr ""
 
-#: .\templates\login\login.html:429 .\templates\main\main.html:455
+#: .\templates\login\login.html:429 .\templates\main\main.html:456
 msgid "Social Network"
 msgstr ""
 
-#: .\templates\login\login.html:433 .\templates\main\main.html:459
+#: .\templates\login\login.html:433 .\templates\main\main.html:460
 msgid ""
 "The new social network funcionalities will allow users to communicate with "
 "each other to exchange ideas and challenges."
 msgstr ""
 
-#: .\templates\login\login.html:453 .\templates\main\main.html:479
+#: .\templates\login\login.html:453 .\templates\main\main.html:480
 msgid "Contact"
 msgstr ""
 
-#: .\templates\login\login.html:455 .\templates\main\main.html:481
+#: .\templates\login\login.html:455 .\templates\main\main.html:482
 msgid "<strong>Contact </strong> Dr. Scratch team</h2>"
 msgstr ""
 
-#: .\templates\login\login.html:459 .\templates\main\main.html:485
+#: .\templates\login\login.html:459 .\templates\main\main.html:486
 msgid "We would be pleased to receive your feedback"
 msgstr ""
 
-#: .\templates\login\login.html:498 .\templates\main\main.html:524
+#: .\templates\login\login.html:498 .\templates\main\main.html:525
 msgid ""
 "We would like to thank many people for their collaboration and we have done "
 "one special section."
@@ -1776,56 +1876,56 @@ msgstr ""
 msgid "Collaborators"
 msgstr ""
 
-#: .\templates\login\login.html:520 .\templates\main\main.html:546
+#: .\templates\login\login.html:520 .\templates\main\main.html:547
 msgid "Are you a Dr. Scratch user?"
 msgstr ""
 
-#: .\templates\login\login.html:523 .\templates\main\main.html:549
+#: .\templates\login\login.html:523 .\templates\main\main.html:550
 msgid "Join now!"
 msgstr ""
 
-#: .\templates\login\login.html:563 .\templates\main\main.html:589
+#: .\templates\login\login.html:563 .\templates\main\main.html:590
 #: .\templates\tournaments\creator\progress\teamsProgress.html:631
 #: .\templates\tournaments\participant\tournamentsPart.html:671
 #: .\templates\upload\dashboard-organization.html:239
 msgid "What is an url?"
 msgstr ""
 
-#: .\templates\login\login.html:565 .\templates\main\main.html:591
+#: .\templates\login\login.html:565 .\templates\main\main.html:592
 #: .\templates\tournaments\creator\progress\teamsProgress.html:633
 #: .\templates\tournaments\participant\tournamentsPart.html:673
 #: .\templates\upload\dashboard-organization.html:241
 msgid "How I can know my Scratch project's url?"
 msgstr ""
 
-#: .\templates\login\login.html:569 .\templates\main\main.html:595
+#: .\templates\login\login.html:569 .\templates\main\main.html:596
 msgid "<img class='framed' src='static/app/images/url-en.png' />"
 msgstr ""
 
-#: .\templates\login\login.html:588 .\templates\main\main.html:614
+#: .\templates\login\login.html:588 .\templates\main\main.html:615
 #: .\templates\tournaments\creator\progress\teamsProgress.html:655
 #: .\templates\tournaments\participant\tournamentsPart.html:695
 #: .\templates\upload\dashboard-organization.html:264
 msgid "I want to download my project from Scratch!"
 msgstr ""
 
-#: .\templates\login\login.html:590 .\templates\main\main.html:616
+#: .\templates\login\login.html:590 .\templates\main\main.html:617
 #: .\templates\tournaments\creator\progress\teamsProgress.html:657
 #: .\templates\tournaments\participant\tournamentsPart.html:697
 #: .\templates\upload\dashboard-organization.html:266
 msgid "How I can download my Scratch project to my computer?"
 msgstr ""
 
-#: .\templates\login\login.html:594 .\templates\main\main.html:620
+#: .\templates\login\login.html:594 .\templates\main\main.html:621
 msgid "<img class='framed' src='static/app/images/project-en.png' />"
 msgstr ""
 
-#: .\templates\login\login.html:614 .\templates\main\main.html:640
+#: .\templates\login\login.html:614 .\templates\main\main.html:641
 #: .\templates\main\main_organization.html:300
 msgid "Wait a moment please"
 msgstr ""
 
-#: .\templates\login\login.html:632 .\templates\main\main.html:658
+#: .\templates\login\login.html:632 .\templates\main\main.html:659
 #: .\templates\main\main_organization.html:318
 msgid "loading..."
 msgstr ""
@@ -1952,37 +2052,37 @@ msgstr ""
 msgid "<strong>More thanks</strong></h2>"
 msgstr ""
 
-#: .\templates\main\main.html:74
+#: .\templates\main\main.html:75
 msgid "Why?"
 msgstr ""
 
-#: .\templates\main\main.html:75
+#: .\templates\main\main.html:76
 msgid "How?"
 msgstr ""
 
-#: .\templates\main\main.html:76
+#: .\templates\main\main.html:77
 msgid "Working on"
 msgstr ""
 
-#: .\templates\main\main.html:77
+#: .\templates\main\main.html:78
 msgid "Contact us"
 msgstr ""
 
-#: .\templates\main\main.html:78
+#: .\templates\main\main.html:79
 #: .\templates\tournaments\creator\admin\admin_creator.html:157
 #: .\templates\tournaments\participant\teamsPart.html:203
 msgid "Tournaments"
 msgstr ""
 
-#: .\templates\main\main.html:79
+#: .\templates\main\main.html:80
 msgid "Organizations"
 msgstr ""
 
-#: .\templates\main\main.html:108
+#: .\templates\main\main.html:109
 msgid "Analyze your Scratch projects"
 msgstr ""
 
-#: .\templates\main\main.html:110
+#: .\templates\main\main.html:111
 msgid ""
 "Welcome to the Dr. Scratch website, an analytical tool that evaluates your "
 "Scratch projects in a variety of computational areas. This analyzer is a "
@@ -1990,16 +2090,16 @@ msgid ""
 "students."
 msgstr ""
 
-#: .\templates\main\main.html:114
+#: .\templates\main\main.html:115
 msgid "Learn More"
 msgstr ""
 
-#: .\templates\main\main.html:128
+#: .\templates\main\main.html:129
 #: .\templates\tournaments\participant\tournamentsPart.html:571
 msgid "There are two options to analyze your Scratch project now!"
 msgstr ""
 
-#: .\templates\main\main.html:133
+#: .\templates\main\main.html:134
 #: .\templates\tournaments\participant\tournamentsPart.html:578
 msgid ""
 "1. Introduce the <span class='colored-text'><a data-toggle='modal' "
@@ -2007,7 +2107,7 @@ msgid ""
 "download it:"
 msgstr ""
 
-#: .\templates\main\main.html:134
+#: .\templates\main\main.html:135
 #: .\templates\tournaments\participant\tournamentsPart.html:579
 msgid ""
 "<input name=\"urlProject\" id=\"cf-name\" class=\"form-control input-box "
@@ -2015,12 +2115,12 @@ msgid ""
 "type=\"text\">"
 msgstr ""
 
-#: .\templates\main\main.html:135
+#: .\templates\main\main.html:136
 #: .\templates\tournaments\participant\tournamentsPart.html:580
 msgid "Analyze by url"
 msgstr ""
 
-#: .\templates\main\main.html:140
+#: .\templates\main\main.html:141
 #: .\templates\tournaments\participant\tournamentsPart.html:585
 msgid ""
 "2. If you have your <span class='colored-text'><a data-toggle='modal' "
@@ -2028,19 +2128,19 @@ msgid ""
 "analyze it here:"
 msgstr ""
 
-#: .\templates\main\main.html:141
+#: .\templates\main\main.html:142
 #: .\templates\tournaments\participant\tournamentsPart.html:586
 msgid ""
 "<input  name='zipFile' type='file' class='filestyle' data-buttonText='Choose "
 "Project'>"
 msgstr ""
 
-#: .\templates\main\main.html:142
+#: .\templates\main\main.html:143
 #: .\templates\tournaments\participant\tournamentsPart.html:587
 msgid "Analyze my project"
 msgstr ""
 
-#: .\templates\main\main.html:149 .\templates\main\main.html.py:152
+#: .\templates\main\main.html:150 .\templates\main\main.html.py:153
 #: .\templates\main\main_organization.html:190
 #: .\templates\main\main_organization.html:193
 #: .\templates\tournaments\participant\tournamentsPart.html:594
@@ -2048,17 +2148,17 @@ msgstr ""
 msgid "Error! Please choose a .sb or .sb2 file or input an url"
 msgstr ""
 
-#: .\templates\main\main.html:156 .\templates\main\main_organization.html:197
+#: .\templates\main\main.html:157 .\templates\main\main_organization.html:197
 #: .\templates\tournaments\participant\tournamentsPart.html:601
 msgid "Error! Your project id is wrong"
 msgstr ""
 
-#: .\templates\main\main.html:160 .\templates\main\main_organization.html:201
+#: .\templates\main\main.html:161 .\templates\main\main_organization.html:201
 #: .\templates\tournaments\participant\tournamentsPart.html:605
 msgid "Error! Your project doesn't exist in Scratch's servers"
 msgstr ""
 
-#: .\templates\main\main.html:527 .\templates\statistics\statistics.html:306
+#: .\templates\main\main.html:528 .\templates\statistics\statistics.html:306
 msgid "Statistics"
 msgstr ""
 
@@ -2093,12 +2193,18 @@ msgstr ""
 #: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:98
 #: .\templates\tournaments\creator\main_creator.html:59
 #: .\templates\tournaments\creator\main_creator.html:91
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:58
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:90
 #: .\templates\tournaments\creator\progress\teamsProgress.html:65
 #: .\templates\tournaments\creator\progress\teamsProgress.html:97
 #: .\templates\tournaments\creator\progress\tournamentsProgress.html:65
 #: .\templates\tournaments\creator\progress\tournamentsProgress.html:97
-#: .\templates\tournaments\main_tournaments.html:58
-#: .\templates\tournaments\main_tournaments.html:90
+#: .\templates\tournaments\creator\validation\validate.html:62
+#: .\templates\tournaments\creator\validation\validate.html:94
+#: .\templates\tournaments\creator\validation\validation.html:59
+#: .\templates\tournaments\creator\validation\validation.html:91
+#: .\templates\tournaments\main_tournaments.html:55
+#: .\templates\tournaments\main_tournaments.html:87
 #: .\templates\tournaments\participant\results.html:174
 #: .\templates\tournaments\participant\results.html:207
 #: .\templates\tournaments\participant\teamsPart.html:58
@@ -2118,9 +2224,12 @@ msgstr ""
 #: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:92
 #: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:100
 #: .\templates\tournaments\creator\main_creator.html:93
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:92
 #: .\templates\tournaments\creator\progress\teamsProgress.html:99
 #: .\templates\tournaments\creator\progress\tournamentsProgress.html:99
-#: .\templates\tournaments\main_tournaments.html:92
+#: .\templates\tournaments\creator\validation\validate.html:96
+#: .\templates\tournaments\creator\validation\validation.html:93
+#: .\templates\tournaments\main_tournaments.html:89
 #: .\templates\tournaments\participant\results.html:209
 #: .\templates\tournaments\participant\teamsPart.html:92
 #: .\templates\tournaments\participant\tournamentsPart.html:99
@@ -2129,6 +2238,7 @@ msgid "Change password"
 msgstr ""
 
 #: .\templates\main\main_organization.html:130
+#: .\templates\password\user_doesntorg.html:14
 #: .\templates\tournaments\creator\admin\admin_creator.html:62
 #: .\templates\tournaments\creator\admin\admin_creator.html:94
 #: .\templates\tournaments\creator\admin\challenges\challengesList.html:62
@@ -2145,12 +2255,18 @@ msgstr ""
 #: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:102
 #: .\templates\tournaments\creator\main_creator.html:63
 #: .\templates\tournaments\creator\main_creator.html:95
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:62
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:94
 #: .\templates\tournaments\creator\progress\teamsProgress.html:69
 #: .\templates\tournaments\creator\progress\teamsProgress.html:101
 #: .\templates\tournaments\creator\progress\tournamentsProgress.html:69
 #: .\templates\tournaments\creator\progress\tournamentsProgress.html:101
-#: .\templates\tournaments\main_tournaments.html:62
-#: .\templates\tournaments\main_tournaments.html:94
+#: .\templates\tournaments\creator\validation\validate.html:66
+#: .\templates\tournaments\creator\validation\validate.html:98
+#: .\templates\tournaments\creator\validation\validation.html:63
+#: .\templates\tournaments\creator\validation\validation.html:95
+#: .\templates\tournaments\main_tournaments.html:59
+#: .\templates\tournaments\main_tournaments.html:91
 #: .\templates\tournaments\participant\results.html:178
 #: .\templates\tournaments\participant\results.html:211
 #: .\templates\tournaments\participant\teamsPart.html:62
@@ -2188,6 +2304,7 @@ msgid " with the urls of the Scratch projects you want to analyze:"
 msgstr ""
 
 #: .\templates\main\main_organization.html:182
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:196
 #: .\templates\upload\dashboard-organization.html:154
 msgid ""
 "<input  name='csvFile' type='file' class='filestyle' data-buttonText='Choose "
@@ -2200,6 +2317,7 @@ msgid "Analyze my projects"
 msgstr ""
 
 #: .\templates\main\main_organization.html:273
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:299
 msgid "How is the file .csv?"
 msgstr ""
 
@@ -2209,28 +2327,43 @@ msgid ""
 msgstr ""
 
 #: .\templates\password\email.html:4
+#: .\templates\tournaments\password\email.html:4
 msgid "Reset password"
 msgstr ""
 
 #: .\templates\password\email.html:6
+#: .\templates\tournaments\password\email.html:6
 msgid ""
 "You're receiving this email because you requested a password reset for your "
 "user account at Dr. Scratch."
 msgstr ""
 
 #: .\templates\password\email.html:7
+#: .\templates\tournaments\password\email.html:7
 msgid "Please, go to the following page and choose a new password:"
 msgstr ""
 
 #: .\templates\password\email.html:9
+#: .\templates\tournaments\password\email.html:9
+#: .\templates\tournaments\password\email_new_participant.html:9
 msgid "Your username is: "
 msgstr ""
 
 #: .\templates\password\email.html:13 .\templates\sign\email.html:11
+#: .\templates\tournaments\creator\email.html:11
+#: .\templates\tournaments\creator\email_resumen.html:9
+#: .\templates\tournaments\creator\email_valid.html:9
+#: .\templates\tournaments\password\email.html:13
+#: .\templates\tournaments\password\email_new_participant.html:13
 msgid "Thanks for using our website!"
 msgstr ""
 
 #: .\templates\password\email.html:14 .\templates\sign\email.html:12
+#: .\templates\tournaments\creator\email.html:12
+#: .\templates\tournaments\creator\email_resumen.html:10
+#: .\templates\tournaments\creator\email_valid.html:10
+#: .\templates\tournaments\password\email.html:14
+#: .\templates\tournaments\password\email_new_participant.html:14
 msgid "The Dr. Scratch team"
 msgstr ""
 
@@ -2243,19 +2376,23 @@ msgid "Check with your systems operator to see if the message was blocked."
 msgstr ""
 
 #: .\templates\password\new_password.html:14
+#: .\templates\tournaments\password\new_password.html:14
 msgid "Type your new password:"
 msgstr ""
 
 #: .\templates\password\new_password.html:19
+#: .\templates\tournaments\password\new_password.html:19
 msgid "Confirm your password:"
 msgstr ""
 
 #: .\templates\password\new_password.html:25
 #: .\templates\password\password.html:19
+#: .\templates\tournaments\password\new_password.html:25
 msgid "Send"
 msgstr ""
 
 #: .\templates\password\new_password.html:31
+#: .\templates\tournaments\password\new_password.html:31
 msgid "The Password and Confirm password fields are not identical."
 msgstr ""
 
@@ -2263,14 +2400,16 @@ msgstr ""
 msgid "Have you forgotten your password? Please introduce your email:"
 msgstr ""
 
-#: .\templates\password\user_doesntexist.html:12
-msgid "User doesn't exist or the password is incorrect."
-msgstr ""
-
 #: .\templates\password\user_doesntexist.html:14
 #: .\templates\password\wrong_form.html:14
 #: .\templates\sign\signup_error.html:25
+#: .\templates\tournaments\creator\signup_error.html:25
+#: .\templates\tournaments\password\user_doesntexist.html:14
 msgid "Retry"
+msgstr ""
+
+#: .\templates\password\user_doesntorg.html:12
+msgid "is not an organization."
 msgstr ""
 
 #: .\templates\password\wrong_form.html:12
@@ -2304,12 +2443,14 @@ msgstr ""
 #: .\templates\sign\createOrganization.html:196
 #: .\templates\sign\createUser.html:195 .\templates\sign\organization.html:222
 #: .\templates\sign\registerOrganization.html:195
+#: .\templates\tournaments\main_tournaments.html:261
 msgid "Password"
 msgstr ""
 
 #: .\templates\sign\createOrganization.html:198
 #: .\templates\sign\createUser.html:197 .\templates\sign\organization.html:224
 #: .\templates\sign\registerOrganization.html:197
+#: .\templates\tournaments\main_tournaments.html:263
 msgid ""
 "<input type='password' class='form-control' name='password' "
 "placeholder='Password'>"
@@ -2318,12 +2459,14 @@ msgstr ""
 #: .\templates\sign\createOrganization.html:203
 #: .\templates\sign\createUser.html:202 .\templates\sign\organization.html:231
 #: .\templates\sign\registerOrganization.html:202
+#: .\templates\tournaments\main_tournaments.html:270
 msgid "Hashkey"
 msgstr ""
 
 #: .\templates\sign\createOrganization.html:205
 #: .\templates\sign\createUser.html:204 .\templates\sign\organization.html:233
 #: .\templates\sign\registerOrganization.html:204
+#: .\templates\tournaments\main_tournaments.html:272
 msgid ""
 "<input type='password' class='form-control' name='hashkey' "
 "placeholder='Password'>"
@@ -2348,9 +2491,12 @@ msgstr ""
 #: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:114
 #: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:122
 #: .\templates\tournaments\creator\main_creator.html:115
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:114
 #: .\templates\tournaments\creator\progress\teamsProgress.html:121
 #: .\templates\tournaments\creator\progress\tournamentsProgress.html:121
-#: .\templates\tournaments\main_tournaments.html:114
+#: .\templates\tournaments\creator\validation\validate.html:118
+#: .\templates\tournaments\creator\validation\validation.html:115
+#: .\templates\tournaments\main_tournaments.html:111
 #: .\templates\tournaments\participant\results.html:232
 #: .\templates\tournaments\participant\teamsPart.html:114
 #: .\templates\tournaments\participant\tournamentsPart.html:121
@@ -2368,9 +2514,12 @@ msgstr ""
 #: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:115
 #: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:123
 #: .\templates\tournaments\creator\main_creator.html:116
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:115
 #: .\templates\tournaments\creator\progress\teamsProgress.html:122
 #: .\templates\tournaments\creator\progress\tournamentsProgress.html:122
-#: .\templates\tournaments\main_tournaments.html:115
+#: .\templates\tournaments\creator\validation\validate.html:119
+#: .\templates\tournaments\creator\validation\validation.html:116
+#: .\templates\tournaments\main_tournaments.html:112
 #: .\templates\tournaments\participant\results.html:233
 #: .\templates\tournaments\participant\teamsPart.html:115
 #: .\templates\tournaments\participant\tournamentsPart.html:122
@@ -2388,9 +2537,12 @@ msgstr ""
 #: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:119
 #: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:127
 #: .\templates\tournaments\creator\main_creator.html:120
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:119
 #: .\templates\tournaments\creator\progress\teamsProgress.html:126
 #: .\templates\tournaments\creator\progress\tournamentsProgress.html:124
-#: .\templates\tournaments\main_tournaments.html:119
+#: .\templates\tournaments\creator\validation\validate.html:123
+#: .\templates\tournaments\creator\validation\validation.html:120
+#: .\templates\tournaments\main_tournaments.html:116
 #: .\templates\tournaments\participant\results.html:237
 #: .\templates\tournaments\participant\teamsPart.html:119
 #: .\templates\tournaments\participant\tournamentsPart.html:126
@@ -2406,9 +2558,12 @@ msgstr ""
 #: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:122
 #: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:130
 #: .\templates\tournaments\creator\main_creator.html:123
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:122
 #: .\templates\tournaments\creator\progress\teamsProgress.html:129
 #: .\templates\tournaments\creator\progress\tournamentsProgress.html:127
-#: .\templates\tournaments\main_tournaments.html:122
+#: .\templates\tournaments\creator\validation\validate.html:126
+#: .\templates\tournaments\creator\validation\validation.html:123
+#: .\templates\tournaments\main_tournaments.html:119
 #: .\templates\tournaments\participant\results.html:240
 #: .\templates\tournaments\participant\teamsPart.html:122
 #: .\templates\tournaments\participant\tournamentsPart.html:129
@@ -2440,23 +2595,28 @@ msgid ""
 msgstr ""
 
 #: .\templates\sign\organization.html:192
+#: .\templates\tournaments\main_tournaments.html:231
 msgid ""
 " and we'll send you a hash key that will allow you to sign up in the web"
 msgstr ""
 
 #: .\templates\sign\signup_error.html:13
+#: .\templates\tournaments\creator\signup_error.html:13
 msgid "This name already exists. Choose another, please."
 msgstr ""
 
 #: .\templates\sign\signup_error.html:16
+#: .\templates\tournaments\creator\signup_error.html:16
 msgid "This email already exists. Choose another, please."
 msgstr ""
 
 #: .\templates\sign\signup_error.html:19
+#: .\templates\tournaments\creator\signup_error.html:19
 msgid "This hash doesn't exist."
 msgstr ""
 
 #: .\templates\sign\signup_error.html:22
+#: .\templates\tournaments\creator\signup_error.html:22
 msgid "You must to complete all fields."
 msgstr ""
 
@@ -2508,8 +2668,8 @@ msgid "Code smell"
 msgstr ""
 
 #: .\templates\statistics\statistics.html:206
-#: .\templates\tournaments\participant\results.html:364
-#: .\templates\tournaments\participant\results.html:416
+#: .\templates\tournaments\participant\results.html:369
+#: .\templates\tournaments\participant\results.html:421
 #: .\templates\upload\dashboard-unregistered-developing.html:206
 #: .\templates\upload\dashboard-unregistered-master.html:242
 msgid "Sprite naming"
@@ -2532,9 +2692,12 @@ msgstr ""
 #: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:60
 #: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:68
 #: .\templates\tournaments\creator\main_creator.html:61
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:60
 #: .\templates\tournaments\creator\progress\teamsProgress.html:67
 #: .\templates\tournaments\creator\progress\tournamentsProgress.html:67
-#: .\templates\tournaments\main_tournaments.html:60
+#: .\templates\tournaments\creator\validation\validate.html:64
+#: .\templates\tournaments\creator\validation\validation.html:61
+#: .\templates\tournaments\main_tournaments.html:57
 #: .\templates\tournaments\participant\results.html:176
 #: .\templates\tournaments\participant\teamsPart.html:60
 #: .\templates\tournaments\participant\tournamentsPart.html:67
@@ -2549,9 +2712,12 @@ msgstr ""
 #: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:107
 #: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:115
 #: .\templates\tournaments\creator\main_creator.html:108
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:107
 #: .\templates\tournaments\creator\progress\teamsProgress.html:114
 #: .\templates\tournaments\creator\progress\tournamentsProgress.html:114
-#: .\templates\tournaments\main_tournaments.html:107
+#: .\templates\tournaments\creator\validation\validate.html:111
+#: .\templates\tournaments\creator\validation\validation.html:108
+#: .\templates\tournaments\main_tournaments.html:104
 #: .\templates\tournaments\participant\results.html:225
 #: .\templates\tournaments\participant\teamsPart.html:107
 #: .\templates\tournaments\participant\tournamentsPart.html:114
@@ -2566,9 +2732,13 @@ msgstr ""
 #: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:148
 #: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:156
 #: .\templates\tournaments\creator\main_creator.html:148
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:147
 #: .\templates\tournaments\creator\progress\teamsProgress.html:155
 #: .\templates\tournaments\creator\progress\tournamentsProgress.html:153
-#: .\templates\tournaments\participant\results.html:277
+#: .\templates\tournaments\creator\validation\validate.html:153
+#: .\templates\tournaments\creator\validation\validate.html:276
+#: .\templates\tournaments\creator\validation\validation.html:149
+#: .\templates\tournaments\participant\results.html:282
 #: .\templates\tournaments\participant\teamsPart.html:148
 #: .\templates\tournaments\participant\tournamentsPart.html:155
 msgid "« Back"
@@ -2605,9 +2775,13 @@ msgstr ""
 #: .\templates\tournaments\creator\admin\challenges\challengesList.html:162
 #: .\templates\tournaments\creator\admin\teams\teamsList.html:162
 #: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:170
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:158
 #: .\templates\tournaments\creator\progress\teamsProgress.html:166
-#: .\templates\tournaments\creator\progress\tournamentsProgress.html:167
-#: .\templates\tournaments\main_tournaments.html:152
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:164
+#: .\templates\tournaments\creator\validation\validate.html:166
+#: .\templates\tournaments\creator\validation\validate.html:288
+#: .\templates\tournaments\creator\validation\validation.html:163
+#: .\templates\tournaments\main_tournaments.html:149
 #: .\templates\tournaments\participant\teamsPart.html:162
 #: .\templates\tournaments\participant\tournamentsPart.html:166
 msgid "Error!"
@@ -2616,9 +2790,13 @@ msgstr ""
 #: .\templates\tournaments\creator\admin\challenges\challengesList.html:167
 #: .\templates\tournaments\creator\admin\teams\teamsList.html:167
 #: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:175
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:163
 #: .\templates\tournaments\creator\progress\teamsProgress.html:171
-#: .\templates\tournaments\creator\progress\tournamentsProgress.html:172
-#: .\templates\tournaments\main_tournaments.html:157
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:169
+#: .\templates\tournaments\creator\validation\validate.html:171
+#: .\templates\tournaments\creator\validation\validate.html:293
+#: .\templates\tournaments\creator\validation\validation.html:168
+#: .\templates\tournaments\main_tournaments.html:154
 #: .\templates\tournaments\participant\teamsPart.html:167
 #: .\templates\tournaments\participant\tournamentsPart.html:171
 msgid "Warning!"
@@ -2627,9 +2805,13 @@ msgstr ""
 #: .\templates\tournaments\creator\admin\challenges\challengesList.html:172
 #: .\templates\tournaments\creator\admin\teams\teamsList.html:172
 #: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:180
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:168
 #: .\templates\tournaments\creator\progress\teamsProgress.html:176
-#: .\templates\tournaments\creator\progress\tournamentsProgress.html:177
-#: .\templates\tournaments\main_tournaments.html:162
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:174
+#: .\templates\tournaments\creator\validation\validate.html:176
+#: .\templates\tournaments\creator\validation\validate.html:298
+#: .\templates\tournaments\creator\validation\validation.html:173
+#: .\templates\tournaments\main_tournaments.html:159
 #: .\templates\tournaments\participant\teamsPart.html:172
 #: .\templates\tournaments\participant\tournamentsPart.html:176
 msgid "Info:"
@@ -2638,9 +2820,13 @@ msgstr ""
 #: .\templates\tournaments\creator\admin\challenges\challengesList.html:177
 #: .\templates\tournaments\creator\admin\teams\teamsList.html:177
 #: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:185
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:173
 #: .\templates\tournaments\creator\progress\teamsProgress.html:181
-#: .\templates\tournaments\creator\progress\tournamentsProgress.html:182
-#: .\templates\tournaments\main_tournaments.html:167
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:179
+#: .\templates\tournaments\creator\validation\validate.html:181
+#: .\templates\tournaments\creator\validation\validate.html:303
+#: .\templates\tournaments\creator\validation\validation.html:178
+#: .\templates\tournaments\main_tournaments.html:164
 #: .\templates\tournaments\participant\teamsPart.html:177
 #: .\templates\tournaments\participant\tournamentsPart.html:181
 msgid "Success!"
@@ -2652,7 +2838,7 @@ msgstr ""
 
 #: .\templates\tournaments\creator\admin\challenges\challengesList.html:196
 #: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:204
-#: .\templates\tournaments\creator\progress\tournamentsProgress.html:200
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:201
 msgid "Detail "
 msgstr ""
 
@@ -2670,7 +2856,7 @@ msgstr ""
 
 #: .\templates\tournaments\creator\admin\challenges\challengesList.html:210
 #: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:244
-#: .\templates\tournaments\creator\progress\tournamentsProgress.html:213
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:214
 msgid "Detail"
 msgstr ""
 
@@ -2729,28 +2915,28 @@ msgstr ""
 
 #: .\templates\tournaments\creator\admin\challenges\challengesList.html:538
 #: .\templates\tournaments\creator\admin\challenges\challengesList.html:549
-#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:281
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:303
 msgid "New Challenge"
 msgstr ""
 
 #: .\templates\tournaments\creator\admin\challenges\challengesList.html:551
-#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:283
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:305
 msgid "Create a new challenge"
 msgstr ""
 
 #: .\templates\tournaments\creator\admin\challenges\challengesList.html:559
 #: .\templates\tournaments\creator\admin\challenges\editChallenge.html:194
-#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:291
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:313
 #: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:259
-#: .\templates\tournaments\creator\progress\tournamentsProgress.html:228
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:229
 msgid "Parallelism:"
 msgstr ""
 
 #: .\templates\tournaments\creator\admin\challenges\challengesList.html:586
 #: .\templates\tournaments\creator\admin\teams\newEditTeam.html:236
-#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:266
-#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:318
-#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:356
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:288
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:340
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:378
 msgid "Add"
 msgstr ""
 
@@ -2759,7 +2945,7 @@ msgstr ""
 #: .\templates\tournaments\creator\admin\teams\newEditTeam.html:188
 #: .\templates\tournaments\creator\admin\teams\newEditTeam.html:212
 #: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:188
-#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:231
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:242
 msgid "Edit"
 msgstr ""
 
@@ -2773,31 +2959,31 @@ msgstr ""
 
 #: .\templates\tournaments\creator\admin\teams\newEditTeam.html:195
 #: .\templates\tournaments\creator\admin\teams\newEditTeam.html:227
-#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:347
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:369
 msgid "You can create a team without participants or include from 1 to"
 msgstr ""
 
 #: .\templates\tournaments\creator\admin\teams\newEditTeam.html:195
 #: .\templates\tournaments\creator\admin\teams\newEditTeam.html:227
-#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:347
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:369
 msgid "participants. Included participants cannot be repeted."
 msgstr ""
 
 #: .\templates\tournaments\creator\admin\teams\newEditTeam.html:198
 #: .\templates\tournaments\creator\admin\teams\newEditTeam.html:206
 #: .\templates\tournaments\creator\admin\teams\newEditTeam.html:230
-#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:350
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:372
 msgid "Select participant"
 msgstr ""
 
 #: .\templates\tournaments\creator\admin\teams\newEditTeam.html:220
 #: .\templates\tournaments\creator\admin\teams\teamsList.html:286
-#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:337
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:359
 msgid "New Team"
 msgstr ""
 
 #: .\templates\tournaments\creator\admin\teams\newEditTeam.html:222
-#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:339
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:361
 msgid "Create a new team"
 msgstr ""
 
@@ -2826,6 +3012,7 @@ msgid "Team participants:"
 msgstr ""
 
 #: .\templates\tournaments\creator\admin\teams\teamsList.html:249
+#: .\templates\tournaments\creator\validation\validate.html:229
 msgid "The team has not participants."
 msgstr ""
 
@@ -2842,92 +3029,113 @@ msgid "Edit tournament:"
 msgstr ""
 
 #: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:195
-#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:246
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:257
 msgid "You can create a tournament without challenges or include from 1 to"
 msgstr ""
 
 #: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:195
-#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:246
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:257
 msgid "challenges. Included challenges cannot be repeted."
 msgstr ""
 
 #: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:198
 #: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:206
-#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:249
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:260
 msgid "Select challenge"
 msgstr ""
 
 #: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:212
-#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:255
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:266
 msgid "New Challenge "
 msgstr ""
 
 #: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:213
-#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:256
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:267
 msgid "You can create a tournament without teams or include from 1 to"
 msgstr ""
 
 #: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:213
-#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:256
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:267
 msgid "teams. Included teams cannot be repeted."
 msgstr ""
 
 #: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:216
 #: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:224
-#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:259
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:270
 msgid "Select team"
 msgstr ""
 
 #: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:230
-#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:265
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:276
 msgid "New Team "
 msgstr ""
 
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:231
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:277
+msgid ""
+"You can validate the challenges of the tournament manually. The challenge "
+"will not be completed until you validate the student's game in Manual "
+"Validation section."
+msgstr ""
+
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:234
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:280
+msgid "Validate the challenges manually"
+msgstr ""
+
 #: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:239
-#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:327
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:285
+msgid ""
+"You can be notified with an email when a participant complete a challenge. "
+"Select the notification frequency."
+msgstr ""
+
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:250
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:345
 msgid "New Tournament"
 msgstr ""
 
-#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:241
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:252
 msgid "Create a new tournament"
 msgstr ""
 
-#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:295
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:317
 #: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:260
-#: .\templates\tournaments\creator\progress\tournamentsProgress.html:229
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:230
 msgid "Logic:"
 msgstr ""
 
-#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:299
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:321
 #: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:261
-#: .\templates\tournaments\creator\progress\tournamentsProgress.html:230
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:231
 msgid "Flow Control:"
 msgstr ""
 
-#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:303
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:325
 #: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:262
-#: .\templates\tournaments\creator\progress\tournamentsProgress.html:231
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:232
 msgid "User Interactivity:"
 msgstr ""
 
-#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:307
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:329
 #: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:263
-#: .\templates\tournaments\creator\progress\tournamentsProgress.html:232
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:233
 msgid "Data Representation:"
 msgstr ""
 
-#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:311
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:333
 #: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:264
-#: .\templates\tournaments\creator\progress\tournamentsProgress.html:233
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:234
 msgid "Abstraction:"
 msgstr ""
 
-#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:315
+#: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:337
 msgid "Syncronization:"
 msgstr ""
 
 #: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:190
-#: .\templates\tournaments\creator\progress\tournamentsProgress.html:187
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:188
+#: .\templates\tournaments\creator\validation\validation.html:184
 msgid "Tournaments created by"
 msgstr ""
 
@@ -2940,42 +3148,100 @@ msgid "Are you sure to delete the tournament?"
 msgstr ""
 
 #: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:246
-#: .\templates\tournaments\creator\progress\tournamentsProgress.html:215
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:216
 msgid "Tournament detail:"
 msgstr ""
 
 #: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:251
-#: .\templates\tournaments\creator\progress\tournamentsProgress.html:220
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:221
 msgid "Tournament challenges:"
 msgstr ""
 
 #: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:265
-#: .\templates\tournaments\creator\progress\tournamentsProgress.html:234
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:235
 msgid "Synchronization:"
 msgstr ""
 
 #: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:271
-#: .\templates\tournaments\creator\progress\tournamentsProgress.html:240
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:241
 msgid "The tournament has not challenges."
 msgstr ""
 
 #: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:272
-#: .\templates\tournaments\creator\progress\tournamentsProgress.html:241
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:242
 msgid "Edit the tournament to add new challenges."
 msgstr ""
 
 #: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:275
-#: .\templates\tournaments\creator\progress\tournamentsProgress.html:244
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:245
 msgid "Tournament teams:"
 msgstr ""
 
 #: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:292
-#: .\templates\tournaments\creator\progress\tournamentsProgress.html:261
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:262
 msgid "Edit the tournament to add new teams."
 msgstr ""
 
-#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:324
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:296
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:307
+msgid "Manual Validation:"
+msgstr ""
+
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:296
+msgid "Yes"
+msgstr ""
+
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:298
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:300
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:302
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:304
+msgid "Receive Emails:"
+msgstr ""
+
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:307
+msgid "No"
+msgstr ""
+
+#: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:342
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:297
 msgid "didn´t include any tournament yet"
+msgstr ""
+
+#: .\templates\tournaments\creator\email.html:5
+msgid "New creator in Dr. Scratch!"
+msgstr ""
+
+#: .\templates\tournaments\creator\email.html:7
+#: .\templates\tournaments\password\email_new_participant.html:6
+msgid ""
+"You're receiving this email because you have successfully signed up in Dr. "
+"Scratch tournaments."
+msgstr ""
+
+#: .\templates\tournaments\creator\email_resumen.html:5
+msgid ""
+"You're receiving this email because you have games with pending validation "
+"in your tournaments."
+msgstr ""
+
+#: .\templates\tournaments\creator\email_resumen.html:7
+msgid ""
+"Access to the Manual Validation section in Dr. Scratch Tournaments to "
+"validate them."
+msgstr ""
+
+#: .\templates\tournaments\creator\email_valid.html:5
+msgid "You're receiving this email because a game of the tournament"
+msgstr ""
+
+#: .\templates\tournaments\creator\email_valid.html:5
+msgid "has been completed."
+msgstr ""
+
+#: .\templates\tournaments\creator\email_valid.html:7
+msgid ""
+"Access to the Manual Validation section in Dr. Scratch Tournaments to "
+"validate it."
 msgstr ""
 
 #: .\templates\tournaments\creator\main_creator.html:167
@@ -3011,18 +3277,79 @@ msgstr ""
 
 #: .\templates\tournaments\creator\main_creator.html:184
 msgid ""
-"The Tournaments progress section provides information about tournaments "
-"already started."
+"The Tournaments progress section provides information about the state of the "
+"games played in created tournaments."
 msgstr ""
 
 #: .\templates\tournaments\creator\main_creator.html:191
-msgid "Invite new participants"
+msgid "Register new participants"
 msgstr ""
 
 #: .\templates\tournaments\creator\main_creator.html:192
 msgid ""
-"In the Invite new participants section you can send an email to include new "
-"participants to Dr. Scratch."
+"In the Register new participants section you can include new participants in "
+"Dr. Scratch Tournaments."
+msgstr ""
+
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:178
+msgid "Register new participants in Dr. Scratch Tournaments"
+msgstr ""
+
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:181
+msgid "You have 3 options:"
+msgstr ""
+
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:190
+msgid "1. You can include up to 20 participants at the same time with a"
+msgstr ""
+
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:190
+msgid "CSV file"
+msgstr ""
+
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:199
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:220
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:250
+msgid "Register"
+msgstr ""
+
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:210
+msgid "2. You can include up to 20 participants at the same time with a"
+msgstr ""
+
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:210
+msgid "TXT file"
+msgstr ""
+
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:217
+msgid ""
+"<input  name='txtFile' type='file' class='filestyle' data-buttonText='Choose "
+"File .txt'>"
+msgstr ""
+
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:229
+msgid ""
+"3. You can include up to 20 participants filling the form below. Press + to "
+"include multiple participants."
+msgstr ""
+
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:234
+msgid "Email"
+msgstr ""
+
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:301
+msgid ""
+"You have to write only the email of the student in the first column. Easy, "
+"isn't it?"
+msgstr ""
+
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:322
+msgid "How is the file .txt?"
+msgstr ""
+
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:324
+msgid ""
+"You have to write only the email of the student in each line. Easy, isn't it?"
 msgstr ""
 
 #: .\templates\tournaments\creator\progress\teamsProgress.html:187
@@ -3077,19 +3404,54 @@ msgstr ""
 msgid "<img class='framed' src='../../static/app/images/project-en.png' />"
 msgstr ""
 
-#: .\templates\tournaments\creator\progress\tournamentsProgress.html:201
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:202
 msgid "Progress "
 msgstr ""
 
-#: .\templates\tournaments\main_tournaments.html:173
+#: .\templates\tournaments\creator\validation\validate.html:202
+#: .\templates\tournaments\creator\validation\validate.html:238
+msgid "Validate"
+msgstr ""
+
+#: .\templates\tournaments\creator\validation\validate.html:308
+msgid "There are no games left to validate in the selected tournament."
+msgstr ""
+
+#: .\templates\tournaments\creator\validation\validation.html:197
+msgid "Validate Games"
+msgstr ""
+
+#: .\templates\tournaments\creator\validation\validation.html:226
+msgid "There are no tournaments with games left to validate."
+msgstr ""
+
+#: .\templates\tournaments\main_tournaments.html:170
 msgid "Welcome to Dr. Scratch Tournaments"
 msgstr ""
 
-#: .\templates\tournaments\main_tournaments.html:175
+#: .\templates\tournaments\main_tournaments.html:172
 msgid ""
-"Dr. Scratch tournaments allows to registered organizations create and manage "
+"Dr. Scratch tournaments allows registered teachers create and manage "
 "tournaments for students to take part in them. Tournaments can be evaluated "
 "manually or automatically."
+msgstr ""
+
+#: .\templates\tournaments\main_tournaments.html:226
+msgid "Dr. Scratch Tournaments"
+msgstr ""
+
+#: .\templates\tournaments\main_tournaments.html:228
+msgid "to join Dr. Scratch tournaments?"
+msgstr ""
+
+#: .\templates\tournaments\main_tournaments.html:231
+msgid ""
+"Would you like to be one of the 10 first teachers testing this new feature? "
+"Just drop us a line at "
+msgstr ""
+
+#: .\templates\tournaments\main_tournaments.html:245
+msgid "Teacher's username"
 msgstr ""
 
 #: .\templates\tournaments\participant\results.html:67
@@ -3160,26 +3522,32 @@ msgid "You complete the challenge."
 msgstr ""
 
 #: .\templates\tournaments\participant\results.html:272
-#: .\templates\tournaments\participant\results.html:275
+#: .\templates\tournaments\participant\results.html:276
+#: .\templates\tournaments\participant\results.html:279
 msgid "Back to improve your highest score."
 msgstr ""
 
-#: .\templates\tournaments\participant\results.html:274
-msgid "You didn't complete the challenge yet."
+#: .\templates\tournaments\participant\results.html:275
+msgid ""
+"Your score has to be validated by you teacher to complete the challenge."
 msgstr ""
 
 #: .\templates\tournaments\participant\results.html:278
+msgid "You didn't complete the challenge yet."
+msgstr ""
+
+#: .\templates\tournaments\participant\results.html:283
 msgid "Learn how"
 msgstr ""
 
-#: .\templates\tournaments\participant\results.html:292
+#: .\templates\tournaments\participant\results.html:297
 #: .\templates\upload\dashboard-unregistered-basic.html:116
 #: .\templates\upload\dashboard-unregistered-developing.html:125
 #: .\templates\upload\dashboard-unregistered-master.html:164
 msgid "Score:"
 msgstr ""
 
-#: .\templates\tournaments\participant\results.html:293
+#: .\templates\tournaments\participant\results.html:298
 #: .\templates\upload\dashboard-unregistered-basic.html:117
 #: .\templates\upload\dashboard-unregistered-developing.html:126
 #: .\templates\upload\dashboard-unregistered-master.html:165
@@ -3189,58 +3557,58 @@ msgid ""
 "Beat it! @DrScratchTool "
 msgstr ""
 
-#: .\templates\tournaments\participant\results.html:298
+#: .\templates\tournaments\participant\results.html:303
 #: .\templates\upload\dashboard-unregistered-master.html:170
 msgid ""
 "<h3 class='text-left dark-text'>Your level is...  <strong>MASTER! </strong></"
 "h3>"
 msgstr ""
 
-#: .\templates\tournaments\participant\results.html:299
+#: .\templates\tournaments\participant\results.html:304
 #: .\templates\upload\dashboard-unregistered-master.html:171
 msgid "You're the master of the universe!!! "
 msgstr ""
 
-#: .\templates\tournaments\participant\results.html:301
+#: .\templates\tournaments\participant\results.html:306
 #: .\templates\upload\dashboard-unregistered-developing.html:131
 msgid ""
 "<h3 class='text-left dark-text'>Your level is... <br></br> "
 "<strong>DEVELOPING! </strong></h3>"
 msgstr ""
 
-#: .\templates\tournaments\participant\results.html:302
+#: .\templates\tournaments\participant\results.html:307
 #: .\templates\upload\dashboard-unregistered-developing.html:132
 msgid "You're doing a great job.<br> Keep it up!!!"
 msgstr ""
 
-#: .\templates\tournaments\participant\results.html:304
+#: .\templates\tournaments\participant\results.html:309
 #: .\templates\upload\dashboard-unregistered-basic.html:122
 msgid ""
 "<h3 class='text-left dark-text'>Your level is...  <strong>BASIC! </strong></"
 "h3>"
 msgstr ""
 
-#: .\templates\tournaments\participant\results.html:305
+#: .\templates\tournaments\participant\results.html:310
 #: .\templates\upload\dashboard-unregistered-basic.html:123
 msgid "You're at the beginning of a <br>great adventure . . . Keep it up!"
 msgstr ""
 
-#: .\templates\tournaments\participant\results.html:316
+#: .\templates\tournaments\participant\results.html:321
 #: .\templates\upload\dashboard-unregistered-basic.html:133
 #: .\templates\upload\dashboard-unregistered-developing.html:141
 #: .\templates\upload\dashboard-unregistered-master.html:184
 msgid "Want to level up?"
 msgstr ""
 
-#: .\templates\tournaments\participant\results.html:318
+#: .\templates\tournaments\participant\results.html:323
 #: .\templates\upload\dashboard-unregistered-basic.html:135
 #: .\templates\upload\dashboard-unregistered-developing.html:143
 #: .\templates\upload\dashboard-unregistered-master.html:186
 msgid "Come back to your Scratch project."
 msgstr ""
 
-#: .\templates\tournaments\participant\results.html:331
-#: .\templates\tournaments\participant\results.html:340
+#: .\templates\tournaments\participant\results.html:336
+#: .\templates\tournaments\participant\results.html:345
 #, python-format
 msgid ""
 "\n"
@@ -3248,56 +3616,56 @@ msgid ""
 "\t\t                                        "
 msgstr ""
 
-#: .\templates\tournaments\participant\results.html:359
-#: .\templates\tournaments\participant\results.html:400
+#: .\templates\tournaments\participant\results.html:364
+#: .\templates\tournaments\participant\results.html:405
 #: .\templates\upload\dashboard-unregistered-developing.html:190
 #: .\templates\upload\dashboard-unregistered-master.html:237
 msgid "Details to fix:"
 msgstr ""
 
-#: .\templates\tournaments\participant\results.html:362
+#: .\templates\tournaments\participant\results.html:367
 #: .\templates\upload\dashboard-unregistered-master.html:240
 msgid " duplicated scripts."
 msgstr ""
 
-#: .\templates\tournaments\participant\results.html:366
-#: .\templates\tournaments\participant\results.html:418
+#: .\templates\tournaments\participant\results.html:371
+#: .\templates\tournaments\participant\results.html:423
 #: .\templates\upload\dashboard-unregistered-developing.html:208
 #: .\templates\upload\dashboard-unregistered-master.html:244
 msgid " sprite naming."
 msgstr ""
 
-#: .\templates\tournaments\participant\results.html:372
+#: .\templates\tournaments\participant\results.html:377
 #: .\templates\upload\dashboard-unregistered-master.html:250
 msgid "Your project does not have dead code, good job!"
 msgstr ""
 
-#: .\templates\tournaments\participant\results.html:374
+#: .\templates\tournaments\participant\results.html:379
 #: .\templates\upload\dashboard-unregistered-master.html:252
 msgid "You have dead code in "
 msgstr ""
 
-#: .\templates\tournaments\participant\results.html:379
+#: .\templates\tournaments\participant\results.html:384
 #: .\templates\upload\dashboard-unregistered-master.html:257
 msgid " dead code."
 msgstr ""
 
-#: .\templates\tournaments\participant\results.html:381
-#: .\templates\tournaments\participant\results.html:403
+#: .\templates\tournaments\participant\results.html:386
+#: .\templates\tournaments\participant\results.html:408
 #: .\templates\upload\dashboard-unregistered-developing.html:193
 #: .\templates\upload\dashboard-unregistered-master.html:259
 msgid "Sprites attributes"
 msgstr ""
 
-#: .\templates\tournaments\participant\results.html:385
-#: .\templates\tournaments\participant\results.html:407
+#: .\templates\tournaments\participant\results.html:390
+#: .\templates\tournaments\participant\results.html:412
 #: .\templates\upload\dashboard-unregistered-developing.html:197
 #: .\templates\upload\dashboard-unregistered-master.html:263
 msgid "Your project does not have uninitialized attributes, good job!"
 msgstr ""
 
-#: .\templates\tournaments\participant\results.html:391
-#: .\templates\tournaments\participant\results.html:413
+#: .\templates\tournaments\participant\results.html:396
+#: .\templates\tournaments\participant\results.html:418
 #: .\templates\upload\dashboard-unregistered-developing.html:203
 #: .\templates\upload\dashboard-unregistered-master.html:269
 msgid " sprite attributes."
@@ -3317,6 +3685,16 @@ msgstr ""
 
 #: .\templates\tournaments\participant\tournamentsPart.html:190
 msgid "You can still improve your highest score in every challenge."
+msgstr ""
+
+#: .\templates\tournaments\password\email_new_participant.html:4
+msgid "New participant in Dr. Scratch!"
+msgstr ""
+
+#: .\templates\tournaments\password\email_new_participant.html:7
+msgid ""
+"Please, go to the following page and choose a new password to access Dr. "
+"Scratch tournaments:"
 msgstr ""
 
 #: .\templates\upload\dashboard-organization.html:122

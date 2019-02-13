@@ -160,6 +160,8 @@ class Tournament(models.Model):
     teams = models.ManyToManyField(Team)
     challenges = models.ManyToManyField(Challenge, through='ChallengesOfTournament')
     manualValidation = models.BooleanField(default=False)
+    """0: Nunca; 1: Inmediatamente; 2: 1 correo al dia; 3: 1 correo a la semana"""
+    notificationPeriod = models.IntegerField(default=int(0))
     def get_challenges(self):
         return self.challenges.order_by('chall')
     
@@ -179,6 +181,7 @@ class Game (models.Model):
     abstraction = models.IntegerField(default=int(0))
     synchronization = models.IntegerField(default=int(0))
     completed = models.IntegerField(default=int(0))
+    done = models.IntegerField(default=int(0))
     challengeOfTournament = models.ForeignKey(ChallengesOfTournament)
     team = models.ForeignKey(Team)
     

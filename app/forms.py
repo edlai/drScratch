@@ -54,9 +54,18 @@ class CreatorForm(forms.Form):
     password = forms.CharField(max_length=50) 
     hashkey = forms.CharField(max_length=70)
     
+NOTIFICATION_CHOICES= [
+    (0, _('Never')),
+    (1, _('Immediately')),
+    (2, _('Once a day')),
+    (3, _('Once a week')),
+    ]
+    
 class TournamentForm(forms.Form):
     name = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'placeholder': _('Tournament Name'), 'class': 'form-control input-box placeholder', 'required': 'required'}), required=True)
     description = forms.CharField(max_length=500, widget=forms.Textarea(attrs={'placeholder': _('Tournament Description'), 'class': 'form-control input-box placeholder', 'required': 'required'}), required=True)
+    manualValidation = forms.BooleanField(widget=forms.CheckboxInput(attrs={'class': 'chk-input'}), required=False)
+    notificationPeriod = forms.ChoiceField(widget=forms.Select(attrs={'class': 'form-control input-box placeholder'}), choices=NOTIFICATION_CHOICES, initial=0)
     
 class TeamForm (forms.Form):
     name = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'placeholder': _('Team Name'), 'class': 'form-control input-box placeholder', 'required': 'required'}), required=True)

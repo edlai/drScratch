@@ -50,6 +50,8 @@ urlpatterns = (
     url(r'^creator/signup', 'app.views.signUpCreator',),
     url(r'^creator/tournaments', 'app.views.tournamentsCreator',),
     url(r'^creator/challenges', 'app.views.challengesCreator',),
+    url(r'^creator/validation', 'app.views.validationCreator',),
+    url(r'^creator/validate/tournament', 'app.views.validateTournamentCreator',),
     url(r'^creator/admin/challenges', 'app.views.adminCreatorChallenges',),
     url(r'^creator/admin/teams', 'app.views.adminCreatorTeams',),
     url(r'^creator/admin/tournaments', 'app.views.adminCreatorTournaments',),

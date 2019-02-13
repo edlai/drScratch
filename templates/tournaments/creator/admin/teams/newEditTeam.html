@@ -193,7 +193,7 @@
 					          	{{form.name}}
 					          	{{form.description}}
 					          	<p class="form-text-left">{% trans "You can create a team without participants or include from 1 to" %} {{totalParticipants}} {% trans "participants. Included participants cannot be repeted."%}</p>
-					          	{% for t_p in team.participant.all %}
+					          	{% for t_p in team.participant_set.all %}
 						          	<select class ="form-control input-box placeholder" id="p_id_{{forloop.counter0}}" name="p_id_{{forloop.counter0}}">
 						          		<option value="">{% trans "Select participant" %} {{forloop.counter}}</option>
 							          	{% for p in participants %}

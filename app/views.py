@@ -23,6 +23,8 @@ from app.models import Project, Dashboard, Attribute, Game,\
     ChallengesOfTournament, CreatorHash
 from app.models import Dead, Sprite, Mastery, Duplicate, File, CSVs
 from app.models import Creator, Participant, Tournament, Team
+from background_task.models import Task
+from app.tasks import *
 from app.models import Teacher, Organization, OrganizationHash, Challenge
 from app.forms import UploadFileForm, UserForm, NewUserForm, UrlForm, TeacherForm,\
     UpdateForm, TeamForm, TournamentForm
@@ -75,6 +77,7 @@ max_teams_per_tournament=4
 max_challenges_per_tournament=4
 paginator_participant_touraments=1
 paginator_creator_progress_teams=1
+paginator_validate_games=4
 max_new_participants=20
 
 #_____________________________ MAIN ______________________________________#
@@ -1682,6 +1685,7 @@ def reset_password_tournaments(request,uidb64=None,token=None,*arg,**kwargs):
             elif new_password == new_confirm:
                 user.set_password(new_password)
                 user.save()
+                messages.add_message(request, messages.SUCCESS, _('Password changed successfully.'))
                 return HttpResponseRedirect("/tournaments")
             else:
                 flag_error = True
@@ -1763,7 +1767,7 @@ def signUpCreator(request):
             hashkey = form.cleaned_data['hashkey']
             try:
                 #This name already exists
-                creator = Creator.objects.get(username=username)
+                creator = User.objects.get(username=username)
                 flagName = True
                 return render_to_response("tournaments/creator/signup_error.html",
                                           {'flagName':flagName,
@@ -1774,7 +1778,7 @@ def signUpCreator(request):
             except:
                 try:
                     #This email already exists
-                    email = Creator.objects.get(email=email)
+                    email = User.objects.get(email=email)
                     flagEmail = True
                     return render_to_response("tournaments/creator/signup_error.html",
                                             {'flagName':flagName,
@@ -1797,7 +1801,7 @@ def signUpCreator(request):
                                 'token':token}
 
                         body = render_to_string("tournaments/creator/email.html",c)
-                        subject = "Welcome to Dr.Scratch tournaments"
+                        subject = _("Welcome to Dr.Scratch tournaments")
                         sender ="no-reply@drscratch.org"
                         to = [email]
                         email = EmailMessage(subject,body,sender,to)
@@ -1852,6 +1856,9 @@ def loginTournaments(request):
                 return render_to_response("tournaments/password/user_doesntexist.html",
                                             {'flag': flag},
                                             context_instance=RC(request))
+        else:
+            messages.add_message(request, messages.ERROR, _("User doesn't exist or the password is incorrect."))
+            return HttpResponseRedirect('/tournaments')
     else:
         return HttpResponseRedirect("/")   
 
@@ -1867,25 +1874,35 @@ def getElementsPaginador (elementList, page, numElemPerPage):
     
 def adminCreator (request):
     if request.method == "GET":
-        return render_to_response('tournaments/creator/admin/admin_creator.html', {'username':request.user.username}, RC(request))
+        if request.user.is_authenticated():
+            try:
+                Creator.objects.get(username=request.user.username)
+                return render_to_response('tournaments/creator/admin/admin_creator.html', {'username':request.user.username}, RC(request))
+            except:
+                messages.add_message(request, messages.ERROR, _('Logged user cannot be found.'))
+                return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request))
+        else:
+            messages.add_message(request, messages.ERROR, _('Session expired. Please log in again.'))
+            return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request))
+        
     else:
         return HttpResponseRedirect("/")
 
 def adminCreatorChallenges (request):
     if request.method == "GET":
         if request.user.is_authenticated():
-            creator = Creator.objects.get(username=request.user.username)
-            if creator:
-                form = ChallengeForm()
-                """Muestro los retos creados por dicho creador"""
-                challenges = Challenge.objects.filter(creator=creator.username)
-                page = request.GET.get('page', 1)
-                challengesPagina = getElementsPaginador (challenges, page, paginator_creator_challenges)
-                return render_to_response('tournaments/creator/admin/challenges/challengesList.html', {'username':request.user.username, 
-                                                                                        'challengesPagina': challengesPagina, 'form': form}, RC(request))
-            else:
+            try:
+                creator = Creator.objects.get(username=request.user.username)
+            except:
                 messages.add_message(request, messages.ERROR, _('Logged user cannot be found.'))
                 return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request))
+            form = ChallengeForm()
+            """Muestro los retos creados por dicho creador"""
+            challenges = Challenge.objects.filter(creator=creator.username)
+            page = request.GET.get('page', 1)
+            challengesPagina = getElementsPaginador (challenges, page, paginator_creator_challenges)
+            return render_to_response('tournaments/creator/admin/challenges/challengesList.html', {'username':request.user.username, 
+                                                                                        'challengesPagina': challengesPagina, 'form': form}, RC(request))
         else:
             messages.add_message(request, messages.ERROR, _('Session expired. Please log in again.'))
             return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request))
@@ -1896,34 +1913,34 @@ def newChallenge (request):
     if request.method == "POST": 
         form = ChallengeForm(request.POST)
         if form.is_valid() and request.user.is_authenticated():
-            creator = Creator.objects.get(username=request.user.username)
-            if creator:
-                name = form.cleaned_data['name']
-                description = form.cleaned_data['description']
-                parallelism = form.cleaned_data['parallelism']
-                logic = form.cleaned_data['logic']
-                flowControl = form.cleaned_data['flowControl']
-                userInteractivity = form.cleaned_data['userInteractivity']
-                dataRepresentation = form.cleaned_data['dataRepresentation']
-                abstraction = form.cleaned_data['abstraction']
-                synchronization = form.cleaned_data['synchronization']
-                challenge = Challenge(name=name, description=description, parallelism=parallelism, logic=logic, 
-                                      flowControl=flowControl, userInteractivity=userInteractivity, dataRepresentation=dataRepresentation, 
-                                      abstraction=abstraction, synchronization=synchronization, creator=creator)
-                challenge.save()
-                messages.add_message(request, messages.SUCCESS, _('Challenge added.'))
-                page = request.GET.get('page', 1)
-                if (request.path == '/newChallenge'):
-                    return HttpResponseRedirect("/creator/admin/challenges?page="+str(page))
-                elif (request.path == '/tournamentNewChallenge'):
-                    idTournament = request.POST.get('idTournament', None)
-                    if (idTournament == ''):
-                        return HttpResponseRedirect("/newTournamentGet?page=" + str(page))
-                    else:
-                        return HttpResponseRedirect("/editTournamentGet?tournament=" + idTournament + "&page=" + str(page))
-            else:
+            try:
+                creator = Creator.objects.get(username=request.user.username)
+            except:
                 messages.add_message(request, messages.ERROR, _('Logged user cannot be found.'))
-                return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request))  
+                return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request))
+            name = form.cleaned_data['name']
+            description = form.cleaned_data['description']
+            parallelism = form.cleaned_data['parallelism']
+            logic = form.cleaned_data['logic']
+            flowControl = form.cleaned_data['flowControl']
+            userInteractivity = form.cleaned_data['userInteractivity']
+            dataRepresentation = form.cleaned_data['dataRepresentation']
+            abstraction = form.cleaned_data['abstraction']
+            synchronization = form.cleaned_data['synchronization']
+            challenge = Challenge(name=name, description=description, parallelism=parallelism, logic=logic, 
+                                  flowControl=flowControl, userInteractivity=userInteractivity, dataRepresentation=dataRepresentation, 
+                                  abstraction=abstraction, synchronization=synchronization, creator=creator)
+            challenge.save()
+            messages.add_message(request, messages.SUCCESS, _('Challenge added.'))
+            page = request.GET.get('page', 1)
+            if (request.path == '/newChallenge'):
+                return HttpResponseRedirect("/creator/admin/challenges?page="+str(page))
+            elif (request.path == '/tournamentNewChallenge'):
+                idTournament = request.POST.get('idTournament', None)
+                if (idTournament == ''):
+                    return HttpResponseRedirect("/newTournamentGet?page=" + str(page))
+                else:
+                    return HttpResponseRedirect("/editTournamentGet?tournament=" + idTournament + "&page=" + str(page))
         else:
             messages.add_message(request, messages.ERROR, _('Session expired. Please log in again.'))
             return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request)) 
@@ -1942,68 +1959,72 @@ def deleteChallenge (request):
                 challengeDelete.delete();
                 messages.add_message(request, messages.SUCCESS, _('Challenge deleted.'))
             page = request.GET.get('page', 1)    
-            return HttpResponseRedirect("/creator/admin/challenges?page="+str(page))   
+            return HttpResponseRedirect("/creator/admin/challenges?page="+str(page))
+        else:
+            messages.add_message(request, messages.ERROR, _('The selected challenge cannot be found.'))
+            page = request.GET.get('page', 1)
+            return HttpResponseRedirect("/creator/admin/challenges?page="+str(page))  
     else:
         return HttpResponseRedirect("/")    
     
 def editChallenge (request):
     if request.method == "GET":
-        creator = Creator.objects.get(username=request.user.username)
-        if creator:
-            idChallenge = request.GET.get('challenge', None)
+        try:
+            Creator.objects.get(username=request.user.username)
+        except:
+            messages.add_message(request, messages.ERROR, _('Logged user cannot be found.'))
+            return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request))
+        idChallenge = request.GET.get('challenge', None)
+        page = request.GET.get('page', 1)
+        if idChallenge is not None:
+            challengeEdit = Challenge.objects.get(id=idChallenge)
+            form = ChallengeForm(initial={'name': challengeEdit.name, 
+                                          'description': challengeEdit.description, 
+                                            'parallelism': challengeEdit.parallelism,
+                                              'logic': challengeEdit.logic,
+                                                'flowControl': challengeEdit.flowControl,
+                                                  'userInteractivity': challengeEdit.userInteractivity,
+                                                    'dataRepresentation': challengeEdit.dataRepresentation,
+                                                      'abstraction': challengeEdit.abstraction,
+                                                        'synchronization': challengeEdit.synchronization})
+            
+            return render_to_response('tournaments/creator/admin/challenges/editChallenge.html', {'username':request.user.username, 
+                                                                                        'form': form, 'challengeName': challengeEdit.name, 'challengeId': challengeEdit.id, 
+                                                                                        'page': page}, RC(request))
+        else:
+            messages.add_message(request, messages.ERROR, _('The selected challenge cannot be found.'))
             page = request.GET.get('page', 1)
+            return HttpResponseRedirect("/creator/admin/challenges?page="+str(page))  
+    else:
+        form = ChallengeForm(request.POST)
+        if form.is_valid() and request.user.is_authenticated():
+            try:
+                Creator.objects.get(username=request.user.username)
+            except:
+                messages.add_message(request, messages.ERROR, _('Logged user cannot be found.'))
+                return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request))
+            idChallenge = request.POST.get('idChallenge', None)
             if idChallenge is not None:
+                #Editamos el reto
                 challengeEdit = Challenge.objects.get(id=idChallenge)
-                form = ChallengeForm(initial={'name': challengeEdit.name, 
-                                              'description': challengeEdit.description, 
-                                                'parallelism': challengeEdit.parallelism,
-                                                  'logic': challengeEdit.logic,
-                                                    'flowControl': challengeEdit.flowControl,
-                                                      'userInteractivity': challengeEdit.userInteractivity,
-                                                        'dataRepresentation': challengeEdit.dataRepresentation,
-                                                          'abstraction': challengeEdit.abstraction,
-                                                            'synchronization': challengeEdit.synchronization})
-                
-                return render_to_response('tournaments/creator/admin/challenges/editChallenge.html', {'username':request.user.username, 
-                                                                                            'form': form, 'challengeName': challengeEdit.name, 'challengeId': challengeEdit.id, 
-                                                                                            'page': page}, RC(request))
+                challengeEdit.name = form.cleaned_data['name']
+                challengeEdit.description = form.cleaned_data['description']
+                challengeEdit.parallelism = form.cleaned_data['parallelism']
+                challengeEdit.logic = form.cleaned_data['logic']
+                challengeEdit.flowControl = form.cleaned_data['flowControl']
+                challengeEdit.userInteractivity = form.cleaned_data['userInteractivity']
+                challengeEdit.dataRepresentation = form.cleaned_data['dataRepresentation']
+                challengeEdit.abstraction = form.cleaned_data['abstraction']
+                challengeEdit.synchronization = form.cleaned_data['synchronization']
+                challengeEdit.save()
+                # Translators: Challenge edited.
+                messages.add_message(request, messages.SUCCESS, _('Challenge edited.'))
+                page = request.GET.get('page', 1)
+                return HttpResponseRedirect("/creator/admin/challenges?page="+str(page))  
             else:
                 messages.add_message(request, messages.ERROR, _('The selected challenge cannot be found.'))
                 page = request.GET.get('page', 1)
                 return HttpResponseRedirect("/creator/admin/challenges?page="+str(page))  
-        else:
-            messages.add_message(request, messages.ERROR, _('Logged user cannot be found.'))
-            return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request))    
-    else:
-        form = ChallengeForm(request.POST)
-        if form.is_valid() and request.user.is_authenticated():
-            creator = Creator.objects.get(username=request.user.username)
-            if creator:
-                idChallenge = request.POST.get('idChallenge', None)
-                if idChallenge is not None:
-                    #Editamos el reto
-                    challengeEdit = Challenge.objects.get(id=idChallenge)
-                    challengeEdit.name = form.cleaned_data['name']
-                    challengeEdit.description = form.cleaned_data['description']
-                    challengeEdit.parallelism = form.cleaned_data['parallelism']
-                    challengeEdit.logic = form.cleaned_data['logic']
-                    challengeEdit.flowControl = form.cleaned_data['flowControl']
-                    challengeEdit.userInteractivity = form.cleaned_data['userInteractivity']
-                    challengeEdit.dataRepresentation = form.cleaned_data['dataRepresentation']
-                    challengeEdit.abstraction = form.cleaned_data['abstraction']
-                    challengeEdit.synchronization = form.cleaned_data['synchronization']
-                    challengeEdit.save()
-                    # Translators: Challenge edited.
-                    messages.add_message(request, messages.SUCCESS, _('Challenge edited.'))
-                    page = request.GET.get('page', 1)
-                    return HttpResponseRedirect("/creator/admin/challenges?page="+str(page))  
-                else:
-                    messages.add_message(request, messages.ERROR, _('The selected challenge cannot be found.'))
-                    page = request.GET.get('page', 1)
-                    return HttpResponseRedirect("/creator/admin/challenges?page="+str(page))  
-            else:
-                messages.add_message(request, messages.ERROR, _('Logged user cannot be found.'))
-                return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request))  
         else:
             messages.add_message(request, messages.ERROR, _('Logged user cannot be found.'))
             return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request)) 
@@ -2011,18 +2032,18 @@ def editChallenge (request):
 def adminCreatorTeams (request):
     if request.method == "GET":
         if request.user.is_authenticated():
-            creator = Creator.objects.get(username=request.user.username)
-            if creator:
-                form = TeamForm()
-                """Muestro los equipos creados por dicho creador"""
-                teams = Team.objects.filter(creator=creator.username)
-                page = request.GET.get('page', 1)
-                teamsPagina = getElementsPaginador (teams, page, paginator_creator_teams)
-                return render_to_response('tournaments/creator/admin/teams/teamsList.html', {'username':request.user.username, 
-                                                                                   'teamsPagina': teamsPagina, 'form': form}, RC(request))
-            else:
+            try:
+                creator = Creator.objects.get(username=request.user.username)
+            except:
                 messages.add_message(request, messages.ERROR, _('Logged user cannot be found.'))
                 return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request))
+            form = TeamForm()
+            """Muestro los equipos creados por dicho creador"""
+            teams = Team.objects.filter(creator=creator.username)
+            page = request.GET.get('page', 1)
+            teamsPagina = getElementsPaginador (teams, page, paginator_creator_teams)
+            return render_to_response('tournaments/creator/admin/teams/teamsList.html', {'username':request.user.username, 
+                                                                               'teamsPagina': teamsPagina, 'form': form}, RC(request))
         else:
             messages.add_message(request, messages.ERROR, _('Session expired. Please log in again.'))
             return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request))
@@ -2047,40 +2068,40 @@ def deleteTeam (request):
     
 def newEditTeam (request):
     if request.method == "GET":
-        creator = Creator.objects.get(username=request.user.username)
-        if creator:
-            if (request.path == '/editTeamGet'):
-                idTeam = request.GET.get('team', None)
-                page = request.GET.get('page', 1)
-                if idTeam is not None:
-                    teamEdit = Team.objects.get(id=idTeam)
-                    form = TeamForm(initial={'name': teamEdit.name, 
-                                                  'description': teamEdit.description})
-                    """Busco todos los participantes incluidos por el creador para poder seleccionarlos"""
-                    participants = Participant.objects.filter(creator=creator.username)
-                    return render_to_response('tournaments/creator/admin/teams/newEditTeam.html', 
-                                              {'username':request.user.username, 'form': form, 'team': teamEdit, 
-                                               'page': page, 'participants': participants, 'totalParticipants': int (max_participants_per_team),
-                                               'maxParticipants': range(len(teamEdit.participant.all()), int (max_participants_per_team)),'editTeam': True}, RC(request))
-                else:
-                    messages.add_message(request, messages.ERROR, _('The selected team cannot be found.'))
-                    page = request.GET.get('page', 1)
-                    return HttpResponseRedirect("/creator/admin/teams?page="+str(page))
-            elif (request.path == '/newTeamGet'):
-                page = request.GET.get('page', 1)
-                form = TeamForm()
-                """Busco todos los participantes incluidos por el creador para poder seleccionarlos"""
-                participants = Participant.objects.filter(creator=creator.username)
-                return render_to_response('tournaments/creator/admin/teams/newEditTeam.html', 
-                                          {'username':request.user.username, 'form': form, 'page': page, 
-                                           'participants': participants, 'maxParticipants': range(int (max_participants_per_team)), 
-                                           'newTeam': True}, RC(request))
-            else:
-                page = request.GET.get('page', 1)
-                return HttpResponseRedirect("/creator/admin/teams?page="+str(page))
-        else:
+        try:
+            creator = Creator.objects.get(username=request.user.username)
+        except:
             messages.add_message(request, messages.ERROR, _('Logged user cannot be found.'))
             return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request))
+        if (request.path == '/editTeamGet'):
+            idTeam = request.GET.get('team', None)
+            page = request.GET.get('page', 1)
+            if idTeam is not None:
+                teamEdit = Team.objects.get(id=idTeam)
+                form = TeamForm(initial={'name': teamEdit.name, 
+                                              'description': teamEdit.description})
+                """Busco todos los participantes incluidos por el creador para poder seleccionarlos"""
+                participants = Participant.objects.filter(creator_username=creator.username)
+                return render_to_response('tournaments/creator/admin/teams/newEditTeam.html', 
+                                          {'username':request.user.username, 'form': form, 'team': teamEdit, 
+                                           'page': page, 'participants': participants, 'totalParticipants': int (max_participants_per_team),
+                                           'maxParticipants': range(len(teamEdit.participant_set.all()), int (max_participants_per_team)),'editTeam': True}, RC(request))
+            else:
+                messages.add_message(request, messages.ERROR, _('The selected team cannot be found.'))
+                page = request.GET.get('page', 1)
+                return HttpResponseRedirect("/creator/admin/teams?page="+str(page))
+        elif (request.path == '/newTeamGet'):
+            page = request.GET.get('page', 1)
+            form = TeamForm()
+            """Busco todos los participantes incluidos por el creador para poder seleccionarlos"""
+            participants = Participant.objects.filter(creator_username=creator.username)
+            return render_to_response('tournaments/creator/admin/teams/newEditTeam.html', 
+                                      {'username':request.user.username, 'form': form, 'page': page, 
+                                       'participants': participants, 'maxParticipants': range(int (max_participants_per_team)), 
+                                       'newTeam': True}, RC(request))
+        else:
+            page = request.GET.get('page', 1)
+            return HttpResponseRedirect("/creator/admin/teams?page="+str(page))
     else:
         return HttpResponseRedirect("/")
 
@@ -2088,32 +2109,32 @@ def editTeam (request):
     if request.method == "POST":
         form = TeamForm(request.POST)
         if form.is_valid() and request.user.is_authenticated():
-            creator = Creator.objects.get(username=request.user.username)
-            if creator:
-                idTeam = request.POST.get('idTeam', None)
-                if idTeam is not None:
-                    #Editamos el equipo
-                    teamEdit = Team.objects.get(id=idTeam)
-                    teamEdit.name = form.cleaned_data['name']
-                    teamEdit.description = form.cleaned_data['description']
-                    teamEdit.save()
-                    teamEdit.participant.clear()
-                    for i in range(int (max_participants_per_team)):
-                        p_id = request.POST['p_id_'+str(i)]
-                        if p_id != '':
-                            partObj = Participant.objects.get(id=p_id)
-                            if (partObj):
-                                teamEdit.participant.add(partObj)
-                    messages.add_message(request, messages.SUCCESS, _('Team edited.'))
-                    page = request.GET.get('page', 1)
-                    return HttpResponseRedirect("/creator/admin/teams?page="+str(page))  
-                else:
-                    messages.add_message(request, messages.ERROR, _('The selected team cannot be found.'))
-                    page = request.GET.get('page', 1)
-                    return HttpResponseRedirect("/creator/admin/teams?page="+str(page))  
-            else:
+            try:
+                Creator.objects.get(username=request.user.username)
+            except:
                 messages.add_message(request, messages.ERROR, _('Logged user cannot be found.'))
-                return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request))  
+                return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request))
+            idTeam = request.POST.get('idTeam', None)
+            if idTeam is not None:
+                #Editamos el equipo
+                teamEdit = Team.objects.get(id=idTeam)
+                teamEdit.name = form.cleaned_data['name']
+                teamEdit.description = form.cleaned_data['description']
+                teamEdit.save()
+                teamEdit.participant_set.clear()
+                for i in range(int (max_participants_per_team)):
+                    p_id = request.POST['p_id_'+str(i)]
+                    if p_id != '':
+                        partObj = Participant.objects.get(id=p_id)
+                        if (partObj):
+                            partObj.teams.add(teamEdit)
+                messages.add_message(request, messages.SUCCESS, _('Team edited.'))
+                page = request.GET.get('page', 1)
+                return HttpResponseRedirect("/creator/admin/teams?page="+str(page))  
+            else:
+                messages.add_message(request, messages.ERROR, _('The selected team cannot be found.'))
+                page = request.GET.get('page', 1)
+                return HttpResponseRedirect("/creator/admin/teams?page="+str(page))  
         else:
             messages.add_message(request, messages.ERROR, _('Logged user cannot be found.'))
             return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request)) 
@@ -2124,32 +2145,32 @@ def newTeam (request):
     if request.method == "POST": 
         form = TeamForm(request.POST)
         if form.is_valid() and request.user.is_authenticated():
-            creator = Creator.objects.get(username=request.user.username)
-            if creator:
-                name = form.cleaned_data['name']
-                description = form.cleaned_data['description']
-                team = Team(name=name, description=description, creator=creator)
-                team.save()
-                """Compruebo si hay participantes asociados al equipo y los incluyo"""
-                for i in range(int (max_participants_per_team)):
-                    p_id = request.POST['p_id_'+str(i)]
-                    if p_id != '':
-                        partObj = Participant.objects.get(id=p_id)
-                        if (partObj):
-                            team.participant.add(partObj)
-                messages.add_message(request, messages.SUCCESS, _('Team added.'))
-                page = request.GET.get('page', 1)
-                if (request.path == '/newTeamPost'):
-                    return HttpResponseRedirect("/creator/admin/teams?page="+str(page))
-                elif (request.path == '/tournamentNewTeam'):
-                    idTournament = request.POST.get('idTournament', None)
-                    if (idTournament == ''):
-                        return HttpResponseRedirect("/newTournamentGet?page=" + str(page))
-                    else:
-                        return HttpResponseRedirect("/editTournamentGet?tournament=" + idTournament + "&page=" + str(page))
-            else:
+            try:
+                creator = Creator.objects.get(username=request.user.username)
+            except:
                 messages.add_message(request, messages.ERROR, _('Logged user cannot be found.'))
-                return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request))  
+                return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request))
+            name = form.cleaned_data['name']
+            description = form.cleaned_data['description']
+            team = Team(name=name, description=description, creator=creator)
+            team.save()
+            """Compruebo si hay participantes asociados al equipo y los incluyo"""
+            for i in range(int (max_participants_per_team)):
+                p_id = request.POST['p_id_'+str(i)]
+                if p_id != '':
+                    partObj = Participant.objects.get(id=p_id)
+                    if (partObj):
+                        partObj.teams.add(team)
+            messages.add_message(request, messages.SUCCESS, _('Team added.'))
+            page = request.GET.get('page', 1)
+            if (request.path == '/newTeamPost'):
+                return HttpResponseRedirect("/creator/admin/teams?page="+str(page))
+            elif (request.path == '/tournamentNewTeam'):
+                idTournament = request.POST.get('idTournament', None)
+                if (idTournament == ''):
+                    return HttpResponseRedirect("/newTournamentGet?page=" + str(page))
+                else:
+                    return HttpResponseRedirect("/editTournamentGet?tournament=" + idTournament + "&page=" + str(page))
         else:
             messages.add_message(request, messages.ERROR, _('Session expired. Please log in again.'))
             return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request)) 
@@ -2159,18 +2180,18 @@ def newTeam (request):
 def adminCreatorTournaments (request):
     if request.method == "GET":
         if request.user.is_authenticated():
-            creator = Creator.objects.get(username=request.user.username)
-            if creator:
-                form = TournamentForm()
-                """Muestro los torneos creados por dicho creador"""
-                tournaments = Tournament.objects.filter(creator=creator.username)
-                page = request.GET.get('page', 1)
-                tournamentsPagina = getElementsPaginador (tournaments, page, paginator_creator_tournaments)
-                return render_to_response('tournaments/creator/admin/tournaments/tournamentsList.html', {'username':request.user.username, 'tournamentsPagina': tournamentsPagina,
-                                                                                         'form': form}, RC(request))
-            else:
+            try:
+                creator = Creator.objects.get(username=request.user.username)
+            except:
                 messages.add_message(request, messages.ERROR, _('Logged user cannot be found.'))
                 return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request))
+            form = TournamentForm()
+            """Muestro los torneos creados por dicho creador"""
+            tournaments = Tournament.objects.filter(creator=creator.username)
+            page = request.GET.get('page', 1)
+            tournamentsPagina = getElementsPaginador (tournaments, page, paginator_creator_tournaments)
+            return render_to_response('tournaments/creator/admin/tournaments/tournamentsList.html', {'username':request.user.username, 'tournamentsPagina': tournamentsPagina,
+                                                                                     'form': form}, RC(request))
         else:
             messages.add_message(request, messages.ERROR, _('Session expired. Please log in again.'))
             return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request))
@@ -2179,63 +2200,65 @@ def adminCreatorTournaments (request):
     
 def newEditTournament (request):
     if request.method == "GET":
-        creator = Creator.objects.get(username=request.user.username)
-        if creator:
-            if (request.path == '/editTournamentGet'):
-                idTournament = request.GET.get('tournament', None)
-                page = request.GET.get('page', 1)
-                if idTournament is not None:
-                    tournamentEdit = Tournament.objects.get(id=idTournament)
-                    challengeForm  = ChallengeForm()
-                    teamForm  = TeamForm()
-                    """Busco todos los participantes incluidos por el creador para poder seleccionarlos"""
-                    participants = Participant.objects.filter(creator=creator.username)
-                    
-                    form = TournamentForm(initial={'name': tournamentEdit.name, 
-                                                  'description': tournamentEdit.description})
-                    """Busco todos los equipos incluidos por el creador para poder seleccionarlos"""
-                    teams = Team.objects.filter(creator=creator.username)
-                    """Busco todos los retos incluidos por el creador para poder seleccionarlos"""
-                    challenges = Challenge.objects.filter(creator=creator.username)
-                    
-                    return render_to_response('tournaments/creator/admin/tournaments/newEditTournament.html', 
-                                              {'username':request.user.username, 'form': form, 'tournament': tournamentEdit, 
-                                               'challengeForm': challengeForm, 'teamForm': teamForm,
-                                               'participants': participants, 'maxParticipants': range(int (max_participants_per_team)), 
-                                               'page': page, 'teams': teams, 'totalTeams': int (max_teams_per_tournament),
-                                               'challenges': challenges, 'totalChallenges': int (max_challenges_per_tournament),
-                                               'maxTeams': range(len(tournamentEdit.teams.all()), int (max_teams_per_tournament)),
-                                               'maxChallenges': range(len(tournamentEdit.get_challenges()), int (max_challenges_per_tournament)),
-                                               'editTournament': True}, RC(request))
-                else:
-                    messages.add_message(request, messages.ERROR, _('The selected tournament cannot be found.'))
-                    page = request.GET.get('page', 1)
-                    return HttpResponseRedirect("/creator/admin/tournaments?page="+str(page))
-            elif (request.path == '/newTournamentGet'):
-                page = request.GET.get('page', 1)
-                form = TournamentForm()
+        try:
+            creator = Creator.objects.get(username=request.user.username)
+        except:
+            messages.add_message(request, messages.ERROR, _('Logged user cannot be found.'))
+            return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request))
+        if (request.path == '/editTournamentGet'):
+            idTournament = request.GET.get('tournament', None)
+            page = request.GET.get('page', 1)
+            if idTournament is not None:
+                tournamentEdit = Tournament.objects.get(id=idTournament)
                 challengeForm  = ChallengeForm()
                 teamForm  = TeamForm()
                 """Busco todos los participantes incluidos por el creador para poder seleccionarlos"""
-                participants = Participant.objects.filter(creator=creator.username)
+                participants = Participant.objects.filter(creator_username=creator.username)
+                
+                form = TournamentForm(initial={'name': tournamentEdit.name, 
+                                              'description': tournamentEdit.description,
+                                              'manualValidation': tournamentEdit.manualValidation,
+                                              'notificationPeriod': tournamentEdit.notificationPeriod})
                 """Busco todos los equipos incluidos por el creador para poder seleccionarlos"""
                 teams = Team.objects.filter(creator=creator.username)
                 """Busco todos los retos incluidos por el creador para poder seleccionarlos"""
                 challenges = Challenge.objects.filter(creator=creator.username)
                 
                 return render_to_response('tournaments/creator/admin/tournaments/newEditTournament.html', 
-                                          {'username':request.user.username, 'form': form, 'page': page, 
+                                          {'username':request.user.username, 'form': form, 'tournament': tournamentEdit, 
                                            'challengeForm': challengeForm, 'teamForm': teamForm,
                                            'participants': participants, 'maxParticipants': range(int (max_participants_per_team)), 
-                                           'challenges': challenges, 'maxChallenges':range(int (max_challenges_per_tournament)),
-                                           'teams': teams, 'maxTeams': range(int (max_teams_per_tournament)), 
-                                           'newTournament': True}, RC(request))
+                                           'page': page, 'teams': teams, 'totalTeams': int (max_teams_per_tournament),
+                                           'challenges': challenges, 'totalChallenges': int (max_challenges_per_tournament),
+                                           'maxTeams': range(len(tournamentEdit.teams.all()), int (max_teams_per_tournament)),
+                                           'maxChallenges': range(len(tournamentEdit.get_challenges()), int (max_challenges_per_tournament)),
+                                           'editTournament': True}, RC(request))
             else:
+                messages.add_message(request, messages.ERROR, _('The selected tournament cannot be found.'))
                 page = request.GET.get('page', 1)
                 return HttpResponseRedirect("/creator/admin/tournaments?page="+str(page))
+        elif (request.path == '/newTournamentGet'):
+            page = request.GET.get('page', 1)
+            form = TournamentForm()
+            challengeForm  = ChallengeForm()
+            teamForm  = TeamForm()
+            """Busco todos los participantes incluidos por el creador para poder seleccionarlos"""
+            participants = Participant.objects.filter(creator_username=creator.username)
+            """Busco todos los equipos incluidos por el creador para poder seleccionarlos"""
+            teams = Team.objects.filter(creator=creator.username)
+            """Busco todos los retos incluidos por el creador para poder seleccionarlos"""
+            challenges = Challenge.objects.filter(creator=creator.username)
+            
+            return render_to_response('tournaments/creator/admin/tournaments/newEditTournament.html', 
+                                      {'username':request.user.username, 'form': form, 'page': page, 
+                                       'challengeForm': challengeForm, 'teamForm': teamForm,
+                                       'participants': participants, 'maxParticipants': range(int (max_participants_per_team)), 
+                                       'challenges': challenges, 'maxChallenges':range(int (max_challenges_per_tournament)),
+                                       'teams': teams, 'maxTeams': range(int (max_teams_per_tournament)), 
+                                       'newTournament': True}, RC(request))
         else:
-            messages.add_message(request, messages.ERROR, _('Logged user cannot be found.'))
-            return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request))
+            page = request.GET.get('page', 1)
+            return HttpResponseRedirect("/creator/admin/tournaments?page="+str(page))
     else:
         return HttpResponseRedirect("/")
     
@@ -2244,6 +2267,8 @@ def deleteTournament (request):
         idTournament = request.POST.get('idTournament', None)
         if idTournament is not None:
             tournamentDelete = Tournament.objects.get(id=idTournament)
+            for task in Task.objects.filter(verbose_name=tournamentDelete.id):
+                task.delete();
             tournamentDelete.delete();
             messages.add_message(request, messages.SUCCESS, _('Tournament deleted.'))
             page = request.GET.get('page', 1)    
@@ -2255,36 +2280,42 @@ def newTournament (request):
     if request.method == "POST": 
         form = TournamentForm(request.POST)
         if form.is_valid() and request.user.is_authenticated():
-            creator = Creator.objects.get(username=request.user.username)
-            if creator:
-                name = form.cleaned_data['name']
-                description = form.cleaned_data['description']
-                tournament = Tournament(name=name, description=description, creator=creator)
-                tournament.save()
-                """Compruebo si hay retos asociados al torneo y los incluyo"""
-                for i in range(int (max_challenges_per_tournament)):
-                    ce_id = request.POST['ce_id_'+str(i)]
-                    if ce_id != '':
-                        challengeObj = Challenge.objects.get(id=ce_id)
-                        if (challengeObj):
-                            ct = ChallengesOfTournament(position=i, tournament=tournament, challenge=challengeObj)
-                            try:
-                                ChallengesOfTournament.objects.get(tournament=tournament, challenge=challengeObj)
-                            except ChallengesOfTournament.DoesNotExist:
-                                ct.save()
-                """Compruebo si hay equipos asociados al torneo y los incluyo"""
-                for i in range(int (max_teams_per_tournament)):
-                    te_id = request.POST['te_id_'+str(i)]
-                    if te_id != '':
-                        teamObj = Team.objects.get(id=te_id)
-                        if (teamObj):
-                            tournament.teams.add(teamObj)
-                messages.add_message(request, messages.SUCCESS, _('Tournament added.'))
-                page = request.GET.get('page', 1)
-                return HttpResponseRedirect("/creator/admin/tournaments?page="+str(page))
-            else:
+            try:
+                creator = Creator.objects.get(username=request.user.username)
+            except:
                 messages.add_message(request, messages.ERROR, _('Logged user cannot be found.'))
-                return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request))  
+                return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request))
+            name = form.cleaned_data['name']
+            description = form.cleaned_data['description']
+            manualValidation = form.cleaned_data['manualValidation']
+            notificationPeriod = form.cleaned_data['notificationPeriod']
+            tournament = Tournament(name=name, description=description, manualValidation=manualValidation, notificationPeriod=notificationPeriod, creator=creator)
+            tournament.save()
+            """Compruebo si hay retos asociados al torneo y los incluyo"""
+            for i in range(int (max_challenges_per_tournament)):
+                ce_id = request.POST['ce_id_'+str(i)]
+                if ce_id != '':
+                    challengeObj = Challenge.objects.get(id=ce_id)
+                    if (challengeObj):
+                        ct = ChallengesOfTournament(position=i, tournament=tournament, challenge=challengeObj)
+                        try:
+                            ChallengesOfTournament.objects.get(tournament=tournament, challenge=challengeObj)
+                        except ChallengesOfTournament.DoesNotExist:
+                            ct.save()
+            """Compruebo si hay equipos asociados al torneo y los incluyo"""
+            for i in range(int (max_teams_per_tournament)):
+                te_id = request.POST['te_id_'+str(i)]
+                if te_id != '':
+                    teamObj = Team.objects.get(id=te_id)
+                    if (teamObj):
+                        tournament.teams.add(teamObj)
+            if (tournament.notificationPeriod == str(2)):
+                summary_email(tournament.id, creator.email, schedule=(5*60), repeat=(5*60), verbose_name=tournament.id) #(once a day)
+            elif (tournament.notificationPeriod == str(3)):
+                summary_email(tournament.id, creator.email, schedule=(10*60), repeat=(10*60), verbose_name=tournament.id) #(once a week)
+            messages.add_message(request, messages.SUCCESS, _('Tournament added.'))
+            page = request.GET.get('page', 1)
+            return HttpResponseRedirect("/creator/admin/tournaments?page="+str(page))
         else:
             messages.add_message(request, messages.ERROR, _('Session expired. Please log in again.'))
             return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request)) 
@@ -2295,45 +2326,57 @@ def editTournament (request):
     if request.method == "POST":
         form = TournamentForm(request.POST)
         if form.is_valid() and request.user.is_authenticated():
-            creator = Creator.objects.get(username=request.user.username)
-            if creator:
-                idTournament = request.POST.get('idTournament', None)
-                if idTournament is not None:
-                    #Editamos el torneo
-                    tournamentEdit = Tournament.objects.get(id=idTournament)
-                    tournamentEdit.name = form.cleaned_data['name']
-                    tournamentEdit.description = form.cleaned_data['description']
-                    tournamentEdit.save()
-                    tournamentEdit.challenges.clear()
-                    """Compruebo si hay retos asociados al torneo y los incluyo"""
-                    for i in range(int (max_challenges_per_tournament)):
-                        ce_id = request.POST['ce_id_'+str(i)]
-                        if ce_id != '':
-                            challengeObj = Challenge.objects.get(id=ce_id)
-                            if (challengeObj):
-                                ct = ChallengesOfTournament(position=i, tournament=tournamentEdit, challenge=challengeObj)
-                                try:
-                                    ChallengesOfTournament.objects.get(tournament=tournamentEdit, challenge=challengeObj)
-                                except ChallengesOfTournament.DoesNotExist:
-                                    ct.save()
-                    tournamentEdit.teams.clear()
-                    """Compruebo si hay equipos asociados al torneo y los incluyo"""
-                    for i in range(int (max_teams_per_tournament)):
-                        te_id = request.POST['te_id_'+str(i)]
-                        if te_id != '':
-                            teamObj = Team.objects.get(id=te_id)
-                            if (teamObj):
-                                tournamentEdit.teams.add(teamObj)
-                    messages.add_message(request, messages.SUCCESS, _('Tournament edited.'))
-                    page = request.GET.get('page', 1)
-                    return HttpResponseRedirect("/creator/admin/tournaments?page="+str(page))  
-                else:
-                    messages.add_message(request, messages.ERROR, _('The selected team cannot be found.'))
-                    page = request.GET.get('page', 1)
-                    return HttpResponseRedirect("/creator/admin/tournaments?page="+str(page))  
-            else:
+            try:
+                creator = Creator.objects.get(username=request.user.username)
+            except:
                 messages.add_message(request, messages.ERROR, _('Logged user cannot be found.'))
-                return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request))  
+                return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request))
+            idTournament = request.POST.get('idTournament', None)
+            if idTournament is not None:
+                #Editamos el torneo
+                tournamentEdit = Tournament.objects.get(id=idTournament)
+                tournamentEdit.name = form.cleaned_data['name']
+                tournamentEdit.description = form.cleaned_data['description']
+                tournamentEdit.manualValidation = form.cleaned_data['manualValidation']
+                if (tournamentEdit.manualValidation == False):
+                    tournamentEdit.notificationPeriod = 0
+                else:
+                    tournamentEdit.notificationPeriod = form.cleaned_data['notificationPeriod']
+                tournamentEdit.save()
+                tournamentEdit.challenges.clear()
+                """Compruebo si hay retos asociados al torneo y los incluyo"""
+                for i in range(int (max_challenges_per_tournament)):
+                    ce_id = request.POST['ce_id_'+str(i)]
+                    if ce_id != '':
+                        challengeObj = Challenge.objects.get(id=ce_id)
+                        if (challengeObj):
+                            ct = ChallengesOfTournament(position=i, tournament=tournamentEdit, challenge=challengeObj)
+                            try:
+                                ChallengesOfTournament.objects.get(tournament=tournamentEdit, challenge=challengeObj)
+                            except ChallengesOfTournament.DoesNotExist:
+                                ct.save()
+                tournamentEdit.teams.clear()
+                """Compruebo si hay equipos asociados al torneo y los incluyo"""
+                for i in range(int (max_teams_per_tournament)):
+                    te_id = request.POST['te_id_'+str(i)]
+                    if te_id != '':
+                        teamObj = Team.objects.get(id=te_id)
+                        if (teamObj):
+                            tournamentEdit.teams.add(teamObj)
+                for task in Task.objects.filter(verbose_name=tournamentEdit.id):
+                    task.delete();
+                if (tournamentEdit.notificationPeriod == str(2)):
+                    summary_email(tournamentEdit.id, creator.email, schedule=(5*60), repeat=(5*60), verbose_name=tournamentEdit.id) #(once a day)
+                elif (tournamentEdit.notificationPeriod == str(3)):
+                    summary_email(tournamentEdit.id, creator.email, schedule=(10*60), repeat=(10*60), verbose_name=tournamentEdit.id) #(once a week)
+                        
+                messages.add_message(request, messages.SUCCESS, _('Tournament edited.'))
+                page = request.GET.get('page', 1)
+                return HttpResponseRedirect("/creator/admin/tournaments?page="+str(page))  
+            else:
+                messages.add_message(request, messages.ERROR, _('The selected team cannot be found.'))
+                page = request.GET.get('page', 1)
+                return HttpResponseRedirect("/creator/admin/tournaments?page="+str(page))  
         else:
             messages.add_message(request, messages.ERROR, _('Logged user cannot be found.'))
             return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request)) 
@@ -2343,16 +2386,16 @@ def editTournament (request):
 def tournamentsCreator (request):
     if request.method == "GET":
         if request.user.is_authenticated():
-            creator = Creator.objects.get(username=request.user.username)
-            if creator:
-                """Muestro los torneos creados por dicho creador"""
-                tournaments = Tournament.objects.filter(creator=creator.username)
-                page = request.GET.get('page', 1)
-                tournamentsPagina = getElementsPaginador (tournaments, page, paginator_creator_tournaments)
-                return render_to_response('tournaments/creator/progress/tournamentsProgress.html', {'username':request.user.username, 'tournamentsPagina': tournamentsPagina}, RC(request))
-            else:
+            try:
+                creator = Creator.objects.get(username=request.user.username)
+            except:
                 messages.add_message(request, messages.ERROR, _('Logged user cannot be found.'))
                 return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request))
+            """Muestro los torneos creados por dicho creador"""
+            tournaments = Tournament.objects.filter(creator=creator.username)
+            page = request.GET.get('page', 1)
+            tournamentsPagina = getElementsPaginador (tournaments, page, paginator_creator_tournaments)
+            return render_to_response('tournaments/creator/progress/tournamentsProgress.html', {'username':request.user.username, 'tournamentsPagina': tournamentsPagina}, RC(request))
         else:
             messages.add_message(request, messages.ERROR, _('Session expired. Please log in again.'))
             return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request))
@@ -2361,41 +2404,41 @@ def tournamentsCreator (request):
     
 def challengesCreator (request):
     if request.method == "GET":
-        creator = Creator.objects.get(username=request.user.username)
-        if creator:
-            pageTour = request.GET.get('pageTour', 1)
-            pageTeam = request.GET.get('pageTeam', 1)
-            idTournament = request.GET.get('tournament', None)
-            if idTournament is not None:
-                tour = Tournament.objects.get(id=idTournament)
-                teamsPagina = getElementsPaginador (tour.teams.all(), pageTeam, paginator_creator_progress_teams)
-                if (not teamsPagina):
-                    messages.add_message(request, messages.ERROR, _('The tournament has not teams.'))
-                    return HttpResponseRedirect("/creator/tournaments?page="+pageTour)
-                dict = {}
-                for team in teamsPagina:
-                    dict[team.id] = []
-                    for ch in tour.get_challenges():
-                        try:
-                            chTour = ChallengesOfTournament.objects.get(challenge=ch, tournament=tour)
-                            game = Game.objects.get(challengeOfTournament=chTour, team=team)
-                            if game.completed:
-                                dict[team.id].append(game)
-                            else:
-                                dict[team.id].append(game)
-                        except Game.DoesNotExist:
-                            game = None
-                            dict[team.id].append(ch)
-                return render_to_response('tournaments/creator/progress/teamsProgress.html', {'username':request.user.username,
-                                                 'team': team, 'maxChallenges': max_challenges_per_tournament,
-                                                 'teamsPagina': teamsPagina, 'dict': dict, 'tour': tour,
-                                                 'pageTeam': pageTeam, 'pageTour': pageTour}, RC(request))    
-                    
-                        
-            return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request)) 
-        else:
+        try:
+            Creator.objects.get(username=request.user.username)
+        except:
             messages.add_message(request, messages.ERROR, _('Logged user cannot be found.'))
-            return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request))    
+            return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request))
+        pageTour = request.GET.get('pageTour', 1)
+        pageTeam = request.GET.get('pageTeam', 1)
+        idTournament = request.GET.get('tournament', None)
+        if idTournament is not None:
+            tour = Tournament.objects.get(id=idTournament)
+            teamsPagina = getElementsPaginador (tour.teams.all(), pageTeam, paginator_creator_progress_teams)
+            if (not teamsPagina):
+                messages.add_message(request, messages.ERROR, _('The tournament has not teams.'))
+                return HttpResponseRedirect("/creator/tournaments?page="+pageTour)
+            dict = {}
+            for team in teamsPagina:
+                dict[team.id] = []
+                for ch in tour.get_challenges():
+                    try:
+                        chTour = ChallengesOfTournament.objects.get(challenge=ch, tournament=tour)
+                        game = Game.objects.get(challengeOfTournament=chTour, team=team)
+                        if game.completed:
+                            dict[team.id].append(game)
+                        else:
+                            dict[team.id].append(game)
+                    except Game.DoesNotExist:
+                        game = None
+                        dict[team.id].append(ch)
+            return render_to_response('tournaments/creator/progress/teamsProgress.html', {'username':request.user.username,
+                                             'team': team, 'maxChallenges': max_challenges_per_tournament,
+                                             'teamsPagina': teamsPagina, 'dict': dict, 'tour': tour,
+                                             'pageTeam': pageTeam, 'pageTour': pageTour}, RC(request))    
+                
+                    
+        return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request)) 
     else:
         return HttpResponseRedirect("/")
     
@@ -2438,139 +2481,221 @@ def creatorNewParticipants (request):
         return render_to_response('tournaments/creator/newParticipant/main_new_participants.html', 
                                   {'username':request.user.username, 'maxNewPart': range(int (max_new_participants))}, RC(request))
     else:
-        creator = Creator.objects.get(username=request.user.username)
-        if creator:
-            error_msg = _('The following emails are already included in Dr. Scratch (they where not registered): ')
-            show_error_msg = False
-            success_msg = _('The following emails were successfully registered in Dr. Scratch: ')
-            show_success_msg = False
-            if "uploadCSV" in request.POST:
-                try:
-                    file = request.FILES['csvFile']
-                except MultiValueDictKeyError:
-                    messages.add_message(request, messages.ERROR, _('You have to include a CSV file.'))
-                    return render_to_response('tournaments/creator/newParticipant/main_new_participants.html', 
-                                              {'username':request.user.username, 'maxNewPart': range(int (max_new_participants))}, RC(request))
-                file_name = file.name.encode('utf-8')
-                if file_name.endswith('.csv'):
-                    for i in range(int (max_new_participants)):
-                        # read line
-                        email = file.readline().rstrip()
-                        # check if line is not empty
-                        if email:
-                            if re.match("[^@]+@[^\.]+\..+", email) != None:
-                                error_msg, success_msg, show_error_msg, show_success_msg = register_participant (email, creator.username, error_msg, success_msg, show_error_msg, show_success_msg)
-                            else:
-                                error_msg = error_msg + email + "; "
-                                show_error_msg = True 
-                    file.close()
-                else:
-                    messages.add_message(request, messages.ERROR, _('The file added is not a CSV file.'))
-            elif "uploadTXT" in request.POST:
-                try:
-                    file = request.FILES['txtFile']
-                except MultiValueDictKeyError:
-                    messages.add_message(request, messages.ERROR, _('You have to include a TXT file.'))
-                    return render_to_response('tournaments/creator/newParticipant/main_new_participants.html', 
-                                              {'username':request.user.username, 'maxNewPart': range(int (max_new_participants))}, RC(request))
-                file_name = file.name.encode('utf-8')
-                if file_name.endswith('.txt'):
-                    for i in range(int (max_new_participants)):
-                        # read line
-                        email = file.readline().rstrip()
-                        # check if line is not empty
-                        if email:
-                            if re.match("[^@]+@[^\.]+\..+", email) != None:
-                                error_msg, success_msg, show_error_msg, show_success_msg = register_participant (email, creator.username, error_msg, success_msg, show_error_msg, show_success_msg)
-                            else:
-                                error_msg = error_msg + email + "; "
-                                show_error_msg = True 
-                    file.close()
-                else:
-                    messages.add_message(request, messages.ERROR, _('The file added is not a TXT file.'))
-            else:    
-                for i in range(int (max_new_participants)):
-                    email = request.POST['email_'+str(i)]
-                    if (email != ''):
-                        error_msg, success_msg, show_error_msg, show_success_msg = register_participant (email, creator.username, error_msg, success_msg, show_error_msg, show_success_msg)
-                        
-            if show_error_msg:            
-                messages.add_message(request, messages.ERROR, error_msg)
-            if show_success_msg:
-                messages.add_message(request, messages.SUCCESS, success_msg)
-            return render_to_response('tournaments/creator/newParticipant/main_new_participants.html', 
-                {'username':request.user.username, 'maxNewPart': range(int (max_new_participants))}, RC(request))
-        else:
+        try:
+            creator = Creator.objects.get(username=request.user.username)
+        except:
             messages.add_message(request, messages.ERROR, _('Logged user cannot be found.'))
-            return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request))      
+            return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request))
+        error_msg = _('The following emails are already included in Dr. Scratch (they where not registered): ')
+        show_error_msg = False
+        success_msg = _('The following emails were successfully registered in Dr. Scratch: ')
+        show_success_msg = False
+        format_msg = _('The following emails have wrong format (they where not registered): ')
+        show_format_msg = False
+        if "uploadCSV" in request.POST:
+            try:
+                file = request.FILES['csvFile']
+            except MultiValueDictKeyError:
+                messages.add_message(request, messages.ERROR, _('You have to include a CSV file.'))
+                return render_to_response('tournaments/creator/newParticipant/main_new_participants.html', 
+                                          {'username':request.user.username, 'maxNewPart': range(int (max_new_participants))}, RC(request))
+            file_name = file.name.encode('utf-8')
+            if file_name.endswith('.csv'):
+                for i in range(int (max_new_participants)):
+                    # read line
+                    email = file.readline().rstrip()
+                    # check if line is not empty
+                    if email:
+                        if re.match("[^@]+@[^\.]+\..+", email) != None:
+                            error_msg, success_msg, show_error_msg, show_success_msg = register_participant (email, creator.username, error_msg, success_msg, show_error_msg, show_success_msg)
+                        else:
+                            format_msg = format_msg + email + "; "
+                            show_format_msg = True 
+                file.close()
+            else:
+                messages.add_message(request, messages.ERROR, _('The file added is not a CSV file.'))
+        elif "uploadTXT" in request.POST:
+            try:
+                file = request.FILES['txtFile']
+            except MultiValueDictKeyError:
+                messages.add_message(request, messages.ERROR, _('You have to include a TXT file.'))
+                return render_to_response('tournaments/creator/newParticipant/main_new_participants.html', 
+                                          {'username':request.user.username, 'maxNewPart': range(int (max_new_participants))}, RC(request))
+            file_name = file.name.encode('utf-8')
+            if file_name.endswith('.txt'):
+                for i in range(int (max_new_participants)):
+                    # read line
+                    email = file.readline().rstrip()
+                    # check if line is not empty
+                    if email:
+                        if re.match("[^@]+@[^\.]+\..+", email) != None:
+                            error_msg, success_msg, show_error_msg, show_success_msg = register_participant (email, creator.username, error_msg, success_msg, show_error_msg, show_success_msg)
+                        else:
+                            format_msg = format_msg + email + "; "
+                            show_format_msg = True 
+                file.close()
+            else:
+                messages.add_message(request, messages.ERROR, _('The file added is not a TXT file.'))
+        else:    
+            for i in range(int (max_new_participants)):
+                email = request.POST['email_'+str(i)]
+                if (email != ''):
+                    error_msg, success_msg, show_error_msg, show_success_msg = register_participant (email, creator.username, error_msg, success_msg, show_error_msg, show_success_msg)
+                    
+        if show_error_msg:            
+            messages.add_message(request, messages.ERROR, error_msg)
+        if show_success_msg:
+            messages.add_message(request, messages.SUCCESS, success_msg)
+        if show_format_msg:
+            messages.add_message(request, messages.ERROR, format_msg)
+        return render_to_response('tournaments/creator/newParticipant/main_new_participants.html', 
+            {'username':request.user.username, 'maxNewPart': range(int (max_new_participants))}, RC(request))
+        
+def validationCreator (request):
+    if request.method == "GET":
+        if request.user.is_authenticated():
+            try:
+                creator = Creator.objects.get(username=request.user.username)
+            except:
+                messages.add_message(request, messages.ERROR, _('Logged user cannot be found.'))
+                return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request))
+            """Muestro los torneos con validacion manual creados por dicho creador"""
+            tour = Tournament.objects.filter(creator=creator.username, manualValidation=True)
+            tournaments = []
+            for t in tour:
+                chTour = ChallengesOfTournament.objects.filter(tournament=t)
+                games = Game.objects.none()
+                for c in chTour:
+                    games = games | Game.objects.filter(challengeOfTournament=c, completed=False, done=True)
+                if games:
+                    tournaments.append(t)
+            page = request.GET.get('page', 1)
+            tournamentsPagina = getElementsPaginador (tournaments, page, paginator_creator_tournaments)
+            return render_to_response('tournaments/creator/validation/validation.html', {'username':request.user.username, 'tournamentsPagina': tournamentsPagina}, RC(request))
+        else:
+            messages.add_message(request, messages.ERROR, _('Session expired. Please log in again.'))
+            return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request))
+    else:
+        return HttpResponseRedirect("/")   
+    
+def validateTournamentCreator (request):
+    if request.method == "GET":
+        if request.user.is_authenticated():
+            try:
+                Creator.objects.get(username=request.user.username)
+            except:
+                messages.add_message(request, messages.ERROR, _('Logged user cannot be found.'))
+                return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request))
+            idTournament = request.GET.get('tournament', None)
+            page = request.GET.get('page', 1)
+            pageGame = request.GET.get('pageGame', 1)
+            if idTournament is not None:
+                tour = Tournament.objects.get(id=idTournament)
+                chTour = ChallengesOfTournament.objects.filter(tournament=tour)
+                games = Game.objects.none()
+                for c in chTour:
+                    games = games | Game.objects.filter(challengeOfTournament=c, completed=False, done=True)
+                gamesPagina = getElementsPaginador (games, pageGame, paginator_validate_games)
+                return render_to_response('tournaments/creator/validation/validate.html', 
+                                          {'username':request.user.username, 'gamesPagina': gamesPagina, 'page': page, 'tour': tour}, RC(request))
+            else:
+                messages.add_message(request, messages.ERROR, _('The selected tournament cannot be found.'))
+                return HttpResponseRedirect("/creator/validation?page="+str(page))
+        else:
+            messages.add_message(request, messages.ERROR, _('Session expired. Please log in again.'))
+            return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request))
+    else:
+        if request.user.is_authenticated():
+            try:
+                Creator.objects.get(username=request.user.username)
+            except:
+                messages.add_message(request, messages.ERROR, _('Logged user cannot be found.'))
+                return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request))
+            page = request.GET.get('page', 1)
+            pageGame = request.GET.get('pageGame', 1)
+            idGame = request.POST.get('idGame', None)
+            if idGame is not None:
+                game = Game.objects.get(id=idGame)
+                game.completed = True
+                game.save()
+                messages.add_message(request, messages.SUCCESS, _('Game validated successfully.'))
+                return HttpResponseRedirect("/creator/validate/tournament?page="+str(page)+"&pageGame="+str(pageGame)+"&tournament="+str(game.challengeOfTournament.tournament.id)) 
+            else:
+                messages.add_message(request, messages.ERROR, _('The selected game cannot be found.'))
+                return HttpResponseRedirect("/creator/validation?page="+str(page)) 
+        else:
+            messages.add_message(request, messages.ERROR, _('Session expired. Please log in again.'))
+            return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request))
 
 def teamsParticipant (request):
     if request.method == "GET":
-        participant = Participant.objects.get(username=request.user.username)
-        if participant:
-            """Busco los equipos asociados al participante"""
-            teams = Team.objects.filter(participant=participant.id)
-            page = request.GET.get('pageTeam', 1)
-            teamsPagina = getElementsPaginador (teams, page, paginator_participant_teams)
-            return render_to_response('tournaments/participant/teamsPart.html', {'username':request.user.username, 'participant': participant,
-                                                                             'teamsPagina': teamsPagina}, RC(request))
-        else:
+        try:
+            participant = Participant.objects.get(username=request.user.username)
+        except:
             messages.add_message(request, messages.ERROR, _('Logged user cannot be found.'))
-            return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request))   
-         
+            return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request))
+        """Busco los equipos asociados al participante"""
+        teams = Team.objects.filter(participant=participant.id)
+        page = request.GET.get('pageTeam', 1)
+        teamsPagina = getElementsPaginador (teams, page, paginator_participant_teams)
+        return render_to_response('tournaments/participant/teamsPart.html', {'username':request.user.username, 'participant': participant,
+                                                                         'teamsPagina': teamsPagina}, RC(request))
     else:
         return HttpResponseRedirect("/")
     
 def tournamentsParticipant (request):
     if request.method == "GET":
-        participant = Participant.objects.get(username=request.user.username)
-        if participant:
-            idTeam = request.GET.get('team', None)
-            if idTeam is not None:
-                team = Team.objects.get(id=idTeam)
-                pageTour = request.GET.get('pageTour', 1)
-                error = request.GET.get('error', None)
-                if error is not None:
-                    error = bool(error)
-                id_error = request.GET.get('id_error', None)
-                if id_error is not None:
-                    id_error = bool(id_error)
-                no_exists = request.GET.get('no_exists', None)
-                if no_exists is not None:
-                    no_exists = bool(no_exists)
-                if team:
-                    tournamentsPagina = getElementsPaginador (team.tournament_set.all(), pageTour, paginator_participant_touraments)
-                    dict = {}
-                    for tour in tournamentsPagina:
-                        """Obtengo los retos y juegos (si los hay) de cada torneo"""
-                        dict[tour.id] = []
-                        for ch in tour.get_challenges():
-                            try:
-                                chTour = ChallengesOfTournament.objects.get(challenge=ch, tournament=tour)
-                                game = Game.objects.get(challengeOfTournament=chTour, team=team)
-                                if game.completed:
-                                    dict[tour.id].append(game)
-                                else:
-                                    dict[tour.id].append(game)
-                                    break
-                            except Game.DoesNotExist:
-                                game = None
-                                dict[tour.id].append(ch)
-                                break
-                        pageTeam = request.GET.get('pageTeam', 1)
-                        return render_to_response('tournaments/participant/tournamentsPart.html', {'username':request.user.username, 'participant': participant,
-                                                                             'team': team, 'maxChallenges': max_challenges_per_tournament,
-                                                                             'error': error, 'id_error': id_error, 'no_exists': no_exists,
-                                                                             'tournamentsPagina': tournamentsPagina, 'dict': dict,
-                                                                             'pageTeam': pageTeam}, RC(request))
-                else:
-                    messages.add_message(request, messages.ERROR, _('The selected team cannot be found.'))
-                    page = request.GET.get('pageTeam', 1)
-                    return HttpResponseRedirect("/participant/teams?page="+str(page))  
-                
-        else:
+        try:
+            participant = Participant.objects.get(username=request.user.username)
+        except:
             messages.add_message(request, messages.ERROR, _('Logged user cannot be found.'))
-            return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request)) 
+            return render_to_response('tournaments/main_tournaments.html', {'username':None}, RC(request))
+        idTeam = request.GET.get('team', None)
+        if idTeam is not None:
+            team = Team.objects.get(id=idTeam)
+            pageTour = request.GET.get('pageTour', 1)
+            error = request.GET.get('error', None)
+            if error is not None:
+                error = bool(error)
+            id_error = request.GET.get('id_error', None)
+            if id_error is not None:
+                id_error = bool(id_error)
+            no_exists = request.GET.get('no_exists', None)
+            if no_exists is not None:
+                no_exists = bool(no_exists)
+            if team:
+                tournamentsPagina = getElementsPaginador (team.tournament_set.all(), pageTour, paginator_participant_touraments)
+                dict = {}
+                for tour in tournamentsPagina:
+                    """Obtengo los retos y juegos (si los hay) de cada torneo"""
+                    dict[tour.id] = []
+                    for ch in tour.get_challenges():
+                        try:
+                            chTour = ChallengesOfTournament.objects.get(challenge=ch, tournament=tour)
+                            game = Game.objects.get(challengeOfTournament=chTour, team=team)
+                            if game.completed:
+                                dict[tour.id].append(game)
+                            else:
+                                dict[tour.id].append(game)
+                                break
+                        except Game.DoesNotExist:
+                            game = None
+                            dict[tour.id].append(ch)
+                            break
+                pageTeam = request.GET.get('pageTeam', 1)
+                return render_to_response('tournaments/participant/tournamentsPart.html', {'username':request.user.username, 'participant': participant,
+                                                                         'team': team, 'maxChallenges': max_challenges_per_tournament,
+                                                                         'error': error, 'id_error': id_error, 'no_exists': no_exists,
+                                                                         'tournamentsPagina': tournamentsPagina, 'dict': dict,
+                                                                         'pageTeam': pageTeam}, RC(request))
+            else:
+                messages.add_message(request, messages.ERROR, _('The selected team cannot be found.'))
+                page = request.GET.get('pageTeam', 1)
+                return HttpResponseRedirect("/participant/teams?page="+str(page))  
+        else:
+            messages.add_message(request, messages.ERROR, _('The selected team cannot be found.'))
+            page = request.GET.get('pageTeam', 1)
+            return HttpResponseRedirect("/participant/teams?page="+str(page))  
     else:
         return HttpResponseRedirect("/")
 
@@ -2604,29 +2729,68 @@ def evaluate(d, idChallenge, idTeam, idTournament):
             newGame = Game()
             newGame.challengeOfTournament = chTour
             newGame.team = team
-            newGame.completed = True
+            newGame.done = True
+            if (tournament.manualValidation):
+                newGame.completed = False
+            else:
+                newGame.completed = True
             for key, value in d["mastery"].items():
                 if (key != 'points' and key != 'maxi'):
                     setattr(newGame, trans_keys[key], value)
                     if(getattr(newGame, trans_keys[key]) < getattr(challenge, trans_keys[key])):
                         newGame.completed = False
+                        newGame.done = False
                     game_value = getattr(newGame, trans_keys[key])
                     total_points = total_points + game_value
                     d["mastery"][key] = game_value
             d["mastery"]["points"] = total_points
+            if (newGame.done == True and tournament.notificationPeriod == 1):
+                try:
+                    creator = Creator.objects.get(username = team.creator)
+                    c = {'tournament':tournament.name}
+                    body = render_to_string("tournaments/creator/email_valid.html",c)
+                    subject = _("Dr. Scratch Tournaments: Manual Validation")
+                    sender ="no-reply@drscratch.org"
+                    to = [creator.email]
+                    email = EmailMessage(subject,body,sender,to)
+                    email.send()
+                except Exception as e:
+                    print '%s (%s)' % (e.message, type(e))
             return newGame
         if (game):
-            game.completed = True
+            if (game.done == False):
+                enviar = True
+            else:
+                enviar = False
+                
+            game.done = True
+            if (tournament.manualValidation):
+                game.completed = False
+            else:
+                game.completed = True
             for key, value in d["mastery"].items():
                 if (key != 'points' and key != 'maxi'):
                     if (value > getattr(game, trans_keys[key])):
                         setattr(game, trans_keys[key], value)
                     if (getattr(game, trans_keys[key]) < getattr(challenge, trans_keys[key])):
                         game.completed = False
+                        game.done = False
                     game_value = getattr(game, trans_keys[key])
                     total_points = total_points + game_value
                     d["mastery"][key] = game_value
             d["mastery"]["points"] = total_points
+            if (enviar == True and game.done == True and tournament.notificationPeriod == 1):
+                try:
+                    creator = Creator.objects.get(username = team.creator)
+                    c = {'tournament':tournament.name}
+                    body = render_to_string("tournaments/creator/email_valid.html",c)
+                    subject = _("Dr. Scratch Tournaments: Manual Validation")
+                    sender ="no-reply@drscratch.org"
+                    to = [creator.email]
+                    email = EmailMessage(subject,body,sender,to)
+                    email.send()
+                except Exception as e:
+                    print '%s (%s)' % (e.message, type(e))
             return game
         else:
             return None

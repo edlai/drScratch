@@ -1387,6 +1387,10 @@ position: absolute;
 	margin-left: 2em;
 }
 
+.space-right{
+	margin-right: 2em;
+}
+
 .space-top{
 	margin-top: 2em;
 }
@@ -1464,8 +1468,8 @@ position: absolute;
 	margin: 0!important; 
 }
 
-.plus-link{
-	color: white;
+.green-color{
+	color: #5cb85c;
 }
 
 .plus-link:hover{
@@ -1474,4 +1478,22 @@ position: absolute;
 
 .btn-secundary{
     padding: 10px 20px 10px 20px;
+}
+
+.chk-input{
+	width: 34px;
+    height: 34px;
+}
+
+.chk-input-text {
+    font-family: 'Purisan,Bold','Open Sans', Helvetica Neue, Sans-serif;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 300;
+    color: #999999;
+    margin-right: 1em;
+}
+
+.form-check{
+	text-align: center;
 }

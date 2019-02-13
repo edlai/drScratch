@@ -236,7 +236,7 @@
 							    </tr>
 							  </thead>
 							  <tbody>
-							  <form name="form" class="project-form" enctype="multipart/form-data" method="post" action="/creator/newpart/form">
+							  <form id="formReg" name="formReg" class="project-form" enctype="multipart/form-data" method="post" action="/creator/newpart/form">
 							  {% csrf_token %}
 							  {% for i in maxNewPart %}
 						    	<tr class="white-text row-line" style="display: none;">
@@ -358,8 +358,8 @@
 	        	}
 	        	$(this).hide();
 	        });
-	        $('#uploadForm').click(function() { 
-	            $.blockUI({ 
+	        $('#formReg').submit(function() { 
+       			$.blockUI({ 
 	            	message: '<img src="../../static/app/images/tournaments/please_wait.gif"/>'
 	            }); 
 	        });
