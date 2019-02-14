@@ -2310,9 +2310,9 @@ def newTournament (request):
                     if (teamObj):
                         tournament.teams.add(teamObj)
             if (tournament.notificationPeriod == str(2)):
-                summary_email(tournament.id, creator.email, schedule=(5*60), repeat=(5*60), verbose_name=tournament.id) #(once a day)
+                summary_email(tournament.id, creator.email, schedule=(24*60*60), repeat=(24*60*60), verbose_name=tournament.id) #(once a day)
             elif (tournament.notificationPeriod == str(3)):
-                summary_email(tournament.id, creator.email, schedule=(10*60), repeat=(10*60), verbose_name=tournament.id) #(once a week)
+                summary_email(tournament.id, creator.email, schedule=(7*24*60*60), repeat=(7*24*60*60), verbose_name=tournament.id) #(once a week)
             messages.add_message(request, messages.SUCCESS, _('Tournament added.'))
             page = request.GET.get('page', 1)
             return HttpResponseRedirect("/creator/admin/tournaments?page="+str(page))
@@ -2366,9 +2366,9 @@ def editTournament (request):
                 for task in Task.objects.filter(verbose_name=tournamentEdit.id):
                     task.delete();
                 if (tournamentEdit.notificationPeriod == str(2)):
-                    summary_email(tournamentEdit.id, creator.email, schedule=(5*60), repeat=(5*60), verbose_name=tournamentEdit.id) #(once a day)
+                    summary_email(tournamentEdit.id, creator.email, schedule=(24*60*60), repeat=(24*60*60), verbose_name=tournamentEdit.id) #(once a day)
                 elif (tournamentEdit.notificationPeriod == str(3)):
-                    summary_email(tournamentEdit.id, creator.email, schedule=(10*60), repeat=(10*60), verbose_name=tournamentEdit.id) #(once a week)
+                    summary_email(tournamentEdit.id, creator.email, schedule=(7*24*60*60), repeat=(7*24*60*60), verbose_name=tournamentEdit.id) #(once a week)
                         
                 messages.add_message(request, messages.SUCCESS, _('Tournament edited.'))
                 page = request.GET.get('page', 1)
