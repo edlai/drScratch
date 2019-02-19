@@ -371,7 +371,7 @@
 							          	<select class ="form-control input-box placeholder" id="p_id_{{n}}" name="p_id_{{n}}">
 							          		<option value="">{% trans "Select participant" %} {{forloop.counter}}</option>
 								          	{% for p in participants %}
-												<option value="{{ p.id }}">{{ p.username }} ({{p.email}})</option>
+												<option value="{{ p.id }}">{{ p.username }}</option>
 											{% endfor %}
 										</select>
 									{% endfor %}

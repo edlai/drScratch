@@ -33,10 +33,6 @@ class Migration(migrations.Migration):
         ),
         migrations.RemoveField(
             model_name='creator',
-            name='id',
-        ),
-        migrations.RemoveField(
-            model_name='creator',
             name='password',
         ),
         migrations.RemoveField(
@@ -47,12 +43,6 @@ class Migration(migrations.Migration):
             model_name='creator',
             name='hashkey',
             field=models.TextField(default=''),
-            preserve_default=False,
-        ),
-        migrations.AddField(
-            model_name='creator',
-            name='user_ptr',
-            field=models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, default='', serialize=False, to=settings.AUTH_USER_MODEL),
             preserve_default=False,
         ),
         migrations.AlterField(
@@ -74,5 +64,15 @@ class Migration(migrations.Migration):
             model_name='tournament',
             name='creator',
             field=models.CharField(max_length=100),
+        ),
+        migrations.RemoveField(
+            model_name='creator',
+            name='id',
+        ),
+        migrations.AddField(
+            model_name='creator',
+            name='user_ptr',
+            field=models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, default='', serialize=False, to=settings.AUTH_USER_MODEL),
+            preserve_default=False,
         ),
     ]

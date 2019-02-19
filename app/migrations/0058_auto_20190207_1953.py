@@ -30,21 +30,11 @@ class Migration(migrations.Migration):
         ),
         migrations.RemoveField(
             model_name='participant',
-            name='id',
-        ),
-        migrations.RemoveField(
-            model_name='participant',
             name='password',
         ),
         migrations.RemoveField(
             model_name='participant',
             name='username',
-        ),
-        migrations.AddField(
-            model_name='participant',
-            name='user_ptr',
-            field=models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, default='', serialize=False, to=settings.AUTH_USER_MODEL),
-            preserve_default=False,
         ),
         migrations.AddField(
             model_name='tournament',
@@ -64,6 +54,16 @@ class Migration(migrations.Migration):
             model_name='team',
             name='participant',
             field=models.CharField(default='', max_length=100),
+            preserve_default=False,
+        ),
+        migrations.RemoveField(
+            model_name='participant',
+            name='id',
+        ),
+        migrations.AddField(
+            model_name='participant',
+            name='user_ptr',
+            field=models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, default='', serialize=False, to=settings.AUTH_USER_MODEL),
             preserve_default=False,
         ),
     ]

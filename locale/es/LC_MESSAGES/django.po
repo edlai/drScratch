@@ -3487,19 +3487,21 @@ msgid ""
 "You can validate the challenges of the tournament manually. The challenge "
 "will not be completed until you validate the student's game in Manual "
 "Validation section."
-msgstr ""
+msgstr "Puedes validar los retos del torneo manualmente. El reto no se completará "
+"hasta que no valides la puntuación del estudiante en la sección de Validación manual."
 
 #: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:234
 #: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:280
 msgid "Validate the challenges manually"
-msgstr ""
+msgstr "Validar los retos manualmente"
 
 #: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:239
 #: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:285
 msgid ""
 "You can be notified with an email when a participant complete a challenge. "
 "Select the notification frequency."
-msgstr ""
+msgstr "Puedes ser notificado con un email cuando un participante complete el reto. "
+"Selecciona la frecuencia de notificación."
 
 #: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:250
 #: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:345
@@ -3984,7 +3986,7 @@ msgstr "No has completado el reto todavía."
 
 #: .\templates\tournaments\participant\results.html:283
 msgid "Learn how"
-msgstr "Aprende como"
+msgstr "Aprende cómo"
 
 #: .\templates\tournaments\participant\results.html:297
 #: .\templates\upload\dashboard-unregistered-basic.html:116
