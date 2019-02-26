@@ -21,64 +21,104 @@ class Migration(migrations.Migration):
             field=models.IntegerField(default=0),
             preserve_default=False,
         ),
-        migrations.AlterField(
+        migrations.RemoveField(
             model_name='file',
             name='abstraction',
-            field=models.IntegerField(),
+        ),
+        migrations.AddField(
+            model_name='file',
+            name='abstraction',
+            field=models.IntegerField(default=0),
             preserve_default=True,
         ),
-        migrations.AlterField(
+        migrations.RemoveField(
             model_name='file',
             name='dataRepresentation',
-            field=models.IntegerField(),
+        ),
+        migrations.AddField(
+            model_name='file',
+            name='dataRepresentation',
+            field=models.IntegerField(default=0),
             preserve_default=True,
         ),
-        migrations.AlterField(
+        migrations.RemoveField(
             model_name='file',
             name='deadCode',
-            field=models.IntegerField(),
+        ),
+        migrations.AddField(
+            model_name='file',
+            name='deadCode',
+            field=models.IntegerField(default=0),
             preserve_default=True,
         ),
-        migrations.AlterField(
+        migrations.RemoveField(
             model_name='file',
             name='flowControl',
-            field=models.IntegerField(),
+        ),
+        migrations.AddField(
+            model_name='file',
+            name='flowControl',
+            field=models.IntegerField(default=0),
             preserve_default=True,
         ),
-        migrations.AlterField(
+        migrations.RemoveField(
             model_name='file',
             name='initialization',
-            field=models.IntegerField(),
+        ),
+        migrations.AddField(
+            model_name='file',
+            name='initialization',
+            field=models.IntegerField(default=0),
             preserve_default=True,
         ),
-        migrations.AlterField(
+        migrations.RemoveField(
             model_name='file',
             name='logic',
-            field=models.IntegerField(),
+        ),
+        migrations.AddField(
+            model_name='file',
+            name='logic',
+            field=models.IntegerField(default=0),
             preserve_default=True,
         ),
-        migrations.AlterField(
+        migrations.RemoveField(
             model_name='file',
             name='parallelization',
-            field=models.IntegerField(),
+        ),
+        migrations.AddField(
+            model_name='file',
+            name='parallelization',
+            field=models.IntegerField(default=0),
             preserve_default=True,
         ),
-        migrations.AlterField(
+        migrations.RemoveField(
             model_name='file',
             name='spriteNaming',
-            field=models.IntegerField(),
+        ),
+        migrations.AddField(
+            model_name='file',
+            name='spriteNaming',
+            field=models.IntegerField(default=0),
             preserve_default=True,
         ),
-        migrations.AlterField(
+        migrations.RemoveField(
             model_name='file',
             name='synchronization',
-            field=models.IntegerField(),
+        ),
+        migrations.AddField(
+            model_name='file',
+            name='synchronization',
+            field=models.IntegerField(default=0),
             preserve_default=True,
         ),
-        migrations.AlterField(
+        migrations.RemoveField(
             model_name='file',
             name='userInteractivity',
-            field=models.IntegerField(),
+        ),
+        migrations.AddField(
+            model_name='file',
+            name='userInteractivity',
+            field=models.IntegerField(default=0),
             preserve_default=True,
         ),
     ]

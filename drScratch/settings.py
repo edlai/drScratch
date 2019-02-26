@@ -92,12 +92,12 @@ WSGI_APPLICATION = 'drScratch.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'drscratch',
-    'USER': 'root',
-    'PASSWORD':'drscratchpass',
+    'USER': 'postgres',
+    'PASSWORD':'drScratch01**',
     'HOST': 'localhost',
-    'PORT': '3306',
+    'PORT': '5432',
     }
 }
 

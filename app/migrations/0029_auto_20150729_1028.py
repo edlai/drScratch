@@ -11,10 +11,14 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.AlterField(
+        migrations.RemoveField(
             model_name='file',
             name='time',
-            field=models.DateField(),
-            preserve_default=True,
         ),
+        migrations.AddField(
+            model_name='file',
+            name='time',
+            field=models.DateTimeField(),
+            preserve_default=True,
+        ), 
     ]

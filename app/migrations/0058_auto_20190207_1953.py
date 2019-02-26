@@ -41,10 +41,15 @@ class Migration(migrations.Migration):
             name='manualValidation',
             field=models.BooleanField(default=False),
         ),
-        migrations.AlterField(
+        migrations.RemoveField(
+            model_name='game',
+            name='completed',
+        ),
+        migrations.AddField(
             model_name='game',
             name='completed',
             field=models.IntegerField(default=0),
+            preserve_default=False,
         ),
         migrations.RemoveField(
             model_name='team',

@@ -12,10 +12,14 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.AlterField(
+        migrations.RemoveField(
+            model_name='csvs',
+            name='date',
+        ),
+        migrations.AddField(
             model_name='csvs',
             name='date',
             field=models.DateTimeField(default=datetime.datetime.now),
             preserve_default=True,
-        ),
+        ),    
     ]
