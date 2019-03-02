@@ -93,10 +93,10 @@ WSGI_APPLICATION = 'drScratch.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'drscratch',
-    'USER': 'postgres',
+        'NAME': 'torneosdrscratch',
+    'USER': 'drscratchdbuser@torneosdrscratch-postgresqldbserver',
     'PASSWORD':'drScratch01**',
-    'HOST': 'localhost',
+    'HOST': 'torneosdrscratch-postgresqldbserver.postgres.database.azure.com',
     'PORT': '5432',
     }
 }
@@ -121,10 +121,10 @@ LANGUAGES = (
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = False
-EMAIL_HOST = 'localhost'
-EMAIL_PORT = 2525
-EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = ''
+EMAIL_HOST = 'in-v3.mailjet.com'
+EMAIL_PORT = 25
+EMAIL_HOST_USER = '627501dbd510706592f37427a8cba2df'
+EMAIL_HOST_PASSWORD = 'f33dbea8205db0fd5dbee844ef9fdf8c'
 
 
 LOCALE_PATHS = (
@@ -138,3 +138,26 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+LOGGING = {
+ 'version': 1,
+ 'disable_existing_loggers': False,
+ 'filters': {
+ 'require_debug_false': {
+ '()': 'django.utils.log.RequireDebugFalse'
+ }
+ },
+ 'handlers': {
+ 'logfile': {
+ 'class': 'logging.handlers.WatchedFileHandler',
+ 'filename': 'myapp.log'
+ }
+ },
+ 'loggers': {
+ 'django': {
+ 'handlers': ['logfile'],
+ 'level': 'DEBUG',
+ 'propagate': False,
+ }
+ }
+ }

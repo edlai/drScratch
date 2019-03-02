@@ -5,7 +5,7 @@
 
 {% trans "You're receiving this email because you have successfully signed up in Dr. Scratch tournaments."%}
 {% trans "Please, go to the following page and choose a new password to access Dr. Scratch tournaments:"%}
-drscratch.programamos.es{% url 'reset_password_tournaments' uidb64=uid token=token %}
+http://torneosdrscratch01.azurewebsites.net{% url 'reset_password_tournaments' uidb64=uid token=token %}
 {% trans "Your username is: " %}{{id}}
 {% block reset_link %}
 {% endblock %}

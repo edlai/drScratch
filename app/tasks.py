@@ -15,7 +15,7 @@ def summary_email(tour_id, email):
         try:
             body = render_to_string("tournaments/creator/email_resumen.html")
             subject = _("Dr. Scratch Tournaments: Manual Validation Summary")
-            sender ="no-reply@drscratch.org"
+            sender ="afdezroig@gmail.com"
             to = [email]
             email = EmailMessage(subject,body,sender,to)
             email.send()

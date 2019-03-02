@@ -62,10 +62,10 @@ from django.db import IntegrityError
 
 #Global variables
 #pMastery = "hairball -p mastery.Mastery "
-pDuplicateScript = "hairball -p duplicate.DuplicateScripts "
-pSpriteNaming = "hairball -p convention.SpriteNaming "
-pDeadCode = "hairball -p blocks.DeadCode "
-pInitialization = "hairball -p initialization.AttributeInitialization "
+pDuplicateScript = "D:\home\Python27\Scripts\hairball -p duplicate.DuplicateScripts "
+pSpriteNaming = "D:\home\Python27\Scripts\hairball -p convention.SpriteNaming "
+pDeadCode = "D:\home\Python27\Scripts\hairball -p blocks.DeadCode "
+pInitialization = "D:\home\Python27\Scripts\hairball -p initialization.AttributeInitialization "
 
 #Tournaments constants
 paginator_creator_challenges=3
@@ -513,7 +513,7 @@ def signUpOrganization(request):
 
                         body = render_to_string("sign/email.html",c)
                         subject = "Welcome to Dr.Scratch for organizations"
-                        sender ="no-reply@drscratch.org"
+                        sender ="afdezroig@gmail.com"
                         to = [email]
                         email = EmailMessage(subject,body,sender,to)
                         #email.attach_file("static/app/images/logo_main.png")
@@ -982,7 +982,7 @@ def changePwd(request):
 
             try:
                 subject = "Dr.Scratch: Did you forget your password?"
-                sender ="no-reply@drscratch.org"
+                sender ="afdezroig@gmail.com"
                 to = [recipient]
                 email = EmailMessage(subject,body,sender,to)
                 #email.attach_file("static/app/images/logo_main.png")
@@ -1090,12 +1090,12 @@ def analyzeProject(request,file_name, fileName):
             list_file = file_name.split(')')
             file_name = list_file[0] + '\)' + list_file[1]"""
         #Request to hairball
-        metricMastery = "hairball -p mastery.Mastery " + file_name
-        metricDuplicateScript = "hairball -p \
+        metricMastery = "D:\home\Python27\Scripts\hairball -p mastery.Mastery " + file_name
+        metricDuplicateScript = "D:\home\Python27\Scripts\hairball -p \
                                 duplicate.DuplicateScripts " + file_name
-        metricSpriteNaming = "hairball -p convention.SpriteNaming " + file_name
-        metricDeadCode = "hairball -p blocks.DeadCode " + file_name
-        metricInitialization = "hairball -p \
+        metricSpriteNaming = "D:\home\Python27\Scripts\hairball -p convention.SpriteNaming " + file_name
+        metricDeadCode = "D:\home\Python27\Scripts\hairball -p blocks.DeadCode " + file_name
+        metricInitialization = "D:\home\Python27\Scripts\hairball -p \
                            initialization.AttributeInitialization " + file_name
 
         #Plug-ins not used yet
@@ -1717,7 +1717,7 @@ def tourChangePwd(request):
 
             try:
                 subject = _("Dr.Scratch: Did you forget your password?")
-                sender ="no-reply@drscratch.org"
+                sender ="afdezroig@gmail.com"
                 to = [recipient]
                 email = EmailMessage(subject,body,sender,to)
                 email.send()
@@ -1802,7 +1802,7 @@ def signUpCreator(request):
 
                         body = render_to_string("tournaments/creator/email.html",c)
                         subject = _("Welcome to Dr.Scratch tournaments")
-                        sender ="no-reply@drscratch.org"
+                        sender ="afdezroig@gmail.com"
                         to = [email]
                         email = EmailMessage(subject,body,sender,to)
                         email.send()
@@ -2466,7 +2466,7 @@ def register_participant (email, creator_username, error_msg, success_msg, show_
             body = render_to_string("tournaments/password/email_new_participant.html",c)
             try:
                 subject = _("Welcome to Dr.Scratch for tournaments")
-                sender ="no-reply@drscratch.org"
+                sender ="afdezroig@gmail.com"
                 to = [email]
                 mail = EmailMessage(subject,body,sender,to)
                 mail.send()
@@ -2664,7 +2664,10 @@ def tournamentsParticipant (request):
             if no_exists is not None:
                 no_exists = bool(no_exists)
             if team:
-                tournamentsPagina = getElementsPaginador (team.tournament_set.all(), pageTour, paginator_participant_touraments)
+                totalTours = []
+                for t in team.tournament_set.all():
+                    totalTours.append(t)
+                tournamentsPagina = getElementsPaginador (totalTours, pageTour, paginator_participant_touraments)
                 dict = {}
                 for tour in tournamentsPagina:
                     """Obtengo los retos y juegos (si los hay) de cada torneo"""
@@ -2750,7 +2753,7 @@ def evaluate(d, idChallenge, idTeam, idTournament):
                     c = {'tournament':tournament.name}
                     body = render_to_string("tournaments/creator/email_valid.html",c)
                     subject = _("Dr. Scratch Tournaments: Manual Validation")
-                    sender ="no-reply@drscratch.org"
+                    sender ="afdezroig@gmail.com"
                     to = [creator.email]
                     email = EmailMessage(subject,body,sender,to)
                     email.send()
@@ -2785,7 +2788,7 @@ def evaluate(d, idChallenge, idTeam, idTournament):
                     c = {'tournament':tournament.name}
                     body = render_to_string("tournaments/creator/email_valid.html",c)
                     subject = _("Dr. Scratch Tournaments: Manual Validation")
-                    sender ="no-reply@drscratch.org"
+                    sender ="afdezroig@gmail.com"
                     to = [creator.email]
                     email = EmailMessage(subject,body,sender,to)
                     email.send()
