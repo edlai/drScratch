@@ -126,6 +126,14 @@ class Stats(models.Model):
     spriteNaming = models.IntegerField(default=int(0))
     initialization = models.IntegerField(default=int(0))
     
+class Coder(User):
+    birthmonth = models.CharField(max_length=100)
+    birthyear = models.CharField(max_length=100)
+    gender = models.CharField(max_length=100)
+    gender_other = models.CharField(max_length=100)
+    country = models.CharField(max_length=100)
+    img = models.ImageField(upload_to="img/", default="app/images/drScratch.png")
+    
 class Creator(User):
     hashkey = models.TextField()
 

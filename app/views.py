@@ -20,7 +20,7 @@ from django.utils.encoding import force_bytes
 from django.db.models import Avg
 from django.utils.http import urlsafe_base64_encode,urlsafe_base64_decode
 from app.models import Project, Dashboard, Attribute, Game,\
-    ChallengesOfTournament, CreatorHash
+    ChallengesOfTournament, CreatorHash, Coder
 from app.models import Dead, Sprite, Mastery, Duplicate, File, CSVs
 from app.models import Creator, Participant, Tournament, Team
 from background_task.models import Task
@@ -59,6 +59,12 @@ from django.conf import settings
 from django.utils.module_loading import import_string
 from django.core.exceptions import ImproperlyConfigured
 from django.db import IntegrityError
+
+import analyzer
+import spriteNaming
+import backdropNaming
+import duplicateScripts
+import deadCode
 
 #Global variables
 #pMastery = "hairball -p mastery.Mastery "
@@ -114,6 +120,445 @@ def error500(request):
                                   context_instance = RC(request))
     return response
 
+def proc_mastery(request,lines, filename):
+    """Returns the information of Mastery"""
+
+
+    dic = {}
+    lLines = lines.split('\n')
+    d = {}
+    d = ast.literal_eval(lLines[1])
+    lLines = lLines[2].split(':')[1]
+    points = int(lLines.split('/')[0])
+    maxi = int(lLines.split('/')[1])
+
+    #Save in DB
+    filename.score = points
+    filename.abstraction = d["Abstraction"]
+    filename.parallelization = d["Parallelization"]
+    filename.logic = d["Logic"]
+    filename.synchronization = d["Synchronization"]
+    filename.flowControl = d["FlowControl"]
+    filename.userInteractivity = d["UserInteractivity"]
+    filename.dataRepresentation = d["DataRepresentation"]
+    filename.save()
+
+    #Translation
+    d_translated = translate(request,d, filename)
+
+    dic["mastery"] = d_translated
+    dic["mastery"]["points"] = points
+    dic["mastery"]["maxi"] = maxi
+
+    return dic
+
+
+def proc_duplicate_script(lines, filename):
+
+
+    dic = {}
+    number = 0
+    lLines = lines.split('\n')
+    #if len(lLines) > 2:
+    number = lLines[0][0]
+    dic["duplicateScript"] = dic
+    dic["duplicateScript"]["number"] = number
+
+    #Save in DB
+    filename.duplicateScript = number
+    filename.save()
+
+    return dic
+
+
+def proc_sprite_naming(lines, filename):
+
+    dic = {}
+    lLines = lines.split('\n')
+    number = lLines[0].split(' ')[0]
+    lObjects = lLines[1:]
+    lfinal = lObjects[:-1]
+    dic['spriteNaming'] = dic
+    dic['spriteNaming']['number'] = str(number)
+    dic['spriteNaming']['sprite'] = lfinal
+
+    #Save in DB
+    filename.spriteNaming = str(number)
+    filename.save()
+
+    return dic
+
+
+def proc_backdrop_naming(lines, filename):
+
+    dic = {}
+    lLines = lines.split('\n')
+    number = lLines[0].split(' ')[0]
+    lObjects = lLines[1:]
+    lfinal = lObjects[:-1]
+    dic['backdropNaming'] = dic
+    dic['backdropNaming']['number'] = str(number)
+    dic['backdropNaming']['backdrop'] = lfinal
+
+    #Save in DB
+    filename.backdropNaming = str(number)
+    filename.save()
+
+    return dic
+
+
+
+def proc_dead_code(lines, filename):
+    
+    dic = {}
+    dead_code = lines.split("\n")[1:]
+    iterator = 0
+    lcharacter = []
+    lblocks = []
+    if dead_code:
+        d = ast.literal_eval(dead_code[0])
+        keys = d.keys()
+        values = d.values()
+        items = d.items()
+
+        for keys, values in items:
+            lcharacter.append(keys)
+            lblocks.append(values) 
+            iterator += 1
+    dic = {}
+    dic["deadCode"] = dic
+    dic["deadCode"]["number"] = iterator
+    number = len(lcharacter)
+    for i in range(number):
+        dic["deadCode"][str(lcharacter[i])] = str(lblocks[i])
+
+    #Save in DB
+    filename.deadCode = iterator
+    filename.save()
+
+    return dic
+
+
+def check_version(filename):
+    """Check the version of the project and return it"""
+
+    extension = filename.split('.')[-1]
+    if extension == 'sb2':
+        version = '2.0'
+    elif extension == 'sb3':
+        version = '3.0'
+    else:
+        version = '1.4'
+
+    return version
+
+def analyze_project(request, file_name, filename):
+
+
+    dictionary = {}
+    
+    if os.path.exists(file_name):
+        
+        list_file = file_name.split('(')
+       
+        #if len(list_file) > 1:
+        #    file_name = list_file[0] + '\(' + list_file[1]
+        #    list_file = file_name.split(')')
+        #    file_name = list_file[0] + '\)' + list_file[1]
+
+
+        resultMastery = analyzer.main(file_name)
+        resultSpriteNaming = spriteNaming.main(file_name)
+        resultBackdropNaming = backdropNaming.main(file_name)
+        resultDuplicateScript = duplicateScripts.main(file_name)
+        resultDeadCode = deadCode.main(file_name)
+
+             
+        #Create a dictionary with necessary information
+        dictionary.update(proc_mastery(request,resultMastery, filename))
+        dictionary.update(proc_sprite_naming(resultSpriteNaming, filename))
+        dictionary.update(proc_backdrop_naming(resultBackdropNaming, filename))
+        dictionary.update(proc_duplicate_script(resultDuplicateScript, filename))
+        dictionary.update(proc_dead_code(resultDeadCode, filename))
+        #dictionary.update(proc_initialization(resultInitialization, filename))
+        #code = {'dupCode':duplicate_script_scratch_block(resultDuplicateScript)}
+        #dictionary.update(code)
+        #code = {'dCode':dead_code_scratch_block(resultDeadCode)}
+        #dictionary.update(code)
+
+
+        return dictionary
+
+    else:
+        return HttpResponseRedirect('/')
+
+def _upload(request):
+    """Upload file from form POST for unregistered users"""
+
+
+    if request.method == 'POST':
+        #Revise the form in main
+        #If user doesn't complete all the fields,it'll show a warning
+        try:
+            file = request.FILES['zipFile']
+        except:
+            d = {'Error': 'MultiValueDict'}
+            return  d
+
+        
+        # Create DB of files
+        now = datetime.now()
+        method = "project"
+        filename = File (filename = file.name.encode('utf-8'),
+                        organization = "",
+                        method = method , time = now,
+                        score = 0, abstraction = 0, parallelization = 0,
+                        logic = 0, synchronization = 0, flowControl = 0,
+                        userInteractivity = 0, dataRepresentation = 0,
+                        spriteNaming = 0 ,initialization = 0,
+                        deadCode = 0, duplicateScript = 0)
+        filename.save()
+
+        dir_zips = os.path.dirname(os.path.dirname(__file__)) + "/uploads/"
+        fileSaved = dir_zips + str(filename.id) + ".sb3"
+
+        # Version of Scratch 1.4Vs2.0Vs3.0
+        version = check_version(filename.filename)
+        if version == "1.4":
+            fileSaved = dir_zips + str(filename.id) + ".sb"
+        elif version == "2.0":
+            fileSaved = dir_zips + str(filename.id) + ".sb2"
+        else:
+            fileSaved = dir_zips + str(filename.id) + ".sb3"
+
+        # Create log
+        pathLog = os.path.dirname(os.path.dirname(__file__)) + "/log/"
+        logFile = open (pathLog + "logFile.txt", "a")
+        logFile.write("FileName: " + str(filename.filename) + "\t\t\t" + \
+            "ID: " + str(filename.id) + "\t\t\t" + \
+            "Method: " + str(filename.method) + \
+            "\t\t\tTime: " + str(filename.time) + "\n")
+
+
+       
+        # Save file in server
+        counter = 0
+        file_name = handler_upload(fileSaved, counter)
+
+        with open(file_name, 'wb+') as destination:
+            for chunk in file.chunks():
+                destination.write(chunk)
+
+
+        # Analyze the scratch project
+        try:
+            d = analyze_project(request, file_name, filename)
+        except:
+            #There ir an error with kutz or hairball
+            #We save the project in folder called error_analyzing
+            filename.method = 'project/error'
+            filename.save()
+            oldPathProject = fileSaved
+            newPathProject = fileSaved.split("/uploads/")[0] + \
+                             "/error_analyzing/" + \
+                             fileSaved.split("/uploads/")[1]
+            shutil.copy(oldPathProject, newPathProject)
+            d = {'Error': 'analyzing'}
+            return d
+        # Show the dashboard
+        # Redirect to dashboard for unregistered user
+        d['Error'] = 'None'
+
+        return d
+    
+    else:
+        return HttpResponseRedirect('/')
+
+def process_string_url(url):
+    """Process String of URL from Form"""
+
+
+    idProject = ''
+    auxString = url.split("/")[-1]
+    if auxString == '':
+        # we need to get the other argument
+        possibleId = url.split("/")[-2]
+        if possibleId == "#editor":
+            idProject = url.split("/")[-3]
+        else:
+            idProject = possibleId
+    else:
+        if auxString == "#editor":
+            idProject = url.split("/")[-2]
+        else:
+            # To get the id project
+            idProject = auxString
+    try:
+        checkInt = int(idProject)
+    except ValueError:
+        idProject = "error"
+
+    return idProject
+
+def new_getSb3(file_name, dir_zips,fileName):
+    if zipfile.is_zipfile(file_name):
+        os.rename(dir_zips + "project.json",dir_zips + str(fileName.id) + ".sb3")
+    else:
+        current = os.getcwd()
+        os.chdir(dir_zips)
+        with ZipFile(str(fileName.id) + ".sb3", 'w') as myzip:
+            myzip.write("project.json")
+        os.chdir(current)
+        try:
+            os.remove(dir_zips + "project.json")
+        except:
+            print "No existe"
+
+    file_name = dir_zips + str(fileName.id) + ".sb3"
+   
+    return file_name
+
+def send_request_getSb3(idProject, username, method):
+    """First request to getSb3"""
+
+    dir_zips = os.path.dirname(os.path.dirname(__file__)) + "/uploads/"
+    try:
+        os.remove(dir_zips + "project.json")
+    except:
+        print "No existe"
+
+    getRequestSb3 = "https://projects.scratch.mit.edu/" + idProject + "/get"
+    fileURL = idProject + ".sb3"
+
+    # Create DB of files
+    now = datetime.now()
+
+    if Organization.objects.filter(username=username):
+        fileName = File (filename = fileURL,
+                         organization = username,
+                         method = method , time = now,
+                         score = 0, abstraction = 0, parallelization = 0,
+                         logic = 0, synchronization = 0, flowControl = 0,
+                         userInteractivity = 0, dataRepresentation = 0,
+                         spriteNaming = 0 ,initialization = 0,
+                         deadCode = 0, duplicateScript = 0)
+    elif Coder.objects.filter(username = username):
+        fileName = File (filename = fileURL,
+                         coder = username,
+                         method = method , time = now,
+                         score = 0, abstraction = 0, parallelization = 0,
+                         logic = 0, synchronization = 0, flowControl = 0,
+                         userInteractivity = 0, dataRepresentation = 0,
+                         spriteNaming = 0 ,initialization = 0,
+                         deadCode = 0, duplicateScript = 0)
+    else:
+        fileName = File (filename = fileURL,
+                         method = method , time = now,
+                         score = 0, abstraction = 0, parallelization = 0,
+                         logic = 0, synchronization = 0, flowControl = 0,
+                         userInteractivity = 0, dataRepresentation = 0,
+                         spriteNaming = 0 ,initialization = 0,
+                         deadCode = 0, duplicateScript = 0)
+    
+    fileName.save()
+    dir_zips = os.path.dirname(os.path.dirname(__file__)) + "/uploads/"
+    fileSaved = dir_zips + "project.json"
+
+    #Write the activity in log
+    pathLog = os.path.dirname(os.path.dirname(__file__)) + "/log/"
+    logFile = open (pathLog + "logFile.txt", "a")
+    logFile.write("FileName: " + str(fileName.filename) + "\t\t\t" + "ID: " + \
+        str(fileName.id) + "\t\t\t" + "Method: " + str(fileName.method) + \
+        "\t\t\t" + "Time: " + str(fileName.time) + "\n")
+
+    
+    # Save file in server
+    counter = 0
+
+    file_name = handler_upload(fileSaved, counter)
+    outputFile = open(file_name, 'wb')
+    try:
+        sb3File = urllib2.urlopen(getRequestSb3)
+        outputFile.write(sb3File.read())
+        outputFile.close()
+    except:
+        outputFile.write("ERROR downloading")
+        outputFile.close()
+    
+
+    #New getSb3
+    file_name = new_getSb3(file_name, dir_zips,fileName)
+    
+
+    return (file_name, fileName)
+
+def generator_dic(request, idProject):
+    """Returns dictionary with analyzes and errors"""
+
+
+    if idProject == "error":
+        d = {'Error': 'id_error'}
+
+        return d
+
+    else:
+        try:
+            if request.user.is_authenticated():
+                username = request.user.username
+            else:
+                username = None
+            method = "url"
+            (pathProject, file) = send_request_getSb3(idProject,
+                                                      username, 
+                                                      method)
+        except:
+            #When your project doesn't exist
+            d = {'Error': 'no_exists'}
+
+            return d
+
+
+        try:
+            d = analyze_project(request, pathProject, file)
+        except:
+            #There is an error with kutz or hairball
+            #We save the project in folder called error_analyzing
+            file.method = 'url/error'
+            file.save()
+            oldPathProject = pathProject
+            newPathProject = pathProject.split("/uploads/")[0] + \
+                             "/error_analyzing/" + \
+                             pathProject.split("/uploads/")[1]
+            shutil.copy(oldPathProject, newPathProject)
+            d = {'Error': 'analyzing'}
+
+            return d
+
+        # Redirect to dashboard for unregistered user
+        d['Error'] = 'None'
+
+        return d
+   
+def _url(request):
+    """Process Request of form URL"""
+
+
+    if request.method == "POST":
+        form = UrlForm(request.POST)
+        if form.is_valid():
+            d = {}
+            url = form.cleaned_data['urlProject']
+            idProject = process_string_url(url)
+            d = generator_dic(request,idProject)
+            return d
+        else:
+            d = {'Error': 'MultiValueDict'}
+
+            return  d
+    else:
+
+        return HttpResponseRedirect('/')
+
 #_______________________ TO UNREGISTERED USER ___________________________#
 
 def selector(request):
@@ -122,7 +567,7 @@ def selector(request):
         id_error = False
         no_exists = False
         if "_upload" in request.POST:
-            d = uploadUnregistered(request)
+            d = _upload(request)
             if d['Error'] == 'analyzing':
                 return render_to_response('error/analyzing.html',
                                           RC(request))
@@ -132,8 +577,8 @@ def selector(request):
                             {'error':error},
                             RC(request))
             else:
-
-                dic = {'url': ""}
+                filename = request.FILES['zipFile'].name.encode('utf-8')
+                dic = {'url': "",'filename':filename}
                 d.update(dic)
                 if d["mastery"]["points"] >= 15:
                     return render_to_response("upload/dashboard-unregistered-master.html", d)
@@ -142,7 +587,7 @@ def selector(request):
                 else:
                     return render_to_response("upload/dashboard-unregistered-basic.html", d)
         elif '_url' in request.POST:
-            d = urlUnregistered(request)
+            d = _url(request)
             if d['Error'] == 'analyzing':
                 return render_to_response('error/analyzing.html',
                                           RC(request))
@@ -164,7 +609,8 @@ def selector(request):
             else:
                 form = UrlForm(request.POST)
                 url = request.POST['urlProject']
-                dic = {'url': url}
+                filename = url
+                dic = {'url': url, 'filename':filename}
                 d.update(dic)
                 if d["mastery"]["points"] >= 15:
                     return render_to_response("upload/dashboard-unregistered-master.html", d)
@@ -2811,7 +3257,7 @@ def playParticipant (request):
         id_error = False
         no_exists = False
         if "_upload" in request.POST:
-            d = uploadUnregistered(request)
+            d = _upload(request)
             if d['Error'] == 'analyzing':
                 return render_to_response('error/analyzing.html',
                                           RC(request))
@@ -2819,7 +3265,8 @@ def playParticipant (request):
                 error = True
                 return HttpResponseRedirect("/participant/tournaments?team="+idTeam+"&pageTour="+pageTour+"&pageTeam="+pageTeam+"&error="+str(error))
             else:
-                dic = {'url': ""}
+                filename = request.FILES['zipFile'].name.encode('utf-8')
+                dic = {'url': "",'filename':filename}
                 d.update(dic)
                 game = evaluate(d, idChallenge, idTeam, idTournament)
                 if (game is None):
@@ -2833,7 +3280,7 @@ def playParticipant (request):
                     d['pageTeam'] = pageTeam
                     return render_to_response("tournaments/participant/results.html", d)
         elif '_url' in request.POST:
-            d = urlUnregistered(request)
+            d = _url(request)
             if d['Error'] == 'analyzing':
                 return render_to_response('error/analyzing.html',
                                           RC(request))
@@ -2847,8 +3294,10 @@ def playParticipant (request):
                 no_exists = True
                 return HttpResponseRedirect("/participant/tournaments?team="+idTeam+"&pageTour="+pageTour+"&pageTeam="+pageTeam+"&no_exists="+str(no_exists))
             else:
+                form = UrlForm(request.POST)
                 url = request.POST['urlProject']
-                dic = {'url': url}
+                filename = url
+                dic = {'url': url, 'filename':filename}
                 d.update(dic)
                 game = evaluate(d, idChallenge, idTeam, idTournament)
                 if (game is None):
