@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-13 15:04+0100\n"
+"POT-Creation-Date: 2019-03-13 12:10+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,21 +19,25 @@ msgstr ""
 
 #: .\app\forms.py:58
 #: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:298
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:268
 msgid "Never"
 msgstr ""
 
 #: .\app\forms.py:59
 #: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:300
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:270
 msgid "Immediately"
 msgstr ""
 
 #: .\app\forms.py:60
 #: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:302
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:272
 msgid "Once a day"
 msgstr ""
 
 #: .\app\forms.py:61
 #: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:304
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:274
 msgid "Once a week"
 msgstr ""
 
@@ -81,161 +85,154 @@ msgstr ""
 msgid "Dr. Scratch Tournaments: Manual Validation Summary"
 msgstr ""
 
-#: .\app\views.py:1688
+#: .\app\views.py:2134
 msgid "Password changed successfully."
 msgstr ""
 
-#: .\app\views.py:1719
+#: .\app\views.py:2165
 msgid "Dr.Scratch: Did you forget your password?"
 msgstr ""
 
-#: .\app\views.py:1748 .\app\views.py:1852
+#: .\app\views.py:2194 .\app\views.py:2298
 msgid "Logged user is not a creator or a participant."
 msgstr ""
 
-#: .\app\views.py:1804
+#: .\app\views.py:2250
 #, fuzzy
 #| msgid "Analyze your Scratch projects"
 msgid "Welcome to Dr.Scratch tournaments"
 msgstr "Analiza tus proyectos de Scratch"
 
-#: .\app\views.py:1860 .\templates\password\user_doesntexist.html:12
+#: .\app\views.py:2306 .\templates\password\user_doesntexist.html:12
 #: .\templates\tournaments\password\user_doesntexist.html:12
 msgid "User doesn't exist or the password is incorrect."
 msgstr ""
 
-#: .\app\views.py:1882 .\app\views.py:1897 .\app\views.py:1919
-#: .\app\views.py:1975 .\app\views.py:2004 .\app\views.py:2029
-#: .\app\views.py:2038 .\app\views.py:2074 .\app\views.py:2115
-#: .\app\views.py:2139 .\app\views.py:2151 .\app\views.py:2186
-#: .\app\views.py:2206 .\app\views.py:2286 .\app\views.py:2332
-#: .\app\views.py:2381 .\app\views.py:2392 .\app\views.py:2410
-#: .\app\views.py:2487 .\app\views.py:2560 .\app\views.py:2587
-#: .\app\views.py:2612 .\app\views.py:2635 .\app\views.py:2651
+#: .\app\views.py:2328 .\app\views.py:2343 .\app\views.py:2365
+#: .\app\views.py:2421 .\app\views.py:2450 .\app\views.py:2475
+#: .\app\views.py:2484 .\app\views.py:2520 .\app\views.py:2561
+#: .\app\views.py:2585 .\app\views.py:2597 .\app\views.py:2632
+#: .\app\views.py:2652 .\app\views.py:2732 .\app\views.py:2778
+#: .\app\views.py:2827 .\app\views.py:2838 .\app\views.py:2856
+#: .\app\views.py:2934 .\app\views.py:3007 .\app\views.py:3034
+#: .\app\views.py:3059 .\app\views.py:3082 .\app\views.py:3098
 msgid "Logged user cannot be found."
 msgstr ""
 
-#: .\app\views.py:1885 .\app\views.py:1907 .\app\views.py:1945
-#: .\app\views.py:2048 .\app\views.py:2175 .\app\views.py:2196
-#: .\app\views.py:2320 .\app\views.py:2400 .\app\views.py:2576
-#: .\app\views.py:2605 .\app\views.py:2627
+#: .\app\views.py:2331 .\app\views.py:2353 .\app\views.py:2391
+#: .\app\views.py:2494 .\app\views.py:2621 .\app\views.py:2642
+#: .\app\views.py:2766 .\app\views.py:2846 .\app\views.py:3023
+#: .\app\views.py:3052 .\app\views.py:3074
 msgid "Session expired. Please log in again."
 msgstr ""
 
-#: .\app\views.py:1934
+#: .\app\views.py:2380
 msgid "Challenge added."
 msgstr ""
 
-#: .\app\views.py:1957
+#: .\app\views.py:2403
 msgid ""
 "The challenge cannot be deleted because is asociated to one or more "
 "tournaments."
 msgstr ""
 
-#: .\app\views.py:1960
+#: .\app\views.py:2406
 msgid "Challenge deleted."
 msgstr ""
 
-#: .\app\views.py:1964 .\app\views.py:1995 .\app\views.py:2025
+#: .\app\views.py:2410 .\app\views.py:2441 .\app\views.py:2471
 msgid "The selected challenge cannot be found."
 msgstr ""
 
 #. Translators: Challenge edited.
-#: .\app\views.py:2021
+#: .\app\views.py:2467
 msgid "Challenge edited."
 msgstr ""
 
-#: .\app\views.py:2060
+#: .\app\views.py:2506
 msgid ""
 "The team cannot be deleted because is asociated to one or more tournaments."
 msgstr ""
 
-#: .\app\views.py:2063
+#: .\app\views.py:2509
 msgid "Team deleted."
 msgstr ""
 
-#: .\app\views.py:2090 .\app\views.py:2135 .\app\views.py:2377
-#: .\app\views.py:2692 .\app\views.py:2696
+#: .\app\views.py:2536 .\app\views.py:2581 .\app\views.py:2823
+#: .\app\views.py:3142 .\app\views.py:3146
 msgid "The selected team cannot be found."
 msgstr ""
 
-#: .\app\views.py:2131
+#: .\app\views.py:2577
 msgid "Team edited."
 msgstr ""
 
-#: .\app\views.py:2164
+#: .\app\views.py:2610
 msgid "Team added."
 msgstr ""
 
-#: .\app\views.py:2237 .\app\views.py:2602
+#: .\app\views.py:2683 .\app\views.py:3049
 msgid "The selected tournament cannot be found."
 msgstr ""
 
-#: .\app\views.py:2273
+#: .\app\views.py:2719
 msgid "Tournament deleted."
 msgstr ""
 
-#: .\app\views.py:2316
+#: .\app\views.py:2762
 msgid "Tournament added."
 msgstr ""
 
-#: .\app\views.py:2373
+#: .\app\views.py:2819
 msgid "Tournament edited."
 msgstr ""
 
-#: .\app\views.py:2419
+#: .\app\views.py:2865
 #: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:291
 #: .\templates\tournaments\creator\progress\tournamentsProgress.html:261
 msgid "The tournament has not teams."
 msgstr ""
 
-#: .\app\views.py:2468
-msgid "Welcome to Dr.Scratch for tournaments"
-msgstr ""
-
-#: .\app\views.py:2489
+#: .\app\views.py:2936
 msgid ""
 "The following emails are already included in Dr. Scratch (they where not "
 "registered): "
 msgstr ""
 
-#: .\app\views.py:2491
+#: .\app\views.py:2938
 msgid "The following emails were successfully registered in Dr. Scratch: "
 msgstr ""
 
-#: .\app\views.py:2493
-msgid "The following emails have wrong format (they where not registered): "
-msgstr ""
-
-#: .\app\views.py:2499
+#: .\app\views.py:2946
 msgid "You have to include a CSV file."
 msgstr ""
 
-#: .\app\views.py:2516
+#: .\app\views.py:2963
 msgid "The file added is not a CSV file."
 msgstr ""
 
-#: .\app\views.py:2521
+#: .\app\views.py:2968
 msgid "You have to include a TXT file."
 msgstr ""
 
-#: .\app\views.py:2538
+#: .\app\views.py:2985
 msgid "The file added is not a TXT file."
 msgstr ""
 
-#: .\app\views.py:2621
+#: .\app\views.py:3068
 msgid "Game validated successfully."
 msgstr ""
 
-#: .\app\views.py:2624
+#: .\app\views.py:3071
 msgid "The selected game cannot be found."
 msgstr ""
 
-#: .\app\views.py:2752 .\templates\tournaments\creator\email_valid.html:3
+#: .\app\views.py:3202 .\app\views.py:3237
+#: .\templates\tournaments\creator\email_valid.html:3
 msgid "Dr. Scratch Tournaments: Manual Validation"
 msgstr ""
 
-#: .\app\views.py:2806 .\app\views.py:2835 .\templates\error\analyzing.html:36
+#: .\app\views.py:3274 .\app\views.py:3305 .\templates\error\analyzing.html:36
 msgid "There was an error analyzing your project"
 msgstr ""
 
@@ -287,9 +284,9 @@ msgstr ""
 #: .\templates\tournaments\creator\admin\tournaments\newEditTournament.html:426
 #: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:387
 #: .\templates\tournaments\creator\main_creator.html:246
-#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:338
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:341
 #: .\templates\tournaments\creator\progress\teamsProgress.html:610
-#: .\templates\tournaments\creator\progress\tournamentsProgress.html:336
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:354
 #: .\templates\tournaments\creator\validation\validate.html:349
 #: .\templates\tournaments\creator\validation\validation.html:268
 #: .\templates\tournaments\main_tournaments.html:325
@@ -2311,7 +2308,7 @@ msgid " with the urls of the Scratch projects you want to analyze:"
 msgstr ""
 
 #: .\templates\main\main_organization.html:182
-#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:196
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:199
 #: .\templates\upload\dashboard-organization.html:154
 msgid ""
 "<input  name='csvFile' type='file' class='filestyle' data-buttonText='Choose "
@@ -2326,7 +2323,7 @@ msgid "Analyze my projects"
 msgstr "Analiza tus proyectos de Scratch"
 
 #: .\templates\main\main_organization.html:273
-#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:299
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:302
 msgid "How is the file .csv?"
 msgstr ""
 
@@ -2815,6 +2812,7 @@ msgstr ""
 #: .\templates\tournaments\creator\admin\teams\teamsList.html:172
 #: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:180
 #: .\templates\tournaments\creator\newParticipant\main_new_participants.html:168
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:180
 #: .\templates\tournaments\creator\progress\teamsProgress.html:176
 #: .\templates\tournaments\creator\progress\tournamentsProgress.html:174
 #: .\templates\tournaments\creator\validation\validate.html:176
@@ -3193,10 +3191,13 @@ msgstr ""
 
 #: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:296
 #: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:307
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:266
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:277
 msgid "Manual Validation:"
 msgstr ""
 
 #: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:296
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:266
 msgid "Yes"
 msgstr ""
 
@@ -3204,15 +3205,20 @@ msgstr ""
 #: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:300
 #: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:302
 #: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:304
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:268
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:270
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:272
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:274
 msgid "Receive Emails:"
 msgstr ""
 
 #: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:307
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:277
 msgid "No"
 msgstr ""
 
 #: .\templates\tournaments\creator\admin\tournaments\tournamentsList.html:342
-#: .\templates\tournaments\creator\progress\tournamentsProgress.html:297
+#: .\templates\tournaments\creator\progress\tournamentsProgress.html:315
 msgid "didn´t include any tournament yet"
 msgstr ""
 
@@ -3304,61 +3310,68 @@ msgstr ""
 msgid "Register new participants in Dr. Scratch Tournaments"
 msgstr ""
 
-#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:181
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:180
+msgid ""
+"The username's password will be the username or email introduced. The "
+"username and the password will be the same."
+msgstr ""
+
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:184
 msgid "You have 3 options:"
 msgstr ""
 
-#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:190
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:193
 msgid "1. You can include up to 20 participants at the same time with a"
 msgstr ""
 
-#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:190
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:193
 msgid "CSV file"
 msgstr ""
 
-#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:199
-#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:220
-#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:250
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:202
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:223
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:253
 msgid "Register"
 msgstr ""
 
-#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:210
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:213
 msgid "2. You can include up to 20 participants at the same time with a"
 msgstr ""
 
-#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:210
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:213
 msgid "TXT file"
 msgstr ""
 
-#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:217
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:220
 msgid ""
 "<input  name='txtFile' type='file' class='filestyle' data-buttonText='Choose "
 "File .txt'>"
 msgstr ""
 
-#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:229
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:232
 msgid ""
 "3. You can include up to 20 participants filling the form below. Press + to "
 "include multiple participants."
 msgstr ""
 
-#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:234
-msgid "Email"
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:237
+msgid "Username / Email"
 msgstr ""
 
-#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:301
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:304
 msgid ""
-"You have to write only the email of the student in the first column. Easy, "
-"isn't it?"
+"You have to write only the username or email of the student in the first "
+"column. Easy, isn't it?"
 msgstr ""
 
-#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:322
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:325
 msgid "How is the file .txt?"
 msgstr ""
 
-#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:324
+#: .\templates\tournaments\creator\newParticipant\main_new_participants.html:327
 msgid ""
-"You have to write only the email of the student in each line. Easy, isn't it?"
+"You have to write only the username or email of the student in each line. "
+"Easy, isn't it?"
 msgstr ""
 
 #: .\templates\tournaments\creator\progress\teamsProgress.html:187

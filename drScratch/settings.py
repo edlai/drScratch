@@ -94,9 +94,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'torneosdrscratch',
-    'USER': 'drscratchdbuser@torneosdrscratch-postgresqldbserver',
+    'USER': 'drscratchdbuser@torneosdrscratch01',
     'PASSWORD':'drScratch01**',
-    'HOST': 'torneosdrscratch-postgresqldbserver.postgres.database.azure.com',
+    'HOST': 'torneosdrscratch01.postgres.database.azure.com',
     'PORT': '5432',
     }
 }

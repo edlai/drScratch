@@ -2151,6 +2151,16 @@ def tourChangePwd(request):
         recipient = request.POST['email']
         try:
             user=User.objects.get(email=recipient)
+            if re.match("[^@]+@[^\.]+\..+", user.email) != None:
+                recipient = user.email
+            else:
+                try:
+                    participant = Participant.objects.get(email=recipient)
+                    creator = Creator.objects.get(username=participant.creator_username)
+                    recipient = creator.email
+                except Participant.DoesNotExist or Creator.DoesNotExist:
+                    return render_to_response("tournaments/password/user_doesntexist.html",
+                                           context_instance=RC(request))
             uid = urlsafe_base64_encode(force_bytes(user.pk))
             token=default_token_generator.make_token(user)
             c = {
@@ -2899,9 +2909,10 @@ def register_participant (email, creator_username, error_msg, success_msg, show_
             error_msg = error_msg + email + "; "
             show_error_msg = True
         except User.DoesNotExist:
-            password = get_random_string(length=32)
+            """password = get_random_string(length=32)"""
+            password = email
             user = Participant.objects.create_user(username = email, email=email, password=password, creator_username=creator_username)
-            uid = urlsafe_base64_encode(force_bytes(user.pk))
+            """uid = urlsafe_base64_encode(force_bytes(user.pk))
             token=default_token_generator.make_token(user)
             c = {
                     'email':email,
@@ -2917,7 +2928,7 @@ def register_participant (email, creator_username, error_msg, success_msg, show_
                 mail = EmailMessage(subject,body,sender,to)
                 mail.send()
             except:
-                """"""
+                """
             success_msg = success_msg + email + "; "
             show_success_msg = True
     return error_msg, success_msg, show_error_msg, show_success_msg
@@ -2936,8 +2947,8 @@ def creatorNewParticipants (request):
         show_error_msg = False
         success_msg = _('The following emails were successfully registered in Dr. Scratch: ')
         show_success_msg = False
-        format_msg = _('The following emails have wrong format (they where not registered): ')
-        show_format_msg = False
+        """format_msg = _('The following emails have wrong format (they where not registered): ')"""
+        """show_format_msg = False"""
         if "uploadCSV" in request.POST:
             try:
                 file = request.FILES['csvFile']
@@ -2952,11 +2963,11 @@ def creatorNewParticipants (request):
                     email = file.readline().rstrip()
                     # check if line is not empty
                     if email:
-                        if re.match("[^@]+@[^\.]+\..+", email) != None:
-                            error_msg, success_msg, show_error_msg, show_success_msg = register_participant (email, creator.username, error_msg, success_msg, show_error_msg, show_success_msg)
-                        else:
+                        """if re.match("[^@]+@[^\.]+\..+", email) != None:"""
+                        error_msg, success_msg, show_error_msg, show_success_msg = register_participant (email, creator.username, error_msg, success_msg, show_error_msg, show_success_msg)
+                        """else:
                             format_msg = format_msg + email + "; "
-                            show_format_msg = True 
+                            show_format_msg = True """
                 file.close()
             else:
                 messages.add_message(request, messages.ERROR, _('The file added is not a CSV file.'))
@@ -2974,11 +2985,11 @@ def creatorNewParticipants (request):
                     email = file.readline().rstrip()
                     # check if line is not empty
                     if email:
-                        if re.match("[^@]+@[^\.]+\..+", email) != None:
-                            error_msg, success_msg, show_error_msg, show_success_msg = register_participant (email, creator.username, error_msg, success_msg, show_error_msg, show_success_msg)
-                        else:
+                        """if re.match("[^@]+@[^\.]+\..+", email) != None:"""
+                        error_msg, success_msg, show_error_msg, show_success_msg = register_participant (email, creator.username, error_msg, success_msg, show_error_msg, show_success_msg)
+                        """else:
                             format_msg = format_msg + email + "; "
-                            show_format_msg = True 
+                            show_format_msg = True """
                 file.close()
             else:
                 messages.add_message(request, messages.ERROR, _('The file added is not a TXT file.'))
@@ -2992,8 +3003,8 @@ def creatorNewParticipants (request):
             messages.add_message(request, messages.ERROR, error_msg)
         if show_success_msg:
             messages.add_message(request, messages.SUCCESS, success_msg)
-        if show_format_msg:
-            messages.add_message(request, messages.ERROR, format_msg)
+        """if show_format_msg:
+            messages.add_message(request, messages.ERROR, format_msg)"""
         return render_to_response('tournaments/creator/newParticipant/main_new_participants.html', 
             {'username':request.user.username, 'maxNewPart': range(int (max_new_participants))}, RC(request))
         

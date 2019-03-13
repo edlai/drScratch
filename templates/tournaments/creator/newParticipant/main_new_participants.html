@@ -176,6 +176,9 @@
 							{% endfor %}
 			          	{% endif %}
 			          	<h2 class="intro white-text title-space-bottom">{% trans "Register new participants in Dr. Scratch Tournaments" %}</h2>
+			          	<div class="alert alert-info" role="alert">
+						  <strong>{% trans "Info:" %}</strong> {% trans "The username's password will be the username or email introduced. The username and the password will be the same." %}
+						</div>
 			          	<div class="col-md-3"></div>
 		          		<div class="col-md-6">
 		          			<h5 class="transparent-text form-heading"><strong>{% trans "You have 3 options:" %}</strong></h5>
@@ -231,7 +234,7 @@
 							  <thead class="white-text">
 							    <tr>
 							      <th scope="col"></th>
-							      <th scope="col" class="title-table-text">{% trans "Email" %}</th>
+							      <th scope="col" class="title-table-text">{% trans "Username / Email" %}</th>
 							      <th scope="col"></th>
 							    </tr>
 							  </thead>
@@ -241,7 +244,7 @@
 							  {% for i in maxNewPart %}
 						    	<tr class="white-text row-line" style="display: none;">
 							      <td scope="row" class="title-table-text">#{{forloop.counter}}</td>
-							      <td class="table-input-cell"><input type="email" class="table-input dark-text form-control placeholder" name="email_{{i}}" id="email_{{i}}"></td>
+							      <td class="table-input-cell"><input type="text" class="table-input dark-text form-control placeholder" name="email_{{i}}" id="email_{{i}}"></td>
 							      <td class="table-input-cell title-table-text"><a id="{{i}}" class="plus-link glyphicon glyphicon-plus"></a></td>
 							    </tr>
 							  {% endfor %}
@@ -298,7 +301,7 @@
 	            <div class="small-text-medium uppercase colored-text">
 	                {% trans "How is the file .csv?" %}
 	            </div>
-	            <h4 class="modal-title"><strong>{% trans "You have to write only the email of the student in the first column. Easy, isn't it?" %}</strong></h4>
+	            <h4 class="modal-title"><strong>{% trans "You have to write only the username or email of the student in the first column. Easy, isn't it?" %}</strong></h4>
 	            <div class="colored-line"></div> 
 	          </div>
 	          <div class="modal-body">
@@ -321,7 +324,7 @@
 	            <div class="small-text-medium uppercase colored-text">
 	                {% trans "How is the file .txt?" %}
 	            </div>
-	            <h4 class="modal-title"><strong>{% trans "You have to write only the email of the student in each line. Easy, isn't it?" %}</strong></h4>
+	            <h4 class="modal-title"><strong>{% trans "You have to write only the username or email of the student in each line. Easy, isn't it?" %}</strong></h4>
 	            <div class="colored-line"></div> 
 	          </div>
 	          <div class="modal-body">
