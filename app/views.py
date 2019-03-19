@@ -68,10 +68,10 @@ import deadCode
 
 #Global variables
 #pMastery = "hairball -p mastery.Mastery "
-pDuplicateScript = "D:\home\Python27\Scripts\hairball -p duplicate.DuplicateScripts "
-pSpriteNaming = "D:\home\Python27\Scripts\hairball -p convention.SpriteNaming "
-pDeadCode = "D:\home\Python27\Scripts\hairball -p blocks.DeadCode "
-pInitialization = "D:\home\Python27\Scripts\hairball -p initialization.AttributeInitialization "
+pDuplicateScript = "hairball -p duplicate.DuplicateScripts "
+pSpriteNaming = "hairball -p convention.SpriteNaming "
+pDeadCode = "hairball -p blocks.DeadCode "
+pInitialization = "hairball -p initialization.AttributeInitialization "
 
 #Tournaments constants
 paginator_creator_challenges=3
@@ -1536,12 +1536,12 @@ def analyzeProject(request,file_name, fileName):
             list_file = file_name.split(')')
             file_name = list_file[0] + '\)' + list_file[1]"""
         #Request to hairball
-        metricMastery = "D:\home\Python27\Scripts\hairball -p mastery.Mastery " + file_name
-        metricDuplicateScript = "D:\home\Python27\Scripts\hairball -p \
+        metricMastery = "hairball -p mastery.Mastery " + file_name
+        metricDuplicateScript = "hairball -p \
                                 duplicate.DuplicateScripts " + file_name
-        metricSpriteNaming = "D:\home\Python27\Scripts\hairball -p convention.SpriteNaming " + file_name
-        metricDeadCode = "D:\home\Python27\Scripts\hairball -p blocks.DeadCode " + file_name
-        metricInitialization = "D:\home\Python27\Scripts\hairball -p \
+        metricSpriteNaming = "hairball -p convention.SpriteNaming " + file_name
+        metricDeadCode = "hairball -p blocks.DeadCode " + file_name
+        metricInitialization = "hairball -p \
                            initialization.AttributeInitialization " + file_name
 
         #Plug-ins not used yet
