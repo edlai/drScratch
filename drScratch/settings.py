@@ -45,7 +45,7 @@ TEMPLATE_LOADERS = (
 
 TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'templates'),)
 
-#ALLOWED_HOSTS = [...]
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 
 # Application definition
@@ -92,11 +92,16 @@ WSGI_APPLICATION = 'drScratch.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'torneosdrscratch',
+        #'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        #'NAME': 'torneosdrscratch',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     'USER': 'drscratchdbuser@torneosdrscratch01',
     'PASSWORD':'drScratch01**',
-    'HOST': 'torneosdrscratch01.postgres.database.azure.com',
+    #
+    # 
+    # 'HOST': 'torneosdrscratch01.postgres.database.azure.com',
+    'HOST': 'localhost',
     'PORT': '5432',
     }
 }
@@ -117,6 +122,7 @@ _ = lambda s: s
 LANGUAGES = (
     ('es', _('Spanish')),
     ('en', _('English')),
+    ('zh-TW', _('Traditional Chinese')),
 )
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
