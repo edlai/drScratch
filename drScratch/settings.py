@@ -45,7 +45,8 @@ TEMPLATE_LOADERS = (
 
 TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'templates'),)
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -115,14 +116,14 @@ MEDIA_ROOT = 'static'
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
-LANGUAGE_CODE = 'es'
+LANGUAGE_CODE = 'zh-hant'
 
 _ = lambda s: s
 
 LANGUAGES = (
     ('es', _('Spanish')),
     ('en', _('English')),
-    ('zh-TW', _('Traditional Chinese')),
+    ('zh-hant', _('Traditional Chinese')),
 )
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -132,12 +133,11 @@ EMAIL_PORT = 25
 EMAIL_HOST_USER = '627501dbd510706592f37427a8cba2df'
 EMAIL_HOST_PASSWORD = 'f33dbea8205db0fd5dbee844ef9fdf8c'
 
-
 LOCALE_PATHS = (
-    os.path.join(BASE_DIR, 'locale'),
+    os.path.join(BASE_DIR, "locale"),
 )
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Taipei'
 
 USE_I18N = True
 

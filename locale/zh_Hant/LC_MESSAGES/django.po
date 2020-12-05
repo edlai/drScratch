@@ -1,0 +1,3811 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-05 22:00+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: app/forms.py:58
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:298
+#: templates/tournaments/creator/progress/tournamentsProgress.html:268
+msgid "Never"
+msgstr "從未"
+
+#: app/forms.py:59
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:300
+#: templates/tournaments/creator/progress/tournamentsProgress.html:270
+msgid "Immediately"
+msgstr "立即"
+
+#: app/forms.py:60
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:302
+#: templates/tournaments/creator/progress/tournamentsProgress.html:272
+msgid "Once a day"
+msgstr "一天一次"
+
+#: app/forms.py:61
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:304
+#: templates/tournaments/creator/progress/tournamentsProgress.html:274
+msgid "Once a week"
+msgstr "一星期一次"
+
+#: app/forms.py:65
+msgid "Tournament Name"
+msgstr "比賽名稱"
+
+#: app/forms.py:66
+msgid "Tournament Description"
+msgstr "比賽說明"
+
+#: app/forms.py:71
+msgid "Team Name"
+msgstr "隊名"
+
+#: app/forms.py:72
+msgid "Team Description"
+msgstr "團隊描述"
+
+#: app/forms.py:86
+msgid "None: 0"
+msgstr "沒有"
+
+#: app/forms.py:87
+msgid "Easy: 1"
+msgstr "容易"
+
+#: app/forms.py:88
+msgid "Medium: 2"
+msgstr "中等"
+
+#: app/forms.py:89
+msgid "Hard: 3"
+msgstr "困難"
+
+#: app/forms.py:93
+msgid "Challenge Name"
+msgstr ""
+
+#: app/forms.py:94
+msgid "Challenge Description"
+msgstr ""
+
+#: app/tasks.py:17 templates/tournaments/creator/email_resumen.html:3
+msgid "Dr. Scratch Tournaments: Manual Validation Summary"
+msgstr ""
+
+#: app/views.py:2134
+msgid "Password changed successfully."
+msgstr ""
+
+#: app/views.py:2175
+msgid "Dr.Scratch: Did you forget your password?"
+msgstr ""
+
+#: app/views.py:2204 app/views.py:2308
+msgid "Logged user is not a creator or a participant."
+msgstr ""
+
+#: app/views.py:2260
+msgid "Welcome to Dr.Scratch tournaments"
+msgstr ""
+
+#: app/views.py:2316 templates/password/user_doesntexist.html:12
+#: templates/tournaments/password/user_doesntexist.html:12
+msgid "User doesn't exist or the password is incorrect."
+msgstr ""
+
+#: app/views.py:2338 app/views.py:2353 app/views.py:2375 app/views.py:2431
+#: app/views.py:2460 app/views.py:2485 app/views.py:2494 app/views.py:2530
+#: app/views.py:2571 app/views.py:2595 app/views.py:2607 app/views.py:2642
+#: app/views.py:2662 app/views.py:2742 app/views.py:2788 app/views.py:2837
+#: app/views.py:2848 app/views.py:2866 app/views.py:2944 app/views.py:3017
+#: app/views.py:3044 app/views.py:3069 app/views.py:3092 app/views.py:3108
+msgid "Logged user cannot be found."
+msgstr ""
+
+#: app/views.py:2341 app/views.py:2363 app/views.py:2401 app/views.py:2504
+#: app/views.py:2631 app/views.py:2652 app/views.py:2776 app/views.py:2856
+#: app/views.py:3033 app/views.py:3062 app/views.py:3084
+msgid "Session expired. Please log in again."
+msgstr ""
+
+#: app/views.py:2390
+msgid "Challenge added."
+msgstr ""
+
+#: app/views.py:2413
+msgid ""
+"The challenge cannot be deleted because is asociated to one or more "
+"tournaments."
+msgstr ""
+
+#: app/views.py:2416
+msgid "Challenge deleted."
+msgstr ""
+
+#: app/views.py:2420 app/views.py:2451 app/views.py:2481
+msgid "The selected challenge cannot be found."
+msgstr ""
+
+#. Translators: Challenge edited.
+#: app/views.py:2477
+msgid "Challenge edited."
+msgstr ""
+
+#: app/views.py:2516
+msgid ""
+"The team cannot be deleted because is asociated to one or more tournaments."
+msgstr ""
+
+#: app/views.py:2519
+msgid "Team deleted."
+msgstr ""
+
+#: app/views.py:2546 app/views.py:2591 app/views.py:2833 app/views.py:3152
+#: app/views.py:3156
+msgid "The selected team cannot be found."
+msgstr ""
+
+#: app/views.py:2587
+msgid "Team edited."
+msgstr ""
+
+#: app/views.py:2620
+msgid "Team added."
+msgstr ""
+
+#: app/views.py:2693 app/views.py:3059
+msgid "The selected tournament cannot be found."
+msgstr ""
+
+#: app/views.py:2729
+msgid "Tournament deleted."
+msgstr ""
+
+#: app/views.py:2772
+msgid "Tournament added."
+msgstr ""
+
+#: app/views.py:2829
+msgid "Tournament edited."
+msgstr ""
+
+#: app/views.py:2875
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:291
+#: templates/tournaments/creator/progress/tournamentsProgress.html:261
+msgid "The tournament has not teams."
+msgstr ""
+
+#: app/views.py:2946
+msgid ""
+"The following emails are already included in Dr. Scratch (they where not "
+"registered): "
+msgstr ""
+
+#: app/views.py:2948
+msgid "The following emails were successfully registered in Dr. Scratch: "
+msgstr ""
+
+#: app/views.py:2956
+msgid "You have to include a CSV file."
+msgstr ""
+
+#: app/views.py:2973
+msgid "The file added is not a CSV file."
+msgstr ""
+
+#: app/views.py:2978
+msgid "You have to include a TXT file."
+msgstr ""
+
+#: app/views.py:2995
+msgid "The file added is not a TXT file."
+msgstr ""
+
+#: app/views.py:3078
+msgid "Game validated successfully."
+msgstr ""
+
+#: app/views.py:3081
+msgid "The selected game cannot be found."
+msgstr ""
+
+#: app/views.py:3212 app/views.py:3247
+#: templates/tournaments/creator/email_valid.html:3
+msgid "Dr. Scratch Tournaments: Manual Validation"
+msgstr ""
+
+#: app/views.py:3284 app/views.py:3315 templates/error/analyzing.html:36
+msgid "There was an error analyzing your project"
+msgstr ""
+
+#: drScratch/settings.py:133
+msgid "Spanish"
+msgstr ""
+
+#: drScratch/settings.py:134
+msgid "English"
+msgstr ""
+
+#: drScratch/settings.py:135
+msgid "Traditional Chinese"
+msgstr ""
+
+#: templates/error/404.html:9 templates/error/500.html:9
+#: templates/error/analyzing.html:9
+msgid "Error"
+msgstr ""
+
+#: templates/error/404.html:36
+msgid "ERROR 404 - Page Not Found"
+msgstr ""
+
+#: templates/error/404.html:39
+msgid "Ops! This page doesn't exist"
+msgstr ""
+
+#: templates/error/404.html:59 templates/error/500.html:59
+#: templates/error/analyzing.html:62 templates/login/login.html:104
+#: templates/login/login.html.py:525 templates/main/collaborators.html:84
+#: templates/main/main.html:86 templates/main/main.html.py:552
+#: templates/sign/createOrganization.html:81 templates/sign/createUser.html:81
+#: templates/sign/organization.html:105
+#: templates/sign/registerOrganization.html:81
+msgid "Get Started"
+msgstr ""
+
+#: templates/error/404.html:67 templates/error/500.html:67
+#: templates/error/analyzing.html:70 templates/learn/base.html:119
+#: templates/login/login.html:536 templates/main/collaborators.html:593
+#: templates/main/main.html:563 templates/main/main_organization.html:246
+#: templates/password/base.html:104 templates/sign/base.html:104
+#: templates/sign/createOrganization.html:256
+#: templates/sign/createUser.html:255 templates/sign/organization.html:288
+#: templates/sign/registerOrganization.html:255
+#: templates/statistics/statistics.html:347
+#: templates/tournaments/creator/admin/admin_creator.html:215
+#: templates/tournaments/creator/admin/challenges/challengesList.html:635
+#: templates/tournaments/creator/admin/challenges/editChallenge.html:264
+#: templates/tournaments/creator/admin/teams/newEditTeam.html:280
+#: templates/tournaments/creator/admin/teams/teamsList.html:328
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:426
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:387
+#: templates/tournaments/creator/main_creator.html:246
+#: templates/tournaments/creator/newParticipant/main_new_participants.html:341
+#: templates/tournaments/creator/progress/teamsProgress.html:610
+#: templates/tournaments/creator/progress/tournamentsProgress.html:354
+#: templates/tournaments/creator/validation/validate.html:349
+#: templates/tournaments/creator/validation/validation.html:268
+#: templates/tournaments/main_tournaments.html:325
+#: templates/tournaments/participant/results.html:488
+#: templates/tournaments/participant/teamsPart.html:274
+#: templates/tournaments/participant/tournamentsPart.html:650
+#: templates/upload/dashboard-organization.html:212
+#: templates/upload/dashboard-unregistered-basic.html:255
+#: templates/upload/dashboard-unregistered-developing.html:292
+#: templates/upload/dashboard-unregistered-master.html:353
+msgid "©2014 Dr. Scratch is powered by "
+msgstr ""
+
+#: templates/error/500.html:36
+msgid "500 - Internal Server Error"
+msgstr ""
+
+#: templates/error/500.html:39 templates/error/analyzing.html:39
+msgid "We apologize for this inconvenience"
+msgstr ""
+
+#: templates/error/analyzing.html:54
+msgid ""
+"Sometimes we have got problems analyzing some projects. We're working on "
+"this."
+msgstr ""
+
+#: templates/learn/Abstraction.html:4 templates/learn/base.html:103
+#: templates/statistics/statistics.html:269
+#: templates/tournaments/creator/admin/challenges/challengesList.html:410
+#: templates/tournaments/creator/admin/challenges/challengesList.html:579
+#: templates/tournaments/creator/admin/challenges/editChallenge.html:214
+#: templates/tournaments/creator/progress/teamsProgress.html:451
+#: templates/tournaments/participant/scores.html:335
+#: templates/tournaments/participant/scores.html:337
+#: templates/tournaments/participant/tournamentsPart.html:451
+msgid "Abstraction"
+msgstr ""
+
+#: templates/learn/Abstraction.html:10
+msgid ""
+"The ability of abstraction and decomposition of problems helps you to "
+"<b>break a problem into smaller parts that are easier to understand, program "
+"and debug.</b>"
+msgstr ""
+
+#: templates/learn/Abstraction.html:17 templates/learn/Data.html:19
+#: templates/learn/Flow.html:17 templates/learn/Logic.html:17
+#: templates/learn/Parallelism.html:17 templates/learn/Synchronization.html:18
+#: templates/learn/User.html:18
+msgid "If you get 0 points..."
+msgstr ""
+
+#: templates/learn/Abstraction.html:19
+msgid ""
+"When you start programming with Scratch, sometimes it may seem that the "
+"simplest solution is to program all the behavior of a character in a single "
+"program. However, <b>ideally is that character behavior is controlled by "
+"different programs and each of these programs deal with a particular issue</"
+"b>. Here's an example:"
+msgstr ""
+
+#: templates/learn/Abstraction.html:20 templates/learn/Abstraction.html:35
+#: templates/learn/Abstraction.html:41 templates/learn/Abstraction.html:61
+#: templates/learn/Abstraction.html:92 templates/learn/Abstraction.html:118
+#: templates/learn/Data.html:85 templates/learn/Data.html.py:104
+#: templates/learn/Data.html:117 templates/learn/Flow.html:21
+#: templates/learn/Flow.html.py:39 templates/learn/Flow.html:49
+#: templates/learn/Flow.html.py:67 templates/learn/Parallelism.html:21
+#: templates/learn/Synchronization.html:21
+#: templates/learn/Synchronization.html:27
+#: templates/learn/Synchronization.html:45 templates/learn/User.html:23
+#: templates/learn/attrInit.html:25
+msgid "when gf clicked"
+msgstr ""
+
+#: templates/learn/Abstraction.html:21 templates/learn/Abstraction.html:36
+#: templates/learn/Abstraction.html:62 templates/learn/Abstraction.html:93
+msgid "clear"
+msgstr ""
+
+#: templates/learn/Abstraction.html:22 templates/learn/Abstraction.html:37
+msgid "go to x:(-100) y:(30)"
+msgstr ""
+
+#: templates/learn/Abstraction.html:23 templates/learn/Abstraction.html:38
+#: templates/learn/Abstraction.html:65 templates/learn/Abstraction.html:71
+#: templates/learn/Abstraction.html:81
+msgid "pen down"
+msgstr ""
+
+#: templates/learn/Abstraction.html:24 templates/learn/Abstraction.html:39
+#: templates/learn/Abstraction.html:72
+msgid "move (200) steps"
+msgstr ""
+
+#: templates/learn/Abstraction.html:25 templates/learn/Abstraction.html:30
+#: templates/learn/Abstraction.html:40 templates/learn/Abstraction.html:46
+#: templates/learn/Abstraction.html:67 templates/learn/Abstraction.html:73
+#: templates/learn/Abstraction.html:83
+msgid "pen up"
+msgstr ""
+
+#: templates/learn/Abstraction.html:26 templates/learn/Abstraction.html:42
+#: templates/learn/Abstraction.html:68 templates/learn/Abstraction.html:96
+#: templates/learn/Synchronization.html:25
+#: templates/learn/duplicatedScripts.html:20
+msgid "wait (1) secs"
+msgstr ""
+
+#: templates/learn/Abstraction.html:27 templates/learn/Abstraction.html:43
+msgid "go to x:(-44) y:(-24)"
+msgstr ""
+
+#: templates/learn/Abstraction.html:28 templates/learn/Abstraction.html:44
+#: templates/learn/Abstraction.html:64 templates/learn/Abstraction.html:70
+#: templates/learn/Abstraction.html:80
+msgid "set pen color to [#FFA500]"
+msgstr ""
+
+#: templates/learn/Abstraction.html:29 templates/learn/Abstraction.html:45
+#: templates/learn/Abstraction.html:66
+msgid "move (100) steps"
+msgstr ""
+
+#: templates/learn/Abstraction.html:33
+msgid ""
+"This project, which paints a picture on the screen, has been programmed in a "
+"single program that draws the two lines that make up the drawing. Although "
+"it is a valid option, a simpler option to program and maintain the program "
+"is divided into two parts, so that we have two different programs, one to "
+"paint the front and another to paint the second:"
+msgstr ""
+
+#: templates/learn/Abstraction.html:49
+msgid ""
+"Thus, if we make any changes eg in one of the lines drawn, it is much easier "
+"to know which part of the program we need to go to carry out the changes."
+msgstr ""
+
+#: templates/learn/Abstraction.html:59 templates/learn/Data.html:80
+#: templates/learn/Flow.html:37 templates/learn/Logic.html:32
+#: templates/learn/Parallelism.html:32 templates/learn/Synchronization.html:43
+#: templates/learn/User.html:36
+msgid "If you get 1 point..."
+msgstr ""
+
+#: templates/learn/Abstraction.html:60
+msgid ""
+"Scratch allows new user-defined blocks that consist of a sequence of "
+"instructions. These abstractions allow you to create simple programs to "
+"read, program and maintain. Here's an example:"
+msgstr ""
+
+#: templates/learn/Abstraction.html:63 templates/learn/Abstraction.html:94
+msgid "go to x:(-200) y:(40)"
+msgstr ""
+
+#: templates/learn/Abstraction.html:69 templates/learn/Abstraction.html:97
+msgid "go to x:(-200) y:(0)"
+msgstr ""
+
+#: templates/learn/Abstraction.html:76
+msgid ""
+"This Scratch project draws two orange lines of different length  on the "
+"screen. Rather than repeat the code 2 times, as shown in the example, you "
+"can define a <i>'DrawOrange'</i> block consisting of blocks that paint an "
+"orange line on the screen and that you can tell what is the length of the "
+"line. For this you go to the category 'More Blocks' and press the Create "
+"button a block:"
+msgstr ""
+
+#: templates/learn/Abstraction.html:79
+msgid "define PaintedOrange(length)"
+msgstr ""
+
+#: templates/learn/Abstraction.html:82
+msgid "move (length) steps"
+msgstr ""
+
+#: templates/learn/Abstraction.html:89
+msgid ""
+"Having defined the block <i>'DrawOrange'</i> it can be used in any program "
+"of the project, as we see below:"
+msgstr ""
+
+#: templates/learn/Abstraction.html:95
+msgid "PaintedOrange(100):: looks stack"
+msgstr ""
+
+#: templates/learn/Abstraction.html:98
+msgid "PaintedOrange(200):: looks stack"
+msgstr ""
+
+#: templates/learn/Abstraction.html:102
+msgid ""
+"In this way, we avoid repeating code, which makes our projects easier to "
+"program and maintain. As can be seen, the first time the block is used "
+"<i>DrawOrange</i> prompted a length of 100 steps, whereas the second time "
+"length is 200 steps."
+msgstr ""
+
+#: templates/learn/Abstraction.html:111 templates/learn/Data.html:99
+#: templates/learn/Flow.html:65 templates/learn/Logic.html:47
+#: templates/learn/Parallelism.html:65 templates/learn/Synchronization.html:67
+#: templates/learn/User.html:66
+msgid "If you get 2 points..."
+msgstr ""
+
+#: templates/learn/Abstraction.html:113
+msgid ""
+"In some Scratch projects we have many identical characters that exactly "
+"perform the same actions. The first idea that comes to mind to do this is to "
+"create a character, schedule all his behavior and once you're ready, make as "
+"many copies as you need. Therefore, if we want 20 Martians, create 20 "
+"identical objects. However, what if I want to change the program? Would have "
+"to go object by object performing this modification."
+msgstr ""
+
+#: templates/learn/Abstraction.html:115
+msgid ""
+"For such situations it is preferable to use <b>clones</b>, a type of "
+"abstraction that helps us to program a single object, and dynamically "
+"<b>create exact copies with the same behavior.</b>"
+msgstr ""
+
+#: templates/learn/Abstraction.html:116
+msgid ""
+"Let's see how it works with an example. Imagine you want to pretend that it "
+"is snowing on a project. We can draw an object that is a snowflake, and once "
+"you start implementing the project, constantly be creating clones appear at "
+"the top of the screen and they will fall to the bottom:"
+msgstr ""
+
+#: templates/learn/Abstraction.html:119 templates/learn/Flow.html:50
+#: templates/learn/Parallelism.html:41 templates/learn/Parallelism.html:46
+#: templates/learn/Synchronization.html:47
+msgid "forever"
+msgstr ""
+
+#: templates/learn/Abstraction.html:120
+msgid "create clone of [myself v]"
+msgstr ""
+
+#: templates/learn/Abstraction.html:121
+msgid "wait (0.2) secs"
+msgstr ""
+
+#: templates/learn/Abstraction.html:122
+msgid "go to x:(pick random(-200) to (200)) y:(200)"
+msgstr ""
+
+#: templates/learn/Abstraction.html:123
+msgid "glide (3) secs to x:(x position) y:(-180)"
+msgstr ""
+
+#: templates/learn/Abstraction.html:124
+msgid "delete this clone"
+msgstr ""
+
+#: templates/learn/Abstraction.html:127
+msgid ""
+"Thus, just by programming a character, we can have infinite clones  which "
+"are created at a particular time of project implementation and are deleted "
+"when they are no longer needed."
+msgstr ""
+
+#: templates/learn/Data.html:5
+#: templates/tournaments/creator/admin/challenges/challengesList.html:374
+#: templates/tournaments/creator/admin/challenges/challengesList.html:575
+#: templates/tournaments/creator/admin/challenges/editChallenge.html:210
+#: templates/tournaments/creator/progress/teamsProgress.html:411
+#: templates/tournaments/participant/scores.html:271
+#: templates/tournaments/participant/scores.html:273
+#: templates/tournaments/participant/tournamentsPart.html:411
+msgid "Data Representation"
+msgstr ""
+
+#: templates/learn/Data.html:11
+msgid ""
+"Every Scratch project needs a set of information about the characters in "
+"order to run properly. For example, <b>we need to know the position of each "
+"character, the direction it is pointing, size, etc.</b> In addition, "
+"programmers can create new information repositories to store other data such "
+"as the level at which we find ourselves, elapsed time, the rating, the "
+"lives, the rewards collected ..."
+msgstr ""
+
+#: templates/learn/Data.html:21
+msgid ""
+"Each character of a Scratch project has a number of features, or attributes, "
+"that every moment of the project have value, and can be modified by "
+"programs. For example, a character has a certain size that can be modified "
+"by block 'resize for 10', making the character appear slightly larger. "
+"Following is the list of attributes that each character and blocks that can "
+"be used to modify:"
+msgstr ""
+
+#: templates/learn/Data.html:25
+msgid "Position:"
+msgstr ""
+
+#: templates/learn/Data.html:29 templates/learn/Flow.html:23
+#: templates/learn/Flow.html.py:42 templates/learn/Flow.html:51
+#: templates/learn/Parallelism.html:42 templates/learn/User.html:40
+msgid "move (10) steps"
+msgstr ""
+
+#: templates/learn/Data.html:30 templates/learn/attrInit.html:26
+msgid "go to x:(0) y:(0)"
+msgstr ""
+
+#: templates/learn/Data.html:31
+msgid "glide (1) secs to x:(0) y:(0)"
+msgstr ""
+
+#: templates/learn/Data.html:32
+msgid "set x to (0)"
+msgstr ""
+
+#: templates/learn/Data.html:33
+msgid "set y to (0)"
+msgstr ""
+
+#: templates/learn/Data.html:34
+msgid "change x by (0)"
+msgstr ""
+
+#: templates/learn/Data.html:35
+msgid "change y by (0)"
+msgstr ""
+
+#: templates/learn/Data.html:38
+msgid "Size:"
+msgstr ""
+
+#: templates/learn/Data.html:42
+msgid "change size by (10)"
+msgstr ""
+
+#: templates/learn/Data.html:43
+#, python-format
+msgid "set size to (120) %%"
+msgstr ""
+
+#: templates/learn/Data.html:47
+msgid "Orientation:"
+msgstr ""
+
+#: templates/learn/Data.html:51
+msgid "point in direction (90 v)"
+msgstr ""
+
+#: templates/learn/Data.html:52
+msgid "point towards [ v]"
+msgstr ""
+
+#: templates/learn/Data.html:53 templates/learn/Flow.html:24
+#: templates/learn/Flow.html.py:43
+msgid "turn cw (15) degrees"
+msgstr ""
+
+#: templates/learn/Data.html:54 templates/learn/Flow.html:26
+#: templates/learn/Flow.html.py:45
+msgid "turn ccw (15) degrees"
+msgstr ""
+
+#: templates/learn/Data.html:58
+msgid "Costume:"
+msgstr ""
+
+#: templates/learn/Data.html:61
+msgid "switch costume to [butterfly v]"
+msgstr ""
+
+#: templates/learn/Data.html:62 templates/learn/duplicatedScripts.html:18
+#: templates/learn/duplicatedScripts.html:26
+#: templates/learn/duplicatedScripts.html:40
+msgid "next costume"
+msgstr ""
+
+#: templates/learn/Data.html:63
+msgid "change [color v] effect by (25)"
+msgstr ""
+
+#: templates/learn/Data.html:64
+msgid "set [color v] effect to (0)"
+msgstr ""
+
+#: templates/learn/Data.html:67
+msgid "Visibility:"
+msgstr ""
+
+#: templates/learn/Data.html:70 templates/learn/Synchronization.html:74
+msgid "show"
+msgstr ""
+
+#: templates/learn/Data.html:71
+msgid "hide"
+msgstr ""
+
+#: templates/learn/Data.html:81
+msgid ""
+"In addition to modifying the attributes of the characters, programmers can "
+"use other mechanisms to store information on a Scratch project. <b>One of "
+"these mechanisms are variables that can store a value to store different "
+"types of data that may need: at what level we are</b>, how many lives you "
+"have left, how many points we, how is called the user ..."
+msgstr ""
+
+#: templates/learn/Data.html:83
+msgid ""
+"To create a variable you have to go to the category of data, click on "
+"'Create a variable' and give a name. In the example shown below we have "
+"given the name 'Points' as use it to store the number of points you get our "
+"character."
+msgstr ""
+
+#: templates/learn/Data.html:86
+msgid "set [Points v] to [0]"
+msgstr ""
+
+#: templates/learn/Data.html:87
+msgid "if &lt;touching color [#0000FF]&gt; then"
+msgstr ""
+
+#: templates/learn/Data.html:88
+msgid "change [Points v] by (1)"
+msgstr ""
+
+#: templates/learn/Data.html:92
+msgid ""
+"In the program of the top, we assign the number of points that we want the "
+"character has to the beginning of the game, in this case 0, for which we use "
+"the block <i>'fixing points at 0'</i>.  However in the program of the right, "
+"what we do is that when the character touches the blue color, that could be "
+"a target, you will add a point, for which we use the block <i>'change Points "
+"by 1'</i>. In this case, the block <i>'change'</i> would check the current "
+"value of the variable points would add 1: If set to 0, I add 1 and is now "
+"worth 1; when set to 1, I add 1 and is now worth 2 ..."
+msgstr ""
+
+#: templates/learn/Data.html:100
+msgid ""
+"In addition to the variables, Scratch lets you use another data type to "
+"store project information: <b>The lists. The lists can store more than one "
+"value at the same time, so they are ideal for storing rewards have been "
+"recovered by a character or set of names, raise a couple of examples.</b>"
+msgstr ""
+
+#: templates/learn/Data.html:102
+msgid ""
+"To create a list, you have to go to the data category, click on 'Create a "
+"List' and give a name. In the example, we have named our 'Students' list:"
+msgstr ""
+
+#: templates/learn/Data.html:105 templates/learn/Data.html.py:118
+msgid "delete (all v) of [Students v]"
+msgstr ""
+
+#: templates/learn/Data.html:106 templates/learn/Data.html.py:119
+#: templates/learn/Flow.html:41
+msgid "repeat (3)"
+msgstr ""
+
+#: templates/learn/Data.html:107 templates/learn/Data.html.py:120
+msgid "ask [Introduce a student name] and wait"
+msgstr ""
+
+#: templates/learn/Data.html:108 templates/learn/Data.html.py:121
+msgid "insert (answer) at (last v) of [Students v]"
+msgstr ""
+
+#: templates/learn/Data.html:112
+msgid ""
+"What have we done with this program? The first thing we do is, to start "
+"execution, <b>delete all items from the list Students</b>, to empty it "
+"completely and  not appear elements of an previous project implementation. "
+"Then we ask three times the user to enter a name, and each name entered "
+"insert it in the last position in the list Students."
+msgstr ""
+
+#: templates/learn/Data.html:114
+msgid ""
+"What we do with the list? We could, for example, use it to get a volunteer "
+"to carry out an exercise to the whiteboard. Look at the new instructions "
+"added to the program:"
+msgstr ""
+
+#: templates/learn/Data.html:122 templates/learn/Flow.html:48
+#: templates/learn/Flow.html.py:70 templates/learn/Logic.html:52
+#: templates/learn/Logic.html.py:55 templates/learn/Logic.html:58
+#: templates/learn/Parallelism.html:44 templates/learn/Parallelism.html:49
+#: templates/learn/Synchronization.html:50 templates/learn/User.html:50
+#: templates/learn/User.html.py:71
+msgid "end"
+msgstr ""
+
+#: templates/learn/Data.html:123
+msgid "say [Today's volunteer will be...] for (2) secs"
+msgstr ""
+
+#: templates/learn/Data.html:124
+msgid "say (item(pick random (1) to (3)) of [Students v]) for (2) secs"
+msgstr ""
+
+#: templates/learn/Data.html:128
+msgid ""
+"We generated a random number between 1 and 3, which are the elements in the "
+"list, we selected the element that occupies that position in the list. "
+"Sometimes we take the name that is in position 1, others that it is in "
+"position 2 and the other at 3."
+msgstr ""
+
+#: templates/learn/Data.html:130
+msgid ""
+"Lists have many possibilities and many available operations ... you dare to "
+"investigate how they work?"
+msgstr ""
+
+#: templates/learn/Flow.html:4 templates/statistics/statistics.html:260
+#: templates/tournaments/creator/admin/challenges/challengesList.html:302
+#: templates/tournaments/creator/admin/challenges/challengesList.html:567
+#: templates/tournaments/creator/admin/challenges/editChallenge.html:202
+#: templates/tournaments/creator/progress/teamsProgress.html:331
+#: templates/tournaments/participant/scores.html:143
+#: templates/tournaments/participant/scores.html:145
+#: templates/tournaments/participant/tournamentsPart.html:331
+msgid "Flow Control"
+msgstr ""
+
+#: templates/learn/Flow.html:10
+msgid ""
+"Instructions related to algorithmic notions of flow control can help you to "
+"<b>control the behavior of your characters</b>, making, for example, certain "
+"blocks that are repeated a number of times,  or until a situation arises."
+msgstr ""
+
+#: templates/learn/Flow.html:19
+msgid ""
+"The most basic way to control the behavior of your characters is creating a "
+"<b>program composed of a set of blocks are executed one after another</b>, "
+"as we see in the picture:"
+msgstr ""
+
+#: templates/learn/Flow.html:22 templates/learn/Flow.html.py:40
+msgid "say [I'm a dancer cat] for (2) secs"
+msgstr ""
+
+#: templates/learn/Flow.html:25 templates/learn/Flow.html.py:44
+#: templates/learn/Flow.html:47 templates/learn/duplicatedScripts.html:28
+msgid "wait (0.5) secs"
+msgstr ""
+
+#: templates/learn/Flow.html:27 templates/learn/Flow.html.py:46
+msgid "move (-10) steps"
+msgstr ""
+
+#: templates/learn/Flow.html:29
+msgid ""
+"How does this program works? When the user click on the green flag run "
+"behind one another all blocks that have been included in the program. Start "
+"with the first block <i>'say I'm a cat dancing for 2 seconds'</i>, then run "
+"<i>'move 10 steps'</i> then <i>'turn 15 degrees right'</i>, and so on to the "
+"last block of the program."
+msgstr ""
+
+#: templates/learn/Flow.html:38
+msgid ""
+"Sometimes when we want a set of blocks is constantly repeated, instead of "
+"repeating the same blocks over and over again, you can use a repeat "
+"instruction allowing achieve the same effect, but more comfortable and "
+"manageable way. Consider a couple of examples:"
+msgstr ""
+
+#: templates/learn/Flow.html:52 templates/learn/Parallelism.html:43
+#: templates/learn/duplicatedScripts.html:19
+#: templates/learn/duplicatedScripts.html:27
+#: templates/learn/duplicatedScripts.html:41
+msgid "if on edge, bounce"
+msgstr ""
+
+#: templates/learn/Flow.html:54
+msgid "How these control blocks works?"
+msgstr ""
+
+#: templates/learn/Flow.html:56
+msgid ""
+"In the block <i>'repeat'</i> when execution reaches this point is repeated "
+"as often as has been indicated in the parameter block 'repeat', in the "
+"example would be 3 times, all blocks included within this block. We can see "
+"that the block 'repeat' has an arrow at the bottom indicating that <b>when "
+"they finish executing the blocks back again up</b>."
+msgstr ""
+
+#: templates/learn/Flow.html:58
+msgid ""
+"The block <i>'forever'</i> works like the 'repeat' but never finish "
+"executing the blocks containing in its interior."
+msgstr ""
+
+#: templates/learn/Flow.html:66
+msgid ""
+"Sometimes we don't know previously  the number of times you want a set of "
+"blocks is executed, as this depends on a given situation. In these cases, "
+"the block 'repeat until ...' is really useful. Here's an example:"
+msgstr ""
+
+#: templates/learn/Flow.html:68
+msgid "repeat until &lt; touching [Enemy v] ?&gt;"
+msgstr ""
+
+#: templates/learn/Flow.html:69
+msgid "say [You don't catch me]"
+msgstr ""
+
+#: templates/learn/Flow.html:71
+msgid "say [You catch me]"
+msgstr ""
+
+#: templates/learn/Flow.html:74
+msgid ""
+"In the example, the character will constantly repeat the instruction say "
+"'You don't caught me...' while he don't touch the enemy. At the time that "
+"the condition is met instruction <i>'repeat until ...'</i>, the contents "
+"inside will finish run and will jump to the next instruction, in this case "
+"say 'You caught me!'."
+msgstr ""
+
+#: templates/learn/Logic.html:4 templates/learn/base.html:97
+#: templates/statistics/statistics.html:257
+#: templates/tournaments/creator/admin/challenges/challengesList.html:266
+#: templates/tournaments/creator/admin/challenges/challengesList.html:563
+#: templates/tournaments/creator/admin/challenges/editChallenge.html:198
+#: templates/tournaments/creator/progress/teamsProgress.html:291
+#: templates/tournaments/participant/scores.html:79
+#: templates/tournaments/participant/scores.html:81
+#: templates/tournaments/participant/tournamentsPart.html:291
+msgid "Logic"
+msgstr ""
+
+#: templates/learn/Logic.html:10
+msgid ""
+"Instructions related to logical thinking can help your projects are dynamic, "
+"<b>so that they behave differently depending on the situation</b>. In the "
+"stories, for example, these instructions are not as important as they "
+"usually have a linear structure we always want to run the same way, but in "
+"other projects, such as video games are essential to perform different "
+"actions depending on the situation."
+msgstr ""
+
+#: templates/learn/Logic.html:19
+msgid "The most basic block you can start working logical thinking is this:"
+msgstr ""
+
+#: templates/learn/Logic.html:21
+msgid "if &lt; touching color [#0000FF]?  &gt;then"
+msgstr ""
+
+#: templates/learn/Logic.html:22 templates/learn/Logic.html.py:35
+#: templates/learn/Logic.html:37
+msgid "say [I have reached the goal!] for (2) secs"
+msgstr ""
+
+#: templates/learn/Logic.html:23
+msgid ""
+"How this block works? When execution reaches this point, the condition on "
+"the block is evaluated, and if this is true, the set of blocks that are "
+"within the if executed."
+msgstr ""
+
+#: templates/learn/Logic.html:24
+msgid ""
+"In the example, if the character is touching the blue color, he says 'I "
+"reached the goal.'"
+msgstr ""
+
+#: templates/learn/Logic.html:33
+msgid ""
+"Now that you know the instructions <i>if</i>, perhaps you can start using "
+"blocks <i>if / else</i>, which can be very practical in many types of "
+"projects. The blocks <i>if / else</i> are very similar to the block <i>if</"
+"i>, but contain two sets of blocks inside."
+msgstr ""
+
+#: templates/learn/Logic.html:34
+msgid "if &lt; touching color [#0000FF]? &gt;then"
+msgstr ""
+
+#: templates/learn/Logic.html:36
+msgid "else"
+msgstr ""
+
+#: templates/learn/Logic.html:38
+msgid ""
+"How this block works? When execution reaches this point, the condition on "
+"the block is evaluated, and if this is true, the set of blocks that are "
+"within the 'if' is executed, but if the condition is false, then the set of  "
+"blocks that are within the 'else' is executed."
+msgstr ""
+
+#: templates/learn/Logic.html:40
+msgid ""
+"In the example, if the character is touching the blue color, he says  'I "
+"reached the goal!', but ,if you are not touching the purple color, says 'I "
+"have not reached the goal'."
+msgstr ""
+
+#: templates/learn/Logic.html:48
+msgid ""
+"To make decisions on some projects sometimes is necessary to evaluate more "
+"than one condition at the same time to know what to execute. In these "
+"situations it is very helpful to use <b>logical operations</b> that combine "
+"the conditions. Logical operations are available in Scratch <i>AND, OR and "
+"No</i>."
+msgstr ""
+
+#: templates/learn/Logic.html:49
+msgid "if &lt;&lt; touching [Enemy v]? &gt; and &lt;(lives) = [0]&gt;&gt; then"
+msgstr ""
+
+#: templates/learn/Logic.html:50
+msgid "say [Game over]"
+msgstr ""
+
+#: templates/learn/Logic.html:51 templates/learn/Synchronization.html:71
+msgid "stop [all v]"
+msgstr ""
+
+#: templates/learn/Logic.html:53
+msgid ""
+"if &lt;&lt; touching [edge v]? &gt; or &lt; touching [Enemy v]? &gt;&gt;then"
+msgstr ""
+
+#: templates/learn/Logic.html:54
+msgid "change [lives v] by (-1)"
+msgstr ""
+
+#: templates/learn/Logic.html:56
+msgid "if &lt;not&lt; (level) = (5)&gt;&gt;then"
+msgstr ""
+
+#: templates/learn/Logic.html:57
+msgid "say [You still have undiscovered levels] for (2) secs"
+msgstr ""
+
+#: templates/learn/Logic.html:60
+msgid ""
+"The operation <i>AND</i> is true when both conditions are true evaluated. "
+"The <i>OR</i> operation is true when one of two conditions are true "
+"evaluated. And the operation otherwise not worth the condition, ie, if the "
+"condition is true, not returns false and vice versa."
+msgstr ""
+
+#: templates/learn/Parallelism.html:4 templates/learn/base.html:99
+#: templates/statistics/statistics.html:254
+#: templates/tournaments/creator/admin/challenges/challengesList.html:230
+#: templates/tournaments/creator/progress/teamsProgress.html:251
+#: templates/tournaments/participant/scores.html:15
+#: templates/tournaments/participant/scores.html:17
+#: templates/tournaments/participant/tournamentsPart.html:251
+msgid "Parallelism"
+msgstr ""
+
+#: templates/learn/Parallelism.html:10
+msgid ""
+"In most Scratch creations a certain level of parallelism is required. But "
+"what means parallelism? <b>Parallelism is the possibility that several "
+"things occur simultaneously.</b> For example, two characters perform an "
+"action while a character or do several things at once."
+msgstr ""
+
+#: templates/learn/Parallelism.html:19
+msgid ""
+"The most basic and most obvious way to achieve parallelism is to have "
+"several programs that start with <i>'When green flag is clicked'</i>:"
+msgstr ""
+
+#: templates/learn/Parallelism.html:24
+msgid ""
+"Thus, when the user clicking on the green flag, all programs that start with "
+"this block would begin to run simultaneously, or in parallel, as can also be "
+"said. You could have several programs that start with this block in the same "
+"character, if you want it to do several things at once, or in programs of "
+"different characters, if you want everyone to undertake an action at "
+"beginning of execution."
+msgstr ""
+
+#: templates/learn/Parallelism.html:33
+msgid ""
+"Another way to achieve parallelism in your program is <b>doing several "
+"things occur when the user presses a key or clicks on an object</b>. "
+"Consider a couple of examples:"
+msgstr ""
+
+#: templates/learn/Parallelism.html:35 templates/learn/Parallelism.html:37
+msgid "when [a v] key pressed"
+msgstr ""
+
+#: templates/learn/Parallelism.html:36 templates/learn/Parallelism.html:38
+msgid "say [A] for (2) secs"
+msgstr ""
+
+#: templates/learn/Parallelism.html:40 templates/learn/Parallelism.html:45
+#: templates/learn/User.html:42
+msgid "when this sprite clicked"
+msgstr ""
+
+#: templates/learn/Parallelism.html:47
+msgid "if &lt;touching [the mouse pointer v]? &gt;"
+msgstr ""
+
+#: templates/learn/Parallelism.html:48
+msgid "turn cw (30) degrees"
+msgstr ""
+
+#: templates/learn/Parallelism.html:53
+msgid "How these blocks works?"
+msgstr ""
+
+#: templates/learn/Parallelism.html:55
+msgid ""
+"In the first example, we see two different characters that, when a key is "
+"pressed, perform a certain action. Therefore, when the user press the a key, "
+"in this case, both the cat and the child run at the same time <i>'say A for "
+"2 seconds'</i>"
+msgstr ""
+
+#: templates/learn/Parallelism.html:57
+msgid ""
+"In the second example we see that a character has two programs that begin "
+"with <i>'when clicking this object'</i>. Therefore, when the user clicks on "
+"this character, both programs will begin to run simultaneously, in parallel."
+msgstr ""
+
+#: templates/learn/Parallelism.html:66
+msgid "There are several events more that can achieve parallelism:"
+msgstr ""
+
+#: templates/learn/Parallelism.html:67
+msgid "when backdrop switches to [backdrop1 v]"
+msgstr ""
+
+#: templates/learn/Parallelism.html:68
+#: templates/learn/duplicatedScripts.html:14
+msgid "when I receive [message1 v]"
+msgstr ""
+
+#: templates/learn/Parallelism.html:69
+msgid "when [loudness v] &gt; (10)"
+msgstr ""
+
+#: templates/learn/Parallelism.html:70
+msgid "when [video motion v] &gt; (2)"
+msgstr ""
+
+#: templates/learn/Parallelism.html:71
+msgid "when [timer v] &gt; (45)"
+msgstr ""
+
+#: templates/learn/Parallelism.html:73
+msgid ""
+"As you see, you could create several programs that begin to run when "
+"changing the background to a given scenario, or to receive a particular "
+"message, or when the room volume exceeds a certain threshold, when the video "
+"motion is greater than a number pixel concrete or when the timer has "
+"exceeded the value you want. Therefore, there are many possibilities to make "
+"things happen in your programs simultaneously. Do you dare to investigate "
+"how works?"
+msgstr ""
+
+#: templates/learn/Synchronization.html:5 templates/learn/base.html:100
+#: templates/statistics/statistics.html:272
+#: templates/tournaments/creator/admin/challenges/challengesList.html:446
+#: templates/tournaments/creator/admin/challenges/challengesList.html:583
+#: templates/tournaments/creator/admin/challenges/editChallenge.html:218
+#: templates/tournaments/creator/progress/teamsProgress.html:491
+#: templates/tournaments/participant/scores.html:399
+#: templates/tournaments/participant/scores.html:401
+#: templates/tournaments/participant/tournamentsPart.html:491
+msgid "Synchronization"
+msgstr ""
+
+#: templates/learn/Synchronization.html:11
+msgid ""
+"Instructions related to synchronization <b>allow our characters to organize "
+"things happen in the order we want</b>."
+msgstr ""
+
+#: templates/learn/Synchronization.html:20
+msgid ""
+"The easiest way to synchronize the behavior of your characters is using a "
+"<i>'wait'</i> block, which makes the character waits the number of seconds "
+"you write as a parameter block. An example of how this block can be used to "
+"synchronize two characters:"
+msgstr ""
+
+#: templates/learn/Synchronization.html:22
+#: templates/learn/Synchronization.html:46
+msgid "say [Hello, how are you?] for (2) secs"
+msgstr ""
+
+#: templates/learn/Synchronization.html:23
+#: templates/learn/Synchronization.html:28
+msgid "wait (2) secs"
+msgstr ""
+
+#: templates/learn/Synchronization.html:24
+msgid "say [Well, do you want to play hide-and seek?] for (3) secs"
+msgstr ""
+
+#: templates/learn/Synchronization.html:26
+msgid "say [Let's go] for (2) secs"
+msgstr ""
+
+#: templates/learn/Synchronization.html:29
+msgid "say [I'm fine, thanks!] for (2) secs"
+msgstr ""
+
+#: templates/learn/Synchronization.html:30
+msgid "wait (3) secs"
+msgstr ""
+
+#: templates/learn/Synchronization.html:31
+msgid "say [Yes] for (1) secs"
+msgstr ""
+
+#: templates/learn/Synchronization.html:34
+msgid ""
+"In this case it uses blocks <i>'wait'</i> to synchronize these two "
+"characters to maintain a conversation, so that while one speaks, the other "
+"character waits, and vice versa. Note that the number of seconds that each "
+"character expected, are equal to the number of seconds that the other "
+"character speaks, so they never talk at the same time."
+msgstr ""
+
+#: templates/learn/Synchronization.html:44
+msgid ""
+"Synchronization using blocks <i>'wait'</i> is very simple when programs are "
+"small and have few characters, but when are larger, or when we have several "
+"characters, or when conditions to generate a reaction can not be measured "
+"previously, it is more efficient to use other modes of synchronization and "
+"messages. Here's an example:"
+msgstr ""
+
+#: templates/learn/Synchronization.html:48
+msgid "if &lt; touching [mouse pointer v]?&gt;then"
+msgstr ""
+
+#: templates/learn/Synchronization.html:49
+msgid "broadcast [catched! v]"
+msgstr ""
+
+#: templates/learn/Synchronization.html:53
+msgid "when I receive [catched! v]"
+msgstr ""
+
+#: templates/learn/Synchronization.html:54
+msgid "say [You have catched my friend] for (2) secs"
+msgstr ""
+
+#: templates/learn/Synchronization.html:55
+msgid "say [Now, you have to catch me!] for (2) secs"
+msgstr ""
+
+#: templates/learn/Synchronization.html:58
+msgid ""
+"How do these syncblocks work? When a situation occurs in a character we want "
+"to cause a reaction in another character, we can use <b>messaging</b>. In "
+"the example, when the mouse touches the cat, the message 'Caught!', which "
+"will be sent to all the characters of the project is sent. Thus, when the "
+"butterfly receives the message 'Caught!', the instructions on the block "
+"<i>'when receive 'caught!'</i>'. Therefore, when the user touches the cat "
+"whit the mouse, butterfly says, 'You caught my companion. Now you have to "
+"catch me!'."
+msgstr ""
+
+#: templates/learn/Synchronization.html:68
+msgid ""
+"In addition to sending messages, you can synchronize characters to make "
+"things happen in the order we want, using other blocks, such as <i>'wait "
+"until'</i> or <i>'when the background changes to ...'</i>."
+msgstr ""
+
+#: templates/learn/Synchronization.html:69
+msgid "wait until &lt;(lives) =[0]&gt;"
+msgstr ""
+
+#: templates/learn/Synchronization.html:70
+msgid "say [Game over] for (2) secs"
+msgstr ""
+
+#: templates/learn/Synchronization.html:73
+msgid "when backdrop switches to [Spring v]"
+msgstr ""
+
+#: templates/learn/Synchronization.html:75
+msgid "say [Spring has come!] for (2) secs"
+msgstr ""
+
+#: templates/learn/Synchronization.html:78
+msgid ""
+"In the first example, when program execution reaches that point will stop "
+"until the condition is met in this case, until life is equal to 0. When "
+"lives equal to 0, then continue execution of the remaining blocks, this "
+"case, <i>'said Game Over'</i> and <i>'stop all'</i>, which ends the "
+"execution of the project."
+msgstr ""
+
+#: templates/learn/Synchronization.html:80
+msgid ""
+"In the second example, the moment when the scene changes to the backdrop "
+"with the name 'Spring', the character will execute the blocks placed after "
+"the instruction 'when the backdrop changes to Spring', ie to be displayed "
+"and will say 'spring has come!'."
+msgstr ""
+
+#: templates/learn/User.html:5 templates/learn/base.html:101
+#: templates/statistics/statistics.html:263
+msgid "User interactivity"
+msgstr ""
+
+#: templates/learn/User.html:11
+msgid ""
+"The instructions related to user interactivity can <b>help your Scratch "
+"projects be more interactive</b>, ie the person who is running it can "
+"perform actions that provoke new situations in the project. For example, I "
+"can use the keyboard or mouse to move a character, you can answer questions "
+"or playing computer webcam, among many other possibilities."
+msgstr ""
+
+#: templates/learn/User.html:20
+msgid ""
+"The most basic block you can start working interactivity with the user is "
+"<i>'when green flag clicked'</i>."
+msgstr ""
+
+#: templates/learn/User.html:27
+msgid ""
+"How this block works? When the user who wants to run your project Scratch "
+"clicks on the green flag, all blocks were placed under the block <i>'when "
+"green flag clicked'</i> begin to run. You can have as many programs as you "
+"need to start with this block."
+msgstr ""
+
+#: templates/learn/User.html:37
+msgid ""
+"Now that you have begun to interact with the user running your Scratch "
+"project, perhaps you can try some of the following blocks:"
+msgstr ""
+
+#: templates/learn/User.html:39
+msgid " when [right arrow v] key pressed"
+msgstr ""
+
+#: templates/learn/User.html:43
+msgid "say [Hello] for (2) secs"
+msgstr ""
+
+#: templates/learn/User.html:45
+msgid "ask [What's your name?] and wait"
+msgstr ""
+
+#: templates/learn/User.html:46
+msgid "say &lt;join [Hello,]&lt;answer"
+msgstr ""
+
+#: templates/learn/User.html:48
+msgid "if &lt;touching [mouse-pointer v] &gt; then"
+msgstr ""
+
+#: templates/learn/User.html:49
+msgid "say [You caught me!]"
+msgstr ""
+
+#: templates/learn/User.html:52
+msgid "mouse down?"
+msgstr ""
+
+#: templates/learn/User.html:54
+msgid "go to [mouse-pointer v]"
+msgstr ""
+
+#: templates/learn/User.html:58
+msgid ""
+"As you see, you can allow users to interact with your characters by pressing "
+"keys to move, writing answers to questions and your characters use user "
+"responses, move characters with the mouse, or perform actions when the user "
+"clicks an object."
+msgstr ""
+
+#: templates/learn/User.html:67
+msgid ""
+"One of the funniest Scratch possibilities in terms of user interactivity is "
+"the possibility that <b>the user can use your webcam or microphone to "
+"interact with characters from Scratch or sound to trigger certain actions.</"
+"b>"
+msgstr ""
+
+#: templates/learn/User.html:69
+msgid "if &lt;(lives) >[30]&gt; then"
+msgstr ""
+
+#: templates/learn/User.html:70
+msgid "say [There is much noise...]"
+msgstr ""
+
+#: templates/learn/User.html:73
+msgid "video [motion v] on [this sprite v]"
+msgstr ""
+
+#: templates/learn/User.html:75
+msgid "video [direction v] on [this sprite v]"
+msgstr ""
+
+#: templates/learn/User.html:78
+msgid ""
+"As you can see in the examples, we can make certain sets of blocks are "
+"executed when the ambient sound captured by the microphone is greater than a "
+"certain threshold, or when video motion occurs over an object or background. "
+"The possibilities of these blocks are very large and allows your creations "
+"Scratch are fully interactive with users."
+msgstr ""
+
+#: templates/learn/attrInit.html:4 templates/statistics/statistics.html:203
+msgid "Attribute Initialization"
+msgstr ""
+
+#: templates/learn/attrInit.html:11
+msgid ""
+" One of the mistakes that many programmers repeat when they learn to program "
+"is not initialize correctly the objects's attributes. What are the "
+"attributes? They are character's features that can be modified in the "
+"execution of a project, like their position, their size, their color, their "
+"orientation..."
+msgstr ""
+
+#: templates/learn/attrInit.html:13
+msgid ""
+"When you have blocks than modify character's feature, you should always have "
+"a program which, when the program begins, asigns the value that we want to "
+"start. For example, if it modifies the position of a character, we should "
+"have the block 'go to' under the block 'when green flag clicked', in order "
+"to place the character in its initial position."
+msgstr ""
+
+#: templates/learn/attrInit.html:15
+msgid "when [right arrow v] key pressed //Not initialized correctly."
+msgstr ""
+
+#: templates/learn/attrInit.html:16 templates/learn/attrInit.html.py:22
+#: templates/learn/deadCode.html:16
+msgid "change x by (10)"
+msgstr ""
+
+#: templates/learn/attrInit.html:17 templates/learn/attrInit.html.py:23
+msgid "when [left arrow v] key pressed"
+msgstr ""
+
+#: templates/learn/attrInit.html:18 templates/learn/attrInit.html.py:24
+msgid "change x by (-10)"
+msgstr ""
+
+#: templates/learn/attrInit.html:21
+msgid "when [right arrow v] key pressed  //Initialized correctly."
+msgstr ""
+
+#: templates/learn/base.html:84 templates/password/base.html:88
+#: templates/sign/base.html:88 templates/statistics/statistics.html:296
+#: templates/upload/dashboard-unregistered-basic.html:99
+#: templates/upload/dashboard-unregistered-developing.html:110
+#: templates/upload/dashboard-unregistered-master.html:148
+msgid "Dr. Scratch(Beta Version)"
+msgstr ""
+
+#: templates/learn/base.html:98 templates/statistics/statistics.html:266
+msgid "Data representation"
+msgstr ""
+
+#: templates/learn/base.html:102
+msgid "Flow control"
+msgstr ""
+
+#: templates/learn/base.html:106 templates/statistics/statistics.html:200
+#: templates/tournaments/participant/results.html:367
+#: templates/upload/dashboard-unregistered-master.html:240
+msgid "Duplicated scripts"
+msgstr ""
+
+#: templates/learn/base.html:107 templates/learn/spriteNaming.html:5
+msgid "Incorrect names"
+msgstr ""
+
+#: templates/learn/base.html:108 templates/learn/deadCode.html:4
+#: templates/statistics/statistics.html:197
+#: templates/tournaments/participant/results.html:373
+#: templates/upload/dashboard-unregistered-master.html:246
+msgid "Dead code"
+msgstr ""
+
+#: templates/learn/base.html:109
+msgid "Attribute initialization"
+msgstr ""
+
+#: templates/learn/deadCode.html:11
+msgid ""
+"Dead code are parts of programs that never are executed. How can it form? "
+"For example, when you have a program that isn't start with a hat block, or "
+"when there is a program that is waiting for a message that never is sent."
+msgstr ""
+
+#: templates/learn/deadCode.html:14
+msgid "forever //Blocks that dont's start with a hat block."
+msgstr ""
+
+#: templates/learn/deadCode.html:15
+msgid "if &lt; key [left arrow v] pressed ? &gt; then"
+msgstr ""
+
+#: templates/learn/deadCode.html:18
+msgid "when I receive [startcc v] //Blocks that start with a hat block."
+msgstr ""
+
+#: templates/learn/deadCode.html:19
+msgid "switch costume to [costume2 v]"
+msgstr ""
+
+#: templates/learn/deadCode.html:20
+msgid "say [Let's start] for (2) secs"
+msgstr ""
+
+#: templates/learn/deadCode.html:24
+msgid ""
+"These situations usually causes that projects doesn't work as expected of "
+"them,so,try to avoid dead code in your programs!"
+msgstr ""
+
+#: templates/learn/duplicatedScripts.html:4
+#: templates/upload/dashboard-unregistered.html:162
+msgid "Duplicated Scripts"
+msgstr ""
+
+#: templates/learn/duplicatedScripts.html:11
+msgid ""
+"Imagine that in a project we have two programs formed by the same blocks and "
+"where only vary the parameters or values of the blocks."
+msgstr ""
+
+#: templates/learn/duplicatedScripts.html:15
+#: templates/learn/duplicatedScripts.html:23
+#: templates/learn/duplicatedScripts.html:37
+msgid "set rotation style [left-rigt v]"
+msgstr ""
+
+#: templates/learn/duplicatedScripts.html:16
+msgid "repeat (10)"
+msgstr ""
+
+#: templates/learn/duplicatedScripts.html:17
+msgid "move (2) steps"
+msgstr ""
+
+#: templates/learn/duplicatedScripts.html:22
+msgid "when I receive [message2 v]"
+msgstr ""
+
+#: templates/learn/duplicatedScripts.html:24
+msgid "repeat (5)"
+msgstr ""
+
+#: templates/learn/duplicatedScripts.html:25
+msgid "move (4) steps"
+msgstr ""
+
+#: templates/learn/duplicatedScripts.html:33
+msgid ""
+"What would happen if we make a small change? We would have to modify both "
+"programs, complicating the maintenance of the code. In these situations is "
+"more appropriate that the programmer make his own block that defines this "
+"behaviour and use this new block in all programs where needed."
+msgstr ""
+
+#: templates/learn/duplicatedScripts.html:36
+msgid "define walk (repetitions)(step)(pause)"
+msgstr ""
+
+#: templates/learn/duplicatedScripts.html:38
+msgid "repeat (repetitions)"
+msgstr ""
+
+#: templates/learn/duplicatedScripts.html:39
+msgid "move (step) steps"
+msgstr ""
+
+#: templates/learn/duplicatedScripts.html:42
+msgid "wait (pause) secs"
+msgstr ""
+
+#: templates/learn/duplicatedScripts.html:47
+msgid ""
+"Thus, if you want a change, you just have to go to the block defined by the "
+"programmer."
+msgstr ""
+
+#: templates/learn/spriteNaming.html:12
+msgid ""
+"When you start to programming with Scratch, is very usually to leave the "
+"default name of the new characters(sprite 1, sprite2, ...). When we have few "
+"characters, is very easy to know what character have each name. However, "
+"when the number of characters increases, it's more complicated. So, is a "
+"good practice naming(to recognize easily) each character of our projects, "
+"because our programs can be read more fast. Avoid default names!"
+msgstr ""
+
+#: templates/login/login.html:81 templates/sign/organization.html:78
+#: templates/tournaments/creator/admin/admin_creator.html:103
+#: templates/tournaments/creator/admin/challenges/challengesList.html:103
+#: templates/tournaments/creator/admin/challenges/editChallenge.html:103
+#: templates/tournaments/creator/admin/teams/newEditTeam.html:103
+#: templates/tournaments/creator/admin/teams/teamsList.html:103
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:103
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:111
+#: templates/tournaments/creator/main_creator.html:104
+#: templates/tournaments/creator/newParticipant/main_new_participants.html:103
+#: templates/tournaments/creator/progress/teamsProgress.html:110
+#: templates/tournaments/creator/progress/tournamentsProgress.html:110
+#: templates/tournaments/creator/validation/validate.html:107
+#: templates/tournaments/creator/validation/validation.html:104
+#: templates/tournaments/main_tournaments.html:100
+#: templates/tournaments/participant/results.html:221
+#: templates/tournaments/participant/teamsPart.html:103
+#: templates/tournaments/participant/tournamentsPart.html:110
+msgid "Sign in"
+msgstr ""
+
+#: templates/login/login.html:92 templates/sign/organization.html:91
+#: templates/tournaments/creator/admin/admin_creator.html:117
+#: templates/tournaments/creator/admin/challenges/challengesList.html:117
+#: templates/tournaments/creator/admin/challenges/editChallenge.html:117
+#: templates/tournaments/creator/admin/teams/newEditTeam.html:117
+#: templates/tournaments/creator/admin/teams/teamsList.html:117
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:117
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:125
+#: templates/tournaments/creator/main_creator.html:118
+#: templates/tournaments/creator/newParticipant/main_new_participants.html:117
+#: templates/tournaments/creator/progress/teamsProgress.html:124
+#: templates/tournaments/creator/validation/validate.html:121
+#: templates/tournaments/creator/validation/validation.html:118
+#: templates/tournaments/main_tournaments.html:114
+#: templates/tournaments/participant/results.html:235
+#: templates/tournaments/participant/teamsPart.html:117
+#: templates/tournaments/participant/tournamentsPart.html:124
+msgid "Remember me"
+msgstr ""
+
+#: templates/login/login.html:127 templates/sign/createOrganization.html:104
+#: templates/sign/createOrganization.html:163
+#: templates/sign/createUser.html:104 templates/sign/createUser.html.py:163
+#: templates/sign/organization.html:128 templates/sign/organization.html:187
+#: templates/sign/registerOrganization.html:104
+#: templates/sign/registerOrganization.html:163
+msgid "Dr. Scratch for Organizations"
+msgstr ""
+
+#: templates/login/login.html:129 templates/sign/createOrganization.html:106
+#: templates/sign/createUser.html:106
+#: templates/sign/registerOrganization.html:106
+msgid ""
+"Welcome to the Dr. Scratch website (version for organizations), an "
+"analytical tool that evaluates your Scratch projects in a variety of "
+"computational areas. This analyzer is a helpful tool to evaluate your "
+"students' Scratch projects. You'll have a smart dashboard where you can see "
+"the most important information about your students and their development."
+msgstr ""
+
+#: templates/login/login.html:133 templates/sign/createOrganization.html:75
+#: templates/sign/createOrganization.html:110
+#: templates/sign/createOrganization.html:209 templates/sign/createUser.html:75
+#: templates/sign/createUser.html.py:110 templates/sign/createUser.html:208
+#: templates/sign/organization.html:134 templates/sign/organization.html:241
+#: templates/sign/registerOrganization.html:75
+#: templates/sign/registerOrganization.html:110
+#: templates/sign/registerOrganization.html:208
+#: templates/tournaments/main_tournaments.html:176
+#: templates/tournaments/main_tournaments.html:280
+msgid "Sign up!"
+msgstr "報名"
+
+#: templates/login/login.html:187 templates/main/main.html:214
+msgid "WHY?"
+msgstr "為什麼?"
+
+#: templates/login/login.html:189 templates/main/main.html:216
+#: templates/sign/createOrganization.html:165
+#: templates/sign/createUser.html:165
+#: templates/sign/registerOrganization.html:165
+msgid "Why "
+msgstr "為什麼"
+
+#: templates/login/login.html:189 templates/main/main.html:216
+#: templates/sign/createOrganization.html:165
+#: templates/sign/createUser.html:165
+#: templates/sign/registerOrganization.html:165
+msgid "you’ll love Dr. Scratch"
+msgstr "你將會喜歡 Dr. Scratch"
+
+#: templates/login/login.html:193 templates/main/main.html:220
+msgid "A powerful tool to analyze your Scratch projects"
+msgstr "一個威力十足的工具來分析你的 Scratch 作品集"
+
+#: templates/login/login.html:205 templates/main/main.html:232
+msgid "Simple & Fun"
+msgstr "簡單且有趣"
+
+#: templates/login/login.html:207 templates/main/main.html:234
+msgid ""
+"Your students can easily learn how to improve their programming skills in a "
+"fun way."
+msgstr "你的學生可以簡單且透過有趣的學習方式去加強他們的程式設計技能"
+
+#: templates/login/login.html:218 templates/main/main.html:245
+msgid "Improve your skills"
+msgstr "加強你的技能"
+
+#: templates/login/login.html:220 templates/main/main.html:247
+msgid ""
+"We provide feedback on several aspects which are related to Computational "
+"Thinking."
+msgstr ""
+
+#: templates/login/login.html:231 templates/main/main.html:258
+msgid "Always improving"
+msgstr ""
+
+#: templates/login/login.html:233 templates/main/main.html:260
+msgid ""
+"We're continually enhancing the features of Dr. Scratch, and we'd love to "
+"hear your thoughts"
+msgstr ""
+
+#: templates/login/login.html:270 templates/main/main.html:297
+msgid "How"
+msgstr "如何"
+
+#: templates/login/login.html:272 templates/main/main.html:299
+#: templates/sign/organization.html:189
+#: templates/tournaments/main_tournaments.html:228
+msgid "How "
+msgstr "如何 "
+
+#: templates/login/login.html:272 templates/main/main.html:299
+msgid "it works"
+msgstr "有用"
+
+#: templates/login/login.html:276 templates/main/main.html:303
+msgid "There are two options to analyze a Scratch project with Dr. Scratch"
+msgstr "Dr. Scratch 提供兩種方式來分析你的 Scratch 作品集"
+
+#: templates/login/login.html:277 templates/main/main.html:304
+msgid "project.png"
+msgstr "專案.png"
+
+#: templates/login/login.html:279 templates/main/main.html:306
+msgid ""
+"You can upload an sb2 file or just provide the project url, avoiding the "
+"need to previously download the project to your computer. By analyzing your "
+"projects with Dr. Scratch, you can easily check your Computational Thinking "
+"Score."
+msgstr "你可以上傳你的 sb2 檔案"
+
+#: templates/login/login.html:288 templates/main/main.html:315
+msgid "It is extremely easy to use, both for begginers and expert programmers."
+msgstr "對初學者與專家而言都十分簡單"
+
+#: templates/login/login.html:292 templates/main/main.html:319
+msgid "You receive feedback to improve your coding skills."
+msgstr "你會收到回覆來加強你的程式設計能力"
+
+#: templates/login/login.html:300 templates/main/main.html:327
+msgid ""
+"You can keep on improving your programming skills by yourself even from home."
+msgstr "你可以在家且獨立而持續去增強你的程式設計能力"
+
+#: templates/login/login.html:304 templates/main/main.html:331
+msgid "You can track your progress through charts and stats."
+msgstr "你可以透過圖行與狀態追蹤你的進度"
+
+#: templates/login/login.html:323 templates/main/main.html:350
+msgid "NEW FEATURES"
+msgstr "新功能"
+
+#: templates/login/login.html:325 templates/main/main.html:352
+msgid "Coming "
+msgstr "來"
+
+#: templates/login/login.html:325 templates/main/main.html:352
+msgid "Soon"
+msgstr "很快"
+
+#: templates/login/login.html:329 templates/main/main.html:356
+msgid "We are working on new features to improve Dr. Scratch"
+msgstr "我們正在持續努力為　Dr. Scratch　加入新功能"
+
+#: templates/login/login.html:344 templates/main/main.html:371
+msgid "Multilingual Website"
+msgstr "多語系網站"
+
+#: templates/login/login.html:348 templates/main/collaborators.html:350
+#: templates/main/main.html:375
+msgid ""
+"We know the importance of receiving feedback on your own language to "
+"understand every little detail or hint, so we'll translate Dr. Scratch to "
+"facilitate coding learning to as many people as possible."
+msgstr ""
+
+#: templates/login/login.html:359 templates/main/main.html:386
+msgid "Teacher Accounts"
+msgstr "教學者帳號"
+
+#: templates/login/login.html:363 templates/main/main.html:390
+msgid ""
+"Teachers will be able to group (and follow) their students to keep track of "
+"their progress in a fast and simple way."
+msgstr ""
+
+#: templates/login/login.html:374 templates/main/main.html:401
+msgid "Cloud Platform"
+msgstr "雲端平台"
+
+#: templates/login/login.html:378 templates/main/main.html:405
+msgid ""
+"We are in the process of migrating our servers to the Cloud with the aim of "
+"providing a better performance."
+msgstr ""
+
+#: templates/login/login.html:403 templates/main/main.html:430
+msgid ""
+"With Dr. Scratch plug-ins for Chrome and Firefox, students will analyze "
+"their project WHILE programming on the Scratch website."
+msgstr ""
+
+#: templates/login/login.html:414 templates/main/main.html:441
+msgid "Gamification"
+msgstr ""
+
+#: templates/login/login.html:418 templates/main/main.html:445
+msgid ""
+"We'd like to take learners curiosity one step further. Do you have cool "
+"ideas to gamify our platform?"
+msgstr ""
+
+#: templates/login/login.html:429 templates/main/main.html:456
+msgid "Social Network"
+msgstr ""
+
+#: templates/login/login.html:433 templates/main/main.html:460
+msgid ""
+"The new social network funcionalities will allow users to communicate with "
+"each other to exchange ideas and challenges."
+msgstr ""
+
+#: templates/login/login.html:453 templates/main/main.html:480
+msgid "Contact"
+msgstr ""
+
+#: templates/login/login.html:455 templates/main/main.html:482
+msgid "<strong>Contact </strong> Dr. Scratch team</h2>"
+msgstr ""
+
+#: templates/login/login.html:459 templates/main/main.html:486
+msgid "We would be pleased to receive your feedback"
+msgstr ""
+
+#: templates/login/login.html:498 templates/main/main.html:525
+msgid ""
+"We would like to thank many people for their collaboration and we have done "
+"one special section."
+msgstr ""
+
+#: templates/login/login.html:501
+msgid "Collaborators"
+msgstr ""
+
+#: templates/login/login.html:520 templates/main/main.html:547
+msgid "Are you a Dr. Scratch user?"
+msgstr ""
+
+#: templates/login/login.html:523 templates/main/main.html:550
+msgid "Join now!"
+msgstr ""
+
+#: templates/login/login.html:563 templates/main/main.html:590
+#: templates/tournaments/creator/progress/teamsProgress.html:631
+#: templates/tournaments/participant/tournamentsPart.html:671
+#: templates/upload/dashboard-organization.html:239
+msgid "What is an url?"
+msgstr ""
+
+#: templates/login/login.html:565 templates/main/main.html:592
+#: templates/tournaments/creator/progress/teamsProgress.html:633
+#: templates/tournaments/participant/tournamentsPart.html:673
+#: templates/upload/dashboard-organization.html:241
+msgid "How I can know my Scratch project's url?"
+msgstr ""
+
+#: templates/login/login.html:569 templates/main/main.html:596
+msgid "<img class='framed' src='static/app/images/url-en.png' />"
+msgstr ""
+
+#: templates/login/login.html:588 templates/main/main.html:615
+#: templates/tournaments/creator/progress/teamsProgress.html:655
+#: templates/tournaments/participant/tournamentsPart.html:695
+#: templates/upload/dashboard-organization.html:264
+msgid "I want to download my project from Scratch!"
+msgstr ""
+
+#: templates/login/login.html:590 templates/main/main.html:617
+#: templates/tournaments/creator/progress/teamsProgress.html:657
+#: templates/tournaments/participant/tournamentsPart.html:697
+#: templates/upload/dashboard-organization.html:266
+msgid "How I can download my Scratch project to my computer?"
+msgstr ""
+
+#: templates/login/login.html:594 templates/main/main.html:621
+msgid "<img class='framed' src='static/app/images/project-en.png' />"
+msgstr ""
+
+#: templates/login/login.html:614 templates/main/main.html:641
+#: templates/main/main_organization.html:300
+msgid "Wait a moment please"
+msgstr ""
+
+#: templates/login/login.html:632 templates/main/main.html:659
+#: templates/main/main_organization.html:318
+msgid "loading..."
+msgstr ""
+
+#: templates/main/collaborators.html:75 templates/main/collaborators.html:162
+msgid "Who we are"
+msgstr ""
+
+#: templates/main/collaborators.html:76 templates/main/collaborators.html:346
+msgid "Translations"
+msgstr ""
+
+#: templates/main/collaborators.html:77 templates/main/collaborators.html:527
+msgid "Workshops"
+msgstr ""
+
+#: templates/main/collaborators.html:78
+msgid "More thanks"
+msgstr ""
+
+#: templates/main/collaborators.html:104
+msgid "Thanks all of you!"
+msgstr ""
+
+#: templates/main/collaborators.html:106
+msgid ""
+"We are so pleased to receive so much help of you and we thought that the "
+"best way of show our appreciation is including your work in the website. In "
+"this space you can see who people help us to improve Dr. Scratch!"
+msgstr ""
+
+#: templates/main/collaborators.html:166
+msgid "Dr. Scratch's team likes to thank you for your contributions."
+msgstr ""
+
+#: templates/main/collaborators.html:182 templates/main/collaborators.html:204
+#: templates/main/collaborators.html:272 templates/main/collaborators.html:295
+msgid " "
+msgstr ""
+
+#: templates/main/collaborators.html:224
+msgid "Eva Hu Garres"
+msgstr ""
+
+#: templates/main/collaborators.html:226 templates/main/collaborators.html:248
+msgid "Web Developer"
+msgstr ""
+
+#: templates/main/collaborators.html:246
+msgid "Mari Luz Aguado Jiménez"
+msgstr ""
+
+#: templates/main/collaborators.html:270 templates/main/collaborators.html:293
+#: templates/main/collaborators.html:315 templates/main/collaborators.html:409
+#: templates/main/collaborators.html:431 templates/main/collaborators.html:455
+#: templates/main/collaborators.html:478 templates/main/collaborators.html:500
+msgid "Anonymous"
+msgstr ""
+
+#: templates/main/collaborators.html:317 templates/main/collaborators.html:502
+msgid "Lenguage"
+msgstr ""
+
+#: templates/main/collaborators.html:351
+msgid ""
+"Would you like help us to translate Dr. Scratch to your language? Many "
+"people have already helped us! "
+msgstr ""
+
+#: templates/main/collaborators.html:367
+msgid "Portuguese from Brazil"
+msgstr ""
+
+#: templates/main/collaborators.html:389
+msgid "Greek"
+msgstr ""
+
+#: templates/main/collaborators.html:411
+msgid "Hungarian"
+msgstr ""
+
+#: templates/main/collaborators.html:433
+msgid "Catalan"
+msgstr ""
+
+#: templates/main/collaborators.html:457
+msgid "Basque"
+msgstr ""
+
+#: templates/main/collaborators.html:480
+msgid "Galician"
+msgstr ""
+
+#: templates/main/collaborators.html:531
+msgid ""
+"We are collaborating with several schools where we can prove the website "
+"with children and see which features they need."
+msgstr ""
+
+#: templates/main/collaborators.html:532
+msgid "Thanks all of children and teachers who help us with the development!"
+msgstr ""
+
+#: templates/main/collaborators.html:561
+msgid "CEIP Lope de Vega"
+msgstr ""
+
+#: templates/main/collaborators.html:565
+msgid "Teacher: Jorge Lobo"
+msgstr ""
+
+#: templates/main/collaborators.html:584
+msgid "<strong>More thanks</strong></h2>"
+msgstr ""
+
+#: templates/main/main.html:75
+msgid "Why?"
+msgstr ""
+
+#: templates/main/main.html:76
+msgid "How?"
+msgstr ""
+
+#: templates/main/main.html:77
+msgid "Working on"
+msgstr ""
+
+#: templates/main/main.html:78
+msgid "Contact us"
+msgstr "聯絡我們"
+
+#: templates/main/main.html:79
+#: templates/tournaments/creator/admin/admin_creator.html:157
+#: templates/tournaments/participant/teamsPart.html:203
+msgid "Tournaments"
+msgstr ""
+
+#: templates/main/main.html:80
+msgid "Organizations"
+msgstr "組織"
+
+#: templates/main/main.html:109
+msgid "Analyze your Scratch projects"
+msgstr "分析你的 Scratch 作品"
+
+#: templates/main/main.html:111
+msgid ""
+"Welcome to the Dr. Scratch website, an analytical tool that evaluates your "
+"Scratch projects in a variety of computational areas. This analyzer is a "
+"helpful tool to evaluate your own projects, or those of your Scratch "
+"students."
+msgstr "歡迎使用 Dr. Scratch 網站，"
+
+#: templates/main/main.html:115
+msgid "Learn More"
+msgstr "了解更多"
+
+#: templates/main/main.html:129
+#: templates/tournaments/participant/tournamentsPart.html:571
+msgid "There are two options to analyze your Scratch project now!"
+msgstr "這網站有提供兩種方是來評量你的 Scratch 作品集"
+
+#: templates/main/main.html:134
+#: templates/tournaments/participant/tournamentsPart.html:578
+msgid ""
+"1. Introduce the <span class='colored-text'><a data-toggle='modal' "
+"href='#modalUrl'>url</a></span> of your Scratch project, you don't have to "
+"download it:"
+msgstr ""
+
+#: templates/main/main.html:135
+#: templates/tournaments/participant/tournamentsPart.html:579
+msgid ""
+"<input name=\"urlProject\" id=\"cf-name\" class=\"form-control input-box "
+"placeholder\" placeholder=\"http:/scratch.mit.edu/projects/your_number\" "
+"type=\"text\">"
+msgstr ""
+
+#: templates/main/main.html:136
+#: templates/tournaments/participant/tournamentsPart.html:580
+msgid "Analyze by url"
+msgstr ""
+
+#: templates/main/main.html:141
+#: templates/tournaments/participant/tournamentsPart.html:585
+msgid ""
+"2. If you have your <span class='colored-text'><a data-toggle='modal' "
+"href='#modalProject'>project</a></span> downloaded in the computer you can "
+"analyze it here:"
+msgstr ""
+
+#: templates/main/main.html:142
+#: templates/tournaments/participant/tournamentsPart.html:586
+msgid ""
+"<input  name='zipFile' type='file' class='filestyle' data-buttonText='Choose "
+"Project'>"
+msgstr ""
+
+#: templates/main/main.html:143
+#: templates/tournaments/participant/tournamentsPart.html:587
+msgid "Analyze my project"
+msgstr ""
+
+#: templates/main/main.html:150 templates/main/main.html.py:153
+#: templates/main/main_organization.html:190
+#: templates/main/main_organization.html:193
+#: templates/tournaments/participant/tournamentsPart.html:594
+#: templates/tournaments/participant/tournamentsPart.html:597
+msgid "Error! Please choose a .sb or .sb2 file or input an url"
+msgstr ""
+
+#: templates/main/main.html:157 templates/main/main_organization.html:197
+#: templates/tournaments/participant/tournamentsPart.html:601
+msgid "Error! Your project id is wrong"
+msgstr ""
+
+#: templates/main/main.html:161 templates/main/main_organization.html:201
+#: templates/tournaments/participant/tournamentsPart.html:605
+msgid "Error! Your project doesn't exist in Scratch's servers"
+msgstr ""
+
+#: templates/main/main.html:528 templates/statistics/statistics.html:306
+msgid "Statistics"
+msgstr ""
+
+#: templates/main/main_organization.html:68
+msgid "Your daily progress"
+msgstr ""
+
+#: templates/main/main_organization.html:76
+#: templates/statistics/statistics.html:73
+msgid " points"
+msgstr ""
+
+#: templates/main/main_organization.html:85
+#: templates/statistics/statistics.html:82
+msgid "Total score"
+msgstr ""
+
+#: templates/main/main_organization.html:126
+#: templates/tournaments/creator/admin/admin_creator.html:58
+#: templates/tournaments/creator/admin/admin_creator.html:90
+#: templates/tournaments/creator/admin/challenges/challengesList.html:58
+#: templates/tournaments/creator/admin/challenges/challengesList.html:90
+#: templates/tournaments/creator/admin/challenges/editChallenge.html:58
+#: templates/tournaments/creator/admin/challenges/editChallenge.html:90
+#: templates/tournaments/creator/admin/teams/newEditTeam.html:58
+#: templates/tournaments/creator/admin/teams/newEditTeam.html:90
+#: templates/tournaments/creator/admin/teams/teamsList.html:58
+#: templates/tournaments/creator/admin/teams/teamsList.html:90
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:58
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:90
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:66
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:98
+#: templates/tournaments/creator/main_creator.html:59
+#: templates/tournaments/creator/main_creator.html:91
+#: templates/tournaments/creator/newParticipant/main_new_participants.html:58
+#: templates/tournaments/creator/newParticipant/main_new_participants.html:90
+#: templates/tournaments/creator/progress/teamsProgress.html:65
+#: templates/tournaments/creator/progress/teamsProgress.html:97
+#: templates/tournaments/creator/progress/tournamentsProgress.html:65
+#: templates/tournaments/creator/progress/tournamentsProgress.html:97
+#: templates/tournaments/creator/validation/validate.html:62
+#: templates/tournaments/creator/validation/validate.html:94
+#: templates/tournaments/creator/validation/validation.html:59
+#: templates/tournaments/creator/validation/validation.html:91
+#: templates/tournaments/main_tournaments.html:55
+#: templates/tournaments/main_tournaments.html:87
+#: templates/tournaments/participant/results.html:174
+#: templates/tournaments/participant/results.html:207
+#: templates/tournaments/participant/teamsPart.html:58
+#: templates/tournaments/participant/teamsPart.html:90
+#: templates/tournaments/participant/tournamentsPart.html:65
+#: templates/tournaments/participant/tournamentsPart.html:97
+#: templates/upload/dashboard-organization.html:81
+msgid "Logged in as "
+msgstr ""
+
+#: templates/main/main_organization.html:128
+#: templates/tournaments/creator/admin/admin_creator.html:92
+#: templates/tournaments/creator/admin/challenges/challengesList.html:92
+#: templates/tournaments/creator/admin/challenges/editChallenge.html:92
+#: templates/tournaments/creator/admin/teams/newEditTeam.html:92
+#: templates/tournaments/creator/admin/teams/teamsList.html:92
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:92
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:100
+#: templates/tournaments/creator/main_creator.html:93
+#: templates/tournaments/creator/newParticipant/main_new_participants.html:92
+#: templates/tournaments/creator/progress/teamsProgress.html:99
+#: templates/tournaments/creator/progress/tournamentsProgress.html:99
+#: templates/tournaments/creator/validation/validate.html:96
+#: templates/tournaments/creator/validation/validation.html:93
+#: templates/tournaments/main_tournaments.html:89
+#: templates/tournaments/participant/results.html:209
+#: templates/tournaments/participant/teamsPart.html:92
+#: templates/tournaments/participant/tournamentsPart.html:99
+#: templates/upload/dashboard-organization.html:83
+msgid "Change password"
+msgstr ""
+
+#: templates/main/main_organization.html:130
+#: templates/password/user_doesntorg.html:14
+#: templates/tournaments/creator/admin/admin_creator.html:62
+#: templates/tournaments/creator/admin/admin_creator.html:94
+#: templates/tournaments/creator/admin/challenges/challengesList.html:62
+#: templates/tournaments/creator/admin/challenges/challengesList.html:94
+#: templates/tournaments/creator/admin/challenges/editChallenge.html:62
+#: templates/tournaments/creator/admin/challenges/editChallenge.html:94
+#: templates/tournaments/creator/admin/teams/newEditTeam.html:62
+#: templates/tournaments/creator/admin/teams/newEditTeam.html:94
+#: templates/tournaments/creator/admin/teams/teamsList.html:62
+#: templates/tournaments/creator/admin/teams/teamsList.html:94
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:62
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:94
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:70
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:102
+#: templates/tournaments/creator/main_creator.html:63
+#: templates/tournaments/creator/main_creator.html:95
+#: templates/tournaments/creator/newParticipant/main_new_participants.html:62
+#: templates/tournaments/creator/newParticipant/main_new_participants.html:94
+#: templates/tournaments/creator/progress/teamsProgress.html:69
+#: templates/tournaments/creator/progress/teamsProgress.html:101
+#: templates/tournaments/creator/progress/tournamentsProgress.html:69
+#: templates/tournaments/creator/progress/tournamentsProgress.html:101
+#: templates/tournaments/creator/validation/validate.html:66
+#: templates/tournaments/creator/validation/validate.html:98
+#: templates/tournaments/creator/validation/validation.html:63
+#: templates/tournaments/creator/validation/validation.html:95
+#: templates/tournaments/main_tournaments.html:59
+#: templates/tournaments/main_tournaments.html:91
+#: templates/tournaments/participant/results.html:178
+#: templates/tournaments/participant/results.html:211
+#: templates/tournaments/participant/teamsPart.html:62
+#: templates/tournaments/participant/teamsPart.html:94
+#: templates/tournaments/participant/tournamentsPart.html:69
+#: templates/tournaments/participant/tournamentsPart.html:101
+#: templates/upload/dashboard-organization.html:85
+msgid "Logout"
+msgstr ""
+
+#: templates/main/main_organization.html:159
+#: templates/upload/dashboard-organization.html:107
+msgid "Welcome to the Dr. Scratch website, "
+msgstr ""
+
+#: templates/main/main_organization.html:177
+#: templates/upload/dashboard-organization.html:150
+msgid ""
+"You can analyze at the same time all the Scratch proyects of your students!"
+msgstr ""
+
+#: templates/main/main_organization.html:181
+#: templates/upload/dashboard-organization.html:153
+msgid "Only you have to put a "
+msgstr ""
+
+#: templates/main/main_organization.html:181
+#: templates/upload/dashboard-organization.html:153
+msgid "file CSV "
+msgstr ""
+
+#: templates/main/main_organization.html:181
+#: templates/upload/dashboard-organization.html:153
+msgid " with the urls of the Scratch projects you want to analyze:"
+msgstr ""
+
+#: templates/main/main_organization.html:182
+#: templates/tournaments/creator/newParticipant/main_new_participants.html:199
+#: templates/upload/dashboard-organization.html:154
+msgid ""
+"<input  name='csvFile' type='file' class='filestyle' data-buttonText='Choose "
+"File .csv'>"
+msgstr ""
+
+#: templates/main/main_organization.html:183
+#: templates/upload/dashboard-organization.html:155
+msgid "Analyze my projects"
+msgstr ""
+
+#: templates/main/main_organization.html:273
+#: templates/tournaments/creator/newParticipant/main_new_participants.html:302
+msgid "How is the file .csv?"
+msgstr ""
+
+#: templates/main/main_organization.html:275
+msgid ""
+"You must to write only the number of your students' projects. Easy, isn't it?"
+msgstr ""
+
+#: templates/password/email.html:4 templates/tournaments/password/email.html:4
+msgid "Reset password"
+msgstr ""
+
+#: templates/password/email.html:6 templates/tournaments/password/email.html:6
+msgid ""
+"You're receiving this email because you requested a password reset for your "
+"user account at Dr. Scratch."
+msgstr ""
+
+#: templates/password/email.html:7 templates/tournaments/password/email.html:7
+msgid "Please, go to the following page and choose a new password:"
+msgstr ""
+
+#: templates/password/email.html:9 templates/tournaments/password/email.html:9
+#: templates/tournaments/password/email_new_participant.html:9
+msgid "Your username is: "
+msgstr ""
+
+#: templates/password/email.html:13 templates/sign/email.html:11
+#: templates/tournaments/creator/email.html:11
+#: templates/tournaments/creator/email_resumen.html:9
+#: templates/tournaments/creator/email_valid.html:9
+#: templates/tournaments/password/email.html:13
+#: templates/tournaments/password/email_new_participant.html:13
+msgid "Thanks for using our website!"
+msgstr ""
+
+#: templates/password/email.html:14 templates/sign/email.html:12
+#: templates/tournaments/creator/email.html:12
+#: templates/tournaments/creator/email_resumen.html:10
+#: templates/tournaments/creator/email_valid.html:10
+#: templates/tournaments/password/email.html:14
+#: templates/tournaments/password/email_new_participant.html:14
+msgid "The Dr. Scratch team"
+msgstr ""
+
+#: templates/password/email_sended.html:12
+msgid "We sended to you an email."
+msgstr ""
+
+#: templates/password/email_sended.html:13
+msgid "Check with your systems operator to see if the message was blocked."
+msgstr ""
+
+#: templates/password/new_password.html:14
+#: templates/tournaments/password/new_password.html:14
+msgid "Type your new password:"
+msgstr ""
+
+#: templates/password/new_password.html:19
+#: templates/tournaments/password/new_password.html:19
+msgid "Confirm your password:"
+msgstr ""
+
+#: templates/password/new_password.html:25 templates/password/password.html:19
+#: templates/tournaments/password/new_password.html:25
+msgid "Send"
+msgstr ""
+
+#: templates/password/new_password.html:31
+#: templates/tournaments/password/new_password.html:31
+msgid "The Password and Confirm password fields are not identical."
+msgstr ""
+
+#: templates/password/password.html:13
+msgid "Have you forgotten your password? Please introduce your email:"
+msgstr ""
+
+#: templates/password/user_doesntexist.html:14
+#: templates/password/wrong_form.html:14 templates/sign/signup_error.html:25
+#: templates/tournaments/creator/signup_error.html:25
+#: templates/tournaments/password/user_doesntexist.html:14
+msgid "Retry"
+msgstr ""
+
+#: templates/password/user_doesntorg.html:12
+msgid "is not an organization."
+msgstr ""
+
+#: templates/password/wrong_form.html:12
+msgid "You must to complete all the fields."
+msgstr ""
+
+#: templates/sign/createOrganization.html:168
+#: templates/sign/createUser.html:168
+#: templates/sign/registerOrganization.html:168
+msgid ""
+"You'll evaluate the projects of all your student in few time. Also, you'll "
+"see all the relevant information in a view."
+msgstr ""
+
+#: templates/sign/createOrganization.html:170
+msgid ""
+"If you want to be one of the ten first organizations which prove Dr. Scratch "
+"send us an email to "
+msgstr ""
+
+#: templates/sign/createOrganization.html:170
+msgid " and we'll give you your hash to can sign up in the web"
+msgstr ""
+
+#: templates/sign/createOrganization.html:184
+#: templates/sign/createUser.html:183 templates/sign/organization.html:206
+#: templates/sign/registerOrganization.html:183
+msgid "Organization's name"
+msgstr ""
+
+#: templates/sign/createOrganization.html:196
+#: templates/sign/createUser.html:195 templates/sign/organization.html:222
+#: templates/sign/registerOrganization.html:195
+#: templates/tournaments/main_tournaments.html:261
+msgid "Password"
+msgstr ""
+
+#: templates/sign/createOrganization.html:198
+#: templates/sign/createUser.html:197 templates/sign/organization.html:224
+#: templates/sign/registerOrganization.html:197
+#: templates/tournaments/main_tournaments.html:263
+msgid ""
+"<input type='password' class='form-control' name='password' "
+"placeholder='Password'>"
+msgstr ""
+
+#: templates/sign/createOrganization.html:203
+#: templates/sign/createUser.html:202 templates/sign/organization.html:231
+#: templates/sign/registerOrganization.html:202
+#: templates/tournaments/main_tournaments.html:270
+msgid "Hashkey"
+msgstr ""
+
+#: templates/sign/createOrganization.html:205
+#: templates/sign/createUser.html:204 templates/sign/organization.html:233
+#: templates/sign/registerOrganization.html:204
+#: templates/tournaments/main_tournaments.html:272
+msgid ""
+"<input type='password' class='form-control' name='hashkey' "
+"placeholder='Password'>"
+msgstr ""
+
+#: templates/sign/email.html:5
+msgid "New organization in Dr. Scratch!"
+msgstr ""
+
+#: templates/sign/email.html:7
+msgid ""
+"You're receiving this email because you have successfully signed up in Dr. "
+"Scratch for organizations."
+msgstr ""
+
+#: templates/sign/organization.html:88
+#: templates/tournaments/creator/admin/admin_creator.html:114
+#: templates/tournaments/creator/admin/challenges/challengesList.html:114
+#: templates/tournaments/creator/admin/challenges/editChallenge.html:114
+#: templates/tournaments/creator/admin/teams/newEditTeam.html:114
+#: templates/tournaments/creator/admin/teams/teamsList.html:114
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:114
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:122
+#: templates/tournaments/creator/main_creator.html:115
+#: templates/tournaments/creator/newParticipant/main_new_participants.html:114
+#: templates/tournaments/creator/progress/teamsProgress.html:121
+#: templates/tournaments/creator/progress/tournamentsProgress.html:121
+#: templates/tournaments/creator/validation/validate.html:118
+#: templates/tournaments/creator/validation/validation.html:115
+#: templates/tournaments/main_tournaments.html:111
+#: templates/tournaments/participant/results.html:232
+#: templates/tournaments/participant/teamsPart.html:114
+#: templates/tournaments/participant/tournamentsPart.html:121
+msgid ""
+"<input type='text' name='username' id='username' placeholder='Username' "
+"style='margin-bottom: 15px;'>"
+msgstr ""
+
+#: templates/sign/organization.html:89
+#: templates/tournaments/creator/admin/admin_creator.html:115
+#: templates/tournaments/creator/admin/challenges/challengesList.html:115
+#: templates/tournaments/creator/admin/challenges/editChallenge.html:115
+#: templates/tournaments/creator/admin/teams/newEditTeam.html:115
+#: templates/tournaments/creator/admin/teams/teamsList.html:115
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:115
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:123
+#: templates/tournaments/creator/main_creator.html:116
+#: templates/tournaments/creator/newParticipant/main_new_participants.html:115
+#: templates/tournaments/creator/progress/teamsProgress.html:122
+#: templates/tournaments/creator/progress/tournamentsProgress.html:122
+#: templates/tournaments/creator/validation/validate.html:119
+#: templates/tournaments/creator/validation/validation.html:116
+#: templates/tournaments/main_tournaments.html:112
+#: templates/tournaments/participant/results.html:233
+#: templates/tournaments/participant/teamsPart.html:115
+#: templates/tournaments/participant/tournamentsPart.html:122
+msgid ""
+"<input type='password' name='password' id='password' placeholder='Password' "
+"style='margin-bottom: 15px;'>"
+msgstr ""
+
+#: templates/sign/organization.html:93
+#: templates/tournaments/creator/admin/admin_creator.html:119
+#: templates/tournaments/creator/admin/challenges/challengesList.html:119
+#: templates/tournaments/creator/admin/challenges/editChallenge.html:119
+#: templates/tournaments/creator/admin/teams/newEditTeam.html:119
+#: templates/tournaments/creator/admin/teams/teamsList.html:119
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:119
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:127
+#: templates/tournaments/creator/main_creator.html:120
+#: templates/tournaments/creator/newParticipant/main_new_participants.html:119
+#: templates/tournaments/creator/progress/teamsProgress.html:126
+#: templates/tournaments/creator/progress/tournamentsProgress.html:124
+#: templates/tournaments/creator/validation/validate.html:123
+#: templates/tournaments/creator/validation/validation.html:120
+#: templates/tournaments/main_tournaments.html:116
+#: templates/tournaments/participant/results.html:237
+#: templates/tournaments/participant/teamsPart.html:119
+#: templates/tournaments/participant/tournamentsPart.html:126
+msgid "I forgot my password"
+msgstr ""
+
+#: templates/sign/organization.html:96
+#: templates/tournaments/creator/admin/admin_creator.html:122
+#: templates/tournaments/creator/admin/challenges/challengesList.html:122
+#: templates/tournaments/creator/admin/challenges/editChallenge.html:122
+#: templates/tournaments/creator/admin/teams/newEditTeam.html:122
+#: templates/tournaments/creator/admin/teams/teamsList.html:122
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:122
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:130
+#: templates/tournaments/creator/main_creator.html:123
+#: templates/tournaments/creator/newParticipant/main_new_participants.html:122
+#: templates/tournaments/creator/progress/teamsProgress.html:129
+#: templates/tournaments/creator/progress/tournamentsProgress.html:127
+#: templates/tournaments/creator/validation/validate.html:126
+#: templates/tournaments/creator/validation/validation.html:123
+#: templates/tournaments/main_tournaments.html:119
+#: templates/tournaments/participant/results.html:240
+#: templates/tournaments/participant/teamsPart.html:122
+#: templates/tournaments/participant/tournamentsPart.html:129
+msgid ""
+"<input type='submit' value='Sign in' id='sign-in' class='btn-group btn-group-"
+"justified colored-text'>"
+msgstr ""
+
+#: templates/sign/organization.html:129
+msgid "Welcome to the organizations version of Dr. Scratch"
+msgstr ""
+
+#: templates/sign/organization.html:130
+msgid ""
+"Dr. Scratch for organizations is an analytical tool that can help you "
+"evaluate the Scratch projects of the students participating in your "
+"initiatives to asses their progression in terms of coding and computational "
+"thinking skills. "
+msgstr ""
+
+#: templates/sign/organization.html:189
+msgid "to join Dr. Scratch for organizations?"
+msgstr ""
+
+#: templates/sign/organization.html:192
+msgid ""
+"Would you like to be one of the 10 first organizations testing this new "
+"feature? Just drop us a line at "
+msgstr ""
+
+#: templates/sign/organization.html:192
+#: templates/tournaments/main_tournaments.html:231
+msgid ""
+" and we'll send you a hash key that will allow you to sign up in the web"
+msgstr ""
+
+#: templates/sign/signup_error.html:13
+#: templates/tournaments/creator/signup_error.html:13
+msgid "This name already exists. Choose another, please."
+msgstr ""
+
+#: templates/sign/signup_error.html:16
+#: templates/tournaments/creator/signup_error.html:16
+msgid "This email already exists. Choose another, please."
+msgstr ""
+
+#: templates/sign/signup_error.html:19
+#: templates/tournaments/creator/signup_error.html:19
+msgid "This hash doesn't exist."
+msgstr ""
+
+#: templates/sign/signup_error.html:22
+#: templates/tournaments/creator/signup_error.html:22
+msgid "You must to complete all fields."
+msgstr ""
+
+#: templates/statistics/statistics.html:65
+msgid "Scores of 2015"
+msgstr ""
+
+#: templates/statistics/statistics.html:92
+msgid "Number of projects analyzed in 2015"
+msgstr ""
+
+#: templates/statistics/statistics.html:100
+msgid " projects"
+msgstr ""
+
+#: templates/statistics/statistics.html:109
+msgid "Total projects"
+msgstr ""
+
+#: templates/statistics/statistics.html:123
+msgid "Percent levels"
+msgstr ""
+
+#: templates/statistics/statistics.html:142
+msgid "Level"
+msgstr ""
+
+#: templates/statistics/statistics.html:145
+#: templates/upload/dashboard-unregistered.html:92
+msgid "Basic"
+msgstr ""
+
+#: templates/statistics/statistics.html:148
+msgid "Development"
+msgstr ""
+
+#: templates/statistics/statistics.html:151
+#: templates/upload/dashboard-unregistered.html:88
+msgid "Master"
+msgstr ""
+
+#: templates/statistics/statistics.html:164
+#: templates/statistics/statistics.html:171
+msgid "Average rate by code smell"
+msgstr ""
+
+#: templates/statistics/statistics.html:194
+msgid "Code smell"
+msgstr ""
+
+#: templates/statistics/statistics.html:206
+#: templates/tournaments/participant/results.html:369
+#: templates/tournaments/participant/results.html:421
+#: templates/upload/dashboard-unregistered-developing.html:206
+#: templates/upload/dashboard-unregistered-master.html:242
+msgid "Sprite naming"
+msgstr ""
+
+#: templates/statistics/statistics.html:221
+#: templates/statistics/statistics.html:228
+msgid "Average rate by programming skill"
+msgstr ""
+
+#: templates/statistics/statistics.html:251
+msgid "Programming skill"
+msgstr ""
+
+#: templates/tournaments/creator/admin/admin_creator.html:60
+#: templates/tournaments/creator/admin/challenges/challengesList.html:60
+#: templates/tournaments/creator/admin/challenges/editChallenge.html:60
+#: templates/tournaments/creator/admin/teams/newEditTeam.html:60
+#: templates/tournaments/creator/admin/teams/teamsList.html:60
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:60
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:68
+#: templates/tournaments/creator/main_creator.html:61
+#: templates/tournaments/creator/newParticipant/main_new_participants.html:60
+#: templates/tournaments/creator/progress/teamsProgress.html:67
+#: templates/tournaments/creator/progress/tournamentsProgress.html:67
+#: templates/tournaments/creator/validation/validate.html:64
+#: templates/tournaments/creator/validation/validation.html:61
+#: templates/tournaments/main_tournaments.html:57
+#: templates/tournaments/participant/results.html:176
+#: templates/tournaments/participant/teamsPart.html:60
+#: templates/tournaments/participant/tournamentsPart.html:67
+msgid "Cambiar contraseña"
+msgstr ""
+
+#: templates/tournaments/creator/admin/admin_creator.html:107
+#: templates/tournaments/creator/admin/challenges/challengesList.html:107
+#: templates/tournaments/creator/admin/challenges/editChallenge.html:107
+#: templates/tournaments/creator/admin/teams/newEditTeam.html:107
+#: templates/tournaments/creator/admin/teams/teamsList.html:107
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:107
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:115
+#: templates/tournaments/creator/main_creator.html:108
+#: templates/tournaments/creator/newParticipant/main_new_participants.html:107
+#: templates/tournaments/creator/progress/teamsProgress.html:114
+#: templates/tournaments/creator/progress/tournamentsProgress.html:114
+#: templates/tournaments/creator/validation/validate.html:111
+#: templates/tournaments/creator/validation/validation.html:108
+#: templates/tournaments/main_tournaments.html:104
+#: templates/tournaments/participant/results.html:225
+#: templates/tournaments/participant/teamsPart.html:107
+#: templates/tournaments/participant/tournamentsPart.html:114
+msgid "Invalid username / password"
+msgstr ""
+
+#: templates/tournaments/creator/admin/admin_creator.html:147
+#: templates/tournaments/creator/admin/challenges/challengesList.html:148
+#: templates/tournaments/creator/admin/challenges/editChallenge.html:148
+#: templates/tournaments/creator/admin/teams/newEditTeam.html:148
+#: templates/tournaments/creator/admin/teams/teamsList.html:148
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:148
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:156
+#: templates/tournaments/creator/main_creator.html:148
+#: templates/tournaments/creator/newParticipant/main_new_participants.html:147
+#: templates/tournaments/creator/progress/teamsProgress.html:155
+#: templates/tournaments/creator/progress/tournamentsProgress.html:153
+#: templates/tournaments/creator/validation/validate.html:153
+#: templates/tournaments/creator/validation/validate.html:276
+#: templates/tournaments/creator/validation/validation.html:149
+#: templates/tournaments/participant/results.html:282
+#: templates/tournaments/participant/teamsPart.html:148
+#: templates/tournaments/participant/tournamentsPart.html:155
+msgid "« Back"
+msgstr ""
+
+#: templates/tournaments/creator/admin/admin_creator.html:158
+msgid "Tournaments administration for creators."
+msgstr ""
+
+#: templates/tournaments/creator/admin/admin_creator.html:159
+#: templates/tournaments/creator/admin/admin_creator.html:167
+#: templates/tournaments/creator/admin/admin_creator.html:175
+msgid "Go »"
+msgstr ""
+
+#: templates/tournaments/creator/admin/admin_creator.html:165
+#: templates/tournaments/participant/teamsPart.html:187
+msgid "Teams"
+msgstr ""
+
+#: templates/tournaments/creator/admin/admin_creator.html:166
+msgid "Teams administration for creators."
+msgstr ""
+
+#: templates/tournaments/creator/admin/admin_creator.html:173
+#: templates/tournaments/participant/tournamentsPart.html:197
+msgid "Challenges"
+msgstr ""
+
+#: templates/tournaments/creator/admin/admin_creator.html:174
+msgid "Challenges administration for creators."
+msgstr ""
+
+#: templates/tournaments/creator/admin/challenges/challengesList.html:162
+#: templates/tournaments/creator/admin/teams/teamsList.html:162
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:170
+#: templates/tournaments/creator/newParticipant/main_new_participants.html:158
+#: templates/tournaments/creator/progress/teamsProgress.html:166
+#: templates/tournaments/creator/progress/tournamentsProgress.html:164
+#: templates/tournaments/creator/validation/validate.html:166
+#: templates/tournaments/creator/validation/validate.html:288
+#: templates/tournaments/creator/validation/validation.html:163
+#: templates/tournaments/main_tournaments.html:149
+#: templates/tournaments/participant/teamsPart.html:162
+#: templates/tournaments/participant/tournamentsPart.html:166
+msgid "Error!"
+msgstr ""
+
+#: templates/tournaments/creator/admin/challenges/challengesList.html:167
+#: templates/tournaments/creator/admin/teams/teamsList.html:167
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:175
+#: templates/tournaments/creator/newParticipant/main_new_participants.html:163
+#: templates/tournaments/creator/progress/teamsProgress.html:171
+#: templates/tournaments/creator/progress/tournamentsProgress.html:169
+#: templates/tournaments/creator/validation/validate.html:171
+#: templates/tournaments/creator/validation/validate.html:293
+#: templates/tournaments/creator/validation/validation.html:168
+#: templates/tournaments/main_tournaments.html:154
+#: templates/tournaments/participant/teamsPart.html:167
+#: templates/tournaments/participant/tournamentsPart.html:171
+msgid "Warning!"
+msgstr ""
+
+#: templates/tournaments/creator/admin/challenges/challengesList.html:172
+#: templates/tournaments/creator/admin/teams/teamsList.html:172
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:180
+#: templates/tournaments/creator/newParticipant/main_new_participants.html:168
+#: templates/tournaments/creator/newParticipant/main_new_participants.html:180
+#: templates/tournaments/creator/progress/teamsProgress.html:176
+#: templates/tournaments/creator/progress/tournamentsProgress.html:174
+#: templates/tournaments/creator/validation/validate.html:176
+#: templates/tournaments/creator/validation/validate.html:298
+#: templates/tournaments/creator/validation/validation.html:173
+#: templates/tournaments/main_tournaments.html:159
+#: templates/tournaments/participant/teamsPart.html:172
+#: templates/tournaments/participant/tournamentsPart.html:176
+msgid "Info:"
+msgstr ""
+
+#: templates/tournaments/creator/admin/challenges/challengesList.html:177
+#: templates/tournaments/creator/admin/teams/teamsList.html:177
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:185
+#: templates/tournaments/creator/newParticipant/main_new_participants.html:173
+#: templates/tournaments/creator/progress/teamsProgress.html:181
+#: templates/tournaments/creator/progress/tournamentsProgress.html:179
+#: templates/tournaments/creator/validation/validate.html:181
+#: templates/tournaments/creator/validation/validate.html:303
+#: templates/tournaments/creator/validation/validation.html:178
+#: templates/tournaments/main_tournaments.html:164
+#: templates/tournaments/participant/teamsPart.html:177
+#: templates/tournaments/participant/tournamentsPart.html:181
+msgid "Success!"
+msgstr ""
+
+#: templates/tournaments/creator/admin/challenges/challengesList.html:182
+msgid "Challenges created by"
+msgstr ""
+
+#: templates/tournaments/creator/admin/challenges/challengesList.html:196
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:204
+#: templates/tournaments/creator/progress/tournamentsProgress.html:201
+msgid "Detail "
+msgstr ""
+
+#: templates/tournaments/creator/admin/challenges/challengesList.html:197
+#: templates/tournaments/creator/admin/teams/teamsList.html:197
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:205
+msgid "Edit "
+msgstr ""
+
+#: templates/tournaments/creator/admin/challenges/challengesList.html:198
+#: templates/tournaments/creator/admin/teams/teamsList.html:198
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:206
+msgid "Delete "
+msgstr ""
+
+#: templates/tournaments/creator/admin/challenges/challengesList.html:210
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:244
+#: templates/tournaments/creator/progress/tournamentsProgress.html:214
+msgid "Detail"
+msgstr ""
+
+#: templates/tournaments/creator/admin/challenges/challengesList.html:212
+msgid "Detail challenge:"
+msgstr ""
+
+#: templates/tournaments/creator/admin/challenges/challengesList.html:219
+#: templates/tournaments/creator/progress/teamsProgress.html:242
+#: templates/tournaments/participant/scores.html:5
+#: templates/tournaments/participant/tournamentsPart.html:242
+#: templates/upload/dashboard-unregistered-basic.html:189
+#: templates/upload/dashboard-unregistered-developing.html:229
+#: templates/upload/dashboard-unregistered-master.html:290
+#: templates/upload/dashboard-unregistered.html:114
+msgid "Concept"
+msgstr ""
+
+#: templates/tournaments/creator/admin/challenges/challengesList.html:220
+msgid "Value"
+msgstr ""
+
+#: templates/tournaments/creator/admin/challenges/challengesList.html:338
+#: templates/tournaments/creator/admin/challenges/challengesList.html:571
+#: templates/tournaments/creator/admin/challenges/editChallenge.html:206
+#: templates/tournaments/creator/progress/teamsProgress.html:371
+#: templates/tournaments/participant/scores.html:207
+#: templates/tournaments/participant/scores.html:209
+#: templates/tournaments/participant/tournamentsPart.html:371
+msgid "User Interactivity"
+msgstr ""
+
+#: templates/tournaments/creator/admin/challenges/challengesList.html:491
+#: templates/tournaments/creator/admin/teams/teamsList.html:210
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:218
+msgid "Delete"
+msgstr ""
+
+#: templates/tournaments/creator/admin/challenges/challengesList.html:493
+msgid "Delete challenge:"
+msgstr ""
+
+#: templates/tournaments/creator/admin/challenges/challengesList.html:497
+msgid "Are you sure to delete the challenge?"
+msgstr ""
+
+#: templates/tournaments/creator/admin/challenges/challengesList.html:501
+#: templates/tournaments/creator/admin/teams/teamsList.html:220
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:228
+msgid "Confirm"
+msgstr ""
+
+#: templates/tournaments/creator/admin/challenges/challengesList.html:535
+msgid "didn´t include any challenge yet"
+msgstr ""
+
+#: templates/tournaments/creator/admin/challenges/challengesList.html:538
+#: templates/tournaments/creator/admin/challenges/challengesList.html:549
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:303
+msgid "New Challenge"
+msgstr ""
+
+#: templates/tournaments/creator/admin/challenges/challengesList.html:551
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:305
+msgid "Create a new challenge"
+msgstr ""
+
+#: templates/tournaments/creator/admin/challenges/challengesList.html:559
+#: templates/tournaments/creator/admin/challenges/editChallenge.html:194
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:313
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:259
+#: templates/tournaments/creator/progress/tournamentsProgress.html:229
+msgid "Parallelism:"
+msgstr ""
+
+#: templates/tournaments/creator/admin/challenges/challengesList.html:586
+#: templates/tournaments/creator/admin/teams/newEditTeam.html:236
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:288
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:340
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:378
+msgid "Add"
+msgstr ""
+
+#: templates/tournaments/creator/admin/challenges/editChallenge.html:186
+#: templates/tournaments/creator/admin/challenges/editChallenge.html:221
+#: templates/tournaments/creator/admin/teams/newEditTeam.html:188
+#: templates/tournaments/creator/admin/teams/newEditTeam.html:212
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:188
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:242
+msgid "Edit"
+msgstr ""
+
+#: templates/tournaments/creator/admin/challenges/editChallenge.html:188
+msgid "Edit challenge:"
+msgstr ""
+
+#: templates/tournaments/creator/admin/teams/newEditTeam.html:190
+msgid "Edit team:"
+msgstr ""
+
+#: templates/tournaments/creator/admin/teams/newEditTeam.html:195
+#: templates/tournaments/creator/admin/teams/newEditTeam.html:227
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:369
+msgid "You can create a team without participants or include from 1 to"
+msgstr ""
+
+#: templates/tournaments/creator/admin/teams/newEditTeam.html:195
+#: templates/tournaments/creator/admin/teams/newEditTeam.html:227
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:369
+msgid "participants. Included participants cannot be repeted."
+msgstr ""
+
+#: templates/tournaments/creator/admin/teams/newEditTeam.html:198
+#: templates/tournaments/creator/admin/teams/newEditTeam.html:206
+#: templates/tournaments/creator/admin/teams/newEditTeam.html:230
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:372
+msgid "Select participant"
+msgstr ""
+
+#: templates/tournaments/creator/admin/teams/newEditTeam.html:220
+#: templates/tournaments/creator/admin/teams/teamsList.html:286
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:359
+msgid "New Team"
+msgstr ""
+
+#: templates/tournaments/creator/admin/teams/newEditTeam.html:222
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:361
+msgid "Create a new team"
+msgstr ""
+
+#: templates/tournaments/creator/admin/teams/teamsList.html:182
+msgid "Teams created by"
+msgstr ""
+
+#: templates/tournaments/creator/admin/teams/teamsList.html:196
+msgid "View Participants "
+msgstr ""
+
+#: templates/tournaments/creator/admin/teams/teamsList.html:212
+msgid "Delete team:"
+msgstr ""
+
+#: templates/tournaments/creator/admin/teams/teamsList.html:216
+msgid "Are you sure to delete the team?"
+msgstr ""
+
+#: templates/tournaments/creator/admin/teams/teamsList.html:236
+msgid "Participants"
+msgstr ""
+
+#: templates/tournaments/creator/admin/teams/teamsList.html:238
+msgid "Team participants:"
+msgstr ""
+
+#: templates/tournaments/creator/admin/teams/teamsList.html:249
+#: templates/tournaments/creator/validation/validate.html:229
+msgid "The team has not participants."
+msgstr ""
+
+#: templates/tournaments/creator/admin/teams/teamsList.html:250
+msgid "Edit the team to add new participants."
+msgstr ""
+
+#: templates/tournaments/creator/admin/teams/teamsList.html:283
+msgid "didn´t include any team yet"
+msgstr ""
+
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:190
+msgid "Edit tournament:"
+msgstr ""
+
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:195
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:257
+msgid "You can create a tournament without challenges or include from 1 to"
+msgstr ""
+
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:195
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:257
+msgid "challenges. Included challenges cannot be repeted."
+msgstr ""
+
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:198
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:206
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:260
+msgid "Select challenge"
+msgstr ""
+
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:212
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:266
+msgid "New Challenge "
+msgstr ""
+
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:213
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:267
+msgid "You can create a tournament without teams or include from 1 to"
+msgstr ""
+
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:213
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:267
+msgid "teams. Included teams cannot be repeted."
+msgstr ""
+
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:216
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:224
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:270
+msgid "Select team"
+msgstr ""
+
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:230
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:276
+msgid "New Team "
+msgstr ""
+
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:231
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:277
+msgid ""
+"You can validate the challenges of the tournament manually. The challenge "
+"will not be completed until you validate the student's game in Manual "
+"Validation section."
+msgstr ""
+
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:234
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:280
+msgid "Validate the challenges manually"
+msgstr ""
+
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:239
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:285
+msgid ""
+"You can be notified with an email when a participant complete a challenge. "
+"Select the notification frequency."
+msgstr ""
+
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:250
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:345
+msgid "New Tournament"
+msgstr ""
+
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:252
+msgid "Create a new tournament"
+msgstr ""
+
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:317
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:260
+#: templates/tournaments/creator/progress/tournamentsProgress.html:230
+msgid "Logic:"
+msgstr ""
+
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:321
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:261
+#: templates/tournaments/creator/progress/tournamentsProgress.html:231
+msgid "Flow Control:"
+msgstr ""
+
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:325
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:262
+#: templates/tournaments/creator/progress/tournamentsProgress.html:232
+msgid "User Interactivity:"
+msgstr ""
+
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:329
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:263
+#: templates/tournaments/creator/progress/tournamentsProgress.html:233
+msgid "Data Representation:"
+msgstr ""
+
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:333
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:264
+#: templates/tournaments/creator/progress/tournamentsProgress.html:234
+msgid "Abstraction:"
+msgstr ""
+
+#: templates/tournaments/creator/admin/tournaments/newEditTournament.html:337
+msgid "Syncronization:"
+msgstr ""
+
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:190
+#: templates/tournaments/creator/progress/tournamentsProgress.html:188
+#: templates/tournaments/creator/validation/validation.html:184
+msgid "Tournaments created by"
+msgstr ""
+
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:220
+msgid "Delete tournament:"
+msgstr ""
+
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:224
+msgid "Are you sure to delete the tournament?"
+msgstr ""
+
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:246
+#: templates/tournaments/creator/progress/tournamentsProgress.html:216
+msgid "Tournament detail:"
+msgstr ""
+
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:251
+#: templates/tournaments/creator/progress/tournamentsProgress.html:221
+msgid "Tournament challenges:"
+msgstr ""
+
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:265
+#: templates/tournaments/creator/progress/tournamentsProgress.html:235
+msgid "Synchronization:"
+msgstr ""
+
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:271
+#: templates/tournaments/creator/progress/tournamentsProgress.html:241
+msgid "The tournament has not challenges."
+msgstr ""
+
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:272
+#: templates/tournaments/creator/progress/tournamentsProgress.html:242
+msgid "Edit the tournament to add new challenges."
+msgstr ""
+
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:275
+#: templates/tournaments/creator/progress/tournamentsProgress.html:245
+msgid "Tournament teams:"
+msgstr ""
+
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:292
+#: templates/tournaments/creator/progress/tournamentsProgress.html:262
+msgid "Edit the tournament to add new teams."
+msgstr ""
+
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:296
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:307
+#: templates/tournaments/creator/progress/tournamentsProgress.html:266
+#: templates/tournaments/creator/progress/tournamentsProgress.html:277
+msgid "Manual Validation:"
+msgstr ""
+
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:296
+#: templates/tournaments/creator/progress/tournamentsProgress.html:266
+msgid "Yes"
+msgstr ""
+
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:298
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:300
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:302
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:304
+#: templates/tournaments/creator/progress/tournamentsProgress.html:268
+#: templates/tournaments/creator/progress/tournamentsProgress.html:270
+#: templates/tournaments/creator/progress/tournamentsProgress.html:272
+#: templates/tournaments/creator/progress/tournamentsProgress.html:274
+msgid "Receive Emails:"
+msgstr ""
+
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:307
+#: templates/tournaments/creator/progress/tournamentsProgress.html:277
+msgid "No"
+msgstr ""
+
+#: templates/tournaments/creator/admin/tournaments/tournamentsList.html:342
+#: templates/tournaments/creator/progress/tournamentsProgress.html:315
+msgid "didn´t include any tournament yet"
+msgstr ""
+
+#: templates/tournaments/creator/email.html:5
+msgid "New creator in Dr. Scratch!"
+msgstr ""
+
+#: templates/tournaments/creator/email.html:7
+#: templates/tournaments/password/email_new_participant.html:6
+msgid ""
+"You're receiving this email because you have successfully signed up in Dr. "
+"Scratch tournaments."
+msgstr ""
+
+#: templates/tournaments/creator/email_resumen.html:5
+msgid ""
+"You're receiving this email because you have games with pending validation "
+"in your tournaments."
+msgstr ""
+
+#: templates/tournaments/creator/email_resumen.html:7
+msgid ""
+"Access to the Manual Validation section in Dr. Scratch Tournaments to "
+"validate them."
+msgstr ""
+
+#: templates/tournaments/creator/email_valid.html:5
+msgid "You're receiving this email because a game of the tournament"
+msgstr ""
+
+#: templates/tournaments/creator/email_valid.html:5
+msgid "has been completed."
+msgstr ""
+
+#: templates/tournaments/creator/email_valid.html:7
+msgid ""
+"Access to the Manual Validation section in Dr. Scratch Tournaments to "
+"validate it."
+msgstr ""
+
+#: templates/tournaments/creator/main_creator.html:167
+msgid "Tournaments Administration"
+msgstr ""
+
+#: templates/tournaments/creator/main_creator.html:168
+msgid ""
+"In the Tournaments Administration section you can create new tournaments, "
+"teams and challenges and manage them once created."
+msgstr ""
+
+#: templates/tournaments/creator/main_creator.html:169
+#: templates/tournaments/creator/main_creator.html:177
+#: templates/tournaments/creator/main_creator.html:185
+#: templates/tournaments/creator/main_creator.html:193
+msgid "Access"
+msgstr ""
+
+#: templates/tournaments/creator/main_creator.html:175
+msgid "Manual Validation"
+msgstr ""
+
+#: templates/tournaments/creator/main_creator.html:176
+msgid ""
+"In the Manual Validation section you can validate manually the Scratch "
+"projects uploaded by the participants."
+msgstr ""
+
+#: templates/tournaments/creator/main_creator.html:183
+msgid "Tournaments progress"
+msgstr ""
+
+#: templates/tournaments/creator/main_creator.html:184
+msgid ""
+"The Tournaments progress section provides information about the state of the "
+"games played in created tournaments."
+msgstr ""
+
+#: templates/tournaments/creator/main_creator.html:191
+msgid "Register new participants"
+msgstr ""
+
+#: templates/tournaments/creator/main_creator.html:192
+msgid ""
+"In the Register new participants section you can include new participants in "
+"Dr. Scratch Tournaments."
+msgstr ""
+
+#: templates/tournaments/creator/newParticipant/main_new_participants.html:178
+msgid "Register new participants in Dr. Scratch Tournaments"
+msgstr ""
+
+#: templates/tournaments/creator/newParticipant/main_new_participants.html:180
+msgid ""
+"The username's password will be the username or email introduced. The "
+"username and the password will be the same."
+msgstr ""
+
+#: templates/tournaments/creator/newParticipant/main_new_participants.html:184
+msgid "You have 3 options:"
+msgstr ""
+
+#: templates/tournaments/creator/newParticipant/main_new_participants.html:193
+msgid "1. You can include up to 20 participants at the same time with a"
+msgstr ""
+
+#: templates/tournaments/creator/newParticipant/main_new_participants.html:193
+msgid "CSV file"
+msgstr ""
+
+#: templates/tournaments/creator/newParticipant/main_new_participants.html:202
+#: templates/tournaments/creator/newParticipant/main_new_participants.html:223
+#: templates/tournaments/creator/newParticipant/main_new_participants.html:253
+msgid "Register"
+msgstr ""
+
+#: templates/tournaments/creator/newParticipant/main_new_participants.html:213
+msgid "2. You can include up to 20 participants at the same time with a"
+msgstr ""
+
+#: templates/tournaments/creator/newParticipant/main_new_participants.html:213
+msgid "TXT file"
+msgstr ""
+
+#: templates/tournaments/creator/newParticipant/main_new_participants.html:220
+msgid ""
+"<input  name='txtFile' type='file' class='filestyle' data-buttonText='Choose "
+"File .txt'>"
+msgstr ""
+
+#: templates/tournaments/creator/newParticipant/main_new_participants.html:232
+msgid ""
+"3. You can include up to 20 participants filling the form below. Press + to "
+"include multiple participants."
+msgstr ""
+
+#: templates/tournaments/creator/newParticipant/main_new_participants.html:237
+msgid "Username / Email"
+msgstr ""
+
+#: templates/tournaments/creator/newParticipant/main_new_participants.html:304
+msgid ""
+"You have to write only the username or email of the student in the first "
+"column. Easy, isn't it?"
+msgstr ""
+
+#: templates/tournaments/creator/newParticipant/main_new_participants.html:325
+msgid "How is the file .txt?"
+msgstr ""
+
+#: templates/tournaments/creator/newParticipant/main_new_participants.html:327
+msgid ""
+"You have to write only the username or email of the student in each line. "
+"Easy, isn't it?"
+msgstr ""
+
+#: templates/tournaments/creator/progress/teamsProgress.html:187
+msgid "Tournaments Progress"
+msgstr ""
+
+#: templates/tournaments/creator/progress/teamsProgress.html:191
+msgid "Tournament completed."
+msgstr ""
+
+#: templates/tournaments/creator/progress/teamsProgress.html:215
+#: templates/tournaments/participant/tournamentsPart.html:215
+msgid "« Previous"
+msgstr ""
+
+#: templates/tournaments/creator/progress/teamsProgress.html:216
+#: templates/tournaments/participant/tournamentsPart.html:216
+msgid "Next »"
+msgstr ""
+
+#: templates/tournaments/creator/progress/teamsProgress.html:243
+#: templates/tournaments/participant/scores.html:6
+#: templates/tournaments/participant/tournamentsPart.html:243
+msgid "Required Value"
+msgstr ""
+
+#: templates/tournaments/creator/progress/teamsProgress.html:244
+#: templates/tournaments/participant/scores.html:7
+#: templates/tournaments/participant/tournamentsPart.html:244
+msgid "Highest Score"
+msgstr ""
+
+#: templates/tournaments/creator/progress/teamsProgress.html:537
+#: templates/tournaments/participant/tournamentsPart.html:537
+msgid "The tournament has not challenges yet"
+msgstr ""
+
+#: templates/tournaments/creator/progress/teamsProgress.html:570
+#: templates/tournaments/participant/tournamentsPart.html:610
+msgid "The team is not included in any tournament yet"
+msgstr ""
+
+#: templates/tournaments/creator/progress/teamsProgress.html:637
+#: templates/tournaments/participant/tournamentsPart.html:677
+#: templates/upload/dashboard-organization.html:245
+msgid "<img class='framed' src='../../static/app/images/url-en.png' />"
+msgstr ""
+
+#: templates/tournaments/creator/progress/teamsProgress.html:661
+#: templates/tournaments/participant/tournamentsPart.html:701
+#: templates/upload/dashboard-organization.html:270
+msgid "<img class='framed' src='../../static/app/images/project-en.png' />"
+msgstr ""
+
+#: templates/tournaments/creator/progress/tournamentsProgress.html:202
+msgid "Progress "
+msgstr ""
+
+#: templates/tournaments/creator/validation/validate.html:202
+#: templates/tournaments/creator/validation/validate.html:238
+msgid "Validate"
+msgstr ""
+
+#: templates/tournaments/creator/validation/validate.html:308
+msgid "There are no games left to validate in the selected tournament."
+msgstr ""
+
+#: templates/tournaments/creator/validation/validation.html:197
+msgid "Validate Games"
+msgstr ""
+
+#: templates/tournaments/creator/validation/validation.html:226
+msgid "There are no tournaments with games left to validate."
+msgstr ""
+
+#: templates/tournaments/main_tournaments.html:170
+msgid "Welcome to Dr. Scratch Tournaments"
+msgstr ""
+
+#: templates/tournaments/main_tournaments.html:172
+msgid ""
+"Dr. Scratch tournaments allows registered teachers create and manage "
+"tournaments for students to take part in them. Tournaments can be evaluated "
+"manually or automatically."
+msgstr ""
+
+#: templates/tournaments/main_tournaments.html:226
+msgid "Dr. Scratch Tournaments"
+msgstr ""
+
+#: templates/tournaments/main_tournaments.html:228
+msgid "to join Dr. Scratch tournaments?"
+msgstr ""
+
+#: templates/tournaments/main_tournaments.html:231
+msgid ""
+"Would you like to be one of the 10 first teachers testing this new feature? "
+"Just drop us a line at "
+msgstr ""
+
+#: templates/tournaments/main_tournaments.html:245
+msgid "Teacher's username"
+msgstr ""
+
+#: templates/tournaments/participant/results.html:67
+#: templates/tournaments/participant/results.html:104
+#: templates/upload/dashboard-unregistered-basic.html:63
+#: templates/upload/dashboard-unregistered-developing.html:58
+#: templates/upload/dashboard-unregistered-master.html:77
+msgid "Score"
+msgstr ""
+
+#: templates/tournaments/participant/results.html:68
+#: templates/tournaments/participant/results.html:105
+#: templates/upload/dashboard-unregistered-basic.html:64
+#: templates/upload/dashboard-unregistered-developing.html:59
+#: templates/upload/dashboard-unregistered-master.html:78
+msgid "This section shows the total score."
+msgstr ""
+
+#: templates/tournaments/participant/results.html:72
+#: templates/tournaments/participant/results.html:109
+#: templates/upload/dashboard-unregistered-basic.html:68
+#: templates/upload/dashboard-unregistered-developing.html:63
+#: templates/upload/dashboard-unregistered-master.html:82
+msgid "Improve the score"
+msgstr ""
+
+#: templates/tournaments/participant/results.html:73
+#: templates/tournaments/participant/results.html:110
+#: templates/upload/dashboard-unregistered-basic.html:69
+#: templates/upload/dashboard-unregistered-developing.html:64
+#: templates/upload/dashboard-unregistered-master.html:83
+msgid ""
+"You do not like the score that you got? Improve it following our advice."
+msgstr ""
+
+#: templates/tournaments/participant/results.html:77
+#: templates/upload/dashboard-unregistered-developing.html:68
+#: templates/upload/dashboard-unregistered-master.html:87
+msgid "Bad habits in programming"
+msgstr ""
+
+#: templates/tournaments/participant/results.html:78
+#: templates/upload/dashboard-unregistered-developing.html:69
+#: templates/upload/dashboard-unregistered-master.html:88
+msgid ""
+"If you correct your bad habits in programming, you will avoid problems in "
+"the future."
+msgstr ""
+
+#: templates/tournaments/participant/results.html:82
+#: templates/tournaments/participant/results.html:114
+#: templates/upload/dashboard-unregistered-basic.html:73
+#: templates/upload/dashboard-unregistered-developing.html:73
+#: templates/upload/dashboard-unregistered-master.html:92
+msgid "Score in detail"
+msgstr ""
+
+#: templates/tournaments/participant/results.html:83
+#: templates/tournaments/participant/results.html:115
+#: templates/upload/dashboard-unregistered-basic.html:74
+#: templates/upload/dashboard-unregistered-developing.html:74
+#: templates/upload/dashboard-unregistered-master.html:93
+msgid "Here we show the score in each programming skill."
+msgstr ""
+
+#: templates/tournaments/participant/results.html:271
+msgid "You complete the challenge."
+msgstr ""
+
+#: templates/tournaments/participant/results.html:272
+#: templates/tournaments/participant/results.html:276
+#: templates/tournaments/participant/results.html:279
+msgid "Back to improve your highest score."
+msgstr ""
+
+#: templates/tournaments/participant/results.html:275
+msgid ""
+"Your score has to be validated by you teacher to complete the challenge."
+msgstr ""
+
+#: templates/tournaments/participant/results.html:278
+msgid "You didn't complete the challenge yet."
+msgstr ""
+
+#: templates/tournaments/participant/results.html:283
+msgid "Learn how"
+msgstr ""
+
+#: templates/tournaments/participant/results.html:297
+#: templates/upload/dashboard-unregistered-basic.html:116
+#: templates/upload/dashboard-unregistered-developing.html:125
+#: templates/upload/dashboard-unregistered-master.html:164
+msgid "Score:"
+msgstr ""
+
+#: templates/tournaments/participant/results.html:298
+#: templates/upload/dashboard-unregistered-basic.html:117
+#: templates/upload/dashboard-unregistered-developing.html:126
+#: templates/upload/dashboard-unregistered-master.html:165
+#, python-format
+msgid ""
+" I have just obtained %(points)s points analyzing my project in Dr. Scratch! "
+"Beat it! @DrScratchTool "
+msgstr ""
+
+#: templates/tournaments/participant/results.html:303
+#: templates/upload/dashboard-unregistered-master.html:170
+msgid ""
+"<h3 class='text-left dark-text'>Your level is...  <strong>MASTER! </strong></"
+"h3>"
+msgstr ""
+
+#: templates/tournaments/participant/results.html:304
+#: templates/upload/dashboard-unregistered-master.html:171
+msgid "You're the master of the universe!!! "
+msgstr ""
+
+#: templates/tournaments/participant/results.html:306
+#: templates/upload/dashboard-unregistered-developing.html:131
+msgid ""
+"<h3 class='text-left dark-text'>Your level is... <br></br> "
+"<strong>DEVELOPING! </strong></h3>"
+msgstr ""
+
+#: templates/tournaments/participant/results.html:307
+#: templates/upload/dashboard-unregistered-developing.html:132
+msgid "You're doing a great job.<br> Keep it up!!!"
+msgstr ""
+
+#: templates/tournaments/participant/results.html:309
+#: templates/upload/dashboard-unregistered-basic.html:122
+msgid ""
+"<h3 class='text-left dark-text'>Your level is...  <strong>BASIC! </strong></"
+"h3>"
+msgstr ""
+
+#: templates/tournaments/participant/results.html:310
+#: templates/upload/dashboard-unregistered-basic.html:123
+msgid "You're at the beginning of a <br>great adventure . . . Keep it up!"
+msgstr ""
+
+#: templates/tournaments/participant/results.html:321
+#: templates/upload/dashboard-unregistered-basic.html:133
+#: templates/upload/dashboard-unregistered-developing.html:141
+#: templates/upload/dashboard-unregistered-master.html:184
+msgid "Want to level up?"
+msgstr ""
+
+#: templates/tournaments/participant/results.html:323
+#: templates/upload/dashboard-unregistered-basic.html:135
+#: templates/upload/dashboard-unregistered-developing.html:143
+#: templates/upload/dashboard-unregistered-master.html:186
+msgid "Come back to your Scratch project."
+msgstr ""
+
+#: templates/tournaments/participant/results.html:336
+#: templates/tournaments/participant/results.html:345
+#, python-format
+msgid ""
+"\n"
+"\t\t                                        %(key)s\n"
+"\t\t                                        "
+msgstr ""
+
+#: templates/tournaments/participant/results.html:364
+#: templates/tournaments/participant/results.html:405
+#: templates/upload/dashboard-unregistered-developing.html:190
+#: templates/upload/dashboard-unregistered-master.html:237
+msgid "Details to fix:"
+msgstr ""
+
+#: templates/tournaments/participant/results.html:367
+#: templates/upload/dashboard-unregistered-master.html:240
+msgid " duplicated scripts."
+msgstr ""
+
+#: templates/tournaments/participant/results.html:371
+#: templates/tournaments/participant/results.html:423
+#: templates/upload/dashboard-unregistered-developing.html:208
+#: templates/upload/dashboard-unregistered-master.html:244
+msgid " sprite naming."
+msgstr ""
+
+#: templates/tournaments/participant/results.html:377
+#: templates/upload/dashboard-unregistered-master.html:250
+msgid "Your project does not have dead code, good job!"
+msgstr ""
+
+#: templates/tournaments/participant/results.html:379
+#: templates/upload/dashboard-unregistered-master.html:252
+msgid "You have dead code in "
+msgstr ""
+
+#: templates/tournaments/participant/results.html:384
+#: templates/upload/dashboard-unregistered-master.html:257
+msgid " dead code."
+msgstr ""
+
+#: templates/tournaments/participant/results.html:386
+#: templates/tournaments/participant/results.html:408
+#: templates/upload/dashboard-unregistered-developing.html:193
+#: templates/upload/dashboard-unregistered-master.html:259
+msgid "Sprites attributes"
+msgstr ""
+
+#: templates/tournaments/participant/results.html:390
+#: templates/tournaments/participant/results.html:412
+#: templates/upload/dashboard-unregistered-developing.html:197
+#: templates/upload/dashboard-unregistered-master.html:263
+msgid "Your project does not have uninitialized attributes, good job!"
+msgstr ""
+
+#: templates/tournaments/participant/results.html:396
+#: templates/tournaments/participant/results.html:418
+#: templates/upload/dashboard-unregistered-developing.html:203
+#: templates/upload/dashboard-unregistered-master.html:269
+msgid " sprite attributes."
+msgstr ""
+
+#: templates/tournaments/participant/teamsPart.html:208
+msgid "is not included in any team yet"
+msgstr ""
+
+#: templates/tournaments/participant/tournamentsPart.html:187
+msgid "Analyze your Scratch project to improve your highest score"
+msgstr ""
+
+#: templates/tournaments/participant/tournamentsPart.html:189
+msgid "You complete the tournament."
+msgstr ""
+
+#: templates/tournaments/participant/tournamentsPart.html:190
+msgid "You can still improve your highest score in every challenge."
+msgstr ""
+
+#: templates/tournaments/password/email_new_participant.html:4
+msgid "New participant in Dr. Scratch!"
+msgstr ""
+
+#: templates/tournaments/password/email_new_participant.html:7
+msgid ""
+"Please, go to the following page and choose a new password to access Dr. "
+"Scratch tournaments:"
+msgstr ""
+
+#: templates/upload/dashboard-organization.html:122
+msgid "You can download your results. You do click in the following button:"
+msgstr ""
+
+#: templates/upload/dashboard-organization.html:125
+msgid "Download .csv file"
+msgstr ""
+
+#: templates/upload/dashboard-organization.html:132
+msgid "Or...you can analyze another file with more projects:"
+msgstr ""
+
+#: templates/upload/dashboard-organization.html:135
+msgid "Analyze again!"
+msgstr ""
+
+#: templates/upload/dashboard-organization.html:163
+msgid "Error! Please choose a .csv file"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered-basic.html:148
+#: templates/upload/dashboard-unregistered-basic.html:157
+#: templates/upload/dashboard-unregistered-basic.html:203
+#: templates/upload/dashboard-unregistered-developing.html:155
+#: templates/upload/dashboard-unregistered-developing.html:165
+#: templates/upload/dashboard-unregistered-developing.html:173
+#: templates/upload/dashboard-unregistered-developing.html:243
+#: templates/upload/dashboard-unregistered-master.html:198
+#: templates/upload/dashboard-unregistered-master.html:208
+#: templates/upload/dashboard-unregistered-master.html:218
+#: templates/upload/dashboard-unregistered-master.html:304
+#, python-format
+msgid ""
+"\n"
+"                                        %(key)s\n"
+"                                        "
+msgstr ""
+
+#: templates/upload/dashboard-unregistered-basic.html:190
+#: templates/upload/dashboard-unregistered-developing.html:230
+#: templates/upload/dashboard-unregistered-master.html:291
+#: templates/upload/dashboard-unregistered.html:115
+msgid "Points"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered.html:10
+msgid "Project results"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered.html:48
+#: templates/upload/dashboard-unregistered.html:57
+#: templates/upload/dashboard-unregistered.html:59
+msgid "Dashboard"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered.html:57
+msgid "Overview"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered.html:63
+msgid "Welcome to Doctor Scratch. Project results."
+msgstr ""
+
+#: templates/upload/dashboard-unregistered.html:79
+msgid "CT Score:"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered.html:86
+msgid "Your level:"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered.html:90
+msgid "Developing"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered.html:101
+#, python-format
+msgid ""
+"I have just obtained %(points)s points analyzing my project in Dr. Scratch! "
+"Beat it! @DrScratchTool "
+msgstr ""
+
+#: templates/upload/dashboard-unregistered.html:109
+msgid "CT Score in detail:"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered.html:127
+#: templates/upload/dashboard-unregistered.html:131
+#: templates/upload/dashboard-unregistered.html:135
+msgid "Learn more!!!"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered.html:139
+msgid "Well done!!!"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered.html:181
+msgid "Sprites naming"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered.html:190
+msgid "Incorrect name:"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered.html:209
+msgid "Dead Code"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered.html:220
+msgid "blocks"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered.html:242
+msgid "Sprite attributes initialization"
+msgstr ""
+
+#: templates/upload/dashboard-unregistered.html:254
+msgid "modified but not initialized correctly."
+msgstr ""
