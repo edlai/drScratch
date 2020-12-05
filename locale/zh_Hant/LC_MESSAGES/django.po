@@ -230,32 +230,32 @@ msgstr ""
 
 #: app/views.py:3284 app/views.py:3315 templates/error/analyzing.html:36
 msgid "There was an error analyzing your project"
-msgstr ""
+msgstr "出現未預期錯誤"
 
 #: drScratch/settings.py:133
 msgid "Spanish"
-msgstr ""
+msgstr "西班牙語"
 
 #: drScratch/settings.py:134
 msgid "English"
-msgstr ""
+msgstr "英文"
 
 #: drScratch/settings.py:135
 msgid "Traditional Chinese"
-msgstr ""
+msgstr "繁體中文"
 
 #: templates/error/404.html:9 templates/error/500.html:9
 #: templates/error/analyzing.html:9
 msgid "Error"
-msgstr ""
+msgstr "錯誤"
 
 #: templates/error/404.html:36
 msgid "ERROR 404 - Page Not Found"
-msgstr ""
+msgstr "錯誤 404 - 找不到該網頁"
 
 #: templates/error/404.html:39
 msgid "Ops! This page doesn't exist"
-msgstr ""
+msgstr "糟糕! 這網頁不存在"
 
 #: templates/error/404.html:59 templates/error/500.html:59
 #: templates/error/analyzing.html:62 templates/login/login.html:104
@@ -265,7 +265,7 @@ msgstr ""
 #: templates/sign/organization.html:105
 #: templates/sign/registerOrganization.html:81
 msgid "Get Started"
-msgstr ""
+msgstr "馬上開始吧"
 
 #: templates/error/404.html:67 templates/error/500.html:67
 #: templates/error/analyzing.html:70 templates/learn/base.html:119
@@ -324,7 +324,7 @@ msgstr ""
 #: templates/tournaments/participant/scores.html:337
 #: templates/tournaments/participant/tournamentsPart.html:451
 msgid "Abstraction"
-msgstr ""
+msgstr "抽象化"
 
 #: templates/learn/Abstraction.html:10
 msgid ""
@@ -366,51 +366,51 @@ msgstr ""
 #: templates/learn/Abstraction.html:21 templates/learn/Abstraction.html:36
 #: templates/learn/Abstraction.html:62 templates/learn/Abstraction.html:93
 msgid "clear"
-msgstr ""
+msgstr "清除"
 
 #: templates/learn/Abstraction.html:22 templates/learn/Abstraction.html:37
 msgid "go to x:(-100) y:(30)"
-msgstr ""
+msgstr "移動到 x:(-100) y:(30)"
 
 #: templates/learn/Abstraction.html:23 templates/learn/Abstraction.html:38
 #: templates/learn/Abstraction.html:65 templates/learn/Abstraction.html:71
 #: templates/learn/Abstraction.html:81
 msgid "pen down"
-msgstr ""
+msgstr "放下畫筆"
 
 #: templates/learn/Abstraction.html:24 templates/learn/Abstraction.html:39
 #: templates/learn/Abstraction.html:72
 msgid "move (200) steps"
-msgstr ""
+msgstr "移動 (200) 步"
 
 #: templates/learn/Abstraction.html:25 templates/learn/Abstraction.html:30
 #: templates/learn/Abstraction.html:40 templates/learn/Abstraction.html:46
 #: templates/learn/Abstraction.html:67 templates/learn/Abstraction.html:73
 #: templates/learn/Abstraction.html:83
 msgid "pen up"
-msgstr ""
+msgstr "拿起畫筆"
 
 #: templates/learn/Abstraction.html:26 templates/learn/Abstraction.html:42
 #: templates/learn/Abstraction.html:68 templates/learn/Abstraction.html:96
 #: templates/learn/Synchronization.html:25
 #: templates/learn/duplicatedScripts.html:20
 msgid "wait (1) secs"
-msgstr ""
+msgstr "等候 (1) 秒"
 
 #: templates/learn/Abstraction.html:27 templates/learn/Abstraction.html:43
 msgid "go to x:(-44) y:(-24)"
-msgstr ""
+msgstr "前進到 x:(-44) y:(-24)"
 
 #: templates/learn/Abstraction.html:28 templates/learn/Abstraction.html:44
 #: templates/learn/Abstraction.html:64 templates/learn/Abstraction.html:70
 #: templates/learn/Abstraction.html:80
 msgid "set pen color to [#FFA500]"
-msgstr ""
+msgstr "將畫筆顏色設成 [#FFA500]"
 
 #: templates/learn/Abstraction.html:29 templates/learn/Abstraction.html:45
 #: templates/learn/Abstraction.html:66
 msgid "move (100) steps"
-msgstr ""
+msgstr "移動 (100) 步"
 
 #: templates/learn/Abstraction.html:33
 msgid ""
@@ -439,7 +439,7 @@ msgid ""
 "Scratch allows new user-defined blocks that consist of a sequence of "
 "instructions. These abstractions allow you to create simple programs to "
 "read, program and maintain. Here's an example:"
-msgstr ""
+msgstr "Scratch 允許"
 
 #: templates/learn/Abstraction.html:63 templates/learn/Abstraction.html:94
 msgid "go to x:(-200) y:(40)"
@@ -926,7 +926,7 @@ msgstr ""
 #: templates/tournaments/participant/scores.html:81
 #: templates/tournaments/participant/tournamentsPart.html:291
 msgid "Logic"
-msgstr ""
+msgstr "邏輯化"
 
 #: templates/learn/Logic.html:10
 msgid ""
@@ -1307,7 +1307,7 @@ msgstr ""
 #: templates/learn/User.html:5 templates/learn/base.html:101
 #: templates/statistics/statistics.html:263
 msgid "User interactivity"
-msgstr ""
+msgstr "使用者互動"
 
 #: templates/learn/User.html:11
 msgid ""
@@ -1715,17 +1715,17 @@ msgstr "加強你的技能"
 msgid ""
 "We provide feedback on several aspects which are related to Computational "
 "Thinking."
-msgstr ""
+msgstr "我們提供有關於運算思維方面多種面向的回饋"
 
 #: templates/login/login.html:231 templates/main/main.html:258
 msgid "Always improving"
-msgstr ""
+msgstr "持續演進"
 
 #: templates/login/login.html:233 templates/main/main.html:260
 msgid ""
 "We're continually enhancing the features of Dr. Scratch, and we'd love to "
 "hear your thoughts"
-msgstr ""
+msgstr "我們持續在加強Dr. Scratch的功能，我們也樂意聽到你的想法"
 
 #: templates/login/login.html:270 templates/main/main.html:297
 msgid "How"
@@ -1755,7 +1755,7 @@ msgid ""
 "need to previously download the project to your computer. By analyzing your "
 "projects with Dr. Scratch, you can easily check your Computational Thinking "
 "Score."
-msgstr "你可以上傳你的 sb2 檔案"
+msgstr "你可以上傳你的 sb2 檔案或只是提供你的 Scratch 作品網址"
 
 #: templates/login/login.html:288 templates/main/main.html:315
 msgid "It is extremely easy to use, both for begginers and expert programmers."
@@ -1830,7 +1830,7 @@ msgstr ""
 
 #: templates/login/login.html:414 templates/main/main.html:441
 msgid "Gamification"
-msgstr ""
+msgstr "遊戲化"
 
 #: templates/login/login.html:418 templates/main/main.html:445
 msgid ""
@@ -1840,7 +1840,7 @@ msgstr ""
 
 #: templates/login/login.html:429 templates/main/main.html:456
 msgid "Social Network"
-msgstr ""
+msgstr "社群網路"
 
 #: templates/login/login.html:433 templates/main/main.html:460
 msgid ""
@@ -1850,15 +1850,15 @@ msgstr ""
 
 #: templates/login/login.html:453 templates/main/main.html:480
 msgid "Contact"
-msgstr ""
+msgstr "聯繫"
 
 #: templates/login/login.html:455 templates/main/main.html:482
 msgid "<strong>Contact </strong> Dr. Scratch team</h2>"
-msgstr ""
+msgstr "聯絡 Dr. Scratch 團隊"
 
 #: templates/login/login.html:459 templates/main/main.html:486
 msgid "We would be pleased to receive your feedback"
-msgstr ""
+msgstr "我們很高興收到你的回覆"
 
 #: templates/login/login.html:498 templates/main/main.html:525
 msgid ""
@@ -1868,81 +1868,81 @@ msgstr ""
 
 #: templates/login/login.html:501
 msgid "Collaborators"
-msgstr ""
+msgstr "合作者"
 
 #: templates/login/login.html:520 templates/main/main.html:547
 msgid "Are you a Dr. Scratch user?"
-msgstr ""
+msgstr "你是否為 Dr. Scratch 會員?"
 
 #: templates/login/login.html:523 templates/main/main.html:550
 msgid "Join now!"
-msgstr ""
+msgstr "現在就加入!"
 
 #: templates/login/login.html:563 templates/main/main.html:590
 #: templates/tournaments/creator/progress/teamsProgress.html:631
 #: templates/tournaments/participant/tournamentsPart.html:671
 #: templates/upload/dashboard-organization.html:239
 msgid "What is an url?"
-msgstr ""
+msgstr "甚麼是網址"
 
 #: templates/login/login.html:565 templates/main/main.html:592
 #: templates/tournaments/creator/progress/teamsProgress.html:633
 #: templates/tournaments/participant/tournamentsPart.html:673
 #: templates/upload/dashboard-organization.html:241
 msgid "How I can know my Scratch project's url?"
-msgstr ""
+msgstr "我如何能得知我的Scratch專案的網址"
 
 #: templates/login/login.html:569 templates/main/main.html:596
 msgid "<img class='framed' src='static/app/images/url-en.png' />"
-msgstr ""
+msgstr "<img class='framed' src='static/app/images/url-en.png' />"
 
 #: templates/login/login.html:588 templates/main/main.html:615
 #: templates/tournaments/creator/progress/teamsProgress.html:655
 #: templates/tournaments/participant/tournamentsPart.html:695
 #: templates/upload/dashboard-organization.html:264
 msgid "I want to download my project from Scratch!"
-msgstr ""
+msgstr "我想要從 Scratch 網站下載我的作品"
 
 #: templates/login/login.html:590 templates/main/main.html:617
 #: templates/tournaments/creator/progress/teamsProgress.html:657
 #: templates/tournaments/participant/tournamentsPart.html:697
 #: templates/upload/dashboard-organization.html:266
 msgid "How I can download my Scratch project to my computer?"
-msgstr ""
+msgstr "我要如何下載我的 Scratch 作品到我的電腦"
 
 #: templates/login/login.html:594 templates/main/main.html:621
 msgid "<img class='framed' src='static/app/images/project-en.png' />"
-msgstr ""
+msgstr "<img class='framed' src='static/app/images/project-en.png' />"
 
 #: templates/login/login.html:614 templates/main/main.html:641
 #: templates/main/main_organization.html:300
 msgid "Wait a moment please"
-msgstr ""
+msgstr "請稍後"
 
 #: templates/login/login.html:632 templates/main/main.html:659
 #: templates/main/main_organization.html:318
 msgid "loading..."
-msgstr ""
+msgstr "運行中..."
 
 #: templates/main/collaborators.html:75 templates/main/collaborators.html:162
 msgid "Who we are"
-msgstr ""
+msgstr "我們是誰"
 
 #: templates/main/collaborators.html:76 templates/main/collaborators.html:346
 msgid "Translations"
-msgstr ""
+msgstr "翻譯"
 
 #: templates/main/collaborators.html:77 templates/main/collaborators.html:527
 msgid "Workshops"
-msgstr ""
+msgstr "工作坊"
 
 #: templates/main/collaborators.html:78
 msgid "More thanks"
-msgstr ""
+msgstr "由衷感謝"
 
 #: templates/main/collaborators.html:104
 msgid "Thanks all of you!"
-msgstr ""
+msgstr "謝謝各位"
 
 #: templates/main/collaborators.html:106
 msgid ""
@@ -1962,62 +1962,62 @@ msgstr ""
 
 #: templates/main/collaborators.html:224
 msgid "Eva Hu Garres"
-msgstr ""
+msgstr "Eva Hu Garres"
 
 #: templates/main/collaborators.html:226 templates/main/collaborators.html:248
 msgid "Web Developer"
-msgstr ""
+msgstr "網站設計師"
 
 #: templates/main/collaborators.html:246
 msgid "Mari Luz Aguado Jiménez"
-msgstr ""
+msgstr "Mari Luz Aguado Jiménez"
 
 #: templates/main/collaborators.html:270 templates/main/collaborators.html:293
 #: templates/main/collaborators.html:315 templates/main/collaborators.html:409
 #: templates/main/collaborators.html:431 templates/main/collaborators.html:455
 #: templates/main/collaborators.html:478 templates/main/collaborators.html:500
 msgid "Anonymous"
-msgstr ""
+msgstr "無名氏"
 
 #: templates/main/collaborators.html:317 templates/main/collaborators.html:502
 msgid "Lenguage"
-msgstr ""
+msgstr "語言"
 
 #: templates/main/collaborators.html:351
 msgid ""
 "Would you like help us to translate Dr. Scratch to your language? Many "
 "people have already helped us! "
-msgstr ""
+msgstr "你是否願意協助我們翻譯 Dr. Scratch 網頁，已經有非常多的人幫助我們了"
 
 #: templates/main/collaborators.html:367
 msgid "Portuguese from Brazil"
-msgstr ""
+msgstr "巴西的葡萄牙語"
 
 #: templates/main/collaborators.html:389
 msgid "Greek"
-msgstr ""
+msgstr "希臘語"
 
 #: templates/main/collaborators.html:411
 msgid "Hungarian"
-msgstr ""
+msgstr "匈牙利語"
 
 #: templates/main/collaborators.html:433
 msgid "Catalan"
-msgstr ""
+msgstr "加泰羅尼亞語"
 
 #: templates/main/collaborators.html:457
 msgid "Basque"
-msgstr ""
+msgstr "加泰隆語"
 
 #: templates/main/collaborators.html:480
 msgid "Galician"
-msgstr ""
+msgstr "加利西亞語"
 
 #: templates/main/collaborators.html:531
 msgid ""
 "We are collaborating with several schools where we can prove the website "
 "with children and see which features they need."
-msgstr ""
+msgstr "我們正與多家學校合作"
 
 #: templates/main/collaborators.html:532
 msgid "Thanks all of children and teachers who help us with the development!"
@@ -2025,27 +2025,27 @@ msgstr ""
 
 #: templates/main/collaborators.html:561
 msgid "CEIP Lope de Vega"
-msgstr ""
+msgstr "CEIP Lope de Vega"
 
 #: templates/main/collaborators.html:565
 msgid "Teacher: Jorge Lobo"
-msgstr ""
+msgstr "Jorge Lobo老師"
 
 #: templates/main/collaborators.html:584
 msgid "<strong>More thanks</strong></h2>"
-msgstr ""
+msgstr "<strong>由衷感謝</strong></h2>"
 
 #: templates/main/main.html:75
 msgid "Why?"
-msgstr ""
+msgstr "為什麼?"
 
 #: templates/main/main.html:76
 msgid "How?"
-msgstr ""
+msgstr "如何?"
 
 #: templates/main/main.html:77
 msgid "Working on"
-msgstr ""
+msgstr "進行中"
 
 #: templates/main/main.html:78
 msgid "Contact us"
@@ -2055,7 +2055,7 @@ msgstr "聯絡我們"
 #: templates/tournaments/creator/admin/admin_creator.html:157
 #: templates/tournaments/participant/teamsPart.html:203
 msgid "Tournaments"
-msgstr ""
+msgstr "比賽"
 
 #: templates/main/main.html:80
 msgid "Organizations"
@@ -2088,7 +2088,8 @@ msgid ""
 "1. Introduce the <span class='colored-text'><a data-toggle='modal' "
 "href='#modalUrl'>url</a></span> of your Scratch project, you don't have to "
 "download it:"
-msgstr ""
+msgstr "1. 介紹<span class='colored-text'><a data-toggle='modal' "
+"href='#modalUrl'>url</a></span> 你的 Scratch 作品, 你無須下載:"
 
 #: templates/main/main.html:135
 #: templates/tournaments/participant/tournamentsPart.html:579
@@ -2096,12 +2097,14 @@ msgid ""
 "<input name=\"urlProject\" id=\"cf-name\" class=\"form-control input-box "
 "placeholder\" placeholder=\"http:/scratch.mit.edu/projects/your_number\" "
 "type=\"text\">"
-msgstr ""
+msgstr "<input name=\"urlProject\" id=\"cf-name\" class=\"form-control input-box "
+"placeholder\" placeholder=\"http:/scratch.mit.edu/projects/你的作品編號\" "
+"type=\"text\">"
 
 #: templates/main/main.html:136
 #: templates/tournaments/participant/tournamentsPart.html:580
 msgid "Analyze by url"
-msgstr ""
+msgstr "藉由網址分析你的作品"
 
 #: templates/main/main.html:141
 #: templates/tournaments/participant/tournamentsPart.html:585
@@ -2109,19 +2112,22 @@ msgid ""
 "2. If you have your <span class='colored-text'><a data-toggle='modal' "
 "href='#modalProject'>project</a></span> downloaded in the computer you can "
 "analyze it here:"
-msgstr ""
+msgstr "2. 假如你有你的 <span class='colored-text'><a data-toggle='modal' "
+"href='#modalProject'>project</a></span> 下載到電腦你就可以 "
+"在這裡分析它:"
 
 #: templates/main/main.html:142
 #: templates/tournaments/participant/tournamentsPart.html:586
 msgid ""
 "<input  name='zipFile' type='file' class='filestyle' data-buttonText='Choose "
 "Project'>"
-msgstr ""
+msgstr "<input  name='zipFile' type='file' class='filestyle' data-buttonText='選擇  "
+"Project'>"
 
 #: templates/main/main.html:143
 #: templates/tournaments/participant/tournamentsPart.html:587
 msgid "Analyze my project"
-msgstr ""
+msgstr "分析你的作品"
 
 #: templates/main/main.html:150 templates/main/main.html.py:153
 #: templates/main/main_organization.html:190
@@ -2129,35 +2135,35 @@ msgstr ""
 #: templates/tournaments/participant/tournamentsPart.html:594
 #: templates/tournaments/participant/tournamentsPart.html:597
 msgid "Error! Please choose a .sb or .sb2 file or input an url"
-msgstr ""
+msgstr "錯誤!"
 
 #: templates/main/main.html:157 templates/main/main_organization.html:197
 #: templates/tournaments/participant/tournamentsPart.html:601
 msgid "Error! Your project id is wrong"
-msgstr ""
+msgstr "錯誤!"
 
 #: templates/main/main.html:161 templates/main/main_organization.html:201
 #: templates/tournaments/participant/tournamentsPart.html:605
 msgid "Error! Your project doesn't exist in Scratch's servers"
-msgstr ""
+msgstr "錯誤!"
 
 #: templates/main/main.html:528 templates/statistics/statistics.html:306
 msgid "Statistics"
-msgstr ""
+msgstr "統計"
 
 #: templates/main/main_organization.html:68
 msgid "Your daily progress"
-msgstr ""
+msgstr "你的每日進度"
 
 #: templates/main/main_organization.html:76
 #: templates/statistics/statistics.html:73
 msgid " points"
-msgstr ""
+msgstr " 點數"
 
 #: templates/main/main_organization.html:85
 #: templates/statistics/statistics.html:82
 msgid "Total score"
-msgstr ""
+msgstr "總得分"
 
 #: templates/main/main_organization.html:126
 #: templates/tournaments/creator/admin/admin_creator.html:58
@@ -2196,7 +2202,7 @@ msgstr ""
 #: templates/tournaments/participant/tournamentsPart.html:97
 #: templates/upload/dashboard-organization.html:81
 msgid "Logged in as "
-msgstr ""
+msgstr "登入為"
 
 #: templates/main/main_organization.html:128
 #: templates/tournaments/creator/admin/admin_creator.html:92
@@ -2218,7 +2224,7 @@ msgstr ""
 #: templates/tournaments/participant/tournamentsPart.html:99
 #: templates/upload/dashboard-organization.html:83
 msgid "Change password"
-msgstr ""
+msgstr "更改密碼"
 
 #: templates/main/main_organization.html:130
 #: templates/password/user_doesntorg.html:14
@@ -2258,33 +2264,33 @@ msgstr ""
 #: templates/tournaments/participant/tournamentsPart.html:101
 #: templates/upload/dashboard-organization.html:85
 msgid "Logout"
-msgstr ""
+msgstr "登入"
 
 #: templates/main/main_organization.html:159
 #: templates/upload/dashboard-organization.html:107
 msgid "Welcome to the Dr. Scratch website, "
-msgstr ""
+msgstr "歡迎進入 Dr. Scratch 網站，"
 
 #: templates/main/main_organization.html:177
 #: templates/upload/dashboard-organization.html:150
 msgid ""
 "You can analyze at the same time all the Scratch proyects of your students!"
-msgstr ""
+msgstr "你可以同時分析你的所有學生的 Scratch 作品集"
 
 #: templates/main/main_organization.html:181
 #: templates/upload/dashboard-organization.html:153
 msgid "Only you have to put a "
-msgstr ""
+msgstr "只有你可以"
 
 #: templates/main/main_organization.html:181
 #: templates/upload/dashboard-organization.html:153
 msgid "file CSV "
-msgstr ""
+msgstr "CSV 檔案"
 
 #: templates/main/main_organization.html:181
 #: templates/upload/dashboard-organization.html:153
 msgid " with the urls of the Scratch projects you want to analyze:"
-msgstr ""
+msgstr " 藉由Scratch作品的網址來分析:"
 
 #: templates/main/main_organization.html:182
 #: templates/tournaments/creator/newParticipant/main_new_participants.html:199
@@ -2292,26 +2298,26 @@ msgstr ""
 msgid ""
 "<input  name='csvFile' type='file' class='filestyle' data-buttonText='Choose "
 "File .csv'>"
-msgstr ""
+msgstr "<input  name='csvFile' type='file' class='filestyle' data-buttonText='選擇一個 .csv檔案'>"
 
 #: templates/main/main_organization.html:183
 #: templates/upload/dashboard-organization.html:155
 msgid "Analyze my projects"
-msgstr ""
+msgstr "分析我的作品"
 
 #: templates/main/main_organization.html:273
 #: templates/tournaments/creator/newParticipant/main_new_participants.html:302
 msgid "How is the file .csv?"
-msgstr ""
+msgstr "甚麼是 .csv 檔案"
 
 #: templates/main/main_organization.html:275
 msgid ""
 "You must to write only the number of your students' projects. Easy, isn't it?"
-msgstr ""
+msgstr "你"
 
 #: templates/password/email.html:4 templates/tournaments/password/email.html:4
 msgid "Reset password"
-msgstr ""
+msgstr "密碼重置"
 
 #: templates/password/email.html:6 templates/tournaments/password/email.html:6
 msgid ""
@@ -2321,12 +2327,12 @@ msgstr ""
 
 #: templates/password/email.html:7 templates/tournaments/password/email.html:7
 msgid "Please, go to the following page and choose a new password:"
-msgstr ""
+msgstr "請到以下網頁去選擇一個新密碼"
 
 #: templates/password/email.html:9 templates/tournaments/password/email.html:9
 #: templates/tournaments/password/email_new_participant.html:9
 msgid "Your username is: "
-msgstr ""
+msgstr "你的使用這名稱是: "
 
 #: templates/password/email.html:13 templates/sign/email.html:11
 #: templates/tournaments/creator/email.html:11
@@ -2335,7 +2341,7 @@ msgstr ""
 #: templates/tournaments/password/email.html:13
 #: templates/tournaments/password/email_new_participant.html:13
 msgid "Thanks for using our website!"
-msgstr ""
+msgstr "謝謝你使用我們的網站!"
 
 #: templates/password/email.html:14 templates/sign/email.html:12
 #: templates/tournaments/creator/email.html:12
@@ -2344,11 +2350,11 @@ msgstr ""
 #: templates/tournaments/password/email.html:14
 #: templates/tournaments/password/email_new_participant.html:14
 msgid "The Dr. Scratch team"
-msgstr ""
+msgstr "Dr. Scratch 團隊"
 
 #: templates/password/email_sended.html:12
 msgid "We sended to you an email."
-msgstr ""
+msgstr "我們會寄出你的電子郵件"
 
 #: templates/password/email_sended.html:13
 msgid "Check with your systems operator to see if the message was blocked."
@@ -2357,7 +2363,7 @@ msgstr ""
 #: templates/password/new_password.html:14
 #: templates/tournaments/password/new_password.html:14
 msgid "Type your new password:"
-msgstr ""
+msgstr "更新你的密碼"
 
 #: templates/password/new_password.html:19
 #: templates/tournaments/password/new_password.html:19
@@ -2563,7 +2569,7 @@ msgstr ""
 
 #: templates/sign/organization.html:189
 msgid "to join Dr. Scratch for organizations?"
-msgstr ""
+msgstr "加入 Dr. Scratch 組織"
 
 #: templates/sign/organization.html:192
 msgid ""
@@ -2851,11 +2857,11 @@ msgstr ""
 #: templates/upload/dashboard-unregistered-master.html:290
 #: templates/upload/dashboard-unregistered.html:114
 msgid "Concept"
-msgstr ""
+msgstr "主題"
 
 #: templates/tournaments/creator/admin/challenges/challengesList.html:220
 msgid "Value"
-msgstr ""
+msgstr "值"
 
 #: templates/tournaments/creator/admin/challenges/challengesList.html:338
 #: templates/tournaments/creator/admin/challenges/challengesList.html:571
@@ -2865,7 +2871,7 @@ msgstr ""
 #: templates/tournaments/participant/scores.html:209
 #: templates/tournaments/participant/tournamentsPart.html:371
 msgid "User Interactivity"
-msgstr ""
+msgstr "使用者互動"
 
 #: templates/tournaments/creator/admin/challenges/challengesList.html:491
 #: templates/tournaments/creator/admin/teams/teamsList.html:210
@@ -3081,49 +3087,49 @@ msgstr ""
 #: templates/tournaments/creator/admin/tournaments/tournamentsList.html:260
 #: templates/tournaments/creator/progress/tournamentsProgress.html:230
 msgid "Logic:"
-msgstr ""
+msgstr "邏輯分析"
 
 #: templates/tournaments/creator/admin/tournaments/newEditTournament.html:321
 #: templates/tournaments/creator/admin/tournaments/tournamentsList.html:261
 #: templates/tournaments/creator/progress/tournamentsProgress.html:231
 msgid "Flow Control:"
-msgstr ""
+msgstr "控制流程"
 
 #: templates/tournaments/creator/admin/tournaments/newEditTournament.html:325
 #: templates/tournaments/creator/admin/tournaments/tournamentsList.html:262
 #: templates/tournaments/creator/progress/tournamentsProgress.html:232
 msgid "User Interactivity:"
-msgstr ""
+msgstr "使用者互動"
 
 #: templates/tournaments/creator/admin/tournaments/newEditTournament.html:329
 #: templates/tournaments/creator/admin/tournaments/tournamentsList.html:263
 #: templates/tournaments/creator/progress/tournamentsProgress.html:233
 msgid "Data Representation:"
-msgstr ""
+msgstr "資料呈現"
 
 #: templates/tournaments/creator/admin/tournaments/newEditTournament.html:333
 #: templates/tournaments/creator/admin/tournaments/tournamentsList.html:264
 #: templates/tournaments/creator/progress/tournamentsProgress.html:234
 msgid "Abstraction:"
-msgstr ""
+msgstr "抽象化"
 
 #: templates/tournaments/creator/admin/tournaments/newEditTournament.html:337
 msgid "Syncronization:"
-msgstr ""
+msgstr "同步化"
 
 #: templates/tournaments/creator/admin/tournaments/tournamentsList.html:190
 #: templates/tournaments/creator/progress/tournamentsProgress.html:188
 #: templates/tournaments/creator/validation/validation.html:184
 msgid "Tournaments created by"
-msgstr ""
+msgstr "競賽提供者"
 
 #: templates/tournaments/creator/admin/tournaments/tournamentsList.html:220
 msgid "Delete tournament:"
-msgstr ""
+msgstr "刪除競賽"
 
 #: templates/tournaments/creator/admin/tournaments/tournamentsList.html:224
 msgid "Are you sure to delete the tournament?"
-msgstr ""
+msgstr "你確定你要"
 
 #: templates/tournaments/creator/admin/tournaments/tournamentsList.html:246
 #: templates/tournaments/creator/progress/tournamentsProgress.html:216
@@ -3431,21 +3437,21 @@ msgstr ""
 
 #: templates/tournaments/main_tournaments.html:226
 msgid "Dr. Scratch Tournaments"
-msgstr ""
+msgstr "Dr. Scratch 競賽"
 
 #: templates/tournaments/main_tournaments.html:228
 msgid "to join Dr. Scratch tournaments?"
-msgstr ""
+msgstr "加入 Scratch 競賽"
 
 #: templates/tournaments/main_tournaments.html:231
 msgid ""
 "Would you like to be one of the 10 first teachers testing this new feature? "
 "Just drop us a line at "
-msgstr ""
+msgstr "你是否想成為我們前十個測試新功能的老師?就給我們一封信"
 
 #: templates/tournaments/main_tournaments.html:245
 msgid "Teacher's username"
-msgstr ""
+msgstr "教師名稱"
 
 #: templates/tournaments/participant/results.html:67
 #: templates/tournaments/participant/results.html:104
@@ -3453,7 +3459,7 @@ msgstr ""
 #: templates/upload/dashboard-unregistered-developing.html:58
 #: templates/upload/dashboard-unregistered-master.html:77
 msgid "Score"
-msgstr ""
+msgstr "得分"
 
 #: templates/tournaments/participant/results.html:68
 #: templates/tournaments/participant/results.html:105
@@ -3461,7 +3467,7 @@ msgstr ""
 #: templates/upload/dashboard-unregistered-developing.html:59
 #: templates/upload/dashboard-unregistered-master.html:78
 msgid "This section shows the total score."
-msgstr ""
+msgstr "此部分顯示總分。"
 
 #: templates/tournaments/participant/results.html:72
 #: templates/tournaments/participant/results.html:109
@@ -3469,7 +3475,7 @@ msgstr ""
 #: templates/upload/dashboard-unregistered-developing.html:63
 #: templates/upload/dashboard-unregistered-master.html:82
 msgid "Improve the score"
-msgstr ""
+msgstr "提高分數"
 
 #: templates/tournaments/participant/results.html:73
 #: templates/tournaments/participant/results.html:110
@@ -3478,13 +3484,13 @@ msgstr ""
 #: templates/upload/dashboard-unregistered-master.html:83
 msgid ""
 "You do not like the score that you got? Improve it following our advice."
-msgstr ""
+msgstr "您對你的得分是否滿意？可以再次根據我們的建議進行改進"
 
 #: templates/tournaments/participant/results.html:77
 #: templates/upload/dashboard-unregistered-developing.html:68
 #: templates/upload/dashboard-unregistered-master.html:87
 msgid "Bad habits in programming"
-msgstr ""
+msgstr "程式設計不好的習慣"
 
 #: templates/tournaments/participant/results.html:78
 #: templates/upload/dashboard-unregistered-developing.html:69
@@ -3492,7 +3498,7 @@ msgstr ""
 msgid ""
 "If you correct your bad habits in programming, you will avoid problems in "
 "the future."
-msgstr ""
+msgstr "如果您修正了你的程式設計不良習慣，就可以避免之後再次出現"
 
 #: templates/tournaments/participant/results.html:82
 #: templates/tournaments/participant/results.html:114
@@ -3500,7 +3506,7 @@ msgstr ""
 #: templates/upload/dashboard-unregistered-developing.html:73
 #: templates/upload/dashboard-unregistered-master.html:92
 msgid "Score in detail"
-msgstr ""
+msgstr "得分分析"
 
 #: templates/tournaments/participant/results.html:83
 #: templates/tournaments/participant/results.html:115
@@ -3508,37 +3514,37 @@ msgstr ""
 #: templates/upload/dashboard-unregistered-developing.html:74
 #: templates/upload/dashboard-unregistered-master.html:93
 msgid "Here we show the score in each programming skill."
-msgstr ""
+msgstr "這是你的每項程式設計得分"
 
 #: templates/tournaments/participant/results.html:271
 msgid "You complete the challenge."
-msgstr ""
+msgstr "你完成了這個挑戰"
 
 #: templates/tournaments/participant/results.html:272
 #: templates/tournaments/participant/results.html:276
 #: templates/tournaments/participant/results.html:279
 msgid "Back to improve your highest score."
-msgstr ""
+msgstr "返回以提高您的最高分數。"
 
 #: templates/tournaments/participant/results.html:275
 msgid ""
 "Your score has to be validated by you teacher to complete the challenge."
-msgstr ""
+msgstr "您的分數必須由老師驗證才能完成挑戰。"
 
 #: templates/tournaments/participant/results.html:278
 msgid "You didn't complete the challenge yet."
-msgstr ""
+msgstr "您尚未完成挑戰。"
 
 #: templates/tournaments/participant/results.html:283
 msgid "Learn how"
-msgstr ""
+msgstr "如何學習"
 
 #: templates/tournaments/participant/results.html:297
 #: templates/upload/dashboard-unregistered-basic.html:116
 #: templates/upload/dashboard-unregistered-developing.html:125
 #: templates/upload/dashboard-unregistered-master.html:164
 msgid "Score:"
-msgstr ""
+msgstr "得分:"
 
 #: templates/tournaments/participant/results.html:298
 #: templates/upload/dashboard-unregistered-basic.html:117
@@ -3548,57 +3554,57 @@ msgstr ""
 msgid ""
 " I have just obtained %(points)s points analyzing my project in Dr. Scratch! "
 "Beat it! @DrScratchTool "
-msgstr ""
+msgstr "我 %(points)s"
 
 #: templates/tournaments/participant/results.html:303
 #: templates/upload/dashboard-unregistered-master.html:170
 msgid ""
 "<h3 class='text-left dark-text'>Your level is...  <strong>MASTER! </strong></"
 "h3>"
-msgstr ""
+msgstr "<h3 class='text-left dark-text'>Your level is...  <strong>專家! </strong></h3>"
 
 #: templates/tournaments/participant/results.html:304
 #: templates/upload/dashboard-unregistered-master.html:171
 msgid "You're the master of the universe!!! "
-msgstr ""
+msgstr "你就是專家!!!"
 
 #: templates/tournaments/participant/results.html:306
 #: templates/upload/dashboard-unregistered-developing.html:131
 msgid ""
 "<h3 class='text-left dark-text'>Your level is... <br></br> "
 "<strong>DEVELOPING! </strong></h3>"
-msgstr ""
+msgstr "<h3 class='text-left dark-text'>你現在的等級是... <br></br> <strong>開發者! </strong></h3>"
 
 #: templates/tournaments/participant/results.html:307
 #: templates/upload/dashboard-unregistered-developing.html:132
 msgid "You're doing a great job.<br> Keep it up!!!"
-msgstr ""
+msgstr "做得好。<br> 具續保持!!!"
 
 #: templates/tournaments/participant/results.html:309
 #: templates/upload/dashboard-unregistered-basic.html:122
 msgid ""
 "<h3 class='text-left dark-text'>Your level is...  <strong>BASIC! </strong></"
 "h3>"
-msgstr ""
+msgstr "<h3 class='text-left dark-text'>你現在的等級是...  <strong>初學者! </strong></h3>"
 
 #: templates/tournaments/participant/results.html:310
 #: templates/upload/dashboard-unregistered-basic.html:123
 msgid "You're at the beginning of a <br>great adventure . . . Keep it up!"
-msgstr ""
+msgstr "您正在開始於一次<br>偉大的冒險。 。 。繼續保持！"
 
 #: templates/tournaments/participant/results.html:321
 #: templates/upload/dashboard-unregistered-basic.html:133
 #: templates/upload/dashboard-unregistered-developing.html:141
 #: templates/upload/dashboard-unregistered-master.html:184
 msgid "Want to level up?"
-msgstr ""
+msgstr "想要更進一步?"
 
 #: templates/tournaments/participant/results.html:323
 #: templates/upload/dashboard-unregistered-basic.html:135
 #: templates/upload/dashboard-unregistered-developing.html:143
 #: templates/upload/dashboard-unregistered-master.html:186
 msgid "Come back to your Scratch project."
-msgstr ""
+msgstr "回到你的 Scratch 專案"
 
 #: templates/tournaments/participant/results.html:336
 #: templates/tournaments/participant/results.html:345
@@ -3614,55 +3620,55 @@ msgstr ""
 #: templates/upload/dashboard-unregistered-developing.html:190
 #: templates/upload/dashboard-unregistered-master.html:237
 msgid "Details to fix:"
-msgstr ""
+msgstr "詳細需要修改部分:"
 
 #: templates/tournaments/participant/results.html:367
 #: templates/upload/dashboard-unregistered-master.html:240
 msgid " duplicated scripts."
-msgstr ""
+msgstr " 重複的程式碼"
 
 #: templates/tournaments/participant/results.html:371
 #: templates/tournaments/participant/results.html:423
 #: templates/upload/dashboard-unregistered-developing.html:208
 #: templates/upload/dashboard-unregistered-master.html:244
 msgid " sprite naming."
-msgstr ""
+msgstr " 主角名稱。"
 
 #: templates/tournaments/participant/results.html:377
 #: templates/upload/dashboard-unregistered-master.html:250
 msgid "Your project does not have dead code, good job!"
-msgstr ""
+msgstr " 主角命名"
 
 #: templates/tournaments/participant/results.html:379
 #: templates/upload/dashboard-unregistered-master.html:252
 msgid "You have dead code in "
-msgstr ""
+msgstr "無效的程式碼 "
 
 #: templates/tournaments/participant/results.html:384
 #: templates/upload/dashboard-unregistered-master.html:257
 msgid " dead code."
-msgstr ""
+msgstr " 無效代碼。"
 
 #: templates/tournaments/participant/results.html:386
 #: templates/tournaments/participant/results.html:408
 #: templates/upload/dashboard-unregistered-developing.html:193
 #: templates/upload/dashboard-unregistered-master.html:259
 msgid "Sprites attributes"
-msgstr ""
+msgstr " 主角屬性"
 
 #: templates/tournaments/participant/results.html:390
 #: templates/tournaments/participant/results.html:412
 #: templates/upload/dashboard-unregistered-developing.html:197
 #: templates/upload/dashboard-unregistered-master.html:263
 msgid "Your project does not have uninitialized attributes, good job!"
-msgstr ""
+msgstr "您的項目沒有未初始化的屬性，非常棒!"
 
 #: templates/tournaments/participant/results.html:396
 #: templates/tournaments/participant/results.html:418
 #: templates/upload/dashboard-unregistered-developing.html:203
 #: templates/upload/dashboard-unregistered-master.html:269
 msgid " sprite attributes."
-msgstr ""
+msgstr " 主角屬性。"
 
 #: templates/tournaments/participant/teamsPart.html:208
 msgid "is not included in any team yet"
@@ -3674,15 +3680,15 @@ msgstr ""
 
 #: templates/tournaments/participant/tournamentsPart.html:189
 msgid "You complete the tournament."
-msgstr ""
+msgstr "你完成此次競技"
 
 #: templates/tournaments/participant/tournamentsPart.html:190
 msgid "You can still improve your highest score in every challenge."
-msgstr ""
+msgstr "你可以繼續增進你的分數"
 
 #: templates/tournaments/password/email_new_participant.html:4
 msgid "New participant in Dr. Scratch!"
-msgstr ""
+msgstr "參加者"
 
 #: templates/tournaments/password/email_new_participant.html:7
 msgid ""
@@ -3696,7 +3702,7 @@ msgstr ""
 
 #: templates/upload/dashboard-organization.html:125
 msgid "Download .csv file"
-msgstr ""
+msgstr "下載 .csv 檔案"
 
 #: templates/upload/dashboard-organization.html:132
 msgid "Or...you can analyze another file with more projects:"
@@ -3733,37 +3739,37 @@ msgstr ""
 #: templates/upload/dashboard-unregistered-master.html:291
 #: templates/upload/dashboard-unregistered.html:115
 msgid "Points"
-msgstr ""
+msgstr "成績"
 
 #: templates/upload/dashboard-unregistered.html:10
 msgid "Project results"
-msgstr ""
+msgstr "作品結果"
 
 #: templates/upload/dashboard-unregistered.html:48
 #: templates/upload/dashboard-unregistered.html:57
 #: templates/upload/dashboard-unregistered.html:59
 msgid "Dashboard"
-msgstr ""
+msgstr "儀表板"
 
 #: templates/upload/dashboard-unregistered.html:57
 msgid "Overview"
-msgstr ""
+msgstr "總覽"
 
 #: templates/upload/dashboard-unregistered.html:63
 msgid "Welcome to Doctor Scratch. Project results."
-msgstr ""
+msgstr "歡迎來到 Doctor Scratch。作品結果。"
 
 #: templates/upload/dashboard-unregistered.html:79
 msgid "CT Score:"
-msgstr ""
+msgstr "CT 分數"
 
 #: templates/upload/dashboard-unregistered.html:86
 msgid "Your level:"
-msgstr ""
+msgstr "你的等級:"
 
 #: templates/upload/dashboard-unregistered.html:90
 msgid "Developing"
-msgstr ""
+msgstr "開發中"
 
 #: templates/upload/dashboard-unregistered.html:101
 #, python-format
@@ -3774,38 +3780,38 @@ msgstr ""
 
 #: templates/upload/dashboard-unregistered.html:109
 msgid "CT Score in detail:"
-msgstr ""
+msgstr "運算思維分數詳細:"
 
 #: templates/upload/dashboard-unregistered.html:127
 #: templates/upload/dashboard-unregistered.html:131
 #: templates/upload/dashboard-unregistered.html:135
 msgid "Learn more!!!"
-msgstr ""
+msgstr "再多學學!!!"
 
 #: templates/upload/dashboard-unregistered.html:139
 msgid "Well done!!!"
-msgstr ""
+msgstr "做得好!!!"
 
 #: templates/upload/dashboard-unregistered.html:181
 msgid "Sprites naming"
-msgstr ""
+msgstr "主角名稱"
 
 #: templates/upload/dashboard-unregistered.html:190
 msgid "Incorrect name:"
-msgstr ""
+msgstr "名稱不正確"
 
 #: templates/upload/dashboard-unregistered.html:209
 msgid "Dead Code"
-msgstr ""
+msgstr "無作用的程式碼"
 
 #: templates/upload/dashboard-unregistered.html:220
 msgid "blocks"
-msgstr ""
+msgstr "區塊"
 
 #: templates/upload/dashboard-unregistered.html:242
 msgid "Sprite attributes initialization"
-msgstr ""
+msgstr "主角屬性初始化"
 
 #: templates/upload/dashboard-unregistered.html:254
 msgid "modified but not initialized correctly."
-msgstr ""
+msgstr "已修改但未正確初始化。"
