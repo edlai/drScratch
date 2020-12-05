@@ -23,6 +23,7 @@ Running in `Ubuntu 18.04` as an example.
 ## Running
 
 ```
+# django-admin compilemessages (Optional for Multilingual)
 # python manage.py migrate
 # python manage.py runserver
 ```
