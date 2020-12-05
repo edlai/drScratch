@@ -7,6 +7,11 @@ You can try a beta version of drScratch at http://drscratch.org
 
 ---
 
+Installation and Running
+========================
+
+Running in `Ubuntu 18.04` as an example.
+
 ## Requirement
 
 ```
@@ -26,7 +31,7 @@ You can try a beta version of drScratch at http://drscratch.org
 
 ### Multilingual
 
-using zh_Hant as an example
+using `zh_Hant` as an example
 
 ```
 # sudo apt install gettext
