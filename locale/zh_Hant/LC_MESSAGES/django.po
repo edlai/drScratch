@@ -60,52 +60,52 @@ msgstr "團隊描述"
 
 #: app/forms.py:86
 msgid "None: 0"
-msgstr "沒有"
+msgstr "沒有: 0"
 
 #: app/forms.py:87
 msgid "Easy: 1"
-msgstr "容易"
+msgstr "容易: 1"
 
 #: app/forms.py:88
 msgid "Medium: 2"
-msgstr "中等"
+msgstr "中等: 2"
 
 #: app/forms.py:89
 msgid "Hard: 3"
-msgstr "困難"
+msgstr "困難: 3"
 
 #: app/forms.py:93
 msgid "Challenge Name"
-msgstr ""
+msgstr "跳戰名稱"
 
 #: app/forms.py:94
 msgid "Challenge Description"
-msgstr ""
+msgstr "挑戰名稱"
 
 #: app/tasks.py:17 templates/tournaments/creator/email_resumen.html:3
 msgid "Dr. Scratch Tournaments: Manual Validation Summary"
-msgstr ""
+msgstr "Dr. Scratch 比賽: 手動驗證總結"
 
 #: app/views.py:2134
 msgid "Password changed successfully."
-msgstr ""
+msgstr "密碼更新成功"
 
 #: app/views.py:2175
 msgid "Dr.Scratch: Did you forget your password?"
-msgstr ""
+msgstr "Dr.Scratch: 忘記密碼?"
 
 #: app/views.py:2204 app/views.py:2308
 msgid "Logged user is not a creator or a participant."
-msgstr ""
+msgstr "登錄的用戶不是創建者或參與者。"
 
 #: app/views.py:2260
 msgid "Welcome to Dr.Scratch tournaments"
-msgstr ""
+msgstr "歡迎參加 Dr.Scratch 比賽"
 
 #: app/views.py:2316 templates/password/user_doesntexist.html:12
 #: templates/tournaments/password/user_doesntexist.html:12
 msgid "User doesn't exist or the password is incorrect."
-msgstr ""
+msgstr "用戶不存在或密碼錯誤。"
 
 #: app/views.py:2338 app/views.py:2353 app/views.py:2375 app/views.py:2431
 #: app/views.py:2460 app/views.py:2485 app/views.py:2494 app/views.py:2530
@@ -114,41 +114,41 @@ msgstr ""
 #: app/views.py:2848 app/views.py:2866 app/views.py:2944 app/views.py:3017
 #: app/views.py:3044 app/views.py:3069 app/views.py:3092 app/views.py:3108
 msgid "Logged user cannot be found."
-msgstr ""
+msgstr "找不到登錄的用戶。"
 
 #: app/views.py:2341 app/views.py:2363 app/views.py:2401 app/views.py:2504
 #: app/views.py:2631 app/views.py:2652 app/views.py:2776 app/views.py:2856
 #: app/views.py:3033 app/views.py:3062 app/views.py:3084
 msgid "Session expired. Please log in again."
-msgstr ""
+msgstr "驗證已過期。 請重新登錄。"
 
 #: app/views.py:2390
 msgid "Challenge added."
-msgstr ""
+msgstr "加入挑戰"
 
 #: app/views.py:2413
 msgid ""
 "The challenge cannot be deleted because is asociated to one or more "
 "tournaments."
-msgstr ""
+msgstr "挑戰不能被刪除，因為它與一個或多個比賽有關聯。"
 
 #: app/views.py:2416
 msgid "Challenge deleted."
-msgstr ""
+msgstr "刪除挑戰"
 
 #: app/views.py:2420 app/views.py:2451 app/views.py:2481
 msgid "The selected challenge cannot be found."
-msgstr ""
+msgstr "該挑戰不能被刪除"
 
 #. Translators: Challenge edited.
 #: app/views.py:2477
 msgid "Challenge edited."
-msgstr ""
+msgstr "編輯挑戰"
 
 #: app/views.py:2516
 msgid ""
 "The team cannot be deleted because is asociated to one or more tournaments."
-msgstr ""
+msgstr "此團隊不能被刪除因為有關連到一個或多個比賽。"
 
 #: app/views.py:2519
 msgid "Team deleted."
@@ -187,13 +187,13 @@ msgstr "編輯挑戰"
 #: templates/tournaments/creator/admin/tournaments/tournamentsList.html:291
 #: templates/tournaments/creator/progress/tournamentsProgress.html:261
 msgid "The tournament has not teams."
-msgstr "該挑戰沒有團隊參與"
+msgstr "沒有團隊參與該挑戰"
 
 #: app/views.py:2946
 msgid ""
 "The following emails are already included in Dr. Scratch (they where not "
 "registered): "
-msgstr ""
+msgstr "以下的電子郵件已經被註冊到 Dr. Scratch"
 
 #: app/views.py:2948
 msgid "The following emails were successfully registered in Dr. Scratch: "
@@ -298,7 +298,7 @@ msgstr "馬上開始吧"
 #: templates/upload/dashboard-unregistered-developing.html:292
 #: templates/upload/dashboard-unregistered-master.html:353
 msgid "©2014 Dr. Scratch is powered by "
-msgstr "©2014 Dr. Scratch is powered by"
+msgstr "©2014 Dr. Scratch 強力驅動"
 
 #: templates/error/500.html:36
 msgid "500 - Internal Server Error"
@@ -312,7 +312,7 @@ msgstr "抱歉 造成你的不便"
 msgid ""
 "Sometimes we have got problems analyzing some projects. We're working on "
 "this."
-msgstr "有時我們在分析某些項目時遇到問題。我們正在努力修復該問題"
+msgstr "有時後我們會在分析某些項目時遇到問題。我們正在努力修復該問題"
 
 #: templates/learn/Abstraction.html:4 templates/learn/base.html:103
 #: templates/statistics/statistics.html:269
@@ -1481,22 +1481,22 @@ msgstr ""
 #: templates/tournaments/participant/results.html:367
 #: templates/upload/dashboard-unregistered-master.html:240
 msgid "Duplicated scripts"
-msgstr ""
+msgstr "重複的程式碼"
 
 #: templates/learn/base.html:107 templates/learn/spriteNaming.html:5
 msgid "Incorrect names"
-msgstr ""
+msgstr "不正確的名稱"
 
 #: templates/learn/base.html:108 templates/learn/deadCode.html:4
 #: templates/statistics/statistics.html:197
 #: templates/tournaments/participant/results.html:373
 #: templates/upload/dashboard-unregistered-master.html:246
 msgid "Dead code"
-msgstr ""
+msgstr "無效的程式碼"
 
 #: templates/learn/base.html:109
 msgid "Attribute initialization"
-msgstr ""
+msgstr "屬性初始化"
 
 #: templates/learn/deadCode.html:11
 msgid ""
@@ -3369,40 +3369,40 @@ msgstr ""
 #: templates/tournaments/creator/progress/teamsProgress.html:215
 #: templates/tournaments/participant/tournamentsPart.html:215
 msgid "« Previous"
-msgstr ""
+msgstr "« 前進"
 
 #: templates/tournaments/creator/progress/teamsProgress.html:216
 #: templates/tournaments/participant/tournamentsPart.html:216
 msgid "Next »"
-msgstr ""
+msgstr "後退 »"
 
 #: templates/tournaments/creator/progress/teamsProgress.html:243
 #: templates/tournaments/participant/scores.html:6
 #: templates/tournaments/participant/tournamentsPart.html:243
 msgid "Required Value"
-msgstr ""
+msgstr "需求值"
 
 #: templates/tournaments/creator/progress/teamsProgress.html:244
 #: templates/tournaments/participant/scores.html:7
 #: templates/tournaments/participant/tournamentsPart.html:244
 msgid "Highest Score"
-msgstr ""
+msgstr "最高分"
 
 #: templates/tournaments/creator/progress/teamsProgress.html:537
 #: templates/tournaments/participant/tournamentsPart.html:537
 msgid "The tournament has not challenges yet"
-msgstr ""
+msgstr "此比賽還未被挑戰"
 
 #: templates/tournaments/creator/progress/teamsProgress.html:570
 #: templates/tournaments/participant/tournamentsPart.html:610
 msgid "The team is not included in any tournament yet"
-msgstr ""
+msgstr "此團隊還未加入任何比賽"
 
 #: templates/tournaments/creator/progress/teamsProgress.html:637
 #: templates/tournaments/participant/tournamentsPart.html:677
 #: templates/upload/dashboard-organization.html:245
 msgid "<img class='framed' src='../../static/app/images/url-en.png' />"
-msgstr ""
+msgstr "<img class='framed' src='../../static/app/images/url-en.png' />"
 
 #: templates/tournaments/creator/progress/teamsProgress.html:661
 #: templates/tournaments/participant/tournamentsPart.html:701
@@ -3412,16 +3412,16 @@ msgstr ""
 
 #: templates/tournaments/creator/progress/tournamentsProgress.html:202
 msgid "Progress "
-msgstr ""
+msgstr "進度 "
 
 #: templates/tournaments/creator/validation/validate.html:202
 #: templates/tournaments/creator/validation/validate.html:238
 msgid "Validate"
-msgstr ""
+msgstr "驗證"
 
 #: templates/tournaments/creator/validation/validate.html:308
 msgid "There are no games left to validate in the selected tournament."
-msgstr ""
+msgstr "沒有任何遊戲"
 
 #: templates/tournaments/creator/validation/validation.html:197
 msgid "Validate Games"
@@ -3433,7 +3433,7 @@ msgstr ""
 
 #: templates/tournaments/main_tournaments.html:170
 msgid "Welcome to Dr. Scratch Tournaments"
-msgstr ""
+msgstr "歡迎參加 Dr. Scratch 比賽"
 
 #: templates/tournaments/main_tournaments.html:172
 msgid ""
