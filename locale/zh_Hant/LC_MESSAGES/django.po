@@ -152,42 +152,42 @@ msgstr ""
 
 #: app/views.py:2519
 msgid "Team deleted."
-msgstr ""
+msgstr "刪除團隊"
 
 #: app/views.py:2546 app/views.py:2591 app/views.py:2833 app/views.py:3152
 #: app/views.py:3156
 msgid "The selected team cannot be found."
-msgstr ""
+msgstr "沒發現該選定的團隊"
 
 #: app/views.py:2587
 msgid "Team edited."
-msgstr ""
+msgstr "編輯團隊"
 
 #: app/views.py:2620
 msgid "Team added."
-msgstr ""
+msgstr "加入團隊"
 
 #: app/views.py:2693 app/views.py:3059
 msgid "The selected tournament cannot be found."
-msgstr ""
+msgstr "選定的挑戰不存在"
 
 #: app/views.py:2729
 msgid "Tournament deleted."
-msgstr ""
+msgstr "刪除該挑戰"
 
 #: app/views.py:2772
 msgid "Tournament added."
-msgstr ""
+msgstr "加入挑戰"
 
 #: app/views.py:2829
 msgid "Tournament edited."
-msgstr ""
+msgstr "編輯挑戰"
 
 #: app/views.py:2875
 #: templates/tournaments/creator/admin/tournaments/tournamentsList.html:291
 #: templates/tournaments/creator/progress/tournamentsProgress.html:261
 msgid "The tournament has not teams."
-msgstr ""
+msgstr "該挑戰沒有團隊參與"
 
 #: app/views.py:2946
 msgid ""
@@ -197,36 +197,36 @@ msgstr ""
 
 #: app/views.py:2948
 msgid "The following emails were successfully registered in Dr. Scratch: "
-msgstr ""
+msgstr "以下的電子郵件已成功的註冊"
 
 #: app/views.py:2956
 msgid "You have to include a CSV file."
-msgstr ""
+msgstr "你必須加入CSV檔"
 
 #: app/views.py:2973
 msgid "The file added is not a CSV file."
-msgstr ""
+msgstr "該加入的檔案不是 CSV 檔案"
 
 #: app/views.py:2978
 msgid "You have to include a TXT file."
-msgstr ""
+msgstr "你必須加入文字檔"
 
 #: app/views.py:2995
 msgid "The file added is not a TXT file."
-msgstr ""
+msgstr "該加入的檔案不是文字檔"
 
 #: app/views.py:3078
 msgid "Game validated successfully."
-msgstr ""
+msgstr "遊戲驗證成功"
 
 #: app/views.py:3081
 msgid "The selected game cannot be found."
-msgstr ""
+msgstr "選定的遊戲無效"
 
 #: app/views.py:3212 app/views.py:3247
 #: templates/tournaments/creator/email_valid.html:3
 msgid "Dr. Scratch Tournaments: Manual Validation"
-msgstr ""
+msgstr "Dr. Scratch 挑戰: 手動驗證"
 
 #: app/views.py:3284 app/views.py:3315 templates/error/analyzing.html:36
 msgid "There was an error analyzing your project"
@@ -298,21 +298,21 @@ msgstr "馬上開始吧"
 #: templates/upload/dashboard-unregistered-developing.html:292
 #: templates/upload/dashboard-unregistered-master.html:353
 msgid "©2014 Dr. Scratch is powered by "
-msgstr ""
+msgstr "©2014 Dr. Scratch is powered by"
 
 #: templates/error/500.html:36
 msgid "500 - Internal Server Error"
-msgstr ""
+msgstr "500 - Internal Server Error"
 
 #: templates/error/500.html:39 templates/error/analyzing.html:39
 msgid "We apologize for this inconvenience"
-msgstr ""
+msgstr "抱歉 造成你的不便"
 
 #: templates/error/analyzing.html:54
 msgid ""
 "Sometimes we have got problems analyzing some projects. We're working on "
 "this."
-msgstr ""
+msgstr "有時我們在分析某些項目時遇到問題。我們正在努力修復該問題"
 
 #: templates/learn/Abstraction.html:4 templates/learn/base.html:103
 #: templates/statistics/statistics.html:269
@@ -331,14 +331,14 @@ msgid ""
 "The ability of abstraction and decomposition of problems helps you to "
 "<b>break a problem into smaller parts that are easier to understand, program "
 "and debug.</b>"
-msgstr ""
+msgstr "問題的抽象和分解能力可以幫助您將問題分解為更易於理解的較小部分，進行程式編輯並進行調試。"
 
 #: templates/learn/Abstraction.html:17 templates/learn/Data.html:19
 #: templates/learn/Flow.html:17 templates/learn/Logic.html:17
 #: templates/learn/Parallelism.html:17 templates/learn/Synchronization.html:18
 #: templates/learn/User.html:18
 msgid "If you get 0 points..."
-msgstr ""
+msgstr "如果你得到 0 點的話 ..."
 
 #: templates/learn/Abstraction.html:19
 msgid ""
@@ -348,6 +348,9 @@ msgid ""
 "different programs and each of these programs deal with a particular issue</"
 "b>. Here's an example:"
 msgstr ""
+"當您開始使用Scratch編程時，有時似乎最簡單的解決方案是在一個字符中對字符的所有行為進行編程"
+"程序。但是，<b>理想的情況是，字符行為由"
+"不同的程序，每個程序都處理一個特定的問題</b>。這是一個示例："
 
 #: templates/learn/Abstraction.html:20 templates/learn/Abstraction.html:35
 #: templates/learn/Abstraction.html:41 templates/learn/Abstraction.html:61
@@ -361,7 +364,7 @@ msgstr ""
 #: templates/learn/Synchronization.html:45 templates/learn/User.html:23
 #: templates/learn/attrInit.html:25
 msgid "when gf clicked"
-msgstr ""
+msgstr "當 gf 被點擊時"
 
 #: templates/learn/Abstraction.html:21 templates/learn/Abstraction.html:36
 #: templates/learn/Abstraction.html:62 templates/learn/Abstraction.html:93
@@ -419,20 +422,24 @@ msgid ""
 "it is a valid option, a simpler option to program and maintain the program "
 "is divided into two parts, so that we have two different programs, one to "
 "paint the front and another to paint the second:"
-msgstr ""
+msgstr "在屏幕上繪製圖片的該項目已在"
+"繪製組成圖形的兩條線的單個程序。儘管"
+"這是一個有效的選項，是對程序進行編程和維護的更簡單的選擇"
+"分為兩個部分，因此我們有兩個不同的程序，其中一個在前面繪製，另一個在第二個繪製："
 
 #: templates/learn/Abstraction.html:49
 msgid ""
 "Thus, if we make any changes eg in one of the lines drawn, it is much easier "
 "to know which part of the program we need to go to carry out the changes."
-msgstr ""
+msgstr "因此，如果我們進行任何更改（例如，在繪製的線條之一中進行更改，則容易得多）"
+"要知道我們需要去程序的哪一部分來進行更改。"
 
 #: templates/learn/Abstraction.html:59 templates/learn/Data.html:80
 #: templates/learn/Flow.html:37 templates/learn/Logic.html:32
 #: templates/learn/Parallelism.html:32 templates/learn/Synchronization.html:43
 #: templates/learn/User.html:36
 msgid "If you get 1 point..."
-msgstr ""
+msgstr "如果你得到一點的話"
 
 #: templates/learn/Abstraction.html:60
 msgid ""
@@ -443,11 +450,11 @@ msgstr "Scratch 允許"
 
 #: templates/learn/Abstraction.html:63 templates/learn/Abstraction.html:94
 msgid "go to x:(-200) y:(40)"
-msgstr ""
+msgstr "移動到 x:(-200) y:(40)"
 
 #: templates/learn/Abstraction.html:69 templates/learn/Abstraction.html:97
 msgid "go to x:(-200) y:(0)"
-msgstr ""
+msgstr "移動到 x:(-200) y:(0)"
 
 #: templates/learn/Abstraction.html:76
 msgid ""
@@ -461,11 +468,11 @@ msgstr ""
 
 #: templates/learn/Abstraction.html:79
 msgid "define PaintedOrange(length)"
-msgstr ""
+msgstr "定義 PaintedOrange（length）"
 
 #: templates/learn/Abstraction.html:82
 msgid "move (length) steps"
-msgstr ""
+msgstr "移動 (length) 步"
 
 #: templates/learn/Abstraction.html:89
 msgid ""
@@ -475,7 +482,7 @@ msgstr ""
 
 #: templates/learn/Abstraction.html:95
 msgid "PaintedOrange(100):: looks stack"
-msgstr ""
+msgstr "PaintedOrange(100):: 看起來"
 
 #: templates/learn/Abstraction.html:98
 msgid "PaintedOrange(200):: looks stack"
@@ -494,7 +501,7 @@ msgstr ""
 #: templates/learn/Parallelism.html:65 templates/learn/Synchronization.html:67
 #: templates/learn/User.html:66
 msgid "If you get 2 points..."
-msgstr ""
+msgstr "如果你得到 2 點的話 ..."
 
 #: templates/learn/Abstraction.html:113
 msgid ""
@@ -525,7 +532,7 @@ msgstr ""
 #: templates/learn/Parallelism.html:41 templates/learn/Parallelism.html:46
 #: templates/learn/Synchronization.html:47
 msgid "forever"
-msgstr ""
+msgstr "永遠"
 
 #: templates/learn/Abstraction.html:120
 msgid "create clone of [myself v]"
@@ -563,7 +570,7 @@ msgstr ""
 #: templates/tournaments/participant/scores.html:273
 #: templates/tournaments/participant/tournamentsPart.html:411
 msgid "Data Representation"
-msgstr ""
+msgstr "資料呈現"
 
 #: templates/learn/Data.html:11
 msgid ""
@@ -587,45 +594,45 @@ msgstr ""
 
 #: templates/learn/Data.html:25
 msgid "Position:"
-msgstr ""
+msgstr "座標:"
 
 #: templates/learn/Data.html:29 templates/learn/Flow.html:23
 #: templates/learn/Flow.html.py:42 templates/learn/Flow.html:51
 #: templates/learn/Parallelism.html:42 templates/learn/User.html:40
 msgid "move (10) steps"
-msgstr ""
+msgstr "移動 (10) 步"
 
 #: templates/learn/Data.html:30 templates/learn/attrInit.html:26
 msgid "go to x:(0) y:(0)"
-msgstr ""
+msgstr "移動到 x:(0) y:(0)"
 
 #: templates/learn/Data.html:31
 msgid "glide (1) secs to x:(0) y:(0)"
-msgstr ""
+msgstr "滑行 (1) 秒到 x:(0) y:(0)"
 
 #: templates/learn/Data.html:32
 msgid "set x to (0)"
-msgstr ""
+msgstr "設定 x 到 (0)"
 
 #: templates/learn/Data.html:33
 msgid "set y to (0)"
-msgstr ""
+msgstr "設定 y 到 (0)"
 
 #: templates/learn/Data.html:34
 msgid "change x by (0)"
-msgstr ""
+msgstr "change x by (0)"
 
 #: templates/learn/Data.html:35
 msgid "change y by (0)"
-msgstr ""
+msgstr "change y by (0)"
 
 #: templates/learn/Data.html:38
 msgid "Size:"
-msgstr ""
+msgstr "大小:"
 
 #: templates/learn/Data.html:42
 msgid "change size by (10)"
-msgstr ""
+msgstr "change size by (10)"
 
 #: templates/learn/Data.html:43
 #, python-format
@@ -656,7 +663,7 @@ msgstr ""
 
 #: templates/learn/Data.html:58
 msgid "Costume:"
-msgstr ""
+msgstr "造型"
 
 #: templates/learn/Data.html:61
 msgid "switch costume to [butterfly v]"
@@ -666,7 +673,7 @@ msgstr ""
 #: templates/learn/duplicatedScripts.html:26
 #: templates/learn/duplicatedScripts.html:40
 msgid "next costume"
-msgstr ""
+msgstr "下一個造型"
 
 #: templates/learn/Data.html:63
 msgid "change [color v] effect by (25)"
@@ -678,15 +685,15 @@ msgstr ""
 
 #: templates/learn/Data.html:67
 msgid "Visibility:"
-msgstr ""
+msgstr "能見度"
 
 #: templates/learn/Data.html:70 templates/learn/Synchronization.html:74
 msgid "show"
-msgstr ""
+msgstr "顯示"
 
 #: templates/learn/Data.html:71
 msgid "hide"
-msgstr ""
+msgstr "隱藏"
 
 #: templates/learn/Data.html:81
 msgid ""
@@ -783,7 +790,7 @@ msgstr ""
 #: templates/learn/Synchronization.html:50 templates/learn/User.html:50
 #: templates/learn/User.html.py:71
 msgid "end"
-msgstr ""
+msgstr "結束"
 
 #: templates/learn/Data.html:123
 msgid "say [Today's volunteer will be...] for (2) secs"
@@ -816,7 +823,7 @@ msgstr ""
 #: templates/tournaments/participant/scores.html:145
 #: templates/tournaments/participant/tournamentsPart.html:331
 msgid "Flow Control"
-msgstr ""
+msgstr "流程控制"
 
 #: templates/learn/Flow.html:10
 msgid ""
@@ -871,7 +878,7 @@ msgstr ""
 
 #: templates/learn/Flow.html:54
 msgid "How these control blocks works?"
-msgstr ""
+msgstr "控制方塊如何工作?"
 
 #: templates/learn/Flow.html:56
 msgid ""
@@ -1620,7 +1627,7 @@ msgstr ""
 #: templates/tournaments/participant/teamsPart.html:103
 #: templates/tournaments/participant/tournamentsPart.html:110
 msgid "Sign in"
-msgstr ""
+msgstr "登入"
 
 #: templates/login/login.html:92 templates/sign/organization.html:91
 #: templates/tournaments/creator/admin/admin_creator.html:117
@@ -1640,7 +1647,7 @@ msgstr ""
 #: templates/tournaments/participant/teamsPart.html:117
 #: templates/tournaments/participant/tournamentsPart.html:124
 msgid "Remember me"
-msgstr ""
+msgstr "記住我"
 
 #: templates/login/login.html:127 templates/sign/createOrganization.html:104
 #: templates/sign/createOrganization.html:163
@@ -1649,7 +1656,7 @@ msgstr ""
 #: templates/sign/registerOrganization.html:104
 #: templates/sign/registerOrganization.html:163
 msgid "Dr. Scratch for Organizations"
-msgstr ""
+msgstr "組織或機構用的 Dr. Scratch "
 
 #: templates/login/login.html:129 templates/sign/createOrganization.html:106
 #: templates/sign/createUser.html:106
@@ -2575,7 +2582,7 @@ msgstr "加入 Dr. Scratch 組織"
 msgid ""
 "Would you like to be one of the 10 first organizations testing this new "
 "feature? Just drop us a line at "
-msgstr ""
+msgstr "如果你願意"
 
 #: templates/sign/organization.html:192
 #: templates/tournaments/main_tournaments.html:231
