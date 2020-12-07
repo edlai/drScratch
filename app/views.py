@@ -1602,6 +1602,19 @@ def translate(request,d, fileName):
         fileName.language = "en"
         fileName.save()
         return d_translate_en
+    #elif request.LANGUAGE_CODE == "zh-hant":   /* FIXME: not working here*/
+    #    print '%s ' % (request.LANGUAGE_CODE)
+    #    d_translate_zh = {}
+    #    d_translate_zh['Abstraction'] = d['Abstraction']                  # 抽象化
+    #    d_translate_zh['Parallelism'] = d['Parallelization']              # 平行化
+    #    d_translate_zh['Logic'] = d['Logic']                              # 邏輯化
+    #    d_translate_zh['Synchronization'] = d['Synchronization']          # 同步化
+    #    d_translate_zh['Flow control'] = d['Flowcontrol']                # 流程化
+    #    d_translate_zh['User interactivity'] = d['UserInteractivity']    # 人性化
+    #    d_translate_zh['Data representation'] = d['DataRepresentation']  # 資料化
+    #    fileName.language = "zh"
+    #    fileName.save()
+    #    return d_translate_zh
     else:
         return d
 
