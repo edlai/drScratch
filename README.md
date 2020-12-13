@@ -25,7 +25,7 @@ Running in `Ubuntu 18.04` as an example.
 ```
 # django-admin compilemessages (Optional for Multilingual)
 # python manage.py migrate
-# python manage.py runserver
+# python manage.py runserver 0.0.0.0:80
 ```
 
 ## Development
