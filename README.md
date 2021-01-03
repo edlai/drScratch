@@ -24,6 +24,8 @@ Running in `Ubuntu 18.04` as an example.
 
 ```
 # django-admin compilemessages (Optional for Multilingual)
+# python manage.py createsuperuser --username=joe --email=joe@example.com (Optional for Createsuperuser)
+# python manage.py makemigrations  (Optional for Migration)
 # python manage.py migrate
 # python manage.py runserver 0.0.0.0:80
 ```
@@ -42,4 +44,19 @@ Add translation to `drscratch/drScratch/locale/zh_Hant/LC_MESSAGES/django.po`, t
 
 ```
 # django-admin compilemessages
+```
+
+
+### Rest API
+
+#### Display all API
+```
+# curl -H 'Cache-Control: no-cache' http://localhost:8000/api/
+```
+
+#### Query User data
+
+```
+# curl -H 'Cache-Control: no-cache' http://localhost:8000/api/users/
+[{"username": "joe", "email": "joe@example.com"}]
 ```
