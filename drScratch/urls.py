@@ -2,12 +2,17 @@ from django.conf.urls import include, url
 from django.conf import settings
 from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
+
+#from django.conf.urls import path
 from rest_framework import routers
+from app.views import UploadViewSet
+
 from app.views import UserViewSet
 admin.autodiscover()
 
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
+router.register(r'upload', UploadViewSet, base_name="upload")
 
 urlpatterns = (
     # Examples:

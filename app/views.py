@@ -51,7 +51,12 @@ import kurt
 import zipfile
 import copy
 from zipfile import ZipFile
+
 from rest_framework import viewsets
+from rest_framework.viewsets import ViewSet
+from rest_framework.response import Response
+from .serializers import UploadSerializer
+
 from django.template.context import RequestContext
 from pickle import NONE
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
@@ -3341,3 +3346,18 @@ def playParticipant (request):
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+
+
+# ViewSets define the view behavior.
+class UploadViewSet(ViewSet):
+    serializer_class = UploadSerializer
+
+    def list(self, request):
+        return Response("GET API")
+
+    def create(self, request):
+        #return Response("POST API")
+        file_uploaded = request.FILES.get('file_uploaded')
+        content_type = file_uploaded.content_type
+        response = "POST API and you have uploaded a {} file".format(content_type)
+        return Response(response)

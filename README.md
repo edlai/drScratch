@@ -60,3 +60,15 @@ Add translation to `drscratch/drScratch/locale/zh_Hant/LC_MESSAGES/django.po`, t
 # curl -H 'Cache-Control: no-cache' http://localhost:8000/api/users/
 [{"username": "joe", "email": "joe@example.com"}]
 ```
+
+#### List Upload file (TBD)
+```
+curl -H 'Cache-Control: no-cache' http://localhost:8000/api/upload/
+"GET API"
+```
+
+#### Upload file
+```
+curl -X POST -H 'Cache-Control: no-cache' -F "file_uploaded=@test/test.sb3" http://localhost:8000/api/upload/
+"POST API and you have uploaded a application/octet-stream file"
+```
