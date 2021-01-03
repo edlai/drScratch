@@ -29,6 +29,7 @@ from app.models import Teacher, Organization, OrganizationHash, Challenge
 from app.forms import UploadFileForm, UserForm, NewUserForm, UrlForm, TeacherForm,\
     UpdateForm, TeamForm, TournamentForm
 from app.forms import OrganizationForm, OrganizationHashForm, LoginForm, EditTournamentForm, ParticipantForm, ChallengeForm, CreatorForm
+from app.serializers import UserSerializer
 from django.contrib.auth.models import User
 from datetime import datetime,timedelta,date
 from django.utils.crypto import get_random_string
@@ -50,6 +51,7 @@ import kurt
 import zipfile
 import copy
 from zipfile import ZipFile
+from rest_framework import viewsets
 from django.template.context import RequestContext
 from pickle import NONE
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
@@ -3334,3 +3336,8 @@ def playParticipant (request):
                     d['pageTour'] = pageTour
                     d['pageTeam'] = pageTeam
                     return render_to_response("tournaments/participant/results.html", d)
+
+# API
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
