@@ -73,6 +73,8 @@ import backdropNaming
 import duplicateScripts
 import deadCode
 
+import uuid
+
 #Global variables
 #pMastery = "hairball -p mastery.Mastery "
 pDuplicateScript = "hairball -p duplicate.DuplicateScripts "
@@ -3347,7 +3349,6 @@ class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
-
 # ViewSets define the view behavior.
 class UploadViewSet(ViewSet):
     serializer_class = UploadSerializer
@@ -3359,5 +3360,13 @@ class UploadViewSet(ViewSet):
         #return Response("POST API")
         file_uploaded = request.FILES.get('file_uploaded')
         content_type = file_uploaded.content_type
-        response = "POST API and you have uploaded a {} file".format(content_type)
+
+        my_uuid = uuid.uuid4()
+        filename = './uploads/' + str(my_uuid) + '.sb3'
+        print filename
+        with open(filename, 'wb+') as temp_file:
+            for chunk in file_uploaded.chunks():
+                temp_file.write(chunk)
+
+        response = "{result: 'ok', " + "dest: '{}'".format(filename) + "}"
         return Response(response)
