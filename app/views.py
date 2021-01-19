@@ -3362,11 +3362,38 @@ class UploadViewSet(ViewSet):
         content_type = file_uploaded.content_type
 
         my_uuid = uuid.uuid4()
-        filename = './uploads/' + str(my_uuid) + '.sb3'
-        print filename
-        with open(filename, 'wb+') as temp_file:
+        file_name = './uploads/' + str(my_uuid) + '.sb3'
+        #print 'file_name:' + file_name + '\n'
+
+        with open(file_name, 'wb+') as temp_file:
             for chunk in file_uploaded.chunks():
                 temp_file.write(chunk)
 
-        response = "{result: 'ok', " + "dest: '{}'".format(filename) + "}"
+        resultMastery = analyzer.main(file_name)
+        resultSpriteNaming = spriteNaming.main(file_name)
+        resultBackdropNaming = backdropNaming.main(file_name)
+        resultDuplicateScript = duplicateScripts.main(file_name)
+        resultDeadCode = deadCode.main(file_name)
+
+        #print (type(resultMastery))
+
+        #metadata = json.loads(resultMastery)
+        #print (type(metadata))  
+      
+        #print(metadata)
+
+        #Create a dictionary with necessary information
+        #dictionary.update(proc_mastery(request,resultMastery, filename))
+        #dictionary.update(proc_sprite_naming(resultSpriteNaming, filename))
+        #dictionary.update(proc_backdrop_naming(resultBackdropNaming, filename))
+        #dictionary.update(proc_duplicate_script(resultDuplicateScript, filename))
+        #dictionary.update(proc_dead_code(resultDeadCode, filename))
+        #dictionary.update(proc_initialization(resultInitialization, filename))
+        #code = {'dupCode':duplicate_script_scratch_block(resultDuplicateScript)}
+        #dictionary.update(code)
+        #code = {'dCode':dead_code_scratch_block(resultDeadCode)}
+        #dictionary.update(code)        
+
+        response = "{result: 'ok', " + "dest: '{}, metadata: {}'".format(file_name, resultMastery) + "}"
+
         return Response(response)
