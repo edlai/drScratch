@@ -23,10 +23,10 @@ $ pip install -r requirements.txt
 ## Running
 
 ```
-$ sudo django-admin compilemessages (Optional for Multilingual)
-$ sudo python manage.py createsuperuser --username=joe --email=joe@example.com (Optional for Createsuperuser)
 $ sudo python manage.py makemigrations  (Optional for Migration)
 $ sudo python manage.py migrate
+$ sudo django-admin compilemessages (Optional for Multilingual)
+$ sudo python manage.py createsuperuser --username=joe --email=joe@example.com (Optional for Createsuperuser)
 $ sudo python manage.py runserver 0.0.0.0:8000
 ```
 
@@ -70,5 +70,4 @@ $ curl -H 'Cache-Control: no-cache' http://localhost:8000/api/upload/
 #### Upload file
 ```
 $ curl -X POST -H 'Cache-Control: no-cache' -F "file_uploaded=@test/test.sb3" http://localhost:8000/api/upload/
-"POST API and you have uploaded a application/octet-stream file"
 ```

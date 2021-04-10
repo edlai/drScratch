@@ -103,9 +103,11 @@ def main(request):
         user = request.user.username
     else:
         user = None
+
     # The first time one user enters
     # Create the dashboards associated to users
     createDashboards()
+ 
     return render_to_response('main/main.html',
                                 {'user':user},
                                 RC(request))
@@ -161,9 +163,15 @@ def proc_mastery(request,lines, filename):
 
     return dic
 
+def log2file(log):
+
+    # Create log
+    pathLog = os.path.dirname(os.path.dirname(__file__)) + "/log/"
+    logFile = open (pathLog + "logFile.txt", "a")
+    logFile.write(log)
+
 
 def proc_duplicate_script(lines, filename):
-
 
     dic = {}
     number = 0
@@ -304,8 +312,8 @@ def analyze_project(request, file_name, filename):
 def _upload(request):
     """Upload file from form POST for unregistered users"""
 
+    if request.method == 'POST': #or request.method == 'OPTIONS':
 
-    if request.method == 'POST':
         #Revise the form in main
         #If user doesn't complete all the fields,it'll show a warning
         try:
@@ -313,7 +321,6 @@ def _upload(request):
         except:
             d = {'Error': 'MultiValueDict'}
             return  d
-
         
         # Create DB of files
         now = datetime.now()
@@ -339,16 +346,6 @@ def _upload(request):
             fileSaved = dir_zips + str(filename.id) + ".sb2"
         else:
             fileSaved = dir_zips + str(filename.id) + ".sb3"
-
-        # Create log
-        pathLog = os.path.dirname(os.path.dirname(__file__)) + "/log/"
-        logFile = open (pathLog + "logFile.txt", "a")
-        logFile.write("FileName: " + str(filename.filename) + "\t\t\t" + \
-            "ID: " + str(filename.id) + "\t\t\t" + \
-            "Method: " + str(filename.method) + \
-            "\t\t\tTime: " + str(filename.time) + "\n")
-
-
        
         # Save file in server
         counter = 0
@@ -474,13 +471,10 @@ def send_request_getSb3(idProject, username, method):
     fileSaved = dir_zips + "project.json"
 
     #Write the activity in log
-    pathLog = os.path.dirname(os.path.dirname(__file__)) + "/log/"
-    logFile = open (pathLog + "logFile.txt", "a")
-    logFile.write("FileName: " + str(fileName.filename) + "\t\t\t" + "ID: " + \
+    log2file("FileName: " + str(fileName.filename) + "\t\t\t" + "ID: " + \
         str(fileName.id) + "\t\t\t" + "Method: " + str(fileName.method) + \
         "\t\t\t" + "Time: " + str(fileName.time) + "\n")
 
-    
     # Save file in server
     counter = 0
 
@@ -844,11 +838,11 @@ def sendRequestgetSB2(idProject, organization, method):
     fileName.save()
     dir_zips = os.path.dirname(os.path.dirname(__file__)) + "/uploads/"
     fileSaved = dir_zips + str(fileName.id) + ".sb2"
-    pathLog = os.path.dirname(os.path.dirname(__file__)) + "/log/"
-    logFile = open (pathLog + "logFile.txt", "a")
-    logFile.write("FileName: " + str(fileName.filename) + "\t\t\t" + "ID: " + \
+
+    log2file("FileName: " + str(fileName.filename) + "\t\t\t" + "ID: " + \
     str(fileName.id) + "\t\t\t" + "Method: " + str(fileName.method) + "\t\t\t" + \
     "Time: " + str(fileName.time) + "\n")
+
     # Save file in server
     counter = 0
     file_name = handler_upload(fileSaved, counter)
@@ -3358,6 +3352,9 @@ class UploadViewSet(ViewSet):
 
     def create(self, request):
         #return Response("POST API")
+        log2file('UploadViewSet create...\n')
+        
+        print("POST API")
         file_uploaded = request.FILES.get('file_uploaded')
         content_type = file_uploaded.content_type
 
@@ -3394,6 +3391,16 @@ class UploadViewSet(ViewSet):
         #code = {'dCode':dead_code_scratch_block(resultDeadCode)}
         #dictionary.update(code)        
 
-        response = "{result: 'ok', " + "dest: '{}, metadata: {}'".format(file_name, resultMastery) + "}"
+        #response = '{"ret": "ok"}'
+        #, ' + '"dest": "{}", "metadata": {}'.format(file_name, resultMastery) + '}'
 
-        return Response(response)
+
+        response_data = {}
+        response_data['ret'] = 'error'
+        response_data['message'] = 'Some error message'
+
+        #return Response(response)
+
+        #return HttpResponse(json.dumps(response_data), content_type="application/json")
+
+        return HttpResponse(json.dumps(resultMastery), content_type="application/json")

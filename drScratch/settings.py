@@ -19,7 +19,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'static'),
 )
 
 STATIC_ROOT = '/static/'
@@ -38,21 +38,22 @@ TEMPLATE_DEBUG = True
 
 
 TEMPLATE_LOADERS = (
-'django.template.loaders.filesystem.Loader',
-'django.template.loaders.app_directories.Loader',
-#'django.template.loaders.eggs.Loader',
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+    # 'django.template.loaders.eggs.Loader',
 )
 
 TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'templates'),)
 
 
-ALLOWED_HOSTS = ['*', '0.0.0.0', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['*', '0.0.0.0', 'localhost', '127.0.0.1', '172.17.2.205']
 
 
 # Application definition
 
 INSTALLED_APPS = (
     'app',
+    #    'corsheaders',
     'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -64,25 +65,44 @@ INSTALLED_APPS = (
 )
 
 MIDDLEWARE_CLASSES = (
-    'django.middleware.common.CommonMiddleware',
+    #    'corsheaders.middleware.CorsMiddleware',
+    #    'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
-    #'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'app.middleware.corsMiddleware',
 )
 
 PASSWORD_HASHERS = (
-        'django.contrib.auth.hashers.PBKDF2PasswordHasher',
-        'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
-        'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
-        'django.contrib.auth.hashers.BCryptPasswordHasher',
-        'django.contrib.auth.hashers.SHA1PasswordHasher',
-        'django.contrib.auth.hashers.MD5PasswordHasher',
-        'django.contrib.auth.hashers.CryptPasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+    'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
+    'django.contrib.auth.hashers.BCryptPasswordHasher',
+    'django.contrib.auth.hashers.SHA1PasswordHasher',
+    'django.contrib.auth.hashers.MD5PasswordHasher',
+    'django.contrib.auth.hashers.CryptPasswordHasher',
 )
+
+#CORS_ORIGIN_ALLOW_ALL = True
+#CORS_ALLOW_CREDENTIALS = True
+
+# CORS_ORIGIN_WHITELIST = [
+#    'http://localhost:8601',
+# ] # If this is used, then not need to use `CORS_ORIGIN_ALLOW_ALL = True`
+
+# CORS_ORIGIN_REGEX_WHITELIST = [
+#    'http://localhost:8601',
+# ]
+
+# CORS_ALLOWED_ORIGINS = [
+#    "http://localhost:8601",
+#    "http://172.17.2.205:8601",
+#    "http://127.0.0.1:8601"
+# ]
 
 ROOT_URLCONF = 'drScratch.urls'
 
@@ -94,17 +114,17 @@ WSGI_APPLICATION = 'drScratch.wsgi.application'
 
 DATABASES = {
     'default': {
-        #'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        #'NAME': 'torneosdrscratch',
+        # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        # 'NAME': 'torneosdrscratch',
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    'USER': 'drscratchdbuser@torneosdrscratch01',
-    'PASSWORD':'drScratch01**',
-    #
-    # 
-    # 'HOST': 'torneosdrscratch01.postgres.database.azure.com',
-    'HOST': 'localhost',
-    'PORT': '5432',
+        'USER': 'drscratchdbuser@torneosdrscratch01',
+        'PASSWORD': 'drScratch01**',
+        #
+        #
+        # 'HOST': 'torneosdrscratch01.postgres.database.azure.com',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
@@ -119,7 +139,9 @@ MEDIA_ROOT = 'static'
 
 LANGUAGE_CODE = 'zh-hant'
 
-_ = lambda s: s
+
+def _(s): return s
+
 
 LANGUAGES = (
     ('es', _('Spanish')),
@@ -147,24 +169,27 @@ USE_L10N = True
 USE_TZ = True
 
 LOGGING = {
- 'version': 1,
- 'disable_existing_loggers': False,
- 'filters': {
- 'require_debug_false': {
- '()': 'django.utils.log.RequireDebugFalse'
- }
- },
- 'handlers': {
- 'logfile': {
- 'class': 'logging.handlers.WatchedFileHandler',
- 'filename': 'myapp.log'
- }
- },
- 'loggers': {
- 'django': {
- 'handlers': ['logfile'],
- 'level': 'DEBUG',
- 'propagate': False,
- }
- }
- }
+    'version': 1,
+    'disable_existing_loggers': False,
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse'
+        }
+    },
+    'handlers': {
+        'logfile': {
+            'class': 'logging.handlers.WatchedFileHandler',
+            'filename': 'myapp2.log'
+        },
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['logfile', 'console'],
+            'level': 'DEBUG',
+            'propagate': False,
+        }
+    }
+}
