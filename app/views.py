@@ -169,7 +169,7 @@ def log2file(log):
     pathLog = os.path.dirname(os.path.dirname(__file__)) + "/log/"
     logFile = open (pathLog + "logFile.txt", "a")
     logFile.write(log)
-
+    logFile.close()
 
 def proc_duplicate_script(lines, filename):
 
@@ -3372,7 +3372,11 @@ class UploadViewSet(ViewSet):
         resultDuplicateScript = duplicateScripts.main(file_name)
         resultDeadCode = deadCode.main(file_name)
 
+
         #print (type(resultMastery))
+        #print (resultMastery.find("{"))
+        #print (resultMastery.find("}"))
+        ret = resultMastery[resultMastery.find("{"):resultMastery.find("}")+1]
 
         #metadata = json.loads(resultMastery)
         #print (type(metadata))  
@@ -3403,4 +3407,4 @@ class UploadViewSet(ViewSet):
 
         #return HttpResponse(json.dumps(response_data), content_type="application/json")
 
-        return HttpResponse(json.dumps(resultMastery), content_type="application/json")
+        return HttpResponse(json.dumps(ret), content_type="application/json")

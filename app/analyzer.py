@@ -61,26 +61,26 @@ class Mastery:
   def finalize(self, filename):
    result = ""
 
-   #result += filename 
-   #result += '\n'
+   result += filename
+   result += '\n'
 
    result += json.dumps(self.mastery_dicc)
    result += '\n'
    
-   #total = 0
-   #for i in self.mastery_dicc.items():
-   #  total += i[1]
-   #result += ("Total mastery points: %d/21\n" % total)
+   total = 0
+   for i in self.mastery_dicc.items():
+     total += i[1]
+   result += ("Total mastery points: %d/21\n" % total)
    
-   #average =  float (total) / 7
-   #result += ("Average mastery points: %.2f/3\n" % average)
+   average =  float (total) / 7
+   result += ("Average mastery points: %.2f/3\n" % average)
 
-   #if average > 2:
-   # result += "Overall programming competence: Proficiency"
-   #elif average > 1:
-   # result += "Overall programming competence: Developing"
-   #else:
-   # result += "Overall programming competence: Basic"
+   if average > 2:
+    result += "Overall programming competence: Proficiency"
+   elif average > 1:
+    result += "Overall programming competence: Developing"
+   else:
+    result += "Overall programming competence: Basic"
 
    return result
 
