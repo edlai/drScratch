@@ -88,11 +88,11 @@ msgstr "Dr. Scratch 比賽: 手動驗證總結"
 
 #: app/views.py:2134
 msgid "Password changed successfully."
-msgstr "密碼更新成功"
+msgstr "密碼更新成功。"
 
 #: app/views.py:2175
 msgid "Dr.Scratch: Did you forget your password?"
-msgstr "Dr.Scratch: 忘記密碼?"
+msgstr "Dr.Scratch: 忘記密碼 ?"
 
 #: app/views.py:2204 app/views.py:2308
 msgid "Logged user is not a creator or a participant."
@@ -124,7 +124,7 @@ msgstr "驗證已過期。 請重新登錄。"
 
 #: app/views.py:2390
 msgid "Challenge added."
-msgstr "加入挑戰"
+msgstr "加入挑戰。"
 
 #: app/views.py:2413
 msgid ""
@@ -134,16 +134,16 @@ msgstr "挑戰不能被刪除，因為它與一個或多個比賽有關聯。"
 
 #: app/views.py:2416
 msgid "Challenge deleted."
-msgstr "刪除挑戰"
+msgstr "刪除挑戰。"
 
 #: app/views.py:2420 app/views.py:2451 app/views.py:2481
 msgid "The selected challenge cannot be found."
-msgstr "該挑戰不能被刪除"
+msgstr "該挑戰不能被刪除。"
 
 #. Translators: Challenge edited.
 #: app/views.py:2477
 msgid "Challenge edited."
-msgstr "編輯挑戰"
+msgstr "編輯挑戰。"
 
 #: app/views.py:2516
 msgid ""
@@ -152,64 +152,64 @@ msgstr "此團隊不能被刪除因為有關連到一個或多個比賽。"
 
 #: app/views.py:2519
 msgid "Team deleted."
-msgstr "刪除團隊"
+msgstr "刪除團隊。"
 
 #: app/views.py:2546 app/views.py:2591 app/views.py:2833 app/views.py:3152
 #: app/views.py:3156
 msgid "The selected team cannot be found."
-msgstr "沒發現該選定的團隊"
+msgstr "沒發現該選定的團隊。"
 
 #: app/views.py:2587
 msgid "Team edited."
-msgstr "編輯團隊"
+msgstr "編輯團隊。"
 
 #: app/views.py:2620
 msgid "Team added."
-msgstr "加入團隊"
+msgstr "加入團隊。"
 
 #: app/views.py:2693 app/views.py:3059
 msgid "The selected tournament cannot be found."
-msgstr "選定的挑戰不存在"
+msgstr "選定的挑戰不存在。"
 
 #: app/views.py:2729
 msgid "Tournament deleted."
-msgstr "刪除該挑戰"
+msgstr "刪除該挑戰。"
 
 #: app/views.py:2772
 msgid "Tournament added."
-msgstr "加入挑戰"
+msgstr "加入挑戰。"
 
 #: app/views.py:2829
 msgid "Tournament edited."
-msgstr "編輯挑戰"
+msgstr "編輯挑戰。"
 
 #: app/views.py:2875
 #: templates/tournaments/creator/admin/tournaments/tournamentsList.html:291
 #: templates/tournaments/creator/progress/tournamentsProgress.html:261
 msgid "The tournament has not teams."
-msgstr "沒有團隊參與該挑戰"
+msgstr "沒有團隊參與該挑戰。"
 
 #: app/views.py:2946
 msgid ""
 "The following emails are already included in Dr. Scratch (they where not "
 "registered): "
-msgstr "以下的電子郵件已經被註冊到 Dr. Scratch"
+msgstr "以下的電子郵件已經被加入到 Dr. Scratch "
 
 #: app/views.py:2948
 msgid "The following emails were successfully registered in Dr. Scratch: "
-msgstr "以下的電子郵件已成功的註冊"
+msgstr "以下的電子郵件已成功的註冊: "
 
 #: app/views.py:2956
 msgid "You have to include a CSV file."
-msgstr "你必須加入CSV檔"
+msgstr "你必須加入CSV檔。"
 
 #: app/views.py:2973
 msgid "The file added is not a CSV file."
-msgstr "該加入的檔案不是 CSV 檔案"
+msgstr "該加入的檔案不是 CSV 檔案。"
 
 #: app/views.py:2978
 msgid "You have to include a TXT file."
-msgstr "你必須加入文字檔"
+msgstr "你必須加入文字檔。"
 
 #: app/views.py:2995
 msgid "The file added is not a TXT file."
@@ -298,11 +298,11 @@ msgstr "馬上開始吧"
 #: templates/upload/dashboard-unregistered-developing.html:292
 #: templates/upload/dashboard-unregistered-master.html:353
 msgid "©2014 Dr. Scratch is powered by "
-msgstr "©2014 Dr. Scratch 強力驅動"
+msgstr "©2014 Dr. Scratch 強力驅動 "
 
 #: templates/error/500.html:36
 msgid "500 - Internal Server Error"
-msgstr "500 - Internal Server Error"
+msgstr "500 - 內部伺服器錯誤"
 
 #: templates/error/500.html:39 templates/error/analyzing.html:39
 msgid "We apologize for this inconvenience"
@@ -331,7 +331,7 @@ msgid ""
 "The ability of abstraction and decomposition of problems helps you to "
 "<b>break a problem into smaller parts that are easier to understand, program "
 "and debug.</b>"
-msgstr "問題的抽象和分解能力可以幫助您將問題分解為更易於理解的較小部分，進行程式編輯並進行調試。"
+msgstr "問題的抽象和分解能力可以幫助您將問題分解為更易於理解的較小部分，進行程式編輯並進行除錯。"
 
 #: templates/learn/Abstraction.html:17 templates/learn/Data.html:19
 #: templates/learn/Flow.html:17 templates/learn/Logic.html:17
@@ -446,7 +446,8 @@ msgid ""
 "Scratch allows new user-defined blocks that consist of a sequence of "
 "instructions. These abstractions allow you to create simple programs to "
 "read, program and maintain. Here's an example:"
-msgstr "Scratch 允許"
+msgstr "Scratch 允許定義使用者自行創建這自己的程式積木方塊，這些程式積木方塊由一系列指令序列組成"
+"抽象化使您可以創建簡單的程式方塊來閱讀，編程和維護。這裡有一個範例："
 
 #: templates/learn/Abstraction.html:63 templates/learn/Abstraction.html:94
 msgid "go to x:(-200) y:(40)"
@@ -464,7 +465,8 @@ msgid ""
 "orange line on the screen and that you can tell what is the length of the "
 "line. For this you go to the category 'More Blocks' and press the Create "
 "button a block:"
-msgstr ""
+msgstr "這個Scratch專案中要畫兩條不同長度的橘色線。比重複程式碼兩次較好的方式，在演示的這個例子中"
+"你可以定義一個<i>'DrawOrange'</i> 程式積木，[TBD]"
 
 #: templates/learn/Abstraction.html:79
 msgid "define PaintedOrange(length)"
@@ -478,15 +480,15 @@ msgstr "移動 (length) 步"
 msgid ""
 "Having defined the block <i>'DrawOrange'</i> it can be used in any program "
 "of the project, as we see below:"
-msgstr ""
+msgstr "已經定義了 <i>'DrawOrange'</i> 程式積木，可以用在任何程式中， 我們可以看到如下: "
 
 #: templates/learn/Abstraction.html:95
 msgid "PaintedOrange(100):: looks stack"
-msgstr "PaintedOrange(100):: 看起來"
+msgstr "PaintedOrange(100):: 看起來堆疊"
 
 #: templates/learn/Abstraction.html:98
 msgid "PaintedOrange(200):: looks stack"
-msgstr ""
+msgstr "PaintedOrange(200):: 看起來堆疊"
 
 #: templates/learn/Abstraction.html:102
 msgid ""
@@ -494,7 +496,8 @@ msgid ""
 "program and maintain. As can be seen, the first time the block is used "
 "<i>DrawOrange</i> prompted a length of 100 steps, whereas the second time "
 "length is 200 steps."
-msgstr ""
+msgstr "如此這樣，我們避免了程式碼重複，從而使我們的項目更容易於設計和維護。可以看到，第一次使用該方塊<i> DrawOrange </i>"
+"提示長度為100步，而第二次提示長度是200步。"
 
 #: templates/learn/Abstraction.html:111 templates/learn/Data.html:99
 #: templates/learn/Flow.html:65 templates/learn/Logic.html:47
@@ -511,14 +514,16 @@ msgid ""
 "many copies as you need. Therefore, if we want 20 Martians, create 20 "
 "identical objects. However, what if I want to change the program? Would have "
 "to go object by object performing this modification."
-msgstr ""
+msgstr "在某些Scratch項目中，我們有許多完全相同的人物角色且執行相同的動作。要做到這一點的第一個想法就是"
+"先創建一個角色，安排他的所有行為，一旦準備好，就做一個再根據需要複製其他的。因此，如果我們要20個火星人，則創建20個"
+"完全相同的對象。如果我想更改程式該怎麼辦的話，就會有逐個對象執行此修正。"
 
 #: templates/learn/Abstraction.html:115
 msgid ""
 "For such situations it is preferable to use <b>clones</b>, a type of "
 "abstraction that helps us to program a single object, and dynamically "
 "<b>create exact copies with the same behavior.</b>"
-msgstr ""
+msgstr "[TBD]"
 
 #: templates/learn/Abstraction.html:116
 msgid ""
@@ -536,30 +541,30 @@ msgstr "永遠"
 
 #: templates/learn/Abstraction.html:120
 msgid "create clone of [myself v]"
-msgstr ""
+msgstr "創建克隆 [myself v]"
 
 #: templates/learn/Abstraction.html:121
 msgid "wait (0.2) secs"
-msgstr ""
+msgstr "等待 (0.2) 秒"
 
 #: templates/learn/Abstraction.html:122
 msgid "go to x:(pick random(-200) to (200)) y:(200)"
-msgstr ""
+msgstr "到 x:(選取亂數(-200) 到 (200)) y:(200)"
 
 #: templates/learn/Abstraction.html:123
 msgid "glide (3) secs to x:(x position) y:(-180)"
-msgstr ""
+msgstr "滑行 (3) 秒 到  x:(x 位置) y:(-180)"
 
 #: templates/learn/Abstraction.html:124
 msgid "delete this clone"
-msgstr ""
+msgstr "刪除這個克隆"
 
 #: templates/learn/Abstraction.html:127
 msgid ""
 "Thus, just by programming a character, we can have infinite clones  which "
 "are created at a particular time of project implementation and are deleted "
 "when they are no longer needed."
-msgstr ""
+msgstr "[TBD]"
 
 #: templates/learn/Data.html:5
 #: templates/tournaments/creator/admin/challenges/challengesList.html:374
@@ -632,34 +637,34 @@ msgstr "大小:"
 
 #: templates/learn/Data.html:42
 msgid "change size by (10)"
-msgstr "change size by (10)"
+msgstr "用 (10) 改變大小"
 
 #: templates/learn/Data.html:43
 #, python-format
 msgid "set size to (120) %%"
-msgstr ""
+msgstr "將大小設定成  (120) %%"
 
 #: templates/learn/Data.html:47
 msgid "Orientation:"
-msgstr ""
+msgstr "方向"
 
 #: templates/learn/Data.html:51
 msgid "point in direction (90 v)"
-msgstr ""
+msgstr "朝向方向 (90 v)"
 
 #: templates/learn/Data.html:52
 msgid "point towards [ v]"
-msgstr ""
+msgstr "前進 [ v]"
 
 #: templates/learn/Data.html:53 templates/learn/Flow.html:24
 #: templates/learn/Flow.html.py:43
 msgid "turn cw (15) degrees"
-msgstr ""
+msgstr "轉向 cw (15) 度"
 
 #: templates/learn/Data.html:54 templates/learn/Flow.html:26
 #: templates/learn/Flow.html.py:45
 msgid "turn ccw (15) degrees"
-msgstr ""
+msgstr "轉向 ccw (15) 度"
 
 #: templates/learn/Data.html:58
 msgid "Costume:"
@@ -667,7 +672,7 @@ msgstr "造型"
 
 #: templates/learn/Data.html:61
 msgid "switch costume to [butterfly v]"
-msgstr ""
+msgstr "更換服裝 到 [butterfly v]"
 
 #: templates/learn/Data.html:62 templates/learn/duplicatedScripts.html:18
 #: templates/learn/duplicatedScripts.html:26
@@ -677,11 +682,11 @@ msgstr "下一個造型"
 
 #: templates/learn/Data.html:63
 msgid "change [color v] effect by (25)"
-msgstr ""
+msgstr "改變 [color v] 受 (25) 作用"
 
 #: templates/learn/Data.html:64
 msgid "set [color v] effect to (0)"
-msgstr ""
+msgstr "設定  [color v] 受 (0) 作用"
 
 #: templates/learn/Data.html:67
 msgid "Visibility:"
