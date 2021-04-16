@@ -255,7 +255,7 @@ class Mastery:
        
    score = 0
    keys = [] 
-   messages = []
+   messages = ['message1']
    backdrops = []
    multimedia = []
    dict_parall = {}
@@ -266,7 +266,10 @@ class Mastery:
    if self.blocks_dicc['event_whenbroadcastreceived'] > 1:            # 2 Scripts start on the same received message
      if dict_parall['BROADCAST_OPTION']:
           new_message = dict_parall['BROADCAST_OPTION']
-          if new_message in messages:
+          print(str(type(new_message)))
+          #for p in new_message: print p
+          #for q in messages: print q
+          if cmp(new_message, messages):
               score = 3
               self.mastery_dicc['Parallelization'] = score
               return
