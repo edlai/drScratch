@@ -266,7 +266,7 @@ class Mastery:
    if self.blocks_dicc['event_whenbroadcastreceived'] > 1:            # 2 Scripts start on the same received message
      if dict_parall['BROADCAST_OPTION']:
           new_message = dict_parall['BROADCAST_OPTION']
-          print(str(type(new_message)))
+          #print(str(type(new_message)))
           #for p in new_message: print p
           #for q in messages: print q
           if cmp(new_message, messages):

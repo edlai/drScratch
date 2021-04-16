@@ -3354,7 +3354,7 @@ class UploadViewSet(ViewSet):
         #return Response("POST API")
         log2file('UploadViewSet create...\n')
         
-        print("POST API")
+        #print("POST API")
         file_uploaded = request.FILES.get('file_uploaded')
         content_type = file_uploaded.content_type
 
