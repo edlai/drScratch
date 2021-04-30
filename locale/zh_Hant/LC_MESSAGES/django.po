@@ -3590,7 +3590,7 @@ msgstr "<h3 class='text-left dark-text'>你現在的等級是... <br></br> <stro
 #: templates/tournaments/participant/results.html:307
 #: templates/upload/dashboard-unregistered-developing.html:132
 msgid "You're doing a great job.<br> Keep it up!!!"
-msgstr "做得好。<br> 具續保持!!!"
+msgstr "做得好。<br> 繼續保持!!!"
 
 #: templates/tournaments/participant/results.html:309
 #: templates/upload/dashboard-unregistered-basic.html:122

@@ -145,18 +145,50 @@
                                       {% if value == 0 %}
                                   <a  href="/learn/{{ key }}/#level0">
                                     <img src="static/app/images/bulb_little.png" alt="">
-                                        {% blocktrans %}
-                                        {{ key }}
-                                        {% endblocktrans %}
+                                    {% if key == "Abstraction" %}
+                                    抽象化 ({{ key }})
+                                    {% elif key == "Parallelization" %}
+                                    平行化 ({{ key }})
+                                    {% elif key == "Logic" %}
+                                    邏輯化 ({{ key }})
+                                    {% elif key == "Synchronization" %}
+                                    同步化 ({{ key }})
+                                    {% elif key == "FlowControl" %}
+                                    流程化 ({{ key }})
+                                    {% elif key == "UserInteractivity" %}
+                                    人性化 ({{ key }})
+                                    {% elif key == "DataRepresentation" %}
+                                    資料化 ({{ key }})
+                                    {% else %}
+                                    {% blocktrans %}
+                                    {{ key }
+                                    {% endblocktrans %}
+                                    {% endif %}
                                  </a><br>
                                    
                                 </tr>
                             {% elif value == 1 %}
                                 <a href="/learn/{{ key }}/#level1">
                                     <img src="static/app/images/bulb_little.png" alt=""> 
-                                        {% blocktrans %}
-                                        {{ key }}
-                                        {% endblocktrans %}
+                                    {% if key == "Abstraction" %}
+                                    抽象化 ({{ key }})
+                                    {% elif key == "Parallelization" %}
+                                    平行化 ({{ key }})
+                                    {% elif key == "Logic" %}
+                                    邏輯化 ({{ key }})
+                                    {% elif key == "Synchronization" %}
+                                    同步化 ({{ key }})
+                                    {% elif key == "FlowControl" %}
+                                    流程化 ({{ key }})
+                                    {% elif key == "UserInteractivity" %}
+                                    人性化 ({{ key }})
+                                    {% elif key == "DataRepresentation" %}
+                                    資料化 ({{ key }})
+                                    {% else %}
+                                    {% blocktrans %}
+                                    {{ key }
+                                    {% endblocktrans %}
+                                    {% endif %}
                                  </a><br>
                             
                             
@@ -200,10 +232,29 @@
                                         {% if value = 3 %}
                                         <span class="glyphicon glyphicon-star" id="star"></span>
                                         {% endif %}
-                                        {% blocktrans %}
-                                        {{ key }}
-                                        {% endblocktrans %}
-                                        
+
+
+                                    <a  href="/learn/{{ key }}/#level0">
+                                      <img src="static/app/images/bulb_little.png" alt="">
+                                      {% if key == "Abstraction" %}
+                                      抽象化 ({{ key }})
+                                      {% elif key == "Parallelization" %}
+                                      平行化 ({{ key }})
+                                      {% elif key == "Logic" %}
+                                      邏輯化 ({{ key }})
+                                      {% elif key == "Synchronization" %}
+                                      同步化 ({{ key }})
+                                      {% elif key == "FlowControl" %}
+                                      流程化 ({{ key }})
+                                      {% elif key == "UserInteractivity" %}
+                                      人性化 ({{ key }})
+                                      {% elif key == "DataRepresentation" %}
+                                      資料化 ({{ key }})
+                                      {% else %}
+                                      {% blocktrans %}
+                                      {{ key }
+                                      {% endblocktrans %}
+                                      {% endif %}                                    
                                       </td>
                                       <td>
                                             {% if value = 0 %}

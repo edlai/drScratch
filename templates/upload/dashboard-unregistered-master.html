@@ -195,9 +195,25 @@ var choose_lang = x=window.navigator.language||navigator.browserLanguage;
                                       {% if value == 0 %}
                                   <a  href="/learn/{{ key }}/#level0">
                                     <img src="static/app/images/bulb_little.png" alt="">
-                                        {% blocktrans %}
-                                        {{ key }}
-                                        {% endblocktrans %}
+                                    {% if key == "Abstraction" %}
+                                    抽象化 ({{ key }})
+                                    {% elif key == "Parallelization" %}
+                                    平行化 ({{ key }})
+                                    {% elif key == "Logic" %}
+                                    邏輯化 ({{ key }})
+                                    {% elif key == "Synchronization" %}
+                                    同步化 ({{ key }})
+                                    {% elif key == "FlowControl" %}
+                                    流程化 ({{ key }})
+                                    {% elif key == "UserInteractivity" %}
+                                    人性化 ({{ key }})
+                                    {% elif key == "DataRepresentation" %}
+                                    資料化 ({{ key }})
+                                    {% else %}
+                                    {% blocktrans %}
+                                    {{ key }
+                                    {% endblocktrans %}
+                                    {% endif %}
                                  </a>
                                 <br>
                                    
@@ -205,9 +221,25 @@ var choose_lang = x=window.navigator.language||navigator.browserLanguage;
                                     {% elif value == 1 %}
                                 <a  href="/learn/{{ key }}/#level1">
                                     <img src="static/app/images/bulb_little.png" alt=""> 
-                                        {% blocktrans %}
-                                        {{ key }}
-                                        {% endblocktrans %}
+                                    {% if key == "Abstraction" %}
+                                    抽象化 ({{ key }})
+                                    {% elif key == "Parallelization" %}
+                                    平行化 ({{ key }})
+                                    {% elif key == "Logic" %}
+                                    邏輯化 ({{ key }})
+                                    {% elif key == "Synchronization" %}
+                                    同步化 ({{ key }})
+                                    {% elif key == "FlowControl" %}
+                                    流程化 ({{ key }})
+                                    {% elif key == "UserInteractivity" %}
+                                    人性化 ({{ key }})
+                                    {% elif key == "DataRepresentation" %}
+                                    資料化 ({{ key }})
+                                    {% else %}
+                                    {% blocktrans %}
+                                    {{ key }
+                                    {% endblocktrans %}
+                                    {% endif %}
                                 
                                  </a>
                                 <br>
@@ -215,9 +247,25 @@ var choose_lang = x=window.navigator.language||navigator.browserLanguage;
                                     {% elif value == 2 %}
                                  <a  href="/learn/{{ key }}/#level2">
                                     <img src="static/app/images/bulb_little.png" alt=""> 
-                                        {% blocktrans %}
-                                        {{ key }}
-                                        {% endblocktrans %}
+                                    {% if key == "Abstraction" %}
+                                    抽象化 ({{ key }})
+                                    {% elif key == "Parallelization" %}
+                                    平行化 ({{ key }})
+                                    {% elif key == "Logic" %}
+                                    邏輯化 ({{ key }})
+                                    {% elif key == "Synchronization" %}
+                                    同步化 ({{ key }})
+                                    {% elif key == "FlowControl" %}
+                                    流程化 ({{ key }})
+                                    {% elif key == "UserInteractivity" %}
+                                    人性化 ({{ key }})
+                                    {% elif key == "DataRepresentation" %}
+                                    資料化 ({{ key }})
+                                    {% else %}
+                                    {% blocktrans %}
+                                    {{ key }
+                                    {% endblocktrans %}
+                                    {% endif %}
                                  
                                  </a>
                                 <br>
@@ -249,7 +297,29 @@ var choose_lang = x=window.navigator.language||navigator.browserLanguage;
                         {% if deadCode.number == 0 %}
                         {% trans 'Your project does not have dead code, good job!' %}
                         {% else %} 
-                        {% trans 'You have dead code in ' %}{{ key }}({{ value }}):
+                        {% trans 'You have dead code in ' %}
+                        
+                        {% if key == "Abstraction" %}
+                        抽象化 ({{ key }})
+                        {% elif key == "Parallelization" %}
+                        平行化 ({{ key }})
+                        {% elif key == "Logic" %}
+                        邏輯化 ({{ key }})
+                        {% elif key == "Synchronization" %}
+                        同步化 ({{ key }})
+                        {% elif key == "FlowControl" %}
+                        流程化 ({{ key }})
+                        {% elif key == "UserInteractivity" %}
+                        人性化 ({{ key }})
+                        {% elif key == "DataRepresentation" %}
+                        資料化 ({{ key }})
+                        {% else %}
+                        {% blocktrans %}
+                        {{ key }
+                        {% endblocktrans %}
+                        {% endif %}
+                        
+                        ({{ value }}):
                         {% endif %}
                         {% endif%}
                         {% endif%}
@@ -262,7 +332,26 @@ var choose_lang = x=window.navigator.language||navigator.browserLanguage;
                         {% if initialization.number == 0 %}
                         {% trans 'Your project does not have uninitialized attributes, good job!'%}
                         {% else %}
-                        {{ key }}({{ value }})
+                        {% if key == "Abstraction" %}
+                        抽象化 ({{ key }})
+                        {% elif key == "Parallelization" %}
+                        平行化 ({{ key }})
+                        {% elif key == "Logic" %}
+                        邏輯化 ({{ key }})
+                        {% elif key == "Synchronization" %}
+                        同步化 ({{ key }})
+                        {% elif key == "FlowControl" %}
+                        流程化 ({{ key }})
+                        {% elif key == "UserInteractivity" %}
+                        人性化 ({{ key }})
+                        {% elif key == "DataRepresentation" %}
+                        資料化 ({{ key }})
+                        {% else %}
+                        {% blocktrans %}
+                        {{ key }
+                        {% endblocktrans %}
+                        {% endif %}
+                        ({{ value }})
                         {% endif %}
                         {% endif%}
                         {% endif%}
@@ -301,9 +390,25 @@ var choose_lang = x=window.navigator.language||navigator.browserLanguage;
                                         {% if value = 3 %}
                                         <span class="glyphicon glyphicon-star" id="star"></span>
                                         {% endif %}
+                                        {% if key == "Abstraction" %}
+                                        抽象化 ({{ key }})
+                                        {% elif key == "Parallelization" %}
+                                        平行化 ({{ key }})
+                                        {% elif key == "Logic" %}
+                                        邏輯化 ({{ key }})
+                                        {% elif key == "Synchronization" %}
+                                        同步化 ({{ key }})
+                                        {% elif key == "FlowControl" %}
+                                        流程化 ({{ key }})
+                                        {% elif key == "UserInteractivity" %}
+                                        人性化 ({{ key }})
+                                        {% elif key == "DataRepresentation" %}
+                                        資料化 ({{ key }})
+                                        {% else %}
                                         {% blocktrans %}
-                                        {{ key }}
+                                        {{ key }
                                         {% endblocktrans %}
+                                        {% endif %}
                                       </td>
                                       <td>
                                             {% if value = 0 %}
