@@ -1759,7 +1759,7 @@ msgstr "Dr. Scratch 提供兩種方式來分析你的 Scratch 作品集"
 
 #: templates/login/login.html:277 templates/main/main.html:304
 msgid "project.png"
-msgstr "專案.png"
+msgstr "project.png"
 
 #: templates/login/login.html:279 templates/main/main.html:306
 msgid ""
@@ -1767,7 +1767,7 @@ msgid ""
 "need to previously download the project to your computer. By analyzing your "
 "projects with Dr. Scratch, you can easily check your Computational Thinking "
 "Score."
-msgstr "你可以上傳你的 sb2 檔案或只是提供你的 Scratch 作品網址"
+msgstr "你可以上傳你的 sb3 檔案或只是提供你的 Scratch 作品網址"
 
 #: templates/login/login.html:288 templates/main/main.html:315
 msgid "It is extremely easy to use, both for begginers and expert programmers."
@@ -2057,7 +2057,7 @@ msgstr "如何?"
 
 #: templates/main/main.html:77
 msgid "Working on"
-msgstr "持續更新"
+msgstr "更新中"
 
 #: templates/main/main.html:78
 msgid "Contact us"
@@ -2067,7 +2067,7 @@ msgstr "聯絡我們"
 #: templates/tournaments/creator/admin/admin_creator.html:157
 #: templates/tournaments/participant/teamsPart.html:203
 msgid "Tournaments"
-msgstr "比賽"
+msgstr "錦標賽"
 
 #: templates/main/main.html:80
 msgid "Organizations"
