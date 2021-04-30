@@ -58,3 +58,9 @@ docs/_build/
 
 # PyBuilder
 target/
+
+log/*
+
+*.sqlite3
+
+uploads/*.sb3
