@@ -1759,7 +1759,7 @@ msgstr "Dr. Scratch 提供兩種方式來分析你的 Scratch 作品集"
 
 #: templates/login/login.html:277 templates/main/main.html:304
 msgid "project.png"
-msgstr "project.png"
+msgstr "project_zh_hant.png"
 
 #: templates/login/login.html:279 templates/main/main.html:306
 msgid ""
@@ -2133,8 +2133,8 @@ msgstr "2. 假如你有你的 <span class='colored-text'><a data-toggle='modal' 
 msgid ""
 "<input  name='zipFile' type='file' class='filestyle' data-buttonText='Choose "
 "Project'>"
-msgstr "<input  name='zipFile' type='file' class='filestyle' data-buttonText='選擇  "
-"Project'>"
+msgstr "<input  name='zipFile' type='file' class='filestyle' data-buttonText='上傳  "
+"作品'>"
 
 #: templates/main/main.html:143
 #: templates/tournaments/participant/tournamentsPart.html:587
