@@ -1026,7 +1026,7 @@ msgstr ""
 
 #: templates/learn/Logic.html:51 templates/learn/Synchronization.html:71
 msgid "stop [all v]"
-msgstr ""
+msgstr "停止 [所有的 v]"
 
 #: templates/learn/Logic.html:53
 msgid ""
@@ -1061,7 +1061,7 @@ msgstr ""
 #: templates/tournaments/participant/scores.html:17
 #: templates/tournaments/participant/tournamentsPart.html:251
 msgid "Parallelism"
-msgstr ""
+msgstr "同步化"
 
 #: templates/learn/Parallelism.html:10
 msgid ""
@@ -1180,7 +1180,7 @@ msgstr ""
 #: templates/tournaments/participant/scores.html:401
 #: templates/tournaments/participant/tournamentsPart.html:491
 msgid "Synchronization"
-msgstr ""
+msgstr "同步化"
 
 #: templates/learn/Synchronization.html:11
 msgid ""
@@ -1319,7 +1319,7 @@ msgstr ""
 #: templates/learn/User.html:5 templates/learn/base.html:101
 #: templates/statistics/statistics.html:263
 msgid "User interactivity"
-msgstr "使用者互動"
+msgstr "人性化"
 
 #: templates/learn/User.html:11
 msgid ""
@@ -1472,15 +1472,15 @@ msgstr ""
 #: templates/upload/dashboard-unregistered-developing.html:110
 #: templates/upload/dashboard-unregistered-master.html:148
 msgid "Dr. Scratch(Beta Version)"
-msgstr ""
+msgstr "Dr. Scratch (測試版)"
 
 #: templates/learn/base.html:98 templates/statistics/statistics.html:266
 msgid "Data representation"
-msgstr ""
+msgstr "資料化"
 
 #: templates/learn/base.html:102
 msgid "Flow control"
-msgstr ""
+msgstr "流程化"
 
 #: templates/learn/base.html:106 templates/statistics/statistics.html:200
 #: templates/tournaments/participant/results.html:367
@@ -2057,7 +2057,7 @@ msgstr "如何?"
 
 #: templates/main/main.html:77
 msgid "Working on"
-msgstr "進行中"
+msgstr "持續更新"
 
 #: templates/main/main.html:78
 msgid "Contact us"
@@ -2075,7 +2075,7 @@ msgstr "組織"
 
 #: templates/main/main.html:109
 msgid "Analyze your Scratch projects"
-msgstr "分析你的 Scratch 作品"
+msgstr "分析你的 Scratch <br> 作品"
 
 #: templates/main/main.html:111
 msgid ""
@@ -3156,7 +3156,7 @@ msgstr ""
 #: templates/tournaments/creator/admin/tournaments/tournamentsList.html:265
 #: templates/tournaments/creator/progress/tournamentsProgress.html:235
 msgid "Synchronization:"
-msgstr ""
+msgstr "同步化"
 
 #: templates/tournaments/creator/admin/tournaments/tournamentsList.html:271
 #: templates/tournaments/creator/progress/tournamentsProgress.html:241
@@ -3413,7 +3413,7 @@ msgstr "<img class='framed' src='../../static/app/images/url-en.png' />"
 #: templates/tournaments/participant/tournamentsPart.html:701
 #: templates/upload/dashboard-organization.html:270
 msgid "<img class='framed' src='../../static/app/images/project-en.png' />"
-msgstr ""
+msgstr "<img class='framed' src='../../static/app/images/project-en.png' />"
 
 #: templates/tournaments/creator/progress/tournamentsProgress.html:202
 msgid "Progress "
@@ -3430,30 +3430,30 @@ msgstr "沒有任何遊戲"
 
 #: templates/tournaments/creator/validation/validation.html:197
 msgid "Validate Games"
-msgstr ""
+msgstr "驗證遊戲"
 
 #: templates/tournaments/creator/validation/validation.html:226
 msgid "There are no tournaments with games left to validate."
-msgstr ""
+msgstr "沒有錦標賽。"
 
 #: templates/tournaments/main_tournaments.html:170
 msgid "Welcome to Dr. Scratch Tournaments"
-msgstr "歡迎參加 Dr. Scratch 比賽"
+msgstr "歡迎參加 Dr. Scratch 錦標賽"
 
 #: templates/tournaments/main_tournaments.html:172
 msgid ""
 "Dr. Scratch tournaments allows registered teachers create and manage "
 "tournaments for students to take part in them. Tournaments can be evaluated "
 "manually or automatically."
-msgstr ""
+msgstr "Dr.  Scratch錦標賽允許註冊的老師創建和管理錦標賽，以便學生參加。比賽可以手動或自動進行評估。"
 
 #: templates/tournaments/main_tournaments.html:226
 msgid "Dr. Scratch Tournaments"
-msgstr "Dr. Scratch 競賽"
+msgstr "Dr. Scratch 錦標賽"
 
 #: templates/tournaments/main_tournaments.html:228
 msgid "to join Dr. Scratch tournaments?"
-msgstr "加入 Scratch 競賽"
+msgstr "加入 Scratch 錦標賽 ?"
 
 #: templates/tournaments/main_tournaments.html:231
 msgid ""
